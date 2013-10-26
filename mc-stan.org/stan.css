@@ -11,11 +11,12 @@ body {
 }
 p {
   margin: 0.5em 0 0.5em 0;  
-  width: 40em;
+  width: 39em;
   line-height: 1.35em;
 }
 hr {
-    background-color: #606060;
+    background-color: #606060;  
+    width: 39em;
 }
 h1 {
   font-size: 200%;   
@@ -54,10 +55,6 @@ tt {
     text-align: left;
 }
 
-
-
-pre {
-}
 pre { 
   font-family: "lucida console", menlo, monaco, "courier new", courier,  monospace;
   font-size: .75em;
