@@ -4,7 +4,7 @@
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>Stan: Project Home</title>
+<title>Stan: Project Home Page</title>
 <meta http-equiv="Content-type"
       content="application/xhtml+xml; charset=utf-8"/>
 <meta http-equiv="Content-Language"
@@ -29,52 +29,67 @@ R, shell interfaces.  Gelman." />
 
 <body>
 
-<h1 style="font-size:300%">Stan</h1>
-<hr />
+<div id="header">
+  <h1 style="font-size:600%">Stan</h1>
+  <script src="navbar.js"></script>
+</div>
 
-<!--
-<img style="float: left" src="stanlogo-main.png"/> 
--->
-<p>Stan is a probabilistic programming language implementing inference with</p>
+<div id="main">
+<p>Stan is a probabilistic programming language implementing
+statistical inference with</p>
 <ul>
   <li> Markov chain Monte Carlo sampling (NUTS, HMC)</li>
   <li> Optimization-based point estimation (BFGS)</li>
 </ul>
-
-<p>Stan is implemented in C++, with interfaces for R, Python, and the command line.</p>
-
+<p>Stan is coded in C++ and runs on all major platforms (Windows,
+Mac, Linux).</p>
 <p>Stan is freedom-respecting, open-source software.</p>
 
-
 <h2>Downloads &amp; Getting Started</h2>
-LICENSE.md
-<p>Getting started instructions and download links are organized by
-interface:</p>
-
+  
+<p>
+Download and getting started instructions by interface:
+</p>
 <ul>
-  <li><a href="">RStan</a></li>
-  <li><a href="">PyStan</a></li>
-  <li><a href="">CmdStan</a></li>
+  <li>
+  <span style="font-size:95%; color:#666;">R: </span>
+  <a href="">RStan</a> 
+  &nbsp; | &nbsp;
+  <span style="font-size:95%; color:#666;">Python: </span>
+  <a href="">PyStan</a> 
+  &nbsp; | &nbsp;
+  <span style="font-size:95%; color:#666;">Command Line: </span>
+  <a href="">CmdStan</a> 
+</li>
 </ul>
 
-<p>Stan's programming language is shared across interfaces:</p>
+<p>Models and examples are portable across interfaces:</p>
 <ul>
-  <li><a href=""><i>Stan Modeling Language User's Guide and Reference
-  Manual</i></a></li>
-<li><a href="">Example models</a></li>
+  <li><a href="">Modeling Language Manual</a>
+  &nbsp; | &nbsp;
+  <a href="">Example Models</a></li>
 </ul>
 
-<h2>More Information</h2>
+<h2>More Info</h2>
+<p>For the user's and developer message groups, how to contribute code
+or models, citing Stan and citations of Stan, feature and bug
+trackers, and the development team:
+</p>
 <ul>
-  <li><a href="mailing-lists.html">Mailing Lists</a></li>
-  <li><a href="contribute.html">Contribute Code &amp; Models</a></li>
-  <li><a href="citations.html">Citations</a></li>
-  <li><a href="development-team.html">Development Team</a></li>
+  <li><a href="mailing-lists.html">Message Groups</a>
+  &nbsp; | &nbsp;
+  <a href="contribute.html">Contribute</a>
+  &nbsp; | &nbsp;
+  <a href="citations.html">Citations</a>
+  &nbsp; | &nbsp;
+  <a href="development-team.html">Issue Tracker</a>
+  &nbsp; | &nbsp;
+  <a href="development-team.html">Dev Team</a></li>
 </ul>
-<div>
-  <br />
-  <hr />
-  <br />
+</div>
+
+<div id="footer">
+  &nbsp;
 </div>
 </body>
 </html>
