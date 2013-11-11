@@ -4,11 +4,14 @@
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>Stan: Contribute Code &amp; Models</title>
+<title>Stan: Contribute Code and Models</title>                               
 <meta http-equiv="Content-type"
       content="application/xhtml+xml; charset=utf-8"/>
 <meta http-equiv="Content-Language"
       content="en"/>
+<meta name="description" content="Stan probabilistic programming
+language; MCMC (HMC, NUTS), optimization (BFGS); RStan, PyStan, CmdStan; automatic differentiation;
+Gelman et al." />
 <link href="stan.css"
       type="text/css"
       rel="stylesheet"
@@ -25,77 +28,109 @@
 </head>
 
 <body>
-<h1>Stan: Contribute Code &amp; Models</h1>
-<hr />
 
-<p>Stan is open source because we want your feedback to help make Stan's
-code and documentation better.</p>
+<div id="header">
+  <h1>Contribute</h1>  
+  <script src="navbar.js" type="text/javascript"></script>
+</div>
 
-<h2>Contribute Code Patches</h2>
+<div id="main">
 
-<p>If you'd like to contribute a bug patch, please submit a Git patch
-or Git pull request either on the user's or developer's <a
- href="mailing-lists.html">mailing list</a> or through the <a
- href="bugs-features.html">issue tracker</a>.  After testing and
-merging, contributions will be distributed under Stan's new BSD license.
-</p>
+  <p>Stan is open source because we want your input to help make
+  Stan's code and documentation better.</p>
 
-<h2>Contribute Models and Data</h2>
+  <h2>Suggest or Discuss Code Patches</h2>
 
-<p>We're still discussing how to support user-contributed models.  The
-issues to sort out are</p>
-<ul>
-  <li>how to vet the models to make sure they work,</li>
-  <li>how to handle intellectual property and licensing, and</li>
-  <li>how to store and distribute them.</li>
-</ul>
-<p>
-If you have suggestions, let us know on the
-<a href="mailing-lists.html">mailing lists</a>.</p>
+  <p>To suggest or discuss small patches, such as localized bug fixes, the user's group
+  is the best venue.  For larger patches, the discussion should move to
+  the developer's group.</p>
+  
+
+  <h2>Contribute Code Patches</h2>
+
+  <p>If you'd like to contribute code, please submit it through a Git
+  pull request.  The developer process for creating a Git pull request
+  is described on:</p>
+
+  <ul>
+    <li><a class="external"
+    href="https://github.com/stan-dev/stan/wiki/Developer-Process">Developer
+    Process Wiki</a><img class="external" src="external-link.png" alt="external link
+    marker"/>
+    <span class="note">[on GitHub]</span>
+    </li>
+  </ul>
+  
+  <p> After code review, testing, and merging, all code is distributed
+  under the same open-source license of the package to which it
+  belongs (GPL for RStan, PyStan; BSD for CmdStan, C++ API; CC
+  BY for documentation).</p>
+
+  <h2>Contribute Models and Data</h2>
+
+  <p>We're still discussing how to support user-contributed
+  models. The issues to sort out are:</p>
+
+  <ul>
+    <li>how to vet the models to make sure they work,</li>
+    <li>how to handle intellectual property and licensing, and</li>
+    <li>how to store and distribute them.</li>
+  </ul>
+
+  <p>If you have suggestions, let us know on the user's group.</p>
+
+  <p>Please feel free to discuss models and provide links and
+  references on the user's mailing list.</p>
+    
+  <h2>To Do List and Projects</h2>
+
+  <p>Larger project design documents and goals, as well as the
+  developer process followed by Stan, are listed in various places on
+  the Stan Wiki on GitHub.  </p>
+
+  <ul>
+    <li><a class="external"
+    href="https://github.com/stan-dev/stan/wiki">Stan Wiki</a><img
+    class="external" src="external-link.png" alt="external link
+    marker"/>
+    <span class="note">[on GitHub]</span>
+    </li>
+  </ul>
 
 
-<h2>Stan Wiki</h2>
+  <p>There is a top-level list that is in the process of being moved
+  over to the <a class="internal" href="issues.html">issue tracker</a>:</p>
 
-<p>Larger project design documents and goals, as well as the developer
-process followed by Stan, are listed in various places on</p>
+  <ul>
+    <li><a class="external"
+    href="https://github.com/stan-dev/stan/wiki/To-Do-List">To-Do List
+    Wiki</a><img
+    class="external" src="external-link.png" alt="external link
+    marker"/>
+    <span class="note">[on GitHub]</span>
+    </li>
+  </ul>
+  
+  
+  <h2>Join the Development Team</h2>
 
-<ul>
-  <li>the <a href="https://github.com/stan-dev/stan/wiki">Stan Wiki</a>.
-  </li>
-</ul>
+  <p>The Stan development team is always looking for developers willing to
+  get their hands dirty with C++ design, coding, documentation,
+  testing, and maintenance.</p>
 
+  <p>The current list of bugs and feature requests we would like to
+  implement is available on the <a class="internal"
+  href="issues.html">issue tracker</a>.</p>
 
+  <p>If you'd like to join the development team and gain push access
+  to the Stan code repository, please let us know by first requesting
+  to join the <a class="internal" href="groups.html">developer's group</a>.
+  Please include a brief description of your programming background
+  and what you'd like to contribute.</p>
+</div>
 
-<h2>Join the Development Team</h2>
-
-<p>We're always on the lookout for new developers willing to
-get their hands dirty with C++ design, coding, documentation, testing, and
-maintenance.</p>
-
-<p>The current list of bugs and feature requests we would like to
-implement
-is available from</p>
-<ul>
-  <li>the <a href="bugs-features.html">Stan Issue Tracker</a>.</li>
-</ul>
-
-<p>If you'd like to join the <a
- href="development-team.html">development team</a> and gain push
-access to the Stan code repository, please let us know by first
-requesting to join the developer's <a
- href="mailing-lists.html">mailing list</a>.</p>
-
-<p>Please include
-a <i>brief</i> description of your programming background and what you'd like to contribute.
-
-</p>
-
-<div>  
-  <br />
-  <hr />
-  <small style="margin:0 0 0 0.1em">
-  &gt; to the <a href="index.html">Stan Home Page</a>
-  </small>
+<div id="footer">
+  <script src="footer.js" type="text/javascript"></script>
 </div>
 
 </body>

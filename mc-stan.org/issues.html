@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Stan: Issue Tracker</title>                               
+<meta http-equiv="Content-type"
+      content="application/xhtml+xml; charset=utf-8"/>
+<meta http-equiv="Content-Language"
+      content="en"/>
+<meta name="description" content="Stan probabilistic programming
+language; MCMC (HMC, NUTS), optimization (BFGS); RStan, PyStan, CmdStan; automatic differentiation;
+Gelman et al." />
+<link href="stan.css"
+      type="text/css"
+      rel="stylesheet"
+      title="lp-site"
+      media="screen,projection,tv"/>
+<link href="web/css/stan.css"
+      title="lp-site"
+      type="text/css"
+      rel="stylesheet"
+      media="print,handheld,tty,aural,braille,embossed"/>
+<link rel="icon"
+      type="image/png" 
+      href="stanlogo-icon.png"/>
+</head>
+
+<body>
+
+<div id="header">
+  <h1>Issues</h1>  
+  <script src="navbar.js" type="text/javascript"></script>
+</div>
+
+<div id="main">
+  <p>Stan uses an issue tracker for reporting and monitoring progress
+  on bug fixes and feature requests.  Bugs include bugs in Stan, its
+  interfaces, installation, sample models, or documentation typos or
+  brainos.</p>
+
+  <p>Users can report bugs or request features by mailing the <a
+  class="internal" href="groups.html">user's group</a> or by opening
+  an issue on the issue tracker:</p>
+
+  <ul>
+    <li><a class="external"
+    href="https://github.com/stan-dev/stan/issues">Issue Tracker</a><img
+    class="external" src="external-link.png" alt="external pdf
+    marker"/>
+    <span class="note">[on Stan's GitHub]</span>
+    </li>
+  </ul>
+
+  <p>The rest of this page explains how to report bugs or request
+  features to make it easy for the development team to respond.</p>
+
+  <p>If you have reported a bug and not gotten a response, please
+  remind the developers through the user's mailing list.</p>
+  
+  <h2>How to Report Bugs</h2>
+
+  <p>The key to a successful bug report is to provide as much context as
+  possible.  Ideally, this will be in the form of a small example that
+  allows the developers to easily reproduce the bug.</p>
+
+  <p>Installation issues should be discussed on the user's group; some
+  of these may be promoted to bugs or feature requests depending on
+  their root cause.</p>
+
+  <p>Documentation typos, brainos, or requests for more information
+  may reported either on the user's list or issue tracker.  Reports
+  should include the name of the document or web site and version as
+  well as page numbers or a link.</p>
+
+  <p>Modeling issues that have not been isolated to small reproducible
+  examples should first be discussed on the user's group.</p>
+
+  <p>Bugs that have been isolated to reproducible examples may be
+  reported on the user's list or issue tracker.  Bug reports should
+  include information about</p>
+  <ul>
+    <li> interface (RStan, PyStan, CmdStan) with version,</li>
+    <li> underlying language version (R, Python, Shell)</li>
+    <li> language byte size (32 or 64 bit),</li>
+    <li> operating system (Windows, Mac OS X, Linux) with version,</li>
+    <li> memory available, and</li>
+    <li> compiler (clang++, g++) with version.</li>
+  </ul>
+  <p>Most importantly, it is almost impossible to diagnose a bug
+  without the</p>
+  <ul>
+    <li>full model file and data that produces the bug.</li>
+  </ul>
+
+  <h2>How to Request Features</h2>
+
+  <p>The Stan developers are happy to field feature requests from
+  users.  Feature requests can be for new functions to support, new
+  samplers, support for platforms, etc.  Please provide as much
+  information as possible, including links to papers or formulas.</p>
+
+  <p>Feature requests should be made either on the user's group or
+  using the issue tracker.</p>
+
+</div>
+
+<div id="footer">
+  <script src="footer.js" type="text/javascript"></script>
+</div>
+
+</body>
+</html>
