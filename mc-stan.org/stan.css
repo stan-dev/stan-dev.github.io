@@ -9,8 +9,8 @@
 }
 body { 
     font-size: 95%;
-    font-color: black;  
-    background-color: #abd191; <!-- pistachio: #82bb5b;  25% lighter: #bddba9; -->
+    color: #000;  
+    background-color: #abd191; 
 }
 #header {
     margin: 0;
@@ -66,7 +66,7 @@ a.internal:hover {
     border-top-style: solid; 
     border-bottom-style: solid; 
     border-width: 1pt; 
-    border-color:black;
+    border-color:#000;
 }
 p {
     margin: 1em 1em 0.75em 0em;
@@ -91,7 +91,7 @@ h2 {
     color: #62834b; /* #516d3f; */
     font-size: 175%;  
     margin: 0.75em 0 0 -0.07em;
-    
+    width: 60%;
 }
 ul {
     margin: 0.75em 1.5em 1em 2em;
@@ -115,7 +115,7 @@ pre {
     font-weight: 100;
     padding: 0.5em 1.5ex;
     margin: 0.85em 2ex .85em 1.5ex;
-    color: black;
+    color: #000;
     background-color: #F0F0F0;
     border-top: 1px solid #DDD;
     border-bottom: 1px solid #DDD;
@@ -125,13 +125,13 @@ pre {
 }
 #nav-container {
     float: right;
-    margin: 1px 0em 1.5em 1.5em;
+    margin: 1px 0em 1.5em 1.25em;
     padding: 0;
     background-color: #bddba9;
 }
 #nav-container ul {
     margin: 0;
-    padding: 10px 7px 12px 9px;
+    padding: 10px 7px 10px 7px;
     background-color: #fafafa;
     list-style-type: none;
 }
@@ -148,16 +148,16 @@ pre {
     padding: 5px 2em 5px 2em;
     margin: 2px 4px;
     background-color: #cfe5c0;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 #nav-container a:hover {
     background-color: #e7f2df;
 }
 #nav-container a:visited {
-    color: black;
+    color: #000;
 }
 #nav-container a:link {
-    color: black;
+    color: #000;
 }
 
 
