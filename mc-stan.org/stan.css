@@ -1,3 +1,5 @@
+/* Pistachio palette: http://encycolorpedia.com/93c572 */
+
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +10,7 @@
 body { 
     font-size: 95%;
     font-color: black;  
-    background-color: #bddba9; <!-- pistachio: #82bb5b;  25% lighter: #bddba9; -->
+    background-color: #abd191; <!-- pistachio: #82bb5b;  25% lighter: #bddba9; -->
 }
 #header {
     margin: 0;
@@ -28,7 +30,7 @@ span.note {
     color: #555;
 }
 div#foot {
-    padding: 1em 0 2em 0em;
+    padding: 2em 0 2em 0em;
     margin: -0.5em 0 0 0;
 }
 a:link {
@@ -47,25 +49,6 @@ a.internal {
 a.internal:hover {
     border-bottom-style: solid;
     border-width: 1pt;
-}
-a.pkg-download {
-    color: black;
-    font-size: 90%;
-    background-color: #EFFEDC;;
-    padding: 0.125em 0.25em 0.125em 0.25em;
-    margin: 2.5em 1.5em 1.5em 0.25em;
-    border-width: 1pt;  
-    border-style: solid;
-}
-a.pkg-download:hover {
-    color: black;
-    background-color: yellow;
-}
-a.pkg-download:link {
-    color: black;
-}
-a.pkg-download:visited {
-    color: black;
 }
 #footer {
     padding: 0;
@@ -88,27 +71,17 @@ p {
     float: right;
 }
 h1 {
-    color: black;
+    color: #555;
     margin: 0.125em 0 0.25em 0;
     font-size: 400%; 
     font-weight: normal;
     letter-spacing: -2px;
 }
 h2 {  
-    color: #476e2d;
-    font-size: 150%;  
+    color: #62834b; /* #516d3f; */
+    font-size: 175%;  
     margin: 0.75em 0 0 -0.07em;
-}
-h3 {  
-    font-size: 100%;  
-    font-weight: bold;
-    margin: 1em 0 0.5em 0em;
-}
-h4 {  
-    font-size: 100%;  
-    font-weight: bold;
-    font-style: italic;
-    margin: 1em 0 0.5em 1em;
+    
 }
 ul {
     margin: 0.75em 1.5em 1em 2em;
@@ -126,7 +99,6 @@ tt {
     padding: 0em 0.25em 0.5em 0.25em;
     text-align: left;
 }
-
 pre { 
     font-family: menlo, "lucida console", menlo, monaco, "courier new", courier,  monospace;
     font-size: .75em;
@@ -141,48 +113,41 @@ pre {
     clip: auto;
     line-height: 130%;
 }
-
 #nav-container {
     float: right;
-    margin: 4px 0em 1.5em 1.5em;
+    margin: 1px 0em 1.5em 1.5em;
     padding: 0;
     background-color: #bddba9;
 }
 #nav-container ul {
     margin: 0;
-    padding: 0;
+    padding: 9px 7px 12px 9px;
+    background-color: #fafafa;
     list-style-type: none;
 }
 #nav-container li {
     margin: 0;
 }
 #nav-container ul .nav-sep {
-    padding: 3px 0 0 0;
+    padding: 2px 0 0 0;
     background-color:  #fafafa;
 }
-#nav-container a {
+#nav-container a {    
     display: block;
     font-size: 85%;
-    padding: 5px 10px 5px 2em;
-    margin: 0;
-    width: 100px;
-    color: #000;
-    background-color:  #bddba9;
-    text-decoration: none;
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #333;
-    border-right: 1px solid #333;
+    padding: 5px 2em 5px 2em;
+    margin: 2px 4px;
+    background-color: #cfe5c0;
+    border: 1px solid black;
 }
 #nav-container a:hover {
-    color: navy;
-    background-color: yellow;
+    background-color: #e7f2df;
 }
 #nav-container a:visited {
-    color: navy;
+    color: black;
 }
 #nav-container a:link {
-    color: navy;
+    color: black;
 }
 
 
