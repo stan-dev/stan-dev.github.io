@@ -4,26 +4,23 @@
     font-size: 1em;   
     font-family: helvetica, lucida grande, arial, sans serif;  
     font-weight: 100;
+    color: #000;                                      /* DEFAULT FONT */
     border-color: #DDD;                               /* DEFAULT BORDER */
+    border-width: 1pt;
 }
 body { 
     margin: -1px;
     font-size: 95%;
-    color: #222;
 }
 #header {
     margin: 0;
     padding: 0.75em 1em 0.25em 2em; 
     background-color:  #F9DD67; /* #F9CB67; */          /* HEADER BG */
     border-bottom-style: solid; 
-    border-width: 1pt; 
-    color: #666;                                        /* HEADER FONT */
 }
 #foot {
     padding: 2em 0 1em 0em;
     background-color: #F9DD67;  ; /* #F9CB67; */        /* FOOTER BG */
-    border-color: #CCC;
-    border-width: 1pt;
     border-top-style: solid;
     border-bottom-style: solid;
     height: 100%;
@@ -31,7 +28,6 @@ body {
 #main {
     margin: 0em 0em -0.375em 0em;  
     padding: 1em 0 2em 2.25em;
-    background-color: #FFF;
 }
 img.download {
     height: 0.7em;
@@ -58,7 +54,6 @@ a {
 }
 a:hover {
     border-bottom-style: solid;
-    border-width: 1pt;
     border-color: #6D8AE3;                         /* LINK HOVER UNDERLINE */
 }
 p {
@@ -78,6 +73,7 @@ h1 {
     font-size: 400%; 
     font-weight: normal;
     letter-spacing: -2px;
+    color: #555;                                        /* HEADER FONT */
 }
 h2 {  
     color: #7F6704; /* #7F5804; */                    /* H2 FONT */
@@ -109,12 +105,12 @@ pre {
     padding: 1em 1.5ex;
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
-    color: #444;
-    background-color: #FAFAFA;
     overflow: auto;
     clip: auto;
     line-height: 1.4em;
     width: 75%;
+    color: #444;
+    background-color: #FAFAFA;
 }
 #nav-container {
     float: right;
@@ -137,8 +133,8 @@ pre {
     padding: 5px 2em 5px 2em;
     margin: 3px 0.5em 0 1.25em;
     background-color:  #F9DD67; /*#F9DFA8;*/        /* NAV BUTTON BG */
-    color: #444;                                    /* NAV BUTTON FONT */
     border: 1px solid #CCC;                         /* NAV BUTTON BORDER */
+    color: #333;                                    /* NAV BUTTON FONT */
 }
 #nav-container a:hover {
     background-color: #F9E9A8;  /*#F9CB67;*/   /* NAV BUTTON HOVER BG */
