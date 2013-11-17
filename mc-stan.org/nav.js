@@ -12,12 +12,11 @@ document.write('\
     <div class="nav-sep"></div>\
     <li><a href="groups.html">Groups</a></li>\
     <li><a href="issues.html">Issues</a></li>\
+    <li><a href="contribute.html">Contribute</a></li>\
+    <li><a href="source-repos.html">Source</a></li>\
     <div class="nav-sep"></div>\
     <li><a href="citations.html">Citations</a></li>\
-    <li><a href="contribute.html">Contribute</a></li>\
-    <div class="nav-sep"></div>\
     <li><a href="team.html">Team</a></li>\
-    <li><a href="source-repos.html">Source Repos</a></li>\
   </ul>\
 </div>\
 ');
