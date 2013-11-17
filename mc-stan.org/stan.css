@@ -102,28 +102,27 @@ tt {
     text-align: left;
 }
 pre { 
-    font-family: menlo, lucida console, courier new, courier,  monospace;
+    margin: 1em 0 1.25em 0;
+    font-family: lucida console, menlo, courier new, courier,  monospace;
     font-size: .8em;
     font-weight: 100;
-    padding: 0.5em 1.5ex;
-    margin: 0.85em 2ex .85em 1.5ex;
-    color: #666;
-    background-color: #FAFAFA;
+    padding: 1em 1.5ex;
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
+    color: #444;
+    background-color: #FAFAFA;
     overflow: auto;
     clip: auto;
-    width: 90%;
-    line-height: 130%;
+    line-height: 1.4em;
+    width: 75%;
 }
 #nav-container {
     float: right;
 }
 #nav-container ul {
-    margin:  2em -0.5em 1em 0;
-    padding: 0 0 1em 0;
+    margin:  1em 0em 2em 0;
+    width: 100%;
     list-style-type: none;
-    background-color: white;
 }
 #nav-container li {
     margin: 2px 12px 0 0;
