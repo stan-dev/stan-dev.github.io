@@ -87,18 +87,31 @@ Gelman et al." />
   reported on the users group or issue tracker.  Bug reports should
   include information about</p>
   <ul>
-    <li> interface (RStan, PyStan, CmdStan) with version,</li>
+    <li> interface (RStan, PyStan, CmdStan) with version</li>
     <li> underlying language version (R, Python, Shell)</li>
-    <li> byte size (32 or 64 bit),</li>
-    <li> operating system (Windows, Mac OS X, Linux) with version,</li>
-    <li> memory available, and</li>
-    <li> compiler (clang++, g++) with version.</li>
+    <li> any wrapper interfaces used and version (e.g., RStudio, RGui, IPython Notebook)</li>
+    <li> operating system and version (Windows [including 32 bit or 64 bit], Mac
+         OS X, Linux)</li>
+    <li> system memory available</li>
+    <li> C++ compiler (clang++, g++) with version
+    <ul>
+      <li>for CmdStan, include the result of <tt>g++ --version</tt>
+          or <tt>clang++ --version</tt> and <tt>make --version</tt></li>
+      <li>for RStan, include the full text of your <tt>.R/Makevars</tt>,
+          which can be viewed from within R using
+          <tt> file.show(file.path(Sys.getenv('HOME'),'.R','Makevars'))</tt></li>
+    </ul>
+    </li>
   </ul>
+
+  <p>For R users, most of this information is reported within R by <tt>sessionInfo()</tt>.</p>
+
+  
   <p>Most importantly, it is almost impossible to diagnose a bug
-  without the</p>
-  <ul>
-    <li>full model file and data that produces the bug.</li>
-  </ul>
+    without the</p>
+    <ul>
+      <li>full model file and data that produces the bug.</li>
+    </ul>
 
   <h2>How to Request Features</h2>
 
