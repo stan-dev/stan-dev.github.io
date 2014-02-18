@@ -1,16 +1,16 @@
 #!/bin/bash
-rm -rf v
-for dir in $(ls -d */)
-do
-  mkdir -p v/$dir
-done
+# rm -rf v
+# for dir in $(ls -d */)
+# do
+#   mkdir -p v/$dir
+# done
 
-files=$(find * -type f -name '*.html')
-for file in $files
-do
-  curl -F uploaded_file=@$file http://validator.w3.org/check -D v/$file
-  sleep 1
-done
+# files=$(find * -type f -name '*.html')
+# for file in $files
+# do
+#   curl -F uploaded_file=@$file http://validator.w3.org/check -D v/$file
+#   sleep 1
+# done
 
 PAGES_WITH_ERRORS=0
 
@@ -21,7 +21,8 @@ do
   Warnings=$(grep X-W3C-Validator-Warnings $file | sed 's/X-W3C-Validator-Warnings: //g' | tr -d [:space:])
   Errors=$(grep X-W3C-Validator-Errors $file | sed 's/X-W3C-Validator-Errors: //g' | tr -d [:space:])
 
-  PAGES_WITH_ERRORS=$(( PAGES_WITH_ERRORS + (( $((Status + Recursion + Warnings + $Errors)) > 0)) ))
+  PAGES_WITH_ERRORS=`expr $PAGES_WITH_ERRORS + $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`
+
   # echo "=${file}="
   # echo "=${Status}="
   # echo "=${Recursion}="
@@ -29,7 +30,7 @@ do
   # echo "=${Errors}="
   # echo $((Status + Recursion + (($Warnings > 0)) + (($Errors > 0)) ))
 
-  echo "<testsuites tests=\"4\" failures=\"$((Status + Recursion + (($Warnings > 0)) + (($Errors > 0)) ))\" disabled=\"0\" errors=\"0\" time=\"0.0\" name=\"$f\">" > $file
+  echo "<testsuites tests=\"4\" failures=\"`expr $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`\" disabled=\"0\" errors=\"0\" time=\"0.0\" name=\"$f\">" > $file
   if [ "$Status" -eq 0 ]
   then
     echo "  <testcase name=\"X-W3C-Validator-Status\"/>" >> $file
