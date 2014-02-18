@@ -36,7 +36,7 @@ do
   then
     echo "  <testcase name=\"W3C_Validator_Status\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"W3C_Validator_Status status=\"run\" time=\"0\">" >> $file
+    echo "  <testcase name=\"W3C_Validator_Status\" status=\"run\" time=\"0\">" >> $file
     echo "    <failure message=\"W3 Validator Status is Invalid\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
