@@ -36,7 +36,7 @@ do
   then
     echo "  <testcase name=\"W3C_Validator_Status\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"W3C_Validator_Status status=\"run\" time=\"0\" >" >> $file
+    echo "  <testcase name=\"W3C_Validator_Status status=\"run\" time=\"0\">" >> $file
     echo "    <failure message=\"W3 Validator Status is Invalid\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
@@ -44,7 +44,7 @@ do
   then
     echo "  <testcase name=\"W3C_Validator_Recursion\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"W3C_Validator_Recursion\" status=\"run\" time=\"0\" >" >> $file
+    echo "  <testcase name=\"W3C_Validator_Recursion\" status=\"run\" time=\"0\">" >> $file
     echo "    <failure message=\"Recursion: ${Recursion}\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
@@ -52,7 +52,7 @@ do
   then
     echo "  <testcase name=\"W3C_Validator_Warnings\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"W3C_Validator_Warnings\" status=\"run\" time=\"0\" >" >> $file
+    echo "  <testcase name=\"W3C_Validator_Warnings\" status=\"run\" time=\"0\">" >> $file
     echo "    <failure message=\"Warnings: ${Warnings}\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
