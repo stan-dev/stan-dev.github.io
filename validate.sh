@@ -36,7 +36,7 @@ do
     echo "  <testcase name=\"X-W3C-Validator-Status\"/>" >> $file
   else
     echo "  <testcase name=\"X-W3C-Validator-Status\">" >> $file
-    echo "    <faiulre type=\"Status\">W3 Validator Status is Invalid</failure>" >> $file
+    echo "    <failure type=\"Status\">W3 Validator Status is Invalid</failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Recursion" -eq 0 ]
@@ -44,7 +44,7 @@ do
     echo "  <testcase name=\"X-W3C-Validator-Recursion\"/>" >> $file
   else
     echo "  <testcase name=\"X-W3C-Validator-Recursion\">" >> $file
-    echo "    <faiulre type=\"Recursion\">${Recursion}</failure>" >> $file
+    echo "    <failure type=\"Recursion\">${Recursion}</failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Warnings" -eq 0 ]
@@ -52,7 +52,7 @@ do
     echo "  <testcase name=\"X-W3C-Validator-Warnings\"/>" >> $file
   else
     echo "  <testcase name=\"X-W3C-Validator-Warnings\">" >> $file
-    echo "    <faiulre type=\"Warnings\">${Warnings}</failure>" >> $file
+    echo "    <failure type=\"Warnings\">${Warnings}</failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Errors" -eq 0 ]
@@ -60,7 +60,7 @@ do
     echo "  <testcase name=\"X-W3C-Validator-Errors\"/>" >> $file
   else
     echo "  <testcase name=\"X-W3C-Validator-Errors\">" >> $file
-    echo "    <faiulre type=\"Errors\">${Errors}</failure>" >> $file
+    echo "    <failure type=\"Errors\">${Errors}</failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   echo "</testsuites>" >> $file
