@@ -1,16 +1,16 @@
 #!/bin/bash
-# rm -rf v
-# for dir in $(ls -d */)
-# do
-#   mkdir -p v/$dir
-# done
+rm -rf v
+for dir in $(ls -d */)
+do
+  mkdir -p v/$dir
+done
 
-# files=$(find * -type f -name '*.html')
-# for file in $files
-# do
-#   curl -F uploaded_file=@$file http://validator.w3.org/check -D v/$file
-#   sleep 1
-# done
+files=$(find * -type f -name '*.html')
+for file in $files
+do
+  curl -F uploaded_file=@$file http://validator.w3.org/check -D v/$file
+  sleep 1
+done
 
 PAGES_WITH_ERRORS=0
 
