@@ -30,8 +30,8 @@ do
   # echo "=${Errors}="
   # echo $((Status + Recursion + (($Warnings > 0)) + (($Errors > 0)) ))
 
-  echo "<testsuites tests=\"4\" failures=\"`expr $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`\" disabled=\"0\" errors=\"0\" time=\"0.0\" name=\"$f\">" > $file
-  echo "<testsuite name=\"$f\" status=\"run\" time=\"0\" errors=\"`expr $Warnings \> 0 + $Errors \> 0`\" >" >> $file
+  echo "<testsuites tests=\"4\" failures=\"`expr $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`\" disabled=\"0\" errors=\"0\" time=\"0\" name=\"AllTests\">" > $file
+  echo "<testsuite name=\"$file\" tests=\"4\" failures=\"`expr $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`\" disabled=\"0\" errors=\"0\" time=\"0\">" >> $file
   if [ "$Status" -eq 0 ]
   then
     echo "  <testcase name=\"W3C_Validator_Status\" status=\"run\" time=\"0\" />" >> $file
