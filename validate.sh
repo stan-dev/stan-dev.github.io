@@ -31,38 +31,40 @@ do
   # echo $((Status + Recursion + (($Warnings > 0)) + (($Errors > 0)) ))
 
   echo "<testsuites tests=\"4\" failures=\"`expr $Status + $Recursion + $Warnings \> 0 + $Errors \> 0`\" disabled=\"0\" errors=\"0\" time=\"0.0\" name=\"$f\">" > $file
+  echo "<testsuite name=\"$f\" status=\"run\" time=\"0\" errors=\"`expr $Warnings \> 0 + $Errors \> 0`\">" >> $file
   if [ "$Status" -eq 0 ]
   then
-    echo "  <testcase name=\"X-W3C-Validator-Status\"/>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Status\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"X-W3C-Validator-Status\">" >> $file
-    echo "    <failure type=\"Status\">W3 Validator Status is Invalid</failure>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Status status=\"run\" time=\"0\" \">" >> $file
+    echo "    <failure message=\"W3 Validator Status is Invalid\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Recursion" -eq 0 ]
   then
-    echo "  <testcase name=\"X-W3C-Validator-Recursion\"/>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Recursion\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"X-W3C-Validator-Recursion\">" >> $file
-    echo "    <failure type=\"Recursion\">${Recursion}</failure>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Recursion\" status=\"run\" time=\"0\" >" >> $file
+    echo "    <failure message=\"Recursion: ${Recursion}\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Warnings" -eq 0 ]
   then
-    echo "  <testcase name=\"X-W3C-Validator-Warnings\"/>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Warnings\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"X-W3C-Validator-Warnings\">" >> $file
-    echo "    <failure type=\"Warnings\">${Warnings}</failure>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Warnings\" status=\"run\" time=\"0\" >" >> $file
+    echo "    <failure message=\"Warnings: ${Warnings}\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
   if [ "$Errors" -eq 0 ]
   then
-    echo "  <testcase name=\"X-W3C-Validator-Errors\"/>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Errors\" status=\"run\" time=\"0\" />" >> $file
   else
-    echo "  <testcase name=\"X-W3C-Validator-Errors\">" >> $file
-    echo "    <failure type=\"Errors\">${Errors}</failure>" >> $file
+    echo "  <testcase name=\"W3C_Validator_Errors\" status=\"run\" time=\"0\" >" >> $file
+    echo "    <failure message=\"Errors: ${Errors}\" type=\"\"></failure>" >> $file
     echo "  </testcase>" >> $file
   fi
+  echo "</testsuite>" >> $file
   echo "</testsuites>" >> $file
 
 done
