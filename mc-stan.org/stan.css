@@ -91,6 +91,12 @@ h2 {
     margin: 0.75em 0 -0.2em -0.07em;
     width: 60%;
 }
+h3 {  
+    color: #444;                                  /* H2 FONT */
+    font-size: 125%;  
+    margin: 1em 0 -0.2em -0.07em;
+    width: 60%;
+}
 ul {
     margin: 0.75em 1.5em 1em 2em;
 }
