@@ -41,17 +41,23 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
       <div id="content">
 
         <p>Stan is a probabilistic programming language implementing
-        statistical inference with</p>
+        full Bayesian statistical inference with</p>
         
         <ul>
-          <li> Markov chain Monte Carlo sampling (NUTS, HMC)</li>
-          <li> Optimization-based point estimation (BFGS)</li>
+          <li> MCMC sampling <span class="note">(NUTS, HMC)</span></li>
         </ul>
 
-        <p>Stan is coded in C++ and runs on all major platforms (Windows,
-        Mac, Linux).</p>
+        <p> and penalized maximum liklelihood estimation with</p>
+        <ul>
+          <li> Optimization <span class="note">(BFGS)</span></li>
+        </ul>
+        
+        <p>Stan is coded in C++ and runs on all major platforms <span class="note">(Linux,
+        Mac, Windows)</span>.</p>
 
-        <p>Stan is freedom-respecting, open-source software.</p>
+        <p>Stan is freedom-respecting, open-source software <span
+        class="note">(new BSD core,
+        GPLv3 interfaces)</span>.</p>
         
         <h2>Interfaces</h2>
         
@@ -60,13 +66,13 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         </p>
 
         <ul>
-          <li><a href="rstan.html" class="internal">RStan v2.2.0</a>
+          <li><a href="rstan.html" class="internal">RStan v2.3.0</a>
           <span class="note">(R)</span></li>
 
-          <li><a href="pystan.html" class="internal">PyStan v2.2.0</a>
+          <li><a href="pystan.html" class="internal">PyStan v2.3.0</a>
           <span class="note">(Python)</span></li>
           
-          <li><a href="cmdstan.html" class="internal">CmdStan v2.2.0</a>
+          <li><a href="cmdstan.html" class="internal">CmdStan v2.3.0</a>
           <span class="note">(shell, command-line terminal)</span></li>
         </ul>
         
