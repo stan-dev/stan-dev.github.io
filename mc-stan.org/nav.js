@@ -17,6 +17,8 @@ document.write('\
     <div class="nav-sep"></div>\
     <li><a href="citations.html">Citations</a></li>\
     <li><a href="team.html">Team</a></li>\
+    <div class="nav-sep"></div>\
+    <li><a href="shop.html">Shop</a></li>\
   </ul>\
 </div>\
 ');
