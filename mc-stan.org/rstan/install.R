@@ -6,7 +6,8 @@ install_rstan <- function(multiarch = FALSE) {
   try(remove.packages("rstan"), silent = TRUE)
   Sys.setenv(R_MAKEVARS_USER = "foobar")
   Sys.setenv(R_MAKEVARS_SITE = "foobar")
-  install.packages(c("inline", "Rcpp"), type = "source")
+  if(multiarch) install.packages(c("inline", "Rcpp"), type = "source", INSTALL_opts = '--merge-multiarch')
+  else install.packages(c("inline", "Rcpp"), type = "source")
   library(inline) 
   library(Rcpp)
   src <- ' 
