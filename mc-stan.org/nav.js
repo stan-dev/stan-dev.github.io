@@ -6,6 +6,8 @@ document.write('\
     <li><a href="rstan.html">RStan</a></li>\
     <li><a href="pystan.html">PyStan</a></li>\
     <li><a href="cmdstan.html">CmdStan</a></li>\
+    <li><a href="matlab-stan.html">MatlabStan</a></li>\
+    <li><a href="julia-stan.html">Stan.jl</a></li>\
     <div class="nav-sep"></div>\
     <li><a href="manual.html">Manual</a></li>\
     <li><a href="examples.html">Examples</a></li>\
