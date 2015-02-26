@@ -11,6 +11,7 @@ document.write('\
     <div class="nav-sep"></div>\
     <li><a href="manual.html">Manual</a></li>\
     <li><a href="examples.html">Examples</a></li>\
+    <li><a href="tutorials.html">Tutorials</a></li>\
     <div class="nav-sep"></div>\
     <li><a href="groups.html">Groups</a></li>\
     <li><a href="issues.html">Issues</a></li>\
