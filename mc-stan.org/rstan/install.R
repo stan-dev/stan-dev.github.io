@@ -23,7 +23,7 @@ install_rstan <- function() {
 
   options(repos = c(getOption("repos"), 
           rstan = "http://rstan.org/repo/"))
-  install.packages("rstan", type = 'source')
+  install.packages("rstan", type = 'source', dependencies = FALSE)
   library(rstan)
   set_cppo("fast")
   if (any(grepl("^darwin", R.version$os, ignore.case = TRUE))) {
