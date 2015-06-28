@@ -6,7 +6,8 @@ install_rstan <- function() {
   try(remove.packages("rstan"), silent = TRUE)
   Sys.setenv(R_MAKEVARS_USER = "foobar")
   Sys.setenv(R_MAKEVARS_SITE = "foobar")
-  install.packages(c("inline", "BH", "RcppEigen"))
+  install.packages(c("inline", "RcppEigen"))
+  devtools::install_url("http://cran.r-project.org/src/contrib/Archive/BH/BH_1.55.0-3.tar.gz")
   install.packages("Rcpp", type = "source")
   library(inline) 
   library(Rcpp)
@@ -22,7 +23,7 @@ install_rstan <- function() {
 
   options(repos = c(getOption("repos"), 
           rstan = "http://rstan.org/repo/"))
-  install.packages("rstan", type = 'source')
+  install.packages("rstan", type = 'source', dependencies = FALSE)
   library(rstan)
   set_cppo("fast")
   if (any(grepl("^darwin", R.version$os, ignore.case = TRUE))) {
