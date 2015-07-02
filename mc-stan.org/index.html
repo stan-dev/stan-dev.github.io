@@ -10,8 +10,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <meta http-equiv="Content-Language"
           content="en"/>
     <meta name="description" content="Stan modeling language and C++ library for Bayesian inference.
-                                      NUTS adaptive HMC (MCMC) sampling, automatic differentiation,
-                                      R, shell interfaces.  Gelman." />
+       NUTS adaptive HMC (MCMC) sampling, automatic differentiation,
+       R, shell interfaces.  Gelman" />
     <link href="stan.css"
           type="text/css"
           rel="stylesheet"
@@ -44,12 +44,19 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         full Bayesian statistical inference with</p>
         
         <ul>
-          <li> MCMC sampling <span class="note">(NUTS, HMC)</span></li>
+          <li> MCMC sampling <span class="note">(NUTS, HMC)</span>,</li>
         </ul>
 
+        <p>approximate Bayesian inference with</p>
+        
+        <ul>
+          <li>Variational inference <span
+          class="note">(ADVI)</span>,</li>
+        </ul>
+        
         <p> and penalized maximum likelihood estimation with</p>
         <ul>
-          <li> Optimization <span class="note">(L-BFGS)</span></li>
+          <li> Optimization <span class="note">(L-BFGS)</span>.</li>
         </ul>
         
         <p>Stan is coded in C++ and runs on all major platforms <span class="note">(Linux,
@@ -59,10 +66,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         class="note">(new BSD core,
         GPLv3 interfaces)</span>.</p>
         
-        <h2>Interfaces</h2>
+        <h2>Stan Interfaces</h2>
         
         <p>
-          Download and getting started instructions, organized by interface:
+          Instructions for getting started by interface:
         </p>
 
         <ul>
@@ -80,9 +87,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
           <li><a href="julia-stan.html" class="internal">Stan.jl</a>
           <span class="note">(Julia)</span></li>
+
+          <li><a href="stata-stan.html" class="internal">StataStan</a>
+          <span class="note">(Stata)</span></li>
         </ul>
-        
-        
+
         <h2>Manual &amp; Examples</h2>
         
         <p>Models are portable across interfaces, so these are cross-platform:</p>
@@ -94,6 +103,14 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           <li><a href="examples.html" class="internal">Example Models</a></li>
         </ul>
         
+        <h2>Visualization</h2>
+
+        <p>Interactively summarize and analyze MCMC output:</p>
+        <ul>
+          <li><a href="shinyStan.html" class="internal">shinyStan</a>
+          <span class="note">(R)</span></li>
+        </ul>
+
         <h2>More Info</h2>
         
         <p>Follow the links on the navigation bar (on the right) for

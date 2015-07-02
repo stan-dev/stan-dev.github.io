@@ -8,6 +8,7 @@ document.write('\
     <li><a href="cmdstan.html">CmdStan</a></li>\
     <li><a href="matlab-stan.html">MatlabStan</a></li>\
     <li><a href="julia-stan.html">Stan.jl</a></li>\
+    <li><a href="stata-stan.html">StataStan</a></li>\
     <li><a href="shinyStan.html">shinyStan</a></li>\
     <div class="nav-sep"></div>\
     <li><a href="manual.html">Manual</a></li>\
