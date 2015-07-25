@@ -76,7 +76,7 @@ p {
     width: 70%;
 }
 #logo {
-    float: right;
+    float: right; margin: 0 1.25em 0 0;
 }
 h1 {
     margin: 0.125em 0 0.1em 0;
