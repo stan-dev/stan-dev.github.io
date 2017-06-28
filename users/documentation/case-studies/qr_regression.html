@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Michael Betancourt" />
+
+
+<title>The QR Decomposition For Regression Models</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">The QR Decomposition For Regression Models</h1>
+<h4 class="author"><em>Michael Betancourt</em></h4>
+<h4 class="date"><em>June 2017</em></h4>
+
+</div>
+
+
+<p>A common problem with regression modeling is correlation amongst the covariates which induces strong posterior correlations that can frustrate accurate computation with those models. In this case study I will review the <em>QR decomposition</em>, a technique for decorrelating the covariates and, hence, the resulting posterior distribution.</p>
+<p>We’ll begin with a simple example that demonstrates the pathological behavior of correlated covariates before going through the mathematics of the QR decomposition and how it can be applied in Stan.</p>
+<div id="fitting-issues-with-correlated-covariates" class="section level1">
+<h1>Fitting Issues with Correlated Covariates</h1>
+<p>Consider a very simple regression with only two covariates – <span class="math inline">\(x \sim \mathcal{N} (1, 0.1)\)</span> and it’s square, <span class="math inline">\(x^{2}\)</span>. The inclusion of both <span class="math inline">\(x\)</span> and <span class="math inline">\(x^{2}\)</span> is not uncommon in nonlinear regressions where the response is given by polynomials of a set of input covariates.</p>
+<pre class="r"><code>set.seed(689934)
+
+N &lt;- 5000
+x &lt;- rnorm(N, 1, 0.1)
+X = t(data.matrix(data.frame(x, x * x)))
+
+M &lt;- 2
+beta = matrix(c(2.5, -1), nrow=M, ncol=1)
+alpha &lt;- -0.275
+sigma &lt;- 0.8
+
+mu &lt;- t(X) %*% beta + alpha
+y = sapply(1:N, function(n) rnorm(1, mu[n], sigma))
+
+library(rstan)
+rstan_options(auto_write = TRUE)
+stan_rdump(c(&quot;N&quot;, &quot;M&quot;, &quot;X&quot;, &quot;y&quot;), file=&quot;regression.data.R&quot;)</code></pre>
+<p>Because <span class="math inline">\(x\)</span> is positive, it will be highly correlated with its square.</p>
+<pre class="r"><code>c_light &lt;- c(&quot;#DCBCBC&quot;)
+c_light_highlight &lt;- c(&quot;#C79999&quot;)
+c_mid &lt;- c(&quot;#B97C7C&quot;)
+c_mid_highlight &lt;- c(&quot;#A25050&quot;)
+c_dark &lt;- c(&quot;#8F2727&quot;)
+c_dark_highlight &lt;- c(&quot;#7C0000&quot;)
+
+c_light_trans &lt;- c(&quot;#DCBCBCBF&quot;)
+c_light_highlight_trans &lt;- c(&quot;#C79999BF&quot;)
+c_mid_trans &lt;- c(&quot;#B97C7CBF&quot;)
+c_mid_highlight_trans &lt;- c(&quot;#A25050BF&quot;)
+c_dark_trans &lt;- c(&quot;#8F2727BF&quot;)
+c_dark_highlight_trans &lt;- c(&quot;#7C0000BF&quot;)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(X[1,], X[2,],
+     col=c_dark, pch=16, cex=0.8, xlab=&quot;x&quot;, ylab=&quot;x^2&quot;)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The correlations here are particularly strong because we didn’t standardize the covariates, although standardization only slightly reduces the correlations. In more typical situations the covariates will be highly correlated due to common confounders in which case standardization will have no effect.</p>
+<p>Now let’s try to fit a Bayesian linear regression,</p>
+<pre class="r"><code>writeLines(readLines(&quot;regression.stan&quot;))</code></pre>
+<pre><code>data {
+  int&lt;lower=1&gt; N;
+  int&lt;lower=1&gt; M;
+  matrix[M, N] X;
+  vector[N] y;
+}
+
+parameters {
+  vector[M] beta;
+  real alpha;
+  real&lt;lower=0&gt; sigma;
+}
+
+model {
+  beta ~ normal(0, 1);
+  alpha ~ normal(0, 1);
+  sigma ~ cauchy(0, 1);
+
+  y ~ normal(X&#39; * beta + alpha, sigma);
+}</code></pre>
+<pre class="r"><code>input_data &lt;- read_rdump(&quot;regression.data.R&quot;)
+
+fit &lt;- stan(file=&#39;regression.stan&#39;, data=input_data,
+            chains=1, seed=483892929, refresh=1000)</code></pre>
+<pre><code>
+SAMPLING FOR MODEL &#39;regression&#39; NOW (CHAIN 1).
+
+Chain 1, Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1, Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1, Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1, Iteration: 2000 / 2000 [100%]  (Sampling)
+ Elapsed Time: 29.4292 seconds (Warm-up)
+               34.958 seconds (Sampling)
+               64.3872 seconds (Total)</code></pre>
+<pre><code>The following numerical problems occured the indicated number of times on chain 1</code></pre>
+<pre><code>                                                                                count
+Exception thrown at line 19: normal_log: Scale parameter is 0, but must be &gt; 0!     6</code></pre>
+<pre><code>When a numerical problem occurs, the Hamiltonian proposal gets rejected.</code></pre>
+<pre><code>See http://mc-stan.org/misc/warnings.html#exception-hamiltonian-proposal-rejected</code></pre>
+<pre><code>If the number in the &#39;count&#39; column is small, do not ask about this message on stan-users.</code></pre>
+<p>None of the diagnostics indicate a poor fit,</p>
+<pre class="r"><code>print(fit)</code></pre>
+<pre><code>Inference for Stan model: regression.
+1 chains, each with iter=2000; warmup=1000; thin=1; 
+post-warmup draws per chain=1000, total post-warmup draws=1000.
+
+            mean se_mean   sd     2.5%      25%      50%      75%    97.5%
+beta[1]     0.42    0.05 0.74    -1.04    -0.06     0.43     0.92     1.81
+beta[2]    -0.04    0.03 0.37    -0.73    -0.29    -0.06     0.19     0.67
+alpha       0.85    0.03 0.38     0.12     0.60     0.85     1.09     1.57
+sigma       0.81    0.00 0.01     0.79     0.80     0.81     0.81     0.82
+lp__    -1433.54    0.09 1.48 -1437.44 -1434.38 -1433.17 -1432.41 -1431.66
+        n_eff Rhat
+beta[1]   203    1
+beta[2]   211    1
+alpha     202    1
+sigma     378    1
+lp__      262    1
+
+Samples were drawn using NUTS(diag_e) at Sun Jun 11 11:27:35 2017.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).</code></pre>
+<pre class="r"><code>divergent &lt;- get_sampler_params(fit, inc_warmup=FALSE)[[1]][,&#39;divergent__&#39;]
+sum(divergent)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>breaks= 0:10
+n_hist_nom &lt;- hist(get_sampler_params(fit, inc_warmup=FALSE)[[1]][,&#39;treedepth__&#39;],
+                   breaks=breaks, plot=FALSE)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(n_hist_nom, col=c_dark_highlight_trans, main=&quot;&quot;,
+     xlab=&quot;theta.1&quot;, yaxt=&#39;n&#39;, ann=FALSE)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>But we can see that the posterior over the slopes is poorly identified.</p>
+<pre class="r"><code>params &lt;- as.data.frame(extract(fit, permuted=FALSE))
+names(params) &lt;- gsub(&quot;chain:1.&quot;, &quot;&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;[&quot;, &quot;.&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;]&quot;, &quot;&quot;, names(params), fixed = TRUE)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(params$beta.1, params$beta.2,
+     col=c_dark_trans, pch=16, cex=0.8, xlab=&quot;beta.1&quot;, ylab=&quot;beta.2&quot;,
+     xlim=c(-6, 6), ylim=c(-3, 3))
+points(beta[1,1], beta[2,1],
+       col=c_mid, pch=17, cex=2)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Note also that the posterior just barely intersects with the true value of the slopes.</p>
+</div>
+<div id="decorrelating-the-posterior-with-a-qr-decomposition" class="section level1">
+<h1>Decorrelating the Posterior with a QR Decomposition</h1>
+<p>Fortunately we can remove the correlations between the covariates, and eliminate the pathological behavior of the Bayesian posterior, by applying a QR decomposition. Perhaps unsurprisingly this is the same QR decomposition that arises in the analytic maximum likelihood and conjugate Bayesian treatment of linear regression, although here it will be applicable regardless of the choice of priors and for any general linear model.</p>
+<div id="mathematical-derivation" class="section level2">
+<h2>Mathematical Derivation</h2>
+<p>The <em>thin</em> QR decomposition decomposes a rectangular <span class="math inline">\(I \times J\)</span> matrix into <span class="math display">\[
+\mathbf{A} = \mathbf{Q} \cdot \mathbf{R}
+\]</span> where <span class="math inline">\(\mathbf{Q}\)</span> is an <span class="math inline">\(I \times I\)</span> orthogonal matrix and <span class="math inline">\(\mathbf{R}\)</span> is a <span class="math inline">\(I \times J\)</span> upper-triangular matrix.</p>
+<p>If we apply the decomposition to the transposed design matrix, <span class="math inline">\(\mathbf{X}^{T} = \mathbf{Q} \cdot \mathbf{R}\)</span>, then we can refactor the linear response as <span class="math display">\[
+\begin{align*}
+\boldsymbol{\mu}
+&amp;= \mathbf{X}^{T} \cdot \boldsymbol{\beta} + \alpha
+\\
+&amp;= \mathbf{Q} \cdot \mathbf{R} \cdot \boldsymbol{\beta} + \alpha
+\\
+&amp;= \mathbf{Q} \cdot (\mathbf{R} \cdot \boldsymbol{\beta}) + \alpha
+\\
+&amp;= \mathbf{Q} \cdot \widetilde{\boldsymbol{\beta}} + \alpha.
+\\
+\end{align*}
+\]</span></p>
+<p>Because the matrix <span class="math inline">\(\mathbf{Q}\)</span> is orthogonal, its columns are independent and consequently we’d expect the posterior over the new parameters, <span class="math inline">\(\widetilde{\boldsymbol{\beta}} = \mathbf{R} \cdot \boldsymbol{\beta}\)</span>, to be significantly less correlated.</p>
+<p>Moreover, we can readily recover the original slopes as <span class="math display">\[
+\boldsymbol{\beta} = \mathbf{R}^{-1} \cdot \widetilde{\boldsymbol{\beta}}.
+\]</span> Because <span class="math inline">\(\mathbf{R}\)</span> is upper diagonal we don’t have to construct its inverse explicitly and can instead solve for <span class="math inline">\(\boldsymbol{\beta}\)</span> with only <span class="math inline">\(\mathcal{O} (M^{2})\)</span> operations.</p>
+<p>Finally, the transformation between <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\widetilde{\boldsymbol{\beta}}\)</span> is <em>linear</em> so the corresponding Jacobian is depends only on the data. This means that in Stan we can define the transformed parameters <span class="math inline">\(\boldsymbol{\beta} = \mathbf{R}^{-1} \cdot \widetilde{\boldsymbol{\beta}}\)</span> and apply priors directly to <span class="math inline">\(\boldsymbol{\beta}\)</span> while ignoring the warning about Jacobians.</p>
+<p>On the other hand, applying weakly-informative priors to the <span class="math inline">\(\widetilde{\boldsymbol{\beta}}\)</span> directly can be interpreted as a form of <em>empirical Bayes</em> where we use the correlations in the data guide the choice of prior.</p>
+</div>
+<div id="implementation-in-stan" class="section level2">
+<h2>Implementation in Stan</h2>
+<p>With the components of the thin QR decomposition added to the input data,</p>
+<pre class="r"><code>qr_decomp = qr(t(X)) # defaults to thin QR decomposition
+
+Q = qr.Q(qr_decomp)
+R = qr.R(qr_decomp)
+
+stan_rdump(c(&quot;N&quot;, &quot;M&quot;, &quot;Q&quot;, &quot;R&quot;, &quot;y&quot;), file=&quot;qr_regression.data.R&quot;)</code></pre>
+<p>we can readily construct the corresponding QR regression in Stan,</p>
+<pre class="r"><code>writeLines(readLines(&quot;qr_regression.stan&quot;))</code></pre>
+<pre><code>data {
+  int&lt;lower=1&gt; N;
+  int&lt;lower=1&gt; M;
+  matrix[N, M] Q;
+  matrix[M, M] R;
+  vector[N] y;
+}
+
+parameters {
+  vector[M] beta_tilde;
+  real alpha;
+  real&lt;lower=0&gt; sigma;
+}
+
+transformed parameters {
+  // Lots of transposing because Stan doesn&#39;t
+  // have a mdivide_right_tri_upper
+  vector[M] beta = mdivide_right_tri_low(beta_tilde&#39;, R&#39;)&#39;;
+}
+
+model {
+  beta ~ normal(0, 10);
+  alpha ~ normal(0, 10);
+  sigma ~ cauchy(0, 10);
+
+  y ~ normal(Q * beta_tilde + alpha, sigma);
+}</code></pre>
+<p>The decorrelated model immediately achieves higher effective sample size with no indication of pathologies.</p>
+<pre class="r"><code>input_data &lt;- read_rdump(&quot;qr_regression.data.R&quot;)
+
+qr_fit &lt;- stan(file=&#39;qr_regression.stan&#39;, data=input_data,
+               chains=1, seed=483892929, refresh=1000)</code></pre>
+<pre><code>
+SAMPLING FOR MODEL &#39;qr_regression&#39; NOW (CHAIN 1).
+
+Chain 1, Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1, Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1, Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1, Iteration: 2000 / 2000 [100%]  (Sampling)
+ Elapsed Time: 40.2694 seconds (Warm-up)
+               40.1634 seconds (Sampling)
+               80.4328 seconds (Total)</code></pre>
+<pre><code>The following numerical problems occured the indicated number of times on chain 1</code></pre>
+<pre><code>                                                                                count
+Exception thrown at line 26: normal_log: Scale parameter is 0, but must be &gt; 0!     6</code></pre>
+<pre><code>When a numerical problem occurs, the Hamiltonian proposal gets rejected.</code></pre>
+<pre><code>See http://mc-stan.org/misc/warnings.html#exception-hamiltonian-proposal-rejected</code></pre>
+<pre><code>If the number in the &#39;count&#39; column is small, do not ask about this message on stan-users.</code></pre>
+<pre class="r"><code>n_hist_qr &lt;- hist(get_sampler_params(qr_fit, inc_warmup=FALSE)[[1]][,&#39;treedepth__&#39;],
+                  breaks=breaks, plot=FALSE)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(n_hist_qr, col=c_dark_highlight_trans, main=&quot;&quot;, xlab=&quot;theta.1&quot;, yaxt=&#39;n&#39;, ann=FALSE)
+plot(n_hist_nom, col=c_mid_trans, add=T)
+
+legend(&quot;topright&quot;, c(&quot;Nominal&quot;, &quot;QR&quot;),
+       fill=c(c_mid, c_dark_highlight), bty=&quot;n&quot;)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>params &lt;- as.data.frame(extract(qr_fit, permuted=FALSE))
+names(params) &lt;- gsub(&quot;chain:1.&quot;, &quot;&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;[&quot;, &quot;.&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;]&quot;, &quot;&quot;, names(params), fixed = TRUE)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(params$beta_tilde.1, params$beta_tilde.2,
+     col=c_dark, pch=16, cex=0.8, xlab=&quot;beta_tilde.1&quot;, ylab=&quot;beta_tilde.2&quot;)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>And we recover the posterior for the nominal slopes,</p>
+<pre class="r"><code>par(mar = c(4, 4, 0.5, 0.5))
+plot(params$beta.1, params$beta.2,
+     col=c_dark, pch=16, cex=0.8, xlab=&quot;beta.1&quot;, ylab=&quot;beta.2&quot;)
+points(beta[1,1], beta[2,1],
+       col=c_mid, pch=17, cex=2)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>What’s weird, however, is that this <em>isn’t</em> the same posterior as for the nominal regression. The QR regression posterior has longer tails along the non-identified direction which actually ensures a better fit. <strong>If these are supposed to be different implementations of the same model then why are they giving different posteriors? Presumably the QR regression would be more accurate, but if the nominal regression is biased to smaller tails they why don’t any of the diagnostics indicate problems?</strong></p>
+<p>If the rows of the effective design matrix are orthogonal then why are the transformed slopes still so strongly correlated in the QR regression posterior? Remember that we are putting an isotropic gaussian prior on the nominal slopes, but this implies a strongly correlated prior for the transformed slopes. If we impose the weakly informative prior on the transformed slopes directly we see that the resulting posterior becomes much less correlated.</p>
+<pre class="r"><code>input_data &lt;- read_rdump(&quot;qr_regression.data.R&quot;)
+
+qr_fit &lt;- stan(file=&#39;qr_regression_qr_prior.stan&#39;, data=input_data,
+               chains=1, seed=483892929, refresh=1000)</code></pre>
+<pre><code>
+SAMPLING FOR MODEL &#39;qr_regression_qr_prior&#39; NOW (CHAIN 1).
+
+Chain 1, Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1, Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1, Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1, Iteration: 2000 / 2000 [100%]  (Sampling)
+ Elapsed Time: 14.2263 seconds (Warm-up)
+               9.53636 seconds (Sampling)
+               23.7626 seconds (Total)</code></pre>
+<pre><code>The following numerical problems occured the indicated number of times on chain 1</code></pre>
+<pre><code>                                                                                count
+Exception thrown at line 26: normal_log: Scale parameter is 0, but must be &gt; 0!     6</code></pre>
+<pre><code>When a numerical problem occurs, the Hamiltonian proposal gets rejected.</code></pre>
+<pre><code>See http://mc-stan.org/misc/warnings.html#exception-hamiltonian-proposal-rejected</code></pre>
+<pre><code>If the number in the &#39;count&#39; column is small, do not ask about this message on stan-users.</code></pre>
+<pre class="r"><code>params &lt;- as.data.frame(extract(qr_fit, permuted=FALSE))
+names(params) &lt;- gsub(&quot;chain:1.&quot;, &quot;&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;[&quot;, &quot;.&quot;, names(params), fixed = TRUE)
+names(params) &lt;- gsub(&quot;]&quot;, &quot;&quot;, names(params), fixed = TRUE)
+
+par(mar = c(4, 4, 0.5, 0.5))
+plot(params$beta_tilde.1, params$beta_tilde.2,
+     col=c_dark, pch=16, cex=0.8, xlab=&quot;beta_tilde.1&quot;, ylab=&quot;beta_tilde.2&quot;)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre class="r"><code>par(mar = c(4, 4, 0.5, 0.5))
+plot(params$beta.1, params$beta.2,
+     col=c_dark, pch=16, cex=0.8, xlab=&quot;beta.1&quot;, ylab=&quot;beta.2&quot;,
+     xlim=c(-6, 6), ylim=c(-3, 3))
+points(beta[1,1], beta[2,1],
+       col=c_mid, pch=17, cex=2)</code></pre>
+<p><img src="qr_regression_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Care must be taken, however, as this is a different choice of prior and hence defines a different model! In particular, in this case a weakly informative prior over the transformed slopes defines a strongly informative prior over the nominal slopes that biases the posterior away from the true value.</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>The QR decomposition is a straightforward technique that can drastically improve the performance of regression with not only linear models but also general linear models. Given its ease of use and strong potential for improvement it should be a ready tool in any modeler’s toolbox.</p>
+</div>
+<div id="original-computing-environment" class="section level1">
+<h1>Original Computing Environment</h1>
+<pre class="r"><code>writeLines(readLines(file.path(Sys.getenv(&quot;HOME&quot;), &quot;.R/Makevars&quot;)))</code></pre>
+<pre><code>#CFLAGS =              -O3 -Wall -pipe -pedantic -std=gnu99 -march=native 
+#CXXFLAGS =            -O3 -Wall -pipe -Wno-unused -pedantic -march=native </code></pre>
+<pre class="r"><code>devtools::session_info(&quot;rstan&quot;)</code></pre>
+<pre><code>Session info --------------------------------------------------------------</code></pre>
+<pre><code> setting  value                       
+ version  R version 3.3.3 (2017-03-06)
+ system   x86_64, linux-gnu           
+ ui       X11                         
+ language (EN)                        
+ collate  en_US.UTF-8                 
+ tz       America/Los_Angeles         
+ date     2017-06-27                  </code></pre>
+<pre><code>Packages ------------------------------------------------------------------</code></pre>
+<pre><code> package      * version   date       source        
+ assertthat     0.1       2013-12-06 CRAN (R 3.3.0)
+ BH             1.62.0-1  2016-11-19 CRAN (R 3.3.3)
+ colorspace     1.2-6     2015-03-11 CRAN (R 3.3.0)
+ dichromat      2.0-0     2013-01-24 CRAN (R 3.3.0)
+ digest         0.6.11    2017-01-03 CRAN (R 3.3.2)
+ ggplot2      * 2.2.1     2016-12-30 CRAN (R 3.3.2)
+ gridExtra      2.2.1     2016-02-29 CRAN (R 3.3.0)
+ gtable         0.2.0     2016-02-26 CRAN (R 3.3.0)
+ inline         0.3.14    2015-04-13 CRAN (R 3.3.3)
+ labeling       0.3       2014-08-23 CRAN (R 3.3.0)
+ lattice        0.20-34   2016-09-06 CRAN (R 3.3.1)
+ lazyeval       0.2.0     2016-06-12 CRAN (R 3.3.0)
+ magrittr       1.5       2014-11-22 CRAN (R 3.3.0)
+ MASS           7.3-45    2015-11-10 CRAN (R 3.2.5)
+ Matrix         1.2-8     2017-01-20 CRAN (R 3.3.2)
+ munsell        0.4.3     2016-02-13 CRAN (R 3.3.0)
+ plyr           1.8.4     2016-06-08 CRAN (R 3.3.0)
+ RColorBrewer   1.1-2     2014-12-07 CRAN (R 3.3.0)
+ Rcpp           0.12.11   2017-05-22 CRAN (R 3.3.3)
+ RcppEigen      0.3.3.3.0 2017-05-01 CRAN (R 3.3.3)
+ reshape2       1.4.1     2014-12-06 CRAN (R 3.3.0)
+ rlang          0.1.1     2017-05-18 CRAN (R 3.3.3)
+ rstan        * 2.15.1    2017-04-19 CRAN (R 3.3.3)
+ scales         0.4.1     2016-11-09 CRAN (R 3.3.2)
+ StanHeaders  * 2.15.0-1  2017-04-19 CRAN (R 3.3.3)
+ stringi        1.1.1     2016-05-27 CRAN (R 3.3.0)
+ stringr        1.1.0     2016-08-19 CRAN (R 3.3.0)
+ tibble         1.3.1     2017-05-17 CRAN (R 3.3.3)</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
