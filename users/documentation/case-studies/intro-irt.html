@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Bob Carpenter Columbia University" />
+
+<meta name="date" content="2015-05-23" />
+
+<title>7 Estimation Pitfalls in Item-Response Theory and How to Avoid Them</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { font-weight: bold; } /* Keyword */
+code > span.dt { text-decoration: underline; } /* DataType */
+code > span.co { font-style: italic; } /* Comment */
+code > span.al { font-weight: bold; } /* Alert */
+code > span.er { font-weight: bold; } /* Error */
+code > span.wa { font-style: italic; } /* Warning */
+code > span.cf { font-weight: bold; } /* ControlFlow */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.do { font-style: italic; } /* Documentation */
+code > span.an { font-style: italic; } /* Annotation */
+code > span.cv { font-style: italic; } /* CommentVar */
+code > span.in { font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">7 Estimation Pitfalls in Item-Response Theory and How to Avoid Them</h1>
+<h4 class="author"><em><big>Bob Carpenter</big><br />Columbia University</em></h4>
+<h4 class="date"><em><small>23 May 2015</small></em></h4>
+
+</div>
+
+
+<p>Item-response theory (IRT) is a model of educational testing that assigns each student an ability value and each question on a test a difficulty level (and optionally discimrinativeness among students).</p>
+<div id="reproducibility" class="section level2">
+<h2>Reproducibility</h2>
+<p>To ensure the experiments are reproducible, all seeds are being set explicitly. These can be changed to explore variation in results with different randomizations.</p>
+<pre class="{r"><code>set.seed(3874656474);</code></pre>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>In the simplest form, the data for an IRT model consists of</p>
+<ul>
+<li><span class="math inline">\(I\)</span>: number of test questions (integer, non-negative)</li>
+<li><span class="math inline">\(J\)</span>: number of students (integer, non-negative)</li>
+<li><span class="math inline">\(y_{i,j}\)</span> : 1 if student <span class="math inline">\(j\)</span> answered question <span class="math inline">\(i\)</span> correctly (<span class="math inline">\(\{0,1\}\)</span>)</li>
+</ul>
+</div>
+<div id="basic-model-1pl" class="section level2">
+<h2>Basic Model (1PL)</h2>
+<p>The simplest form of IRT model is based on an ability parameter for students and a difficulty parameter for questions.</p>
+<div id="parameters-1pl" class="section level3">
+<h3>Parameters (1PL)</h3>
+<ul>
+<li><span class="math inline">\(\theta_j\)</span> : ability for student <span class="math inline">\(j\)</span> (unconstrained)</li>
+<li><span class="math inline">\(b_i\)</span> : difficulty of test question <span class="math inline">\(i\)</span> (unconstrained)</li>
+</ul>
+<p>This form of IRT is called “one parameter logistic” (1PL) because there is a single parameter for each test question and because the logistic link function will be used.</p>
+</div>
+<div id="likelihood-1pl" class="section level3">
+<h3>Likelihood (1PL)</h3>
+<p>The likelihood function uses the inverse of the logistic link function,</p>
+<p><span class="math display">\[
+\mbox{logit}^{-1}(u) = \frac{1}{1 + \exp(-u)},
+\]</span></p>
+<p>to convert the parameters into a probability that a given question is answered correctly by a given student,</p>
+<p><span class="math display">\[
+\mbox{Pr}[y_{i,j} = 1] = \mbox{logit}^{-1}(\theta_j - b_i)
+\]</span></p>
+<p>Expressed using sampling notation, the likelihood is</p>
+<p><span class="math display">\[
+y_{i,j} \sim \mbox{Bernoulli}\left(\mbox{logit}^{-1}(\theta_j - b_i)\right)
+\]</span></p>
+<p>Under the assumption that the data are independent and identically distributed (i.i.d.), the full likelihood function is</p>
+<p><span class="math display">\[
+p(y \ | \ \theta,b) = \prod_{i=1}^I \prod_{j=1}^J \mbox{Bernoulli}\left(y_{i,j} \, | \, \mbox{logit}^{-1}(\theta_j - b_i)\right)
+\]</span></p>
+</div>
+<div id="prior-1pl" class="section level3">
+<h3>Prior (1PL)</h3>
+<p>The prior on <span class="math inline">\(\theta\)</span> and <span class="math inline">\(b\)</span> is going to be an independent fixed normal prior on both coefficient vectors. The student abilities will be given a unit normal prior <span class="math display">\[
+\theta_j \sim \mbox{Normal}(0, 1)
+\]</span> and the difficulties a prior centering the mean accuracy at around 73% accuracy (1 on the logit scale).<br />
+<span class="math display">\[
+b_i \sim \mbox{Normal}(0, 2);
+\]</span></p>
+<p>In later sections we consider the issues of separability that arise in any logistic regression and the additive invariance that leads to non-identifiability when trying to define a maximum likelihood estimate for IRT models. We will also consider our preferred resolution to both problems, a centered hierarchical prior for the abilities <span class="math inline">\(\theta\)</span> and a free hierarchical prior on the problem difficulties.</p>
+</div>
+<div id="joint-1pl" class="section level3">
+<h3>Joint (1PL)</h3>
+<p>The joint probability function is given by the prior times the likelihood, <span class="math display">\[
+p(\theta, b, y) = p(\theta) \, p(b) \, p(y \, | \, \theta, b),
+\]</span> and by Bayes’s rule, this is proportional to the posterior <span class="math display">\[
+p(\theta, b \, | \, y) \propto  p(\theta) \, p(b) \, p(y \, | \, \theta, b).
+\]</span> Stan models typically define log joint probability functions</p>
+<div id="pl-as-a-sparse-logistic-legression" class="section level4">
+<h4>1PL as a sparse logistic legression</h4>
+<p>The 1PL IRT model may be reformulated as a traditional binary logistic regression with an <span class="math inline">\(I + J\)</span> coefficient vector <span class="math inline">\(\beta = (\theta,b)\)</span> and for each outcome <span class="math inline">\(y_{i,j}\)</span> an <span class="math inline">\((I+J)\)</span>-dimensional predictor vector <span class="math inline">\(x_{i,j}\)</span> where <span class="math inline">\(x_{i,j,i} = 1\)</span>, <span class="math inline">\(x_{i,j, I + j} = 1\)</span> and all other coefficients are zero. Then</p>
+<p><span class="math display">\[
+\mbox{Pr}[y_{i,j} = 1] 
+= \mbox{logit}^{-1}(\beta^{\top} x_{i,j})
+= \mbox{logit}^{-1}\left( \sum_{k=1}^{I+J} \beta_k x_{i,j,k} \right)
+\]</span></p>
+</div>
+</div>
+<div id="simulating-data-in-r-1pl" class="section level3">
+<h3>Simulating data in R (1PL)</h3>
+<p>To simulate the data using R, the model is simply evaluated in the forward direction from the priors. Thus the model is known in advance to be well specified for the data, which is a very unrealistic assumption in practice, but a very convenient assumption for validating computational estimation behavior.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inv_logit &lt;-<span class="st"> </span>function(u) {
+  <span class="kw">return</span>(<span class="dv">1</span> /<span class="st"> </span>(<span class="dv">1</span> +<span class="st"> </span><span class="kw">exp</span>(-u)));
+}
+
+I &lt;-<span class="st"> </span><span class="dv">20</span>;
+J &lt;-<span class="st"> </span><span class="dv">100</span>;
+theta &lt;-<span class="st"> </span><span class="kw">rnorm</span>(J, <span class="dv">0</span>, <span class="dv">1</span>);
+b &lt;-<span class="st"> </span><span class="kw">rnorm</span>(I, -<span class="dv">1</span>, <span class="dv">2</span>);
+
+y &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="ot">NA</span>, I, J);
+for (i in <span class="dv">1</span>:I)
+  y[i,] &lt;-<span class="st"> </span><span class="kw">rbinom</span>(J, <span class="dv">1</span>, <span class="kw">inv_logit</span>(theta -<span class="st"> </span>b[i]));</code></pre></div>
+<p>The data can be summarized in histograms.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2);
+hist_theta_sim &lt;-<span class="st">  </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">data.frame</span>(theta), <span class="kw">aes</span>(theta)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="fl">0.5</span>, <span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>);
+hist_theta_sim;</code></pre></div>
+<p><img src="intro-irt_files/figure-html/sim-1pl-hist-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hist_b_sim &lt;-
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">data.frame</span>(b), <span class="kw">aes</span>(b)) +
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">1</span>, <span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>);
+hist_b_sim;</code></pre></div>
+<p><img src="intro-irt_files/figure-html/sim-1pl-hist-2.png" width="672" /></p>
+</div>
+<div id="coding-model-in-stan-1pl" class="section level3">
+<h3>Coding model in Stan (1PL)</h3>
+<p>The following Stan program computes the model described in the previous section.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>J;
+  int&lt;lower=<span class="dv">0</span>,upper=<span class="dv">1</span>&gt;<span class="st"> </span>y[I,J];
+}
+parameters {
+  vector[I] b;
+  vector[J] theta;
+}
+model {
+  theta ~<span class="st"> </span><span class="kw">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>);
+  b ~<span class="st"> </span><span class="kw">normal</span>(-<span class="dv">1</span>, <span class="dv">2</span>);
+  for (i in <span class="dv">1</span>:I)
+    y[i] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta -<span class="st"> </span>b[i]);
+}</code></pre></div>
+<p>The data block declares variables for the constant sizes <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> (constrained to be non-negative) and for the data variable <span class="math inline">\(y\)</span> (constrained to be 0 or 1).</p>
+<p>The parameters block declares vectors of size <span class="math inline">\(I\)</span> and <span class="math inline">\(J\)</span> for the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(\theta\)</span>, with no constraints on their values.</p>
+<p>The model block defines the joint probability function with separate statements for the priors and a loop for the likelihood with a logit-scaled Bernoulli distribution and a vectorized probability statement.</p>
+<div id="a-note-on-vectorization" class="section level4">
+<h4>A note on vectorization</h4>
+<p>The vectorized form used in the model block for the 1PL model is equivalent to the fully unfolded form:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">for (i in <span class="dv">1</span>:I)
+  for (j in <span class="dv">1</span>:J)
+    y[i,j] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta[j] -<span class="st"> </span>b[i]);</code></pre></div>
+<p>Because <tt>theta</tt> is a size <tt>J</tt> vector, the expression <tt>(theta - b[i])</tt> evaluates to a <tt>J</tt>-vector with entry <tt>j</tt> given by <tt>(theta[j] - b[i])</tt>. The expression <tt>y[i]</tt> evaluates a size <tt>J</tt> array (it would be written as <tt>y[i,]</tt> in R).</p>
+</div>
+<div id="a-note-on-alternative-parameterizations" class="section level4">
+<h4>A note on alternative parameterizations</h4>
+<p>Stan uses alternative parameterizations such as the logit-scaled Bernoulli for many of the distributions commonly used for generalized linear models. They provide better efficiency because of fewer operations and derivatives and better robustness through more stable arithmetic. The logit-scaled Bernoulli is defined as</p>
+<p><span class="math display">\[
+\mbox{BernoulliLogit}(u \, | \, \alpha)
+= \mbox{Bernoulli}(u \, | \, \mbox{logit}^{-1}(\alpha)).
+\]</span></p>
+<p>Eliminating the direct application of the inverse logit function avoid losing precision due to subtraction and overflowing/underflowing due to exponentiation. Because Stan works on the log scale, The logit-scaled Bernoulli allows whichever of <span class="math inline">\(\log \mbox{logit}^{-1}(u)\)</span> or <span class="math inline">\(\log (1 - \mbox{logit}^{-1}(u))\)</span> is needed to be calculated efficiently and with much higher precision.</p>
+</div>
+</div>
+<div id="fitting-model-in-stan-1pl" class="section level3">
+<h3>Fitting model in Stan (1PL)</h3>
+<div id="initialization" class="section level4">
+<h4>Initialization</h4>
+<p>First the RStan library is loaded, then the model is compiled from its file.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rstan);
+model &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_1pl.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file161757ac08c9.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<p>By default, RStan will initialize parameters uniformly on <span class="math inline">\((-2,2)\)</span> in the unconstrained space. Because there are no constraints on <span class="math inline">\(\theta\)</span> or <span class="math inline">\(b\)</span> in the model, this means <span class="math inline">\(\theta\)</span> and <span class="math inline">\(b\)</span> would have each of their elements initialized with a value drawn from <span class="math inline">\(\mbox{Unif}(-2,2)\)</span>.</p>
+<p>RStan allows an optional initialization. The initialization here just explicitly mimics Stan’s default in order to allow comparison with JAGS.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">init_fun &lt;-<span class="st"> </span>function(chain_id) {
+  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">theta=</span><span class="kw">runif</span>(J, -<span class="dv">2</span>, <span class="dv">2</span>), <span class="dt">b=</span><span class="kw">runif</span>(I, -<span class="dv">2</span>, <span class="dv">2</span>)));
+}</code></pre></div>
+<p>And then the <tt>sampling</tt> function is called on the model, given the data which is in the global environment, and the initialization function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="kw">sampling</span>(model, <span class="dt">data =</span> <span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="dt">init=</span>init_fun, <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>)</code></pre></div>
+<p>Next, the fit is printed out, with a subset of variables selected by name and the quantiles specified explicitly (here to give a median and 90% central posterior interval).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="st">&quot;width&quot;</span>=<span class="dv">100</span>);
+<span class="kw">print</span>(fit, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.9</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##              mean se_mean   sd     10%     50%     90% n_eff Rhat
+## b[1]         1.28    0.00 0.26    0.95    1.27    1.61  4000    1
+## b[2]        -2.12    0.00 0.31   -2.51   -2.11   -1.71  4000    1
+## b[3]         0.40    0.00 0.25    0.08    0.39    0.72  4000    1
+## b[4]         0.15    0.00 0.23   -0.15    0.15    0.46  4000    1
+## b[5]        -0.96    0.00 0.25   -1.29   -0.96   -0.63  4000    1
+## b[6]        -0.85    0.00 0.25   -1.17   -0.84   -0.53  4000    1
+## b[7]        -1.86    0.00 0.29   -2.23   -1.86   -1.50  4000    1
+## b[8]         1.22    0.00 0.26    0.88    1.21    1.56  4000    1
+## b[9]        -1.13    0.00 0.27   -1.48   -1.13   -0.80  4000    1
+## b[10]        1.76    0.00 0.30    1.38    1.75    2.14  4000    1
+## theta[1]    -0.26    0.01 0.52   -0.92   -0.26    0.42  4000    1
+## theta[2]     0.54    0.01 0.51   -0.10    0.52    1.18  4000    1
+## theta[3]    -0.53    0.01 0.53   -1.20   -0.52    0.14  4000    1
+## theta[4]    -0.27    0.01 0.52   -0.94   -0.27    0.40  4000    1
+## theta[5]     1.37    0.01 0.55    0.65    1.36    2.09  4000    1
+## theta[6]     0.52    0.01 0.53   -0.15    0.52    1.20  4000    1
+## theta[7]     1.06    0.01 0.53    0.38    1.06    1.72  4000    1
+## theta[8]     1.07    0.01 0.55    0.35    1.08    1.75  4000    1
+## theta[9]    -0.25    0.01 0.53   -0.91   -0.26    0.42  4000    1
+## theta[10]    0.80    0.01 0.54    0.11    0.79    1.51  4000    1
+## lp__      -877.95    0.20 7.78 -888.46 -877.62 -868.13  1487    1
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:08:32 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+<p>The <span class="math inline">\(\hat{R}\)</span> convergence diagnostics are all 1 (within the 2 decimal places printed), and the effective sample sizes are very high (2000 to 4000) compared to the total number of draws (4000). This indicates very good mixing behavior for this simple model.</p>
+<p>The simulated values for <span class="math inline">\(\theta\)</span> and <span class="math inline">\(b\)</span> are as follows.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(b[<span class="dv">1</span>:<span class="dv">10</span>], <span class="dt">digits=</span><span class="dv">2</span>);</code></pre></div>
+<pre><code>##  [1]  1.20 -2.46  0.32  0.23 -1.43 -0.84 -1.95  1.16 -1.18  1.87</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(theta[<span class="dv">1</span>:<span class="dv">10</span>], <span class="dt">digits=</span><span class="dv">2</span>);</code></pre></div>
+<pre><code>##  [1] -1.0879 -0.2259 -1.4705  0.0096  1.2958  1.0805  1.6493  0.8867 -0.0435  0.1932</code></pre>
+<p>These are mostly recovered within their 90% posterior intervals. The posterior is much wider for the student abilities (<span class="math inline">\(\theta\)</span>) than question difficulties (<span class="math inline">\(b\)</span>) because there five times as many students as questions—each question is evaluated with 100 students, whereas each student is evaluated with only 20 questions.</p>
+</div>
+</div>
+<div id="pitfall-1-location-invariance" class="section level3">
+<h3>Pitfall #1: Location Invariance</h3>
+<p>The 1PL likelihood function is problematic because it only uses the differences between the abilities and difficulties. For any constant <span class="math inline">\(c\)</span>, adding <span class="math inline">\(c\)</span> to the difficulties and subtracing them from the abilities yields the same distribution for <span class="math inline">\(y\)</span>, <span class="math display">\[
+p(y \, | \, b, \theta) = p(y \, | \, b + c, \theta - c).
+\]</span> This means that the function <span class="math inline">\(p(y \, | \, b, \theta)\)</span> does not have a maximum value for <span class="math inline">\((b,\theta)\)</span> given fixed data <span class="math inline">\(y\)</span> and hence there is no maximum likelihood estimator for the basic model.</p>
+<div id="avoiding-pitfall-1-pinning-values" class="section level4">
+<h4>Avoiding pitfall #1: Pinning Values</h4>
+<p>One approach to locating the model is to fix one of the student ability values, for instance, setting <span class="math inline">\(\theta_{1} = 0\)</span> (alternatively one of the test difficulties can be pinned). This removes a degree of freedom in the parameterization and identifies the remaining free parameters, because the student abilities <span class="math inline">\(\theta_2,\ldots,\theta_J\)</span> and the question difficulties <span class="math inline">\(b_1,\ldots,b_I\)</span> are all determined relative to student 1’s ability (<span class="math inline">\(\theta_1\)</span>).</p>
+<p>In Stan, this can be accomplished as in the following model.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>J;
+  int&lt;lower=<span class="dv">0</span>,upper=<span class="dv">1</span>&gt;<span class="st"> </span>y[I,J];
+}
+parameters {
+  vector[I] b;
+  vector[J -<span class="st"> </span><span class="dv">1</span>] theta;
+}
+model {
+  for (i in <span class="dv">1</span>:I) {
+    <span class="kw">head</span>(y[i], J -<span class="st"> </span><span class="dv">1</span>) ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta -<span class="st"> </span>b[i]);
+    y[i,J] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(b[i]);  /<span class="er">/</span><span class="st"> </span>theta[J] =<span class="st"> </span><span class="dv">0</span>
+  }
+}</code></pre></div>
+<p>This can be fit with the following R code.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model_pin &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_1pl_pin.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file1617328e36eb.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit_pin &lt;-<span class="st"> </span><span class="kw">sampling</span>(model_pin, <span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>);</code></pre></div>
+<p>The results can be shown as follows.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(fit_pin, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.5</span>, <span class="fl">0.90</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl_pin.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##              mean se_mean   sd     10%     50%     90% n_eff Rhat
+## b[1]         3.58    0.08 0.64    2.75    3.59    4.39    59 1.04
+## b[2]        -0.32    0.08 0.66   -1.18   -0.30    0.51    62 1.04
+## b[3]         2.65    0.08 0.63    1.85    2.67    3.44    55 1.04
+## b[4]         2.34    0.08 0.63    1.56    2.35    3.16    56 1.04
+## b[5]         1.02    0.08 0.63    0.20    1.03    1.82    58 1.04
+## b[6]         1.15    0.08 0.63    0.35    1.17    1.94    57 1.04
+## b[7]        -0.02    0.08 0.63   -0.83   -0.02    0.79    60 1.04
+## b[8]         3.50    0.08 0.64    2.68    3.50    4.31    57 1.04
+## b[9]         0.83    0.08 0.63    0.02    0.84    1.63    57 1.04
+## b[10]        4.14    0.08 0.65    3.30    4.15    4.97    59 1.04
+## theta[1]     1.73    0.08 0.85    0.66    1.74    2.80   105 1.02
+## theta[2]     2.92    0.08 0.86    1.81    2.92    4.01   106 1.02
+## theta[3]     1.34    0.09 0.87    0.21    1.36    2.46    99 1.02
+## theta[4]     1.74    0.09 0.85    0.67    1.76    2.83    97 1.02
+## theta[5]     4.35    0.08 0.98    3.11    4.33    5.62   135 1.01
+## theta[6]     2.92    0.08 0.86    1.81    2.92    4.03   104 1.02
+## theta[7]     3.82    0.09 0.93    2.67    3.80    4.98   112 1.02
+## theta[8]     3.80    0.09 0.92    2.66    3.80    5.01   112 1.02
+## theta[9]     1.73    0.08 0.85    0.68    1.72    2.83   100 1.02
+## theta[10]    3.34    0.08 0.89    2.21    3.35    4.45   115 1.02
+## lp__      -835.88    0.24 7.92 -846.06 -835.73 -825.79  1123 1.00
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:09:31 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="st">&quot;theta[1:10] + theta[100] =&quot;</span>, <span class="dt">quote=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] theta[1:10] + theta[100] =</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(theta[<span class="dv">1</span>:<span class="dv">10</span>] +<span class="st"> </span>theta[<span class="dv">100</span>], <span class="dt">quote=</span><span class="ot">FALSE</span>, <span class="dt">digits=</span><span class="dv">1</span>);</code></pre></div>
+<pre><code>##  [1]  0.3  1.1 -0.1  1.4  2.7  2.4  3.0  2.2  1.3  1.6</code></pre>
+<p>This shows dramatically worse mixing than the model fit with priors, with the <span class="math inline">\(\hat{R}\)</span> showing convergence has not been reached and an effective sample size rate two orders of magnitude lower than the fit with priors. While it would be possible to run for more iterations and perhaps drive <span class="math inline">\(\hat{R}\)</span> down to 1 and effective sample sizes up, there are better approaches.</p>
+</div>
+<div id="avoiding-pitfall-1-sum-to-one-constraint" class="section level4">
+<h4>Avoiding pitfall #1: Sum to One Constraint</h4>
+<p>An alternative approach suggested by Gelman and Hill (<em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>, 2007, section 14.3, “Defining the model using redundant parameters”) is to let the parameters float and then renormalize them. To let the parameters float, <span class="math inline">\(\theta\)</span> is given an improper uniform prior on <span class="math inline">\((-\infty,\infty)\)</span>. The result of an improper prior for <span class="math inline">\(\theta\)</span> here is an improper posterior with an infinite ridge of fixed height due to the additive invariance of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(b\)</span>.</p>
+<p>Then the “adjusted” student abilities <span class="math inline">\(\theta_j\)</span> and problem difficulties <span class="math inline">\(b_i\)</span> are defined by subtracting the mean ability in the floating parameter <span class="math inline">\(\theta\)</span>, <span class="math display">\[
+\theta_j = \theta^{\mathrm{raw}}_j - \bar{\theta^{\mathrm{raw}}}
+\]</span> <span class="math display">\[
+b_i = b^{\mathrm{raw}}_i - \bar{\theta^{\mathrm{raw}}}
+\]</span> where <span class="math inline">\(\bar{\theta^{\mathrm{raw}}}\)</span> is the sample mean of the vector <span class="math inline">\(\theta^{\mathrm{raw}}\)</span>. The hope is that even though the posterior in <span class="math inline">\(\theta^{\mathrm{raw}}\)</span> is improper, the “posterior” in <span class="math inline">\(\theta\)</span> will be proper.</p>
+<p><strong>WARNING: Do not do this.</strong> Stan cannot sample from an improper posterior and then hope to adjust it later. It is not clear that BUGS or JAGS can, either, because the normalization would have to happen at each conditional sample within each iteration in order for the resulting transform to define a proper posterior.</p>
+<p>And if the warning’s not enough, here’s an example of what happens. The model is coded with the adjustments done in the</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>J;
+  int&lt;lower=<span class="dv">0</span>,upper=<span class="dv">1</span>&gt;<span class="st"> </span>y[I,J];
+}
+parameters {
+  vector[I] b_raw;
+  vector[J] theta_raw;
+}
+transformed parameters {
+  vector[I] b;
+  vector[J] theta;
+  { 
+    real mean_theta_raw;
+    mean_theta_raw &lt;-<span class="st"> </span><span class="kw">mean</span>(theta_raw);
+    theta &lt;-<span class="st"> </span>theta_raw -<span class="st"> </span>mean_theta_raw;
+    b &lt;-<span class="st"> </span>b_raw -<span class="st"> </span>mean_theta_raw;
+  }
+}
+model {
+  for (i in <span class="dv">1</span>:I)
+    y[i] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta -<span class="st"> </span>b[i]);
+}</code></pre></div>
+<p>The raw parameters are defined in the parameters block—these are the ones over which sampling is performed. Then transformed versions of the parameters are defined by subtracting the mean. The subtraction is done in a local variable block to allow <tt>mean_theta_raw</tt> to be calculated once and reused in both normalizations. In general, it is a big computational win to save on calculations that introduce a lot of edges in the expression graph (for a mean, there is an edge for each operand and one for the division by the size).</p>
+<p>Stan is called as usual.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model_adj &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_1pl_adjust.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file161745f5bb15.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit_adj &lt;-<span class="st"> </span><span class="kw">sampling</span>(model_adj, <span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>);</code></pre></div>
+<p>The results show the problem with improper posteriors.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(fit_adj, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;theta_raw[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>),
+                 <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>),
+                 <span class="kw">paste</span>(<span class="st">&quot;b_raw[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>),
+                 <span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>),
+                 <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.5</span>, <span class="fl">0.90</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl_adjust.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##                 mean se_mean    sd     10%     50%     90% n_eff  Rhat
+## theta_raw[1]   21.77   40.20 56.90  -62.82   33.18   82.19     2 42.23
+## theta_raw[2]   23.02   40.19 56.89  -61.70   34.34   83.49     2 41.10
+## theta_raw[3]   21.37   40.20 56.90  -63.38   32.99   81.84     2 41.61
+## theta_raw[4]   21.78   40.21 56.91  -62.89   33.09   82.15     2 41.76
+## theta_raw[5]   24.51   40.20 56.90  -60.09   36.52   84.91     2 39.43
+## theta[1]       -0.37    0.01  0.63   -1.17   -0.37    0.44  4000  1.00
+## theta[2]        0.88    0.01  0.67    0.04    0.88    1.74  4000  1.00
+## theta[3]       -0.77    0.01  0.65   -1.61   -0.76    0.07  4000  1.00
+## theta[4]       -0.35    0.01  0.64   -1.17   -0.35    0.45  4000  1.00
+## theta[5]        2.38    0.01  0.81    1.36    2.32    3.43  4000  1.00
+## b_raw[1]       23.77   40.20 56.90  -60.67   35.44   84.19     2 45.64
+## b_raw[2]       19.62   40.20 56.90  -64.94   31.38   80.02     2 44.83
+## b_raw[3]       22.69   40.20 56.90  -61.78   34.57   83.09     2 45.88
+## b_raw[4]       22.38   40.20 56.90  -62.16   34.18   82.80     2 45.92
+## b_raw[5]       21.04   40.20 56.90  -63.39   32.88   81.37     2 45.82
+## b[1]            1.63    0.00  0.27    1.27    1.62    1.98  4000  1.00
+## b[2]           -2.52    0.01  0.34   -2.97   -2.51   -2.10  4000  1.00
+## b[3]            0.55    0.00  0.26    0.23    0.55    0.89  4000  1.00
+## b[4]            0.25    0.00  0.24   -0.06    0.25    0.56  3966  1.00
+## b[5]           -1.10    0.00  0.26   -1.43   -1.10   -0.77  3837  1.00
+## lp__         -804.34    0.21  7.98 -814.84 -803.96 -794.37  1464  1.00
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:10:34 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+</div>
+</div>
+<div id="pitfall-2-poor-mixing-and-exchangeability" class="section level3">
+<h3>Pitfall #2: Poor Mixing and Exchangeability</h3>
+<p>Not only is there poor mixing with the value-pinning approach, it is awkward to pin the value of a single ability (difficulty) variable because the model is no longer exchangeable on the students (test questions). With a value pinned, comparison to simulated values has to be done in relative terms.</p>
+<div id="avoiding-pitfall-2-priors" class="section level4">
+<h4>Avoiding pitfall #2: Priors</h4>
+<p>Rather than pinning a value, in the example we ran at the very start, we placed priors on both <span class="math inline">\(\theta\)</span> and <span class="math inline">\(b\)</span>. For all but a non-measurable set of edge cases, <span class="math display">\[
+p(b) \, p(\theta) 
+\neq 
+p(b + c) \, p(\theta - c),
+\]</span> and thus the posterior does not have the same additive invariance as the likelihood function.</p>
+</div>
+</div>
+<div id="pitfall-3-vague-priors" class="section level3">
+<h3>Pitfall #3: Vague Priors</h3>
+<p>Even mild priors identify the parameters in theory, but in practice may not be strong enough. For example, consider fitting the same model we fit with the <span class="math inline">\(\mbox{Normal}(0,100)\)</span> priors commonly employed in BUGS or JAGS examples.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>J;
+  int&lt;lower=<span class="dv">0</span>,upper=<span class="dv">1</span>&gt;<span class="st"> </span>y[I,J];
+  real mu_theta;
+  real&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>sigma_theta;
+  real mu_b;
+  real&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>sigma_b;
+}
+parameters {
+  vector[I] b;
+  vector[J] theta;
+}
+model {
+  theta ~<span class="st"> </span><span class="kw">normal</span>(mu_theta, sigma_theta);
+  b ~<span class="st"> </span><span class="kw">normal</span>(mu_b, sigma_b);
+  for (i in <span class="dv">1</span>:I)
+    y[i] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta -<span class="st"> </span>b[i]);
+}</code></pre></div>
+<p>This model includes data for specifying the priors. This can be fit with the following R code, which then sets the fixed prior values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model_vague &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_1pl_vague.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file161720a4de2e.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu_theta &lt;-<span class="st"> </span><span class="dv">0</span>;  sigma_theta &lt;-<span class="st"> </span><span class="dv">100</span>;
+mu_b &lt;-<span class="st"> </span><span class="dv">0</span>; sigma_b &lt;-<span class="st"> </span><span class="dv">100</span>;
+fit_vague &lt;-<span class="st"> </span><span class="kw">sampling</span>(model_vague, 
+                 <span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;mu_theta&quot;</span>, <span class="st">&quot;sigma_theta&quot;</span>, <span class="st">&quot;mu_b&quot;</span>, <span class="st">&quot;sigma_b&quot;</span>),
+                 <span class="dt">init=</span>init_fun, <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>);</code></pre></div>
+<p>The results can be shown as follows.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(fit_vague, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.5</span>, <span class="fl">0.90</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl_vague.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##              mean se_mean   sd     10%     50%     90% n_eff Rhat
+## b[1]         6.01    5.13 7.46   -5.82    7.68   15.57     2 5.64
+## b[2]         1.87    5.15 7.48   -9.99    3.54   11.51     2 5.60
+## b[3]         4.94    5.14 7.47   -6.92    6.59   14.57     2 5.68
+## b[4]         4.63    5.14 7.47   -7.24    6.31   14.22     2 5.69
+## b[5]         3.29    5.14 7.47   -8.57    4.94   12.94     2 5.65
+## b[6]         3.42    5.14 7.47   -8.41    5.13   13.01     2 5.68
+## b[7]         2.17    5.13 7.46   -9.61    3.82   11.78     2 5.63
+## b[8]         5.93    5.13 7.46   -5.94    7.60   15.51     2 5.66
+## b[9]         3.08    5.14 7.47   -8.76    4.74   12.69     2 5.65
+## b[10]        6.61    5.13 7.46   -5.22    8.27   16.19     2 5.63
+## theta[1]     4.02    5.14 7.49   -7.76    5.59   13.68     2 5.27
+## theta[2]     5.25    5.15 7.50   -6.56    6.83   14.93     2 5.22
+## theta[3]     3.62    5.14 7.49   -8.17    5.17   13.34     2 5.23
+## theta[4]     4.03    5.14 7.48   -7.76    5.62   13.65     2 5.25
+## theta[5]     6.77    5.14 7.50   -5.00    8.34   16.43     2 5.01
+## theta[6]     5.25    5.14 7.49   -6.59    6.86   14.89     2 5.26
+## theta[7]     6.19    5.14 7.49   -5.54    7.74   15.90     2 5.18
+## theta[8]     6.17    5.14 7.49   -5.63    7.69   15.88     2 5.13
+## theta[9]     4.03    5.13 7.48   -7.69    5.60   13.66     2 5.31
+## theta[10]    5.70    5.14 7.49   -6.17    7.27   15.38     2 5.17
+## lp__      -804.66    0.20 7.99 -814.93 -804.52 -794.44  1580 1.00
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:11:40 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+<p>This is so far from convergence as indicated by <span class="math inline">\(\hat{R}\)</span> that there seems little hope that further iterations would provide a useful effective sample size.</p>
+<div id="avoiding-pitfall-3-tighten-priors" class="section level4">
+<h4>Avoiding Pitfall #3: Tighten Priors</h4>
+<p>In principle, it is enough to put a prior on one of the parameter vectors, such as <span class="math inline">\(p(\theta)\)</span>, but this performs poorly in practice. What does suffice is putting an appropriate prior on one of the parameters, such as <span class="math inline">\(\theta\)</span>. For example, the following fits with a unit normal on <span class="math inline">\(\theta\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu_theta &lt;-<span class="st"> </span><span class="dv">0</span>;  sigma_theta &lt;-<span class="st"> </span><span class="dv">1</span>;
+mu_b &lt;-<span class="st"> </span><span class="dv">0</span>; sigma_b &lt;-<span class="st"> </span><span class="dv">100</span>;
+fit_vague2 &lt;-<span class="st"> </span><span class="kw">sampling</span>(model_vague, 
+                  <span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;mu_theta&quot;</span>, <span class="st">&quot;sigma_theta&quot;</span>, <span class="st">&quot;mu_b&quot;</span>, <span class="st">&quot;sigma_b&quot;</span>),
+                  <span class="dt">init=</span>init_fun, <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>);</code></pre></div>
+<pre><code>## Warning: There were 5 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. See
+## http://mc-stan.org/misc/warnings.html#maximum-treedepth-exceeded</code></pre>
+<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(fit_vague2, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">10</span>, <span class="st">&quot;]&quot;</span>), <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.5</span>, <span class="fl">0.90</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl_vague.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##              mean se_mean   sd     10%     50%     90% n_eff Rhat
+## b[1]         1.36    0.00 0.27    1.02    1.35    1.70  4000    1
+## b[2]        -2.11    0.01 0.32   -2.53   -2.10   -1.71  4000    1
+## b[3]         0.45    0.00 0.25    0.13    0.45    0.77  4000    1
+## b[4]         0.20    0.00 0.25   -0.12    0.20    0.51  4000    1
+## b[5]        -0.93    0.00 0.25   -1.26   -0.93   -0.60  4000    1
+## b[6]        -0.82    0.00 0.26   -1.14   -0.83   -0.49  4000    1
+## b[7]        -1.85    0.00 0.30   -2.23   -1.85   -1.47  4000    1
+## b[8]         1.29    0.00 0.27    0.96    1.29    1.64  4000    1
+## b[9]        -1.11    0.00 0.27   -1.45   -1.11   -0.77  4000    1
+## b[10]        1.86    0.00 0.30    1.49    1.86    2.24  4000    1
+## theta[1]    -0.23    0.01 0.52   -0.89   -0.23    0.43  4000    1
+## theta[2]     0.58    0.01 0.54   -0.11    0.57    1.26  4000    1
+## theta[3]    -0.51    0.01 0.51   -1.16   -0.51    0.14  4000    1
+## theta[4]    -0.24    0.01 0.53   -0.91   -0.24    0.45  4000    1
+## theta[5]     1.44    0.01 0.57    0.72    1.42    2.16  4000    1
+## theta[6]     0.58    0.01 0.52   -0.09    0.57    1.25  4000    1
+## theta[7]     1.12    0.01 0.55    0.41    1.11    1.83  4000    1
+## theta[8]     1.12    0.01 0.54    0.44    1.11    1.83  4000    1
+## theta[9]    -0.24    0.01 0.52   -0.91   -0.23    0.42  4000    1
+## theta[10]    0.85    0.01 0.55    0.17    0.84    1.54  4000    1
+## lp__      -865.10    0.21 7.97 -875.25 -864.81 -854.84  1454    1
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:12:24 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+</div>
+</div>
+<div id="pitfall-4-separability" class="section level3">
+<h3>Pitfall #4: Separability</h3>
+<p>A second problem facing logistic regression models in general and IRT models in particular is separability. Consider the case where a question is so easy that every student gets it right or so hard every student gets it wrong—there are no means by which to estimate its true difficulty. In the case where every student gets a question right, the likelihood keeps increasing as the question’s difficulty approaches negative infinity. The same problem arises for a student who gets every question right; the likelihood keeps increasing as the student’s ability approaches infinity. Unlike in the additive invariance case, where there are multiple solutions for the parameters that maximize the likelihood, in the separabe case there are no finite parameters that maximize the likelihood.</p>
+<div id="avoiding-pitfall-4-priors" class="section level4">
+<h4>Avoiding Pitfall #4: Priors</h4>
+<p>The easiest way to solve the separability problem is to add priors. It then becomes a balance between the likelihood term <span class="math inline">\(p(y_{i,1},\ldots,y_{i,J} \, | \, b_i, \theta)\)</span> and the prior term <span class="math inline">\(p(b_i)\)</span>. For example, if all the students answered question <span class="math inline">\(i\)</span> correctly, the likelihood quickly asymptotes at 1 as the problem difficulty <span class="math inline">\(b_i\)</span> becomes more negative.</p>
+</div>
+<div id="missing-experiment-separable---priors" class="section level4">
+<h4>MISSING EXPERIMENT: separable +/- priors</h4>
+</div>
+</div>
+<div id="pitfall-5-unknown-priors" class="section level3">
+<h3>Pitfall #5: Unknown Priors</h3>
+<p>Up until now, we’ve been cheating with the priors, choosing them to match the data-generating process. In reality, we do not know the parameters of the (hyperprior) distribution used to generate the parameters. Even more to the point, we do not even know the parametric family of the parameter-generating process—it’s elephants all the way down.</p>
+<div id="avoiding-pitfall-5-hierarchical-models" class="section level4">
+<h4>Avoiding pitfall #5: Hierarchical models</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>J;
+  int&lt;lower=<span class="dv">0</span>,upper=<span class="dv">1</span>&gt;<span class="st"> </span>y[I,J];
+}
+parameters {
+  vector[I] b;
+  vector[J] theta;
+  real mu_b;
+  real&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>sigma_b;
+  real&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>sigma_theta;
+}
+model {
+  /<span class="er">/</span><span class="st"> </span>hyperpriors
+  mu_b ~<span class="st"> </span><span class="kw">normal</span>(<span class="dv">0</span>, <span class="dv">5</span>);
+  sigma_b ~<span class="st"> </span><span class="kw">cauchy</span>(<span class="dv">0</span>, <span class="dv">2</span>);
+  sigma_theta ~<span class="st"> </span><span class="kw">cauchy</span>(<span class="dv">0</span>, <span class="dv">2</span>);
+
+  /<span class="er">/</span><span class="st"> </span>priors
+  b ~<span class="st"> </span><span class="kw">normal</span>(mu_b, sigma_b);
+  theta ~<span class="st"> </span><span class="kw">normal</span>(<span class="dv">0</span>, sigma_theta);
+
+  /<span class="er">/</span><span class="st"> </span>likelihood
+  for (i in <span class="dv">1</span>:I)
+    y[i] ~<span class="st"> </span><span class="kw">bernoulli_logit</span>(theta -<span class="st"> </span>b[i]);
+}</code></pre></div>
+<p>This model now includes parameter declarations for the priors along with hyperpriors. This can be fit with the following R code, which then sets the fixed prior values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rstan);
+model_hier &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_1pl_hier.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file161778e57471.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit_hier &lt;-<span class="kw">sampling</span>(model_hier, <span class="dt">data =</span> <span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;J&quot;</span>, <span class="st">&quot;y&quot;</span>),
+                    <span class="dt">refresh=</span><span class="dv">2000</span>, <span class="dt">seed=</span><span class="dv">1234</span>)
+
+<span class="kw">options</span>(<span class="st">&quot;width&quot;</span>=<span class="dv">100</span>);
+<span class="kw">print</span>(fit_hier, <span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;b[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;theta[&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>, <span class="st">&quot;]&quot;</span>),
+                  <span class="st">&quot;mu_b&quot;</span>, <span class="st">&quot;sigma_b&quot;</span>, <span class="st">&quot;sigma_theta&quot;</span>, <span class="st">&quot;lp__&quot;</span>), 
+      <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.10</span>, <span class="fl">0.5</span>, <span class="fl">0.90</span>));</code></pre></div>
+<pre><code>## Inference for Stan model: irt_1pl_hier.
+## 4 chains, each with iter=2000; warmup=1000; thin=1; 
+## post-warmup draws per chain=1000, total post-warmup draws=4000.
+## 
+##                mean se_mean   sd     10%     50%     90% n_eff Rhat
+## b[1]           1.36    0.00 0.28    1.01    1.36    1.73  4000    1
+## b[2]          -2.13    0.01 0.32   -2.55   -2.12   -1.72  4000    1
+## b[3]           0.46    0.00 0.26    0.12    0.46    0.79  4000    1
+## b[4]           0.20    0.00 0.26   -0.13    0.20    0.54  4000    1
+## b[5]          -0.95    0.00 0.27   -1.30   -0.94   -0.61  4000    1
+## theta[1]      -0.26    0.01 0.55   -0.95   -0.26    0.43  4000    1
+## theta[2]       0.61    0.01 0.54   -0.08    0.61    1.27  4000    1
+## theta[3]      -0.53    0.01 0.55   -1.22   -0.53    0.16  4000    1
+## theta[4]      -0.26    0.01 0.52   -0.90   -0.27    0.41  4000    1
+## theta[5]       1.54    0.01 0.59    0.79    1.52    2.29  4000    1
+## mu_b          -0.32    0.01 0.57   -1.04   -0.32    0.39  4000    1
+## sigma_b        2.48    0.01 0.46    1.95    2.42    3.10  4000    1
+## sigma_theta    1.16    0.00 0.12    1.01    1.15    1.32  2721    1
+## lp__        -896.34    0.24 8.67 -907.83 -895.92 -885.84  1347    1
+## 
+## Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:13:24 2017.
+## For each parameter, n_eff is a crude measure of effective sample size,
+## and Rhat is the potential scale reduction factor on split chains (at 
+## convergence, Rhat=1).</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(b[<span class="dv">1</span>:<span class="dv">10</span>], <span class="dt">digits=</span><span class="dv">2</span>);</code></pre></div>
+<pre><code>##  [1]  1.20 -2.46  0.32  0.23 -1.43 -0.84 -1.95  1.16 -1.18  1.87</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(theta[<span class="dv">1</span>:<span class="dv">10</span>], <span class="dt">digits=</span><span class="dv">2</span>);</code></pre></div>
+<pre><code>##  [1] -1.0879 -0.2259 -1.4705  0.0096  1.2958  1.0805  1.6493  0.8867 -0.0435  0.1932</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="st">&quot;mu_b = 1;  sigma_b = 2;  sigma_theta=1&quot;</span>);</code></pre></div>
+<pre><code>## [1] &quot;mu_b = 1;  sigma_b = 2;  sigma_theta=1&quot;</code></pre>
+<p>So now that we have a fit that looks like it converged, let’s compare the posterior estimates with the true values from the simulation. We’ll plot using the following function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit_vs_sim &lt;-<span class="st"> </span>function(var_name, <span class="dt">interval_width =</span> <span class="fl">0.9</span>) {
+  ss &lt;-<span class="st"> </span><span class="kw">extract</span>(fit);
+  theta &lt;-<span class="st"> </span><span class="kw">get</span>(var_name);
+  theta_hat &lt;-<span class="st"> </span><span class="kw">c</span>();
+  theta_lower &lt;-<span class="st"> </span><span class="kw">c</span>();
+  theta_upper &lt;-<span class="st"> </span><span class="kw">c</span>();
+  for (i in <span class="dv">1</span>:<span class="kw">length</span>(theta)) {
+    ss_theta_i &lt;-<span class="st"> </span>ss[[var_name]][,i];
+    theta_hat[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(ss_theta_i);
+    theta_lower[i] &lt;-<span class="st"> </span><span class="kw">quantile</span>(ss_theta_i, <span class="dt">probs=</span><span class="fl">0.5</span> -<span class="st"> </span>interval_width/<span class="dv">2</span>);
+    theta_upper[i] &lt;-<span class="st"> </span><span class="kw">quantile</span>(ss_theta_i, <span class="dt">probs=</span><span class="fl">0.5</span> +<span class="st"> </span>interval_width/<span class="dv">2</span>);
+  }
+  df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(theta, theta_hat, theta_lower, theta_upper);
+  ggp &lt;-<span class="st">  </span>
+<span class="st">    </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x=</span>theta, <span class="dt">y=</span>theta_hat)) +
+<span class="st">    </span><span class="kw">geom_point</span>() +
+<span class="st">    </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>theta_lower, <span class="dt">ymax=</span>theta_upper), <span class="dt">width=</span>.<span class="dv">05</span>) +
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept=</span><span class="dv">0</span>, <span class="dt">slope=</span><span class="dv">1</span>, <span class="dt">colour=</span><span class="st">&quot;red&quot;</span>) +
+<span class="st">    </span><span class="kw">xlab</span>(<span class="kw">paste</span>(var_name,<span class="st">&quot;(simulated)&quot;</span>)) +
+<span class="st">    </span><span class="kw">ylab</span>(<span class="kw">paste</span>(var_name,<span class="st">&quot; (posterior mean and &quot;</span>, <span class="dv">100</span> *<span class="st"> </span>interval_width,
+               <span class="st">&quot;% interval)&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)) +
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="kw">paste</span>(<span class="st">&quot;Posterior Estimate vs. Simulation: &quot;</span>, var_name));
+  <span class="kw">return</span>(ggp);
+}</code></pre></div>
+<p>To plot the posterior with 90% intervals, the following function calls can be used.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fit_vs_sim</span>(<span class="st">&quot;b&quot;</span>, <span class="fl">0.9</span>);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fit_vs_sim</span>(<span class="st">&quot;theta&quot;</span>, <span class="fl">0.9</span>);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
+<p>As is clear from this diagram, the posterior intervals are much wider for <tt>theta</tt> (student ability) than for <tt>b</tt> (question difficulty) because there are fewer students per test item than there are test items per student. It’s also clear from the print results that <code>mu_b</code>, <code>sigma_b</code> and <code>sigma_theta</code> are recovered within their 80% intervals.</p>
+</div>
+</div>
+</div>
+<div id="model-with-discrimination-2pl" class="section level2">
+<h2>Model with Discrimination (2PL)</h2>
+<p>So far, we have only considered the 1PL IRT model with a single parameter for each test item corresponding to one dimension of difficulty. The 2PL model enhances this by adding a second parameter for each item corresponding to how discriminative it is. That is, some test items are better at separating people who know the answer versus those who don’t, whereas other test items are noisier with responses being more random.</p>
+<div id="additional-parameters-2pl" class="section level3">
+<h3>Additional Parameters (2PL)</h3>
+<p>In addition to the two 1PL parameters, the 2PL model adds</p>
+<ul>
+<li><span class="math inline">\(a_i\)</span> : discriminativeness of test question <span class="math inline">\(i\)</span> (unconstrained)</li>
+</ul>
+</div>
+<div id="likelihood-2pl" class="section level3">
+<h3>Likelihood (2PL)</h3>
+<p>The discrimination parameter acts multiplicatively, with the probability of a correct answer being given by student <span class="math inline">\(j\)</span> to question <span class="math inline">\(i\)</span> modeled as</p>
+<p><span class="math display">\[
+\mbox{Pr}[y_{i,j} = 1] = \mbox{logit}^{-1}(a_i (\theta_j - b_i)).
+\]</span></p>
+<p>Because the parameter is multiplicative, values above 1 mean sharper distinction and low values mean less sharp distinction.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>(-<span class="dv">100</span>:<span class="dv">100</span>)/<span class="dv">10</span>
+y1 &lt;-<span class="st"> </span><span class="kw">inv_logit</span>(<span class="fl">0.25</span> *<span class="st"> </span>x);
+y2 &lt;-<span class="st"> </span><span class="kw">inv_logit</span>(x);
+y3 &lt;-<span class="st"> </span><span class="kw">inv_logit</span>(<span class="dv">4</span> *<span class="st"> </span>x);
+df_logit &lt;-
+<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(x,<span class="dv">3</span>), <span class="dt">y =</span> <span class="kw">c</span>(y1, y2, y3),  <span class="dt">discrim=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;1/4&quot;</span>, <span class="kw">length</span>(x)), 
+                                                         <span class="kw">rep</span>(<span class="st">&quot;1&quot;</span>, <span class="kw">length</span>(x)),
+                                                         <span class="kw">rep</span>(<span class="st">&quot;4&quot;</span>, <span class="kw">length</span>(x))));
+ilogit_plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df_logit, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">group=</span>discrim, <span class="dt">colour=</span>discrim)) +
+<span class="st">     </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="dv">1</span>) +
+<span class="st">     </span><span class="kw">ggtitle</span>(<span class="st">&quot;Effect of Discrimination Parameter&quot;</span>) +
+<span class="st">     </span><span class="kw">xlab</span>(<span class="st">&quot;theta[j] - b[i]&quot;</span>) +
+<span class="st">     </span><span class="kw">ylab</span>(<span class="st">&quot;Pr[y[i,j] = 1]&quot;</span>);
+<span class="kw">plot</span>(ilogit_plot);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>For discrimiantion 4, the curve is very sharp, with most students with slightly higher than difficulty ability getting it right and most students with slightly lower than the difficulty getting it wrong. For disrimination 1/4, the effect is the opposite, with students of much lower ability than question difficulty having a good shot at getting a correct answer and students of much higher ability having a good shot at getting it wrong. An ideal test question has high discrimination.</p>
+<p>A discrimination value of -1 reverses the process, with students of higher ability <tt>theta</tt> being more likely to get the question wrong. The following plot illustrates.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>(-<span class="dv">100</span>:<span class="dv">100</span>)/<span class="dv">10</span>;
+y1 &lt;-<span class="st"> </span><span class="kw">inv_logit</span>(-<span class="dv">1</span> *<span class="st"> </span>x);
+y2 &lt;-<span class="st"> </span><span class="kw">inv_logit</span>(x);
+df_logit &lt;-
+<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(x,<span class="dv">2</span>), <span class="dt">y =</span> <span class="kw">c</span>(y1, y2),  <span class="dt">discrim=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;-1&quot;</span>, <span class="kw">length</span>(x)), 
+                                                     <span class="kw">rep</span>(<span class="st">&quot;1&quot;</span>, <span class="kw">length</span>(x))));
+ilogit_plot2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df_logit, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">group=</span>discrim, <span class="dt">colour=</span>discrim)) +
+<span class="st">        </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="dv">1</span>) +
+<span class="st">        </span><span class="kw">ggtitle</span>(<span class="st">&quot;Effect of Negative Discrimination Parameter&quot;</span>) +
+<span class="st">        </span><span class="kw">xlab</span>(<span class="st">&quot;theta[j] - b[i]&quot;</span>) +
+<span class="st">        </span><span class="kw">ylab</span>(<span class="st">&quot;Pr[y[i,j] = 1]&quot;</span>);
+<span class="kw">plot</span>(ilogit_plot2);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="pitfall-6-scale-invariance" class="section level3">
+<h3>Pitfall #6: Scale Invariance</h3>
+<p>There are two immediate problems with the IRT 2PL model, the first of which is scale invariance. If we multiply <tt>a</tt> by a constant and divide <tt>theta</tt> and <tt>b</tt> by the same constant, we get the same likelihood, because <span class="math display">\[
+a_i \times c \times (\theta_j / c - b_i / c) = a_i \times (\theta_j - b_i).
+\]</span></p>
+<div id="avoiding-pitfall-6-priors" class="section level4">
+<h4>Avoiding Pitfall #6: Priors</h4>
+<p>Putting a unit normal prior on <span class="math inline">\(\theta\)</span> solves the problem by fixing the scale of <span class="math inline">\(\theta\)</span> to 1, which then causes <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to follow suit.</p>
+</div>
+</div>
+<div id="pitfall-7-sign-invariance" class="section level3">
+<h3>Pitfall #7: Sign Invariance</h3>
+<p>The second pitfall of the IRT 2PL model is sign invariance. The problem is that if we reverse the signs of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(\theta\)</span>, the predictions remain the same. This follows from simply taking <span class="math inline">\(c = -1\)</span> above, <span class="math display">\[
+- a_i \times (-\theta_j - (-b_i)) = a_i \times (\theta_j - b_i).
+\]</span></p>
+<div id="avoiding-pitfall-7-constrain-to-positive" class="section level4">
+<h4>Avoiding Pitfall #7: Constrain to Positive</h4>
+<p>A reasonable test question will not have a negative discrimination, so the typical solution for sidestepping sign invariance is to constrain <span class="math inline">\(a_i &gt; 0\)</span>.</p>
+<p>In Stan this is straightforward to code.</p>
+</div>
+</div>
+</div>
+<div id="bonus-1-power-calculations-using-irt-2pl" class="section level1">
+<h1>Bonus #1: Power Calculations using IRT 2PL</h1>
+<p>How well do tests separate students of different abilities? It is straightforward to do this kind of power calculation directly in Stan. Consider the following model, which will simulate the number of questions from a test with a number of questions of given difficulty and discriminativeness.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data {
+  int&lt;lower=<span class="dv">0</span>&gt;<span class="st"> </span>I;
+  vector[I] a;
+  vector[I] b;
+}
+model { 
+}
+generated quantities {
+  int&lt;lower=<span class="dv">0</span>,upper=I&gt;<span class="st"> </span>z_sim[<span class="dv">100</span>];
+  vector[<span class="dv">100</span>] theta_sim;
+  for (j in <span class="dv">1</span>:<span class="dv">100</span>) {
+    theta_sim[j] &lt;-<span class="st"> </span>(j -<span class="st"> </span><span class="dv">50</span>) /<span class="st"> </span><span class="fl">10.0</span>;
+    z_sim[j] &lt;-<span class="st"> </span><span class="dv">0</span>;
+    for (i in <span class="dv">1</span>:I)
+      z_sim[j] &lt;-<span class="st"> </span>z_sim[j] 
+        +<span class="st"> </span><span class="kw">bernoulli_rng</span>(<span class="kw">inv_logit</span>(a[i] *<span class="st"> </span>(theta_sim[j] -<span class="st"> </span>b[i])));
+  }
+}</code></pre></div>
+<p>The data block declares the number of questions (<tt>I</tt>), along with vectors of the question discriminativeness (<tt>a</tt>) and difficulty (<tt>b</tt>). The generated quantitites block then declares two variables, <tt>theta_sim</tt> for the abilities of 100 students and <tt>z_sim</tt> for the simulated number of questions they answer correctly. Because <tt>bernoulli_rng</tt> returns an integer 0 or 1, it can be used directly in the arithmetic statement. The student abilities are evenly spaced between -5 (exclusive) and 5 (inclusive). For efficiency and clarity, <code>theta_sim</code> should be either a local or defined in the data block so that it is not treated as a sampled parameter.</p>
+<p>To run the simulations, first the model is compiled and then a function is defined that will do the sampling using Stan and convert the sample summary statistics to an appropriate data frame to pass to ggplot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rstan);
+model &lt;-<span class="st"> </span><span class="kw">stan_model</span>(<span class="st">&quot;irt_2pl_power.stan&quot;</span>);</code></pre></div>
+<pre><code>## In file included from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config.hpp:39:0,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/math/tools/config.hpp:13,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/var.hpp:7,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core/gevv_vvv_vari.hpp:5,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/core.hpp:12,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math/rev/mat.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/stan/math.hpp:4,
+##                  from /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/StanHeaders/include/src/stan/model/model_header.hpp:4,
+##                  from file1617610f4ed8.cpp:8:
+## /home/aaronjg/R/x86_64-pc-linux-gnu-library/3.3/BH/include/boost/config/compiler/gcc.hpp:186:0: warning: &quot;BOOST_NO_CXX11_RVALUE_REFERENCES&quot; redefined
+##  #  define BOOST_NO_CXX11_RVALUE_REFERENCES
+##  ^
+## &lt;command-line&gt;:0:0: note: this is the location of the previous definition</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_to_df &lt;-<span class="st"> </span>function(test_name) {
+  fit &lt;-<span class="st"> </span><span class="kw">sampling</span>(model, <span class="dt">algorithm=</span><span class="st">&quot;Fixed_param&quot;</span>,
+                  <span class="dt">data=</span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dt">chains=</span><span class="dv">1</span>, <span class="dt">iter=</span><span class="dv">20000</span>,
+                  <span class="dt">refresh=</span><span class="dv">10000</span>, <span class="dt">seed=</span><span class="dv">1234</span>);
+  sims &lt;-<span class="st"> </span><span class="kw">extract</span>(fit)$z_sim;
+  questions &lt;-<span class="st"> </span><span class="kw">c</span>();
+  mean &lt;-<span class="st"> </span><span class="kw">c</span>();
+  sd &lt;-<span class="st"> </span><span class="kw">c</span>();
+  theta_sim &lt;-<span class="st"> </span><span class="kw">c</span>();
+  five &lt;-<span class="st"> </span><span class="kw">c</span>();
+  fifty &lt;-<span class="st"> </span><span class="kw">c</span>();
+  ninety_five &lt;-<span class="st"> </span><span class="kw">c</span>();
+  for (j in <span class="dv">1</span>:<span class="kw">dim</span>(sims)[<span class="dv">2</span>]) {
+    questions[j] &lt;-<span class="st"> </span>test_name;
+    theta_sim[j] &lt;-<span class="st"> </span>(j -<span class="st"> </span><span class="dv">50</span>) /<span class="st"> </span><span class="dv">10</span>;
+    mean[j] &lt;-<span class="st"> </span><span class="kw">mean</span>(sims[,j]);
+    sd[j] &lt;-<span class="st"> </span><span class="kw">sd</span>(sims[,j]);
+    five[j] &lt;-<span class="st"> </span><span class="kw">quantile</span>(sims[,j], <span class="fl">0.05</span>);
+    fifty[j] &lt;-<span class="st"> </span><span class="kw">quantile</span>(sims[,j], <span class="fl">0.50</span>);
+    ninety_five[j] &lt;-<span class="st"> </span><span class="kw">quantile</span>(sims[,j], <span class="fl">0.95</span>);
+  }
+  df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(questions, mean, sd, theta_sim, five, fifty, ninety_five);
+  <span class="kw">return</span>(df);
+}</code></pre></div>
+<p>The first set of plots is for tests with questions of evenly spaced difficulty between -5 and 5. Three conditions are sampled corresponding to a test with questions of low discriminativeness, medium discriminativeness, and high discriminativeness. Only a single long chain is used for each simulation because the draws are independent Monte Carlo draws, not MCMC draws.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 1a: low discrim
+b &lt;-<span class="st"> </span>((<span class="dv">0</span>:<span class="dv">20</span>) -<span class="st"> </span><span class="dv">10</span>) /<span class="st"> </span><span class="dv">2</span>;
+I &lt;-<span class="st"> </span><span class="kw">length</span>(b);
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="fl">0.25</span>, I);
+df_1a &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;low discrim (a = 0.25)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.70266 seconds (Sampling)
+##                1.70266 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 1b: medium discrim
+b &lt;-<span class="st"> </span>((<span class="dv">0</span>:<span class="dv">20</span>) -<span class="st"> </span><span class="dv">10</span>) /<span class="st"> </span><span class="dv">2</span>;
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, I);
+df_1b &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;medium discrim (a = 1)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.58204 seconds (Sampling)
+##                1.58204 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 1c: high discrim
+b &lt;-<span class="st"> </span>((<span class="dv">0</span>:<span class="dv">20</span>) -<span class="st"> </span><span class="dv">10</span>) /<span class="st"> </span><span class="dv">2</span>;
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">4</span>, <span class="kw">length</span>(b));
+df_1c &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;high discrim (a = 4)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.58735 seconds (Sampling)
+##                1.58735 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df_1abc &lt;-<span class="st"> </span><span class="kw">rbind</span>(df_1a,df_1b,df_1c);</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2);
+plot_1abc &lt;-
+<span class="st">  </span><span class="kw">ggplot</span>(df_1abc, <span class="kw">aes</span>(<span class="dt">x=</span>theta_sim, <span class="dt">y=</span>mean)) +
+<span class="st">  </span><span class="kw">facet_grid</span>(. ~<span class="st"> </span>questions) +
+<span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>(mean -<span class="st"> </span><span class="dv">2</span> *<span class="st"> </span>sd), <span class="dt">ymax=</span>(mean +<span class="st"> </span><span class="dv">2</span> *<span class="st"> </span>sd)),
+              <span class="dt">colour=</span><span class="st">&quot;darkgray&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;lightgray&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="fl">0.5</span>) +
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;ability&quot;</span>) +
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;expected correct +/- 2 std dev&quot;</span>) +
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;21 Questions of Mixed Difficulty (b in [-5, 5])&quot;</span>);
+
+<span class="kw">plot</span>(plot_1abc);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/power-2pl-plot-1-1.png" width="672" /></p>
+<p>The second group of plots is for tests consisting of questions all of the same idifficulty and unit discriminativeness.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 2a: 20 all easy
+b &lt;-<span class="st"> </span><span class="kw">rep</span>(-<span class="dv">3</span>, I);
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, I);
+df_2a &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;easy (b = -3)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.60541 seconds (Sampling)
+##                1.60541 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 2b: 20 all medium
+b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, I);
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, I);
+df_2b &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;moderate (b = 0)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.79856 seconds (Sampling)
+##                1.79856 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## TEST 2c: 20 all hard
+b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">3</span>, I);
+a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, I);
+df_2c &lt;-<span class="st"> </span><span class="kw">sample_to_df</span>(<span class="st">&quot;difficult (b = 3)&quot;</span>);</code></pre></div>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;irt_2pl_power&#39; NOW (CHAIN 1).
+## Iteration:     1 / 20000 [  0%]  (Sampling)
+## Iteration: 10000 / 20000 [ 50%]  (Sampling)
+## Iteration: 20000 / 20000 [100%]  (Sampling)
+## 
+##  Elapsed Time: 0 seconds (Warm-up)
+##                1.67965 seconds (Sampling)
+##                1.67965 seconds (Total)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df_2abc &lt;-<span class="st"> </span><span class="kw">rbind</span>(df_2a, df_2b, df_2c);
+
+plot_2abc &lt;-
+<span class="st">  </span><span class="kw">ggplot</span>(df_2abc, <span class="kw">aes</span>(<span class="dt">x=</span>theta_sim, <span class="dt">y=</span>mean)) +
+<span class="st">  </span><span class="kw">facet_grid</span>(. ~<span class="st"> </span>questions) +
+<span class="st">  </span><span class="kw">geom_ribbon</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>(mean -<span class="st"> </span><span class="dv">2</span> *<span class="st"> </span>sd), <span class="dt">ymax=</span>(mean +<span class="st"> </span><span class="dv">2</span> *<span class="st"> </span>sd)),
+              <span class="dt">colour=</span><span class="st">&quot;darkgray&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;lightgray&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="fl">0.5</span>) +
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;ability&quot;</span>) +
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;expected correct +/- 2 std dev&quot;</span>) +
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;21 Questions of Same Difficulty (discrim a = 1)&quot;</span>)
+<span class="kw">plot</span>(plot_2abc);</code></pre></div>
+<p><img src="intro-irt_files/figure-html/power-2pl-test-2-1.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

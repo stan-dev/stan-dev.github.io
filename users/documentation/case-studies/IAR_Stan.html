@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Mitzi Morris" />
+
+
+<title>Spatial Models in Stan: Intrinsic Auto-Regressive Models for Areal Data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/default.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Spatial Models in Stan: Intrinsic Auto-Regressive Models for Areal Data</h1>
+<h4 class="author"><em>Mitzi Morris</em></h4>
+
+</div>
+
+
+<style type="text/css">
+.table {
+
+    width: 40%;
+
+}
+</style>
+<p>When data has a spatio-temporal structure and when observations from neighboring regions exhibit higher correlation than observations between distant regions, this correlation can be accounted for using the class of spatial models called “CAR” models (Conditional Auto-Regressive) introduced by Besag (Besag 1974). Intrinsic Auto-Regressive (IAR) models are a subclass of CAR models. The Besag York Mollié (BYM) model is a lognormal Poisson model which includes both an IAR component for spatial smoothing and an ordinary random-effects component for non-spatial heterogeneity. This case study covers how to efficiently code these models in Stan.</p>
+<p>All models and data files are available in the Stan example-models GitHub repo for Stan case studies: <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson">car-iar-poisson</a>. All commands should be run from the directory <code>stan-dev/example-models/knitr/car-iar-poisson</code>.</p>
+<div id="formulations-of-car-and-iar-models" class="section level2">
+<h2>Formulations of CAR and IAR models</h2>
+<p>Given a set of observations taken at <span class="math inline">\(n\)</span> different areal units of a region with a number of dimensions <span class="math inline">\(D\)</span> (for spatio-temporal data, this number is between 1 and 4 as there are 1-3 spatial dimensions and 1 time dimension), spatial interactions between regions <span class="math inline">\(n_i\)</span> and <span class="math inline">\(n_j\)</span> can be modelled conditionally as a spatial random variable <span class="math inline">\(\mathbf{\phi}\)</span>, which is an <span class="math inline">\(n\)</span>-length vector <span class="math inline">\(\mathbf{\phi} = ({\phi}_1, \ldots, {\phi}_n)^T\)</span>.</p>
+<p>We represent spatial relationship between the <span class="math inline">\(n\)</span> areal units as an adjacency matrix <span class="math inline">\(W\)</span> with dimensions <span class="math inline">\(n \times n\)</span> where entries <span class="math inline">\(w_{ij}\)</span> and <span class="math inline">\(w_{ji}\)</span> are positive when regions <span class="math inline">\({n_i}\)</span> and <span class="math inline">\({n_j}\)</span> are neighbors and zero otherwise. The <em>neighbor</em> relationship <span class="math inline">\(i \sim j\)</span> is defined in terms of this matrix: the neighbors of region <span class="math inline">\(i\)</span> are those regions who have non-zero entries in row or column <span class="math inline">\(i\)</span>. This encoding defines a lattice structure over the <span class="math inline">\(n\)</span> areal units.</p>
+<p>Besag (1974) uses results from the physics of lattice systems of particles and the Hammersley-Clifford theorem provide an equivalence between a local specification of the conditional distribution of each particle given its neighboring particles and the global specification of the joint distribution of all particles. This specification of the joint distribution via the local specification of the conditional distributions of the individual variables is a Markov random field (MRF) specification. The conditional distribution for each <span class="math inline">\({\phi}_i\)</span> is specified in terms of a mean and precision parameter <span class="math inline">\(\tau\)</span> as:</p>
+<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, {{\tau}_i}^{-1} \right)
+= \mathit{N} \left( \alpha \sum_{i \sim j} {w}_{ij} {\phi}_j,\tau_i^{-1} \right), i,j = 1, \ldots, n \]</span></p>
+<p>The corresponding joint distribution can be uniquely determined from the set of full conditional distributions by introducing a fixed point from the support of <span class="math inline">\(p\)</span> and then using Brook’s Lemma to factor the set of conditional distributions into a joint distribution which is determined up to a proportionality constant (see Banerjee, Carlin, and Gelfand, 2004, sec. 3.2):</p>
+<p><span class="math display">\[ \mathbf{\phi} \sim \mathit{N} \left(\mathbf{0}, \left[D_{\tau}(I - \alpha B)\right]^{-1} \right) \]</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(B\)</span> is an <span class="math inline">\(n \times n\)</span> matrix where entries <span class="math inline">\(\{i,i\}\)</span> are zero and the off-diagonal elements describe the spatial proximity of regions <span class="math inline">\(n_i\)</span> and <span class="math inline">\(n_j\)</span>.</li>
+<li><span class="math inline">\(I\)</span> is an <span class="math inline">\(n \times n\)</span> identity matrix</li>
+<li><span class="math inline">\(D_{\tau} = \tau D\)</span> where D is an <span class="math inline">\(n \times n\)</span> diagonal matrix.</li>
+</ul>
+<p>The construction of the spatial proximity matrix <span class="math inline">\(B\)</span> determines the class of CAR model structure. The model is an Intrinsic Auto-Regressive (IAR) model when:</p>
+<ul>
+<li><span class="math inline">\(\alpha = 1\)</span></li>
+<li><span class="math inline">\(D\)</span> is an <span class="math inline">\(n \times n\)</span> diagonal matrix where <span class="math inline">\(d_{ii}\)</span> = the number of neighbors for region <span class="math inline">\(n_i\)</span></li>
+<li><span class="math inline">\(W\)</span> is the adjacency matrix where <span class="math inline">\(w_{ii} = 0, w_{ij} = 1\)</span> if <span class="math inline">\(i\)</span> is a neighbor of <span class="math inline">\(j\)</span>, and <span class="math inline">\(w_{ij}=0\)</span> otherwise</li>
+<li><span class="math inline">\(B = D^{-1} W\)</span>, i.e., <span class="math inline">\(B\)</span> is the scaled adjacency matrix</li>
+</ul>
+<p>The corresponding conditional distribution specification is:</p>
+<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, {{\tau}_i}^{-1} \right)
+= \mathit{N} \left( \frac{\sum_{i \sim j} {\phi}_{i}}{d_{ii}}, \frac{1}{d_{ii} {\tau}_i} \right)\]</span></p>
+<p>where <span class="math inline">\(d_{ii}\)</span> is the number of neighbors for region <span class="math inline">\(n_i\)</span>. Intuitively, the individual spatial random variable <span class="math inline">\({\phi}_j\)</span> for region <span class="math inline">\(n_j\)</span> with neighbors <span class="math inline">\(N(i)\)</span> is normally distributed with a mean equal to the average of its neighbors. Its variance decreases as the number of neighbors increases.</p>
+<p>The joint distribution simplifies to the <em>pairwise difference</em> formulation:</p>
+<p><span class="math display">\[\phi \sim N(0, [\tau \, (D - W)]^{-1}).\]</span></p>
+<p>which rewrites to:</p>
+<p><span class="math display">\[ p(\phi | \tau) \propto \frac{1}{{\tau}^\frac{n}{2}} \exp \left\{ {- \frac{1}{2\tau}} \sum_{i \sim j}{({\phi}_i - {\phi}_j)}^2 \right\} \]</span></p>
+<p>The above conditions for the IAR model produce an improper distribution because setting <span class="math inline">\(\alpha = 1\)</span> creates a singular matrix <span class="math inline">\((D - W)\)</span>, see Besag and Kooperberg 1995. Furthermore, the pairwise distance formulation of the joint distribution is non-centered; adding any constant to all of the elements of <span class="math inline">\(\phi\)</span> leaves the joint distribution unchanged. To correct this, we add the constraint <span class="math inline">\(\sum_{i} {\phi}_i = 0\)</span>.</p>
+<p>While this IAR model is non-generating in that it cannot be used as a model for the data, it can be used as a prior as part of a hierarchical model, which is the role it plays in the BYM model.</p>
+</div>
+<div id="multi-level-poisson-glms-the-besag-york-mollie-bym-model" class="section level2">
+<h2>Multi-level Poisson GLMs: the Besag York Mollié (BYM) Model</h2>
+<p>Adding a CAR spatially structured error term to a multi-level GLM provides spatial smoothing of the resulting estimates. For count data, e.g. incidents of disease or accidents, Poisson CAR models are available via R, BUGS, and JAGS as well as INLA (Integrated Nested Laplace Approximation) which is a fast alternative to MCMC, (INLA trades speed and scalability for accuracy, per the “no free lunch” principle).</p>
+<p>The lognormal Poisson model proposed in Besag York Mollié 1991 is used for count data in biostatistics and epidemiology. It includes both an IAR component for spatial smoothing and an ordinary random-effects component for non-spatial heterogeneity. Banerjee Carlin and Gelfand 2003, section 5.4, presents the details of this model and its difficulties, together with a WinBUGS implementation which they use to fit the Scottish lip cancer dataset from Clayton and Kaldor 1987. Using the notation of Banerjee et al., the Besag York Mollié model is:</p>
+<p><span class="math display">\[
+Y_i \vert \psi_i \sim Poisson ( E_i \, e^{\psi_i}),
+\]</span></p>
+<p>for <span class="math inline">\(i \in 1:N\)</span>, where</p>
+<p><span class="math display">\[
+\psi = x \beta + \theta + \phi
+\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(x\)</span> is the matrix of explanatory spatial covariates, so that <span class="math inline">\(x_i\)</span> is the vector of covariates for areal unit <span class="math inline">\(i\)</span>. The coefficients <span class="math inline">\(\beta\)</span> are often called “fixed effects.”</p></li>
+<li><p><span class="math inline">\(\theta\)</span> is an ordinary random-effects components for non-spatial heterogeneity.</p></li>
+<li><p><span class="math inline">\(\phi\)</span> is an IAR spatial component.</p></li>
+</ul>
+<p>The pairwise difference formulation of the IAR spatial component <span class="math inline">\(\phi\)</span> is non-centered, thus models with include both an IAR spatial effects component and an intercept term are non-identifiable. Adding the constraint that <span class="math inline">\(\phi\)</span> must sum to zero centers it, allowing the model to fit both the fixed-effect intercept <span class="math inline">\(\beta\_0\)</span> as well as <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span>.</p>
+<div id="a-stan-implementation-of-the-bym-model" class="section level3">
+<h3>A Stan Implementation of the BYM Model</h3>
+<p>A Stan model which implements the BYM model for univariate data plus offset is in the file <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/bym_predictor_plus_offset.stan">bym_predictor_plus_offset.stan</a>.</p>
+<pre><code>data {
+  int&lt;lower=0&gt; N;                 // num regions
+  int&lt;lower=0&gt; N_edges;           // num edges, (undirected)
+  int&lt;lower=1, upper=N&gt; node1[N_edges];  // node1[i] adjacent to node2[i]
+  int&lt;lower=1, upper=N&gt; node2[N_edges];  // node1[i] adjacent to node2[i]
+
+  int&lt;lower=0&gt; y[N];              // count outcomes
+  vector[N] x;                    // predictor
+  vector&lt;lower=0&gt;[N] E;           // exposure
+}
+transformed data {
+  vector[N] log_E = log(E);
+}
+parameters {
+  real beta0;                // intercept
+  real beta1;                // slope
+
+  real&lt;lower=0&gt; tau_theta;   // precision of heterogeneous effects
+  real&lt;lower=0&gt; tau_phi;     // precision of spatial effects
+
+  vector[N] theta_std;       // standardized heterogeneous effects
+  vector[N - 1] phi_std_raw; // raw, standardized spatial effects
+}
+transformed parameters {
+  real&lt;lower=0&gt; sigma_theta = inv(sqrt(tau_theta));  // scale of heterogeneous effects
+  vector[N] theta = theta_std * sigma_theta;         // non-centered parameterization
+
+  real&lt;lower=0&gt; sigma_phi = inv(sqrt(tau_phi));      // scal of spatial effects
+  vector[N] phi;
+  phi[1:(N - 1)] = phi_std_raw;
+  phi[N] = -sum(phi_std_raw);
+  phi = phi * sigma_phi;    // non-centered parameterization
+}
+model {
+  y ~ poisson_log(log_E + beta0 + beta1 * x + theta + phi);
+
+  target += -0.5 * dot_self(phi[node1] - phi[node2]);
+
+  beta0 ~ normal(0, inv(sqrt(1e-5)));   // Carlin WinBUGS priors
+  beta1 ~ normal(0, inv(sqrt(1e-5)));
+  theta_std ~ normal(0, 1);
+  tau_theta ~ gamma(3.2761, 1.81);
+  tau_phi ~ gamma(1, 1);
+}
+generated quantities {
+  vector[N] eta = phi + theta;
+  real sd_phi = sd(phi);
+  real sd_theta = sd(theta);
+  real psi = sd_phi / (sd_theta + sd_phi);  // stat from Banerjee et al.
+}</code></pre>
+<p>In the next sections we discuss the data structures and coding idioms used to insure good fit and efficient performance.</p>
+<div id="encoding-the-adjacency-matrix" class="section level4">
+<h4>Encoding the Adjacency Matrix</h4>
+<p>The information needed to compute the IAR spatial variance component of the model is:</p>
+<ul>
+<li><span class="math inline">\(D\)</span> - the <span class="math inline">\(n \times n\)</span> diagonal matrix where <span class="math inline">\(d_{ii}\)</span> = the number of neighbors for region <span class="math inline">\(n_i\)</span></li>
+<li><span class="math inline">\(W\)</span> - the adjacency matrix where <span class="math inline">\(w_{ii} = 0, w_{ij} = 1\)</span> if <span class="math inline">\(i\)</span> is a neighbor of <span class="math inline">\(j\)</span>, and <span class="math inline">\(w_{ij}=0\)</span> otherwise</li>
+</ul>
+<p>A straightforward encoding of the adjacency matrix is as a square matrix with dimensions equal to the number of areal units. Depending on the regularity or irregularity of areal boundaries, the number of neighbors for each region may vary. In a completely regular grid structure each region will have 4 neighbors with which it shares an edge and another 4 regions diagonally adjacent, thus in any row or column, the number of non-zero entries is 4 or 8. The size of the adjacency matrix grows quadratically, while the number of non-zero entries grows linearly, thus the matrix quickly becomes very sparse. Representing a sparse matrix as a full matrix is expensive both in terms of storage and computation; an adjacency matrix for <span class="math inline">\(n\)</span> areal units requires <span class="math inline">\(n^2\)</span> units of memory, and walking over all entries in this matrix requires many needless lookups.</p>
+<p>The information needed from <span class="math inline">\(D\)</span> for the IAR spatial component is an array or vector of length <span class="math inline">\(n\)</span> where each entry <span class="math inline">\(n_i\)</span> contains the number of neighbors for region <span class="math inline">\(n_i\)</span>.</p>
+<p>The information needed from the adjacency matrix is a list of the {i,j} coordinates of the non-zero entries in this matrix. Since these entries all have value <span class="math inline">\(1\)</span>, we don’t need to store this value itself. Since the adjacency matrix is symmetric, we only need store the entries in the upper or lower triangular matrix.</p>
+<p>The data block of the Stan model declares these structures as:</p>
+<pre><code>  int&lt;lower=0&gt; N;                 // num regions
+  int&lt;lower=0&gt; N_edges;           // num edges, (undirected)
+  int&lt;lower=1, upper=N&gt; node1[N_edges];  // node1[i] adjacent to node2[i]
+  int&lt;lower=1, upper=N&gt; node2[N_edges];  // node1[i] adjacent to node2[i]</code></pre>
+<p>To wrangle the data into this format, we have written two R helper functions:</p>
+<ul>
+<li><a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/mungeCARdata4stan.R">mungeCARdata4stan.R</a></li>
+<li><a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/nbdata4stan.R">nbdata4stan.R</a></li>
+</ul>
+<p>The function <code>mungeCARdata4stan</code> is used to translate spatial data from the format required by WinBUGS <code>car.normal</code> function. It takes two inputs, <code>adj</code> which is a list of all neighbors by site id and <code>num</code> which is a list of the number of neighbors for each site. It returns a list containing the input data objects <code>N</code>, <code>N_edges</code>, <code>node1</code>, and <code>node2</code>. The function <code>nbdata4stan</code> is used to translate “nb” objects generated by R’s <a href="https://cran.r-project.org/web/packages/spdep">spdep</a> package. It takes an <code>nb</code> object as input and returns a list containing the input data objects <code>N</code>, <code>N_edges</code>, <code>node1</code>, and <code>node2</code>.</p>
+<p>For both of these functions, the conditional on the innermost loop restricts the edges recorded in the parallel arrays <code>node1</code> and <code>node2</code> to entries in the upper triangular part of the adjacency matrix.</p>
+</div>
+<div id="computing-the-poisson-iar-model" class="section level4">
+<h4>Computing the Poisson-IAR Model</h4>
+<p>The model block specifies the vectorized Poisson regression, working on the log scale:</p>
+<pre><code>  y ~ poisson_log(log_E + beta0 + beta1 * x + theta + phi);</code></pre>
+<p>We use the non-centered parameterization for both random effects components <code>theta</code> and <code>phi</code>.</p>
+<p>The values for the priors are taken from a model on Brad Carlin’s website, also discussed in Banerjee, Carlin, and Gelfand, 2004, chapter 5:</p>
+<pre><code>  beta0 ~ normal(0, inv(sqrt(1e-5)));
+  beta1 ~ normal(0, inv(sqrt(1e-5)));
+  theta_std ~ normal(0, 1);
+  tau_theta ~ gamma(3.2761, 1.81);
+  tau_phi ~ gamma(1, 1);</code></pre>
+<p>Computation of the IAR spatial component <span class="math inline">\(\phi\)</span> is distributed across the transformed parameters block and the model block.</p>
+<p><span class="math inline">\(\phi\)</span> is constrained <span class="math inline">\(\sum_{i} {\phi}_i = 0\)</span>. To meet the sum-to-zero constraint we declare the parameter vector <code>phi_std_raw</code> of length <span class="math inline">\(N-1\)</span>. In the transformed parameters block we declare the <span class="math inline">\(N\)</span>-length vector <code>phi</code> and ensure that it is centered on zero by defining the N-th element as the negation of the sum of the elements 1 through N − 1.</p>
+<pre><code>parameters {
+  ...
+  vector[N - 1] phi_std_raw; // raw, standardized spatial effects
+  ...
+}
+transformed parameters {
+  ...
+  phi[1:(N - 1)] = phi_std_raw;
+  phi[N] = -sum(phi_std_raw);
+  phi = phi * sigma_phi;
+  ...
+}</code></pre>
+<p>Computation of the pairwise difference is done in the model block. From above, <span class="math inline">\(\phi\)</span> is a multivariate normal, with variance <span class="math inline">\([\tau (D - W)]^{-1}\)</span>, which rewrites to:</p>
+<p><span class="math display">\[ p(\phi | \tau) \propto \frac{1}{{\tau}^\frac{n}{2}} \exp \left\{ {- \frac{1}{2\tau}} \sum_{i \sim j}{({\phi}_i - {\phi}_j)}^2 \right\} \]</span></p>
+<p>The corresponding Stan statement is:</p>
+<pre><code>  target += -dot_self(phi[node1] - phi[node2]);</code></pre>
+<p>The expression <code>phi[node1] - phi[node2]</code> uses Stan’s multiple indexing feature to specify an array of integer indexes, thus this is a vectorized subtraction operation, the result of which is a vector. The <code>dot_self</code> function which returns the dot product of this vector with itself, thus computing sum of the squares. Because Stan is computing <span class="math inline">\(\phi\)</span> on the unit scale, <span class="math inline">\(\tau\)</span> is 1, and drops out. The <span class="math inline">\(\frac{1}{2}\)</span> drops out because of symmetry: by using only the upper triangular entries in the adjacency matrix, we want to count them twice. Thus by clever construction of the prior, the data, vectorization, and the fact that Stan computes densities on the unit scale only up to a proportional constant, we can efficiently compute the IAR spatial component <span class="math inline">\(\phi\)</span>.</p>
+</div>
+<div id="fitting-the-model-to-the-scotland-lip-cancer-dataset" class="section level4">
+<h4>Fitting the Model to the Scotland Lip Cancer Dataset</h4>
+<p>To check this model, we run it over the version of the Scotland Lip Cancer dataset from <a href="http://www.biostat.umn.edu/~brad/data2.html">Brad Carlin’s software page</a>, in file “Lipsbrad.odc”. This file contains both the data and the program and inits for the WinBUGS model presented in Banerjee, Carlin, and Gelfand, 2004, chapter 5. Following the Carlin model, where covariate <code>aff</code> is divided by 10, we multiply the <code>x</code> covariate by 0.1, as multiplication is more efficient than division. A Stan model which matches the Carlin model is in the file <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/bym_carlin_scotland.stan">bym_carlin_scotland.stan</a>. It is exactly the same as the above model, save for the Poisson regression which is:</p>
+<pre><code>  y ~ poisson_log(log_E + beta0 + 0.1 * beta1 * x + theta + phi);</code></pre>
+<p>We run this program using the Rstan interface via the R script: <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/fit_scot_stan.R">fit_scot_stan.R</a></p>
+<p>After running this script, we print a subset of the fitted parameters to check that the sampler was able to fit the data; all Rhat values should be very close to 1.0, and the number of effective samples should be in the thousands.</p>
+<pre><code>Inference for Stan model: bym_carlin_scotland.
+4 chains, each with iter=2000; warmup=1000; thin=1; 
+post-warmup draws per chain=1000, total post-warmup draws=4000.
+
+                mean se_mean     sd     2.5%    97.5% n_eff   Rhat
+lp__        738.2810  0.2892 9.2946 719.1322 755.3245  1033 1.0012
+beta0        -0.2404  0.0040 0.1834  -0.6113   0.0963  2115 1.0001
+beta1         0.3489  0.0042 0.1887  -0.0166   0.7141  2046 0.9999
+tau_theta     4.6202  0.0211 1.3359   2.4931   7.7349  4000 1.0011
+tau_phi      28.3956  0.1160 5.2146  18.9391  39.1702  2021 0.9995
+sigma_theta   0.4797  0.0011 0.0695   0.3596   0.6333  4000 1.0007
+sigma_phi     0.1901  0.0004 0.0180   0.1598   0.2298  1961 0.9997
+psi           0.6216  0.0008 0.0438   0.5302   0.7012  2806 0.9995
+eta[1]        1.3674  0.0055 0.3450   0.6600   2.0099  4000 0.9993
+eta[2]        1.1551  0.0040 0.2254   0.7041   1.5922  3190 0.9992
+
+Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:02:04 2017.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).</code></pre>
+</div>
+</div>
+<div id="a-winbugs-implementation-of-the-bym-model" class="section level3">
+<h3>A WinBUGS Implementation of the BYM Model</h3>
+<p>The program and data for the WinBUGS model, are available from <a href="http://www.biostat.umn.edu/~brad/data2.html">Brad Carlin’s software page</a>, in file “Lipsbrad.odc”.</p>
+<p>The WinBUGS model is in file <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/carlin_bym.txt">carlin_bym.txt</a>.</p>
+<pre><code>carlin_bym &lt;- function() {
+for (i in 1 : N) {
+      y[i] ~ dpois(mu[i])
+      log(mu[i]) &lt;- log(E[i]) + beta0 + beta1*x[i]/10 + phi[i] + theta[i]*tau_theta
+      theta[i] ~ dnorm(0.0, 1.0)  # non-centered theta, std normal
+      eta[i] &lt;- theta[i] + phi[i]
+   }
+   phi[1:N] ~ car.normal(adj[], weights[], num[], tau_phi)
+
+   beta0 ~ dnorm(0.0, 1.0E-5)  # vague prior on grand intercept
+   beta1 ~ dnorm(0.0, 1.0E-5)  # vague prior on covariate effect
+
+   tau_theta ~ dgamma(3.2761, 1.81)
+   tau_phi ~ dgamma(1.0, 1.0)
+
+   sd_theta &lt;- sd(theta[]) # marginal SD of heterogeneity effects
+   sd_phi &lt;- sd(phi[])   # marginal SD of clustering (spatial) effects
+   psi &lt;- sd_theta / (sd_theta + sd_phi)  # proportion spatial variance
+}</code></pre>
+<p>The data file <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/carlin_data.R">carlin_data.R</a> contains the following objects:</p>
+<ul>
+<li><code>O</code>: the observed lip cancer case counts on a per-county basis</li>
+<li><code>aff</code>: an area-specific continuous covariate that represents the proportion of the population employed in agriculture, fishing, or forestry (AFF)</li>
+<li><code>E</code>: the an expected number of cases, used as an offset,</li>
+<li><code>adj</code>: a list of region ids for adjacent regions</li>
+<li><code>num</code>: a list of the number of neighbors for each region</li>
+</ul>
+<p>Data items <code>adj</code> and <code>num</code> are used as input to the WinBUGS function <code>car.normal</code> which computes the values of the elements for the zero-centered spatial component <span class="math inline">\(\phi\)</span>.</p>
+<p>In the WinBUGS program, the formula for the Poisson regression is:</p>
+<pre><code>O[i] ~ dpois(mu[i])
+log(mu[i]) &lt;- log(E[i]) + beta0 + beta1*aff[i]/10 + phi[i] + theta[i]</code></pre>
+<p>(Note that the covariate term <code>aff</code> is divided by 10).</p>
+<p>To compare this model to the Stan model, we include an R script to run the WinBUGS model in OpenBUGS on the same data: <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/fit_scot_bugs.R">fit_scot_bugs.R</a> After running the model, we use the function <code>rstan::monitor</code> to compare the Stan fit with OpenBUGS fit of the WinBUGS model. The WinBUGS model uses the suffix “.h” for the heterogeneous random effects component which is “theta” in the Stan model, and it uses the suffix “.c” for the IAR spatial effect component which is “phi” in the Stan model. The WinBUGS program “alpha” corresponds to the Stan quantity “psi” and the WinBUGS “xi” corresponds to the Stan quantities “eta”.</p>
+<pre><code>                mean  se_mean      sd      2.5%        25%        50%        75%     97.5% n_eff   Rhat
+beta0      -0.292821 0.004952 0.16362  -0.62310  -0.402500  -0.291000 -1.829e-01   0.02528  1092 1.0024
+beta1       0.430032 0.005346 0.15983   0.11229   0.324500   0.431900  5.372e-01   0.73861   894 1.0032
+tau.h       4.630522 0.025351 1.28887   2.50900   3.712500   4.490000  5.402e+00   7.52117  2585 1.0055
+tau.c       2.517394 0.026565 1.00376   1.07000   1.790000   2.348000  3.057e+00   4.92312  1428 1.0014
+sd.h        0.428034 0.001392 0.06218   0.31800   0.384600   0.424000  4.663e-01   0.56290  1996 1.0064
+sd.c        0.576708 0.002922 0.09117   0.40339   0.514800   0.574900  6.357e-01   0.76640   974 1.0058
+alpha       0.572579 0.001709 0.05567   0.45330   0.537900   0.576200  6.115e-01   0.67130  1061 1.0103
+xi[1]       1.232006 0.004781 0.34157   0.53658   1.009000   1.239000  1.469e+00   1.88002  5104 1.0007
+xi[2]       1.066722 0.004442 0.20843   0.66020   0.925175   1.068000  1.208e+00   1.47402  2202 1.0011</code></pre>
+<p>These estimates are not within <code>se_mean</code> of one another, although they do get similar estimates for the slope and intercept terms of the poisson regression as well as the quantities <code>eta</code> and <code>xi</code>. As noted above, the Stan models use the non-centered parameterization for both <code>theta</code> and <code>phi</code>. This could also be due to the difference between the Gibbs sampler and the NUTS HMC sampler.</p>
+</div>
+</div>
+<div id="from-56-counties-in-scotland-to-709-census-tracts-in-brooklyn" class="section level2">
+<h2>From 56 Counties in Scotland to 709 Census Tracts in Brooklyn</h2>
+<p>To demonstrate the scalability of using Stan to compute a spatial IAR component, we analyze the Brooklyn subset of the dataset from <a href="https://www.ncbi.nlm.nih.gov/pubmed/25643104">Small-area spatiotemporal analysis of pedestrian and bicyclist injuries in New York City</a> which was compiled from all reported traffic accidents involving a car and either a pedestrian or bicyclist in New York City in 2001, localized to the census tract level.</p>
+<p>The traffic accident data is in the file <code>nyc_ped_subset.data.R</code>. It contains a list of census tract IDs, the count of events per tract (<code>y</code>), and the rate-adjusted population per tract (<code>x</code>).</p>
+<p><img src="IAR_Stan_files/figure-html/nyc-data-xy-plot-1.png" width="672" /></p>
+<p>The Stan program is in the file <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/bym_predictor_only.stan">bym_predictor_only.stan</a>. This program implements the BYM model for univariate data without an offset term.</p>
+<p>Spatial information is in a set of files in directory <code>nycTracts10</code>. The spatial information for the census tracts is obtained via the R <code>maptools</code> and <code>spdep</code> packages. We use these packages to create an <code>nb</code> object which is a list of all neighbors for each census tract. Each list entry is itself a list containing the relative index of the neighboring regions. We have written an R helper function <code>nbdata4stan</code> that take an <code>nb</code> object as input and returns a list containing the input data objects <code>N</code>, <code>N_edges,</code>node1<code>, and</code>node2`.</p>
+<p>We fit this model using only the Brooklyn census tracts, so that all areal units have at least one neighbor. There are 709 census tracts, more than 10x’s the number of counties in the Scotland lip cancer dataset. We assemble the Brooklyn data and fit the model Rstan interface via the R script: <a href="https://github.com/stan-dev/example-models/tree/master/knitr/car-iar-poisson/fit_brooklyn.R">fit_brooklyn.R</a></p>
+<p>This script uses R’s <code>proc.time()</code> function to measure how long this model takes to fit the data. On a MacBook Pro with 8G of memory and 2 processors, the reported times in seconds are:</p>
+<pre><code>   user  system elapsed 
+ 21.097   1.632 200.232 </code></pre>
+<p>The Rhat and Neff numbers indicates that the model has fit the data:</p>
+<pre><code>Inference for Stan model: bym_predictor_only.
+4 chains, each with iter=5000; warmup=2500; thin=1; 
+post-warmup draws per chain=2500, total post-warmup draws=10000.
+
+               mean se_mean    sd    2.5%     50%   97.5% n_eff Rhat
+lp__        9708.89    0.80 36.32 9636.93 9709.29 9779.36  2063    1
+beta0          1.19    0.00  0.09    1.02    1.19    1.36  3226    1
+beta1          0.07    0.00  0.01    0.05    0.07    0.09  2873    1
+tau_theta      4.33    0.01  0.60    3.32    4.27    5.64  2826    1
+tau_phi      354.64    0.35 18.93  318.79  354.36  392.69  2877    1
+sigma_theta    0.48    0.00  0.03    0.42    0.48    0.55  2805    1
+sigma_phi      0.05    0.00  0.00    0.05    0.05    0.06  2858    1
+psi            0.64    0.00  0.02    0.61    0.64    0.67  2865    1
+eta[1]        -1.17    0.01  0.51   -2.20   -1.15   -0.24 10000    1
+eta[2]         1.24    0.00  0.26    0.72    1.25    1.73 10000    1
+eta[3]        -1.40    0.01  0.59   -2.62   -1.37   -0.35 10000    1
+eta[4]        -0.50    0.00  0.43   -1.41   -0.47    0.28 10000    1
+eta[709]      -0.54    0.00  0.45   -1.47   -0.52    0.28 10000    1
+
+Samples were drawn using NUTS(diag_e) at Tue Jun 27 21:06:41 2017.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).</code></pre>
+<p>We can compare these results to using a simple Poisson GLM to fit this data:</p>
+<pre><code>
+Call:  glm(formula = y ~ x, family = &quot;poisson&quot;)
+
+Coefficients:
+(Intercept)            x  
+     1.3402       0.1117  
+
+Degrees of Freedom: 708 Total (i.e. Null);  707 Residual
+Null Deviance:      7201 
+Residual Deviance: 6354     AIC: 8741</code></pre>
+<p>We use <code>ggplot2</code> and related packages to plot the Brooklyn census tracts colored by event counts, scaled population, and the generated quantity “mu” which recovers the number of events based on the data and the samples. Note that some Brooklyn census tracts are not in the study.</p>
+<pre class="r"><code>grid.arrange(events_plot, pop_plot, bym_plot, poisson_plot, ncol=2)</code></pre>
+<p><img src="IAR_Stan_files/figure-html/plot-brooklyn-1.png" width="672" /></p>
+<div id="discussion" class="section level3">
+<h3>Discussion</h3>
+<p>The models developed in this case study allow for analysis of relatively large datasets; for the last model in this case study, given a dataset with 709 areal units, the fitted model had approximately 1400 parameters.</p>
+<p>The scalability of IAR models derives from the nature of the covariance matrix and the fact that Stan computes proportional densities, so that constant terms drop out. Furthermore, because spatial adjacency matrices are sparse for large numbers of areal units <span class="math inline">\(N\)</span>, efficient representations of the contents of these matrices provides substantial speedup over trying to compute using a full <span class="math inline">\(N \times N\)</span> matrix.</p>
+</div>
+<div id="acknowledgements" class="section level3">
+<h3>Acknowledgements</h3>
+<p>Many thanks to Daniel Simpson, Rob Trangucci, Imad Ali, Andrew Gelman, and Bob Carpenter for all their help and encouragement.</p>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<div id="literature" class="section level4">
+<h4>Literature</h4>
+<ul>
+<li><p>Banerjee, Sudipto, Alan E. Gelfand, and Bradley P. Carlin. “Hierarchical modeling and analysis for spatial data.” (2003).</p></li>
+<li><p>Besag, Julian. “Spatial interaction and the statistical analysis of lattice systems.” Journal of the Royal Statistical Society. Series B (Methodological) (1974): 192-236.</p></li>
+<li><p>Besag, Julian, and Charles Kooperberg. “On conditional and intrinsic autoregression.” Biometrika (1995): 733-746.</p></li>
+<li><p>Besag, J., J. York, and A. Mollie. “Bayesian image restoration with two applications in spatial statistics (with discussion) Ann Inst Stat Math. 1991; 43: 1–59. doi: 10.1007.” BF00116466.[Cross Ref].</p></li>
+<li><p>Haran, Murali. “Gaussian random field models for spatial data.” Handbook of Markov Chain Monte Carlo (2011): 449-478.</p></li>
+</ul>
+</div>
+<div id="r-packages" class="section level4">
+<h4>R Packages</h4>
+<ul>
+<li><p>Statistics: <a href="http://mc-stan.org/rstan.html">RStan</a></p></li>
+<li><p>Plots: <a href="http://ggplot2.org">ggplot2</a>, <a href="https://cran.r-project.org/web/packages/dplyr">dplyr</a>, <a href="https://cran.r-project.org/web/packages/gridExtra">gridExtra</a></p></li>
+<li><p>Spatial Data: <a href="https://cran.r-project.org/web/packages/maptools">maptools</a>, <a href="https://cran.r-project.org/web/packages/spdep">spdep</a>, <a href="https://cran.r-project.org/web/packages/gpclib">gpclib</a></p></li>
+</ul>
+</div>
+</div>
+<div id="licenses" class="section level3">
+<h3>Licenses</h3>
+<p><small> <strong>Code:</strong> Copyright (2017) Columbia University. Released under the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-clause license</a>. </small></p>
+<p><small> <strong>Text:</strong> Copyright (2017) Mitzi Morris. Released under the the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</a>. </small></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
