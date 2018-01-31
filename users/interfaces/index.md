@@ -38,18 +38,23 @@ through interfaces into many popular computing environments.
 * [MathematicaStan](mathematica-stan.html)
   <span class="note">(Mathematica)</span>
 
-* [ScalaStan](https://github.com/cibotech/ScalaStan)
-  <span class="note">(Scala)</span>
-
 Programs written in the Stan modeling language are portable
 across interfaces.
+
+# Alternative Interfaces
+
+Alternatives to Stan's modeling language for expressing models that
+make use of Stan's math library and algorithms.
+
+* [ScalaStan](https://github.com/cibotech/ScalaStan)
+  <span class="note">(Scala)</span>
 
 # Higher-Level Interfaces
 
 RStanArm provides an R formula interface for Bayesian regression
 modeling.
 
-* <p>  
+* <p>
   <a href="/users/interfaces/rstanarm.html">RStanArm</a>
   <span class="note">(R)</span>
   </p>
