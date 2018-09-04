@@ -132,9 +132,8 @@ Location: [Aalto University, Töölö campus, Runeberginkatu 14-16, Helsinki](ht
 
 10:00 - 10:45 **Coffee break**
 
-10:45 - 11:45 **Contributed Talks: Session 1**   
-**Session Chair: Richard McElreath**  
-  
+10:45 - 11:45 **Contributed Talks: Session 1**
+
 * **Arya A. Pourzanjani**, Tie Bo Wu, Benjamin B. Bales, Linda R. Petzold	*Relating Disparate Measures of Coagulapathy Using Unorthodox Data: A Hybrid Mechanistic-Statistical Approach*
 * **Martin Modrák** *ODE Model of Gene Regulation*
 * **Sebastian Weber and Eero Siivola** *Solving ODEs in the wild: Scalable pharmacometrics with Stan*
@@ -145,7 +144,7 @@ Location: [Aalto University, Töölö campus, Runeberginkatu 14-16, Helsinki](ht
 
 13:00 - 14:00 **Contributed Talks: Session 2**  
 **Session Chair: Theresa Smith**  
-  
+
 * **Iiris Sundin**	*Using counterfactual queries to improve models for decision-support*
 * **Alex Braylan and Daniel Marthaler**  *Self-tuning Holidays*
 * **Jari Turkia**	*Modeling the Effects of Nutrition with Mixed-Effect Bayesian Network*
@@ -156,6 +155,7 @@ Location: [Aalto University, Töölö campus, Runeberginkatu 14-16, Helsinki](ht
 14:45 - 15:00 **Poster Spotlights**
 
 15:00 - 15:45 **Coffee Break**
+
 
 15:45 - 16:45 **Contributed Talks: Session 3**   
 **Session Chair: Ilaria Prosdocimi**   
@@ -182,8 +182,8 @@ Location: [Aalto University, Töölö campus, Runeberginkatu 14-16, Helsinki](ht
 
 10:00 - 10:45 **Coffee Break**
 
-10:45 - 11:45 **Contributed Talks: Session 4**   
-**Session Chair: Maggie Lieu**   
+10:45 - 11:45 **Contributed Talks: Session 4**
+
 * **Bruno Nicenboim** *The implementation of a model of choice: the (truncated) linear ballistic accumulator.*
 * **Ville Laitinen** & Leo Lahti *A Hierarchical extension to Ornstein-Uhlenbeck-type Student’s t-processes*
 * **Christopher Hammill** & Jason Lerch	*Analyzing Brain Structure Trees with Stan*
@@ -193,6 +193,7 @@ Location: [Aalto University, Töölö campus, Runeberginkatu 14-16, Helsinki](ht
 12:00 - 13:00 **Lunch**
 
 13:00 - 14:00 **Contributed Talks: Session 5**  
+
 **Session Chair: Daniel Simpson**   
 * **Jonathan Auerbach,** Timothy Jones, and Robin Winstanley *Predicting New York City School Enrollment*
 * **Leo Egidi**, F. Pauli & N. Torelli	*Are shots predictive of soccer results?*
