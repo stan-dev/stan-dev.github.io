@@ -1,0 +1,50 @@
+<div class="site_search">
+  <form id="site_search" action="javascript:searchItem();">
+    <input type="search" id="q" name="query" placeholder="enter search terms" required>
+    <button type="submit" class="icon"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+
+<ul id="search_results"></ul>
+
+<script>
+    function searchItem() {
+        'use strict';
+
+        var search = document.getElementById('q').value.toLowerCase();
+        if (search == null) return false;
+        console.log(search);
+        
+        var urlIndex = '/searchIdx.json';
+        var index, store;
+        var data = $.getJSON(urlIndex);
+        data.then(function(data) {
+	    index = lunr.Index.load(data.index);
+	    store = data.store;
+	    console.log("loaded");
+        
+	    console.log("searching...");
+	    var query = $("#q").val();
+	    console.log("query: " + query);
+ 	        var results = index.search(query);
+	        console.log(results.length);
+	        var $search_results = $("#search_results");
+	        $search_results.empty(); // Clear any old results
+	        if (results.length) {
+		    results.forEach(function(result) {
+	                console.log(result.ref);
+		        var appendString = '<li><a href="' +
+			    result.ref +
+			    '">' + 
+			    store[result.ref].title +
+			    '</a></li>';
+		        $search_results.append(appendString);
+		    });
+	        } else {
+		    $search_results.html('<li>No results found</li>');
+	        }
+	    console.log("done");
+	    return false;
+        });
+    };
+</script>

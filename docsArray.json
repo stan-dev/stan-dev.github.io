@@ -1,0 +1,17 @@
+---
+---
+[
+  {% assign first = true %}
+  {% for page in site.pages %}
+    {% capture page_text %}{{ page.content | newline_to_br | replace: '<br />', ' ' | strip_html | strip_newlines}}{% endcapture %}
+    {% capture page_url %}{{ page.url}}{% endcapture %}
+    {% if page_url contains '/users/documentation' or page_url contains '/users/interfaces' or page_url contains '/misc' %}
+      {% if first == true %}  {% assign first = false %} {% else %}, {% endif %}
+      { "title"    : "{{ page.title | escape }}",
+        "content_short"	 : {{ page_text | truncatewords: 100 | jsonify }},
+        "content_long"	 : {{ page_text | truncatewords: 2500 |jsonify }},
+        "url"      : "{{ page_url }}"
+      }
+    {% endif %}
+  {% endfor %}
+]

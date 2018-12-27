@@ -1,3 +1,6 @@
+---
+title: "Spatial Models in Stan: Intrinsic Auto-Regressive Models for Areal Data"
+---
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -335,7 +338,7 @@ div.quote-container blockquote {  font-size: small; }
 <section id="conditional-auto-regressive-car-models" class="level3">
 <h3>Conditional Auto-Regressive (CAR) Models</h3>
 <p>Besag (1974) motivates CAR models for spatial processes using results from the physics of lattice systems of particles and the Hammersley-Clifford theorem which provides an equivalence between a local specification of the conditional distribution of each particle given its neighboring particles and the global specification of the joint distribution of all particles. This specification of the joint distribution via the local specification of the conditional distributions of the individual variables is a Markov random field (MRF) specification. The conditional distribution for each <span class="math inline">\({\phi}_i\)</span> is specified in terms of a mean and precision parameter <span class="math inline">\(\tau\)</span> as:</p>
-<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, {{\tau}_i}^{-1} \right)
+<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, { {\tau}_i}^{-1} \right)
 = \mathit{N} \left( \alpha \sum_{i \sim j} {w}_{i,j} {\phi}_j,\tau_i^{-1} \right), i,j = 1, \ldots, n \]</span></p>
 <p>The parameter <span class="math inline">\(\alpha\)</span> controls the strength of the spatial association, where <span class="math inline">\(\alpha = 0\)</span> corresponds to spatial independence.</p>
 <p>The corresponding joint distribution can be uniquely determined from the set of full conditional distributions by introducing a fixed point from the support of <span class="math inline">\(p\)</span> and then using Brook’s Lemma to factor the set of conditional distributions into a joint distribution which is determined up to a proportionality constant (see Banerjee, Carlin, and Gelfand, 2004, sec. 3.2):</p>
@@ -359,7 +362,7 @@ div.quote-container blockquote {  font-size: small; }
 <li><span class="math inline">\(B\)</span> is the scaled weights matrix <span class="math inline">\(W / D\)</span>, where <span class="math inline">\(W\)</span> is uses a binary encoding such that <span class="math inline">\(w_{i,i} = 0, w_{i,j} = 1\)</span> if <span class="math inline">\(i\)</span> is a neighbor of <span class="math inline">\(j\)</span>, and <span class="math inline">\(w_{i,j}=0\)</span> otherwise</li>
 </ul>
 <p>The corresponding conditional distribution specification is:</p>
-<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, {{\tau}_i}^{-1} \right)
+<p><span class="math display">\[ p \left( { \phi }_i \, \vert\, {\phi}_j \, j \neq i, { {\tau}_i}^{-1} \right)
 = \mathit{N} \left( \frac{\sum_{i \sim j} {\phi}_{i}}{d_{i,i}}, \frac{1}{d_{i,i} {\tau}_i} \right)\]</span></p>
 <p>where <span class="math inline">\(d_{i,i}\)</span> is the number of neighbors for region <span class="math inline">\(n_i\)</span>. The individual spatial random variable <span class="math inline">\({\phi}_i\)</span> for region <span class="math inline">\(n_i\)</span> which has a set of neighbors <span class="math inline">\(j \neq i\)</span> whose cardinality is <span class="math inline">\(d_{i,i}\)</span>, is normally distributed with a mean equal to the average of its neighbors. Its variance decreases as the number of neighbors increases.</p>
 <p>The joint distribution simplifies to:</p>
@@ -385,13 +388,13 @@ div.quote-container blockquote {  font-size: small; }
 \log p(\phi) &amp;=  -{\frac{1}{2}} {\phi}^T [D - W] \phi + \mbox{const} \\
 &amp;= -{\frac{1}{2}} \left( \sum_{i,j} {\phi}_i {[D - W]}_{i,j} {\phi}_j \right) + \mbox{const} \\
 &amp;= -{\frac{1}{2}} \left( \sum_{i,j} {\phi}_i\,{\phi}_j D_{i,j} - \sum_{i,j} {\phi}_i\,{\phi}_j W_{i,j} \right) + \mbox{const} \\
-&amp;= -{\frac{1}{2}} \left( \sum_{i} {{\phi}_i}^2\,D_{i,i} - \sum_{i \sim j} 2\ {\phi}_i\,{\phi}_j \right) + \mbox{const} \\
-&amp;= -{\frac{1}{2}} \left( \sum_{i \sim j} ({{\phi}_i}^2 + {{\phi}_j}^2) - \sum_{i \sim j} 2\ {\phi}_i\,{\phi}_j \right) + \mbox{const} \\
-&amp;= -{\frac{1}{2}} \left( \sum_{i \sim j} {{\phi}_i}^2 - 2\ {\phi}_i\,{\phi}_j + {{\phi}_j}^2 \right) + \mbox{const} \\
+&amp;= -{\frac{1}{2}} \left( \sum_{i} { {\phi}_i}^2\,D_{i,i} - \sum_{i \sim j} 2\ {\phi}_i\,{\phi}_j \right) + \mbox{const} \\
+&amp;= -{\frac{1}{2}} \left( \sum_{i \sim j} ({ {\phi}_i}^2 + { {\phi}_j}^2) - \sum_{i \sim j} 2\ {\phi}_i\,{\phi}_j \right) + \mbox{const} \\
+&amp;= -{\frac{1}{2}} \left( \sum_{i \sim j} { {\phi}_i}^2 - 2\ {\phi}_i\,{\phi}_j + { {\phi}_j}^2 \right) + \mbox{const} \\
 &amp;= -{\frac{1}{2}} \left( \sum_{i \sim j} {({\phi}_i - {\phi}_j)}^2 \right) + \mbox{const}
 \end{align}
 \]</span></p>
-<p>Since <span class="math inline">\(D\)</span> is the diagonal matrix where <span class="math inline">\(D_{i,i}\)</span> is the number of neighbors and the off-diagonal entries have value <span class="math inline">\(0\)</span>. The expression <span class="math inline">\(\sum_{i,j} {\phi}_i\,{\phi}_j D_{i,j}\)</span> rewrites to terms <span class="math inline">\({{\phi}_i}^2\)</span> where the number of each <span class="math inline">\({\phi_i}\)</span> terms is given by <span class="math inline">\(D_{i,i}\)</span>. For each pair of adjacent regions <span class="math inline">\(\{i,j\}\)</span> and <span class="math inline">\(\{j,i\}\)</span>, one <span class="math inline">\({\phi}^2\)</span> term each is contributed, so we can rewrite this in terms of <span class="math inline">\(i \sim j\)</span>. Since <span class="math inline">\(W\)</span> is the adjacency matrix where <span class="math inline">\(w_{ii} = 0, w_{ij} = 1\)</span> if <span class="math inline">\(i\)</span> is a neighbor of <span class="math inline">\(j\)</span>, and <span class="math inline">\(w_{ij}=0\)</span> otherwise, the expression <span class="math inline">\(\sum_{i,j} {\phi}_i\,{\phi}_j W_{i,j}\)</span> rewrite to terms <span class="math inline">\(2 \, {\phi}_i {\phi}_j\)</span>, since there are two entries in <span class="math inline">\(W\)</span> for each pair of adjacent regions. When both expressions are over <span class="math inline">\(i \sim j\)</span>, we combine, rearrange, and reduce.</p>
+<p>Since <span class="math inline">\(D\)</span> is the diagonal matrix where <span class="math inline">\(D_{i,i}\)</span> is the number of neighbors and the off-diagonal entries have value <span class="math inline">\(0\)</span>. The expression <span class="math inline">\(\sum_{i,j} {\phi}_i\,{\phi}_j D_{i,j}\)</span> rewrites to terms <span class="math inline">\({ {\phi}_i}^2\)</span> where the number of each <span class="math inline">\({\phi_i}\)</span> terms is given by <span class="math inline">\(D_{i,i}\)</span>. For each pair of adjacent regions <span class="math inline">\(\{i,j\}\)</span> and <span class="math inline">\(\{j,i\}\)</span>, one <span class="math inline">\({\phi}^2\)</span> term each is contributed, so we can rewrite this in terms of <span class="math inline">\(i \sim j\)</span>. Since <span class="math inline">\(W\)</span> is the adjacency matrix where <span class="math inline">\(w_{ii} = 0, w_{ij} = 1\)</span> if <span class="math inline">\(i\)</span> is a neighbor of <span class="math inline">\(j\)</span>, and <span class="math inline">\(w_{ij}=0\)</span> otherwise, the expression <span class="math inline">\(\sum_{i,j} {\phi}_i\,{\phi}_j W_{i,j}\)</span> rewrite to terms <span class="math inline">\(2 \, {\phi}_i {\phi}_j\)</span>, since there are two entries in <span class="math inline">\(W\)</span> for each pair of adjacent regions. When both expressions are over <span class="math inline">\(i \sim j\)</span>, we combine, rearrange, and reduce.</p>
 <p>We check our work by a simple example using 4 regions <span class="math inline">\(\{a, b, c, d\}\)</span> where <span class="math inline">\(a\)</span> is adjacent to <span class="math inline">\(b\)</span>, <span class="math inline">\(b\)</span> is adjacent to <span class="math inline">\(c\)</span>, and <span class="math inline">\(c\)</span> is adjacent to <span class="math inline">\(d\)</span>. The diagonal matrix <span class="math inline">\(D\)</span> <span class="math display">\[\begin{pmatrix}\ 1\ 0\ 0\ 0\ \\
 \ 0\ 2\ 0\ 0\ \\
 \ 0\ 0\ 2\ 0\ \\
