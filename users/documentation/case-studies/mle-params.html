@@ -475,7 +475,7 @@ model {
   for (n in 1:N) 
     y[n] ~ bernoulli(theta); 
   theta ~ uniform(0, 1); 
-  increment_log_prob(log(theta) + log(1 - theta)); 
+  increment_log_prob(-theta - 2 * log1p_exp(-theta));
 } </code></pre>
 <p>This is not the most efficient Stan model; the likelihood may be implemented with <code>bernoulli_logit</code> rather than an explicit application of <code>inv_logit</code>, the likelihood may be vectorized, the constant uniform may be dropped, and the efficient and stable <code>log_inv_logit</code> and <code>log1m_inv_logit</code> may be used for the Jacobian calculation. The more arithmetically stable form (and the more efficient form if <code>theta</code> is not available) is as follows.</p>
 <pre><code>model {
