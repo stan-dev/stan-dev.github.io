@@ -32,6 +32,27 @@ for code, Creative Commons for text)</span>; authors retain all copyright.
 <hr style="margin:0.25em 0 0.25em 0;"/>
 <hr style="margin:0 0 2em 0;"/>
 
+## Probabilistic A/B Testing with Stan
+
+<small>Statisticians, Data Scientists, etc. should not make business decisions; they should facilitate them. This case study shows how basic A/B testing using Stan and Bayesian methods can achieve this. In practice, we find this approach useful given its ability to quantify domain-specific business knowledge and hypotheses through the use of prior distributions. Instead of using p-values and confidence intervals, we are able to perform inference with probability and credible intervals directly on posterior predictions. In addition to our results being highly interpretable, this approach gives us the ability to quantify business risk.</small>
+
+[View](case-studies/ab-testing.html) <span class="note">(HTML)</span>
+
+Author
+: Imad Ali
+
+Keywords
+: a/b testing, hypothesis testing, randomized controlled trials
+
+Source Repository
+: [imadmali/ab-testing](https://github.com/imadmali/ab-testing)
+<span class="note">(GitHub)</span>
+
+R Package Dependencies
+: <tt style="font-size: 90%">rstanarm, rstan</tt>
+
+License
+:  BSD (3 clause), CC-BY-NC
 
 ## Model-based Inference for Causal Effects in Completely Randomized Experiments
 
@@ -49,11 +70,11 @@ Source Repository
 : [example-models/education/causal_rct](https://github.com/stan-dev/example-models/tree/master/education/causal_rct)
 
 R Package Dependencies
-: <tt style="font-size: 90%">rstan</tt>, 
-<tt style="font-size: 90%">rstanarm</tt>, 
-<tt style="font-size: 90%">bayesplot</tt>, 
-<tt style="font-size: 90%">tidyverse</tt>, 
-<tt style="font-size: 90%">gridExtra</tt>, 
+: <tt style="font-size: 90%">rstan</tt>,
+<tt style="font-size: 90%">rstanarm</tt>,
+<tt style="font-size: 90%">bayesplot</tt>,
+<tt style="font-size: 90%">tidyverse</tt>,
+<tt style="font-size: 90%">gridExtra</tt>,
 <tt style="font-size: 90%">Matching</tt>
 
 License
