@@ -12,9 +12,9 @@ image:
 The Stan name and logo are registered trademarks of
 [NumFOCUS](http://numfocus.org/) under the direction of the [Stan Governing Body](/about#stan-governing-body-sgb).
 
-Both may be freely used when referencing Stan, such as in a blog post or lecture
-notes, but they may not be used in the branding of commercial entities, such
-as software packages or paid courses, without the express license of the Stan
+Both may be freely used when referencing Stan, such as in blog posts, lecture
+notes, or opensourced software packages, but they may not be used in the branding of commercial entities, such
+as paid software packages or paid courses, without the express license of the Stan
 leadership board.  If you have any questions or would like to inquire about
 licensing the Stan name and/or logo for a commercial venture then please contact
 NumFOCUS.
