@@ -54,7 +54,7 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 **Instructor:** Daniel Lee.
 
 **Cognitive diagnostic models in R and Stan**\
-**Instructor:** W. Jake Thompson, PhD (Assistant Director of Psychometrics | ATLAS | University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
+**Instructor:** Jake Thompson (University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
 
 ### ....
 
