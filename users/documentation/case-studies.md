@@ -27,10 +27,144 @@ versions noted and seeds fixed)</span> and
 * an open-source code license <span class="note">(preferably BSD or GPL
 for code, Creative Commons for text)</span>; authors retain all copyright.
 
+
+# *Stan Case Studies*, &nbsp; Volume 9 &nbsp; (2022)
+
+<hr style="margin:0.25em 0 0.25em 0;"/>
+<hr style="margin:0 0 2em 0;"/>
+
+##  Multilevel regression modeling with CmdStanPy and plotnine
+<small> This notebook is a short introduction to multilevel regression modeling
+using the [CmdStanPy](https://mc-stan.org/cmdstanpy/) interface and
+[plotnine](https://plotnine.readthedocs.io/en/stable/), a Python implementation
+of a [_grammar of graphics_](https://vita.had.co.nz/papers/layered-grammar.pdf)
+based on [ggplot2](https://en.wikipedia.org/wiki/Ggplot2).
+
+
+[View](case-studies/radon_cmdstanpy_plotnine.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Mitzi Morris
+
+Keywords
+: Python, CmdStanPy, plotnine, hierarchical/multilevel modeling,
+linear regression, posterior predictive checks, radon
+
+Source Repository
+: [example-models/jupyter/radon](https://github.com/stan-dev/example-models/tree/master/jupyter/radon)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> cmdstanpy, numpy, pandas, matplotlib, plotnine, jupyter </tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+
+
+## HoloML in Stan: Low-photon Image Reconstruction
+<small> In this case study, we perform image reconstruction in Stan by implementing the HoloML phase retrieval model and then solving the inverse problem with optimization. This case study requires Stan 2.30 or greater in order to use the Fourier transform functions added in that version. </small>
+
+[View](case-studies/HoloML_in_Stan.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Brian Ward, Bob Carpenter, and David Barmherzig
+
+Keywords
+: image reconstruction, phase retrieval, Fourier transforms, deconvolution
+
+Source Repository
+: [WardBrian/holoml-in-stan](https://github.com/WardBrian/holoml-in-stan)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> cmdstanpy, numpy, matplotlib, scipy, jupyter </tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+
+
+# *Stan Case Studies*, &nbsp; Volume 8 &nbsp; (2021)
+
+<hr style="margin:0.25em 0 0.25em 0;"/>
+<hr style="margin:0 0 2em 0;"/>
+
+## Bayesian Latent Class Models and Handling of Label Switching
+<small> In this case study, we fit the Bayesian latent class model using Hamiltonian Monte Carlo sampling and Variational Bayes in Stan and illustrate the issue of label switching and its treatment with simulated and empirical data. </small>
+
+[View](case-studies/Latent_class_case_study.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Feng Ji, Aybolek Amanmyradova, Sophia Rabe-Hesketh
+
+Keywords
+: latent class models, label-switching, post-hoc relabeling, variational Bayes
+
+Source Repository
+: [example-models/education/latent_class](https://github.com/education-stan/example-models/tree/master/education/latent_class)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> label.switching, rstan, magrittr, knitr, poLCA </tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+
 # *Stan Case Studies*, &nbsp; Volume 7 &nbsp; (2020)
 
 <hr style="margin:0.25em 0 0.25em 0;"/>
 <hr style="margin:0 0 2em 0;"/>
+
+## Bayesian model of planetary motion: exploring ideas for a modeling workflow when dealing with ordinary differential equations and multimodality
+<small> The Bayesian model of planetary motion is a simple but powerful example that illustrates important concepts, as well as gaps, in prescribed modeling workflows. Our focus is on Bayesian inference using Markov chains Monte Carlo for a model based on an ordinary differential equations (ODE). Our example presents unexpected multimodality, causing our inference to be unreliable and what is more, dramatically slowing down our ODE integrators. What do we do when our chains do not mix and do not forget their starting points? Reasoning about the computational statistics at hand and the physics of the modeled phenomenon, we diagnose how the modes arise and how to improve our inference. Our process for fitting the model is iterative, starting with a simplification and building the model back up, and makes extensive use of visualization.</small>
+
+[View](case-studies/planetary_motion/planetary_motion.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Charles Margossian and Andrew Gelman
+
+Keywords
+: ordinary differential equations, multimodality, classical mechanics
+
+Source Repository
+: [example-models/knitr/planetary_motion](https://github.com/stan-dev/example-models/tree/master/knitr/planetary_motion)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> CmdStanR, posterior, ggplot2, dplyr, plyr, tidyr, boot, latex2exp </tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+## HMM Interface Example
+
+<small> Cmdstan 2.24 introduces a new interface for working with
+Hidden Markov Models (HMMs). This is an example of how to use that
+interface. </small>
+
+[View](case-studies/hmm-example.html) <span class="note">(HTML)</span>
+
+Authors
+: Ben Bales
+
+Keywords
+: Hidden Markov Models, HMMs, cmdstanr, Stan programming
+
+Source Repository
+: [example-models/knitr/hmm-example](https://github.com/stan-dev/example-models/tree/master/knitr/hmm-example)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%">CmdStanR, tidyverse, ggplot2, and posterior</tt>
+
+License
+:  BSD (3 clause), CC-BY
 
 ## Spatial models for plant neighborhood dynamics in Stan
 <small> In this case study, we demonstrate how Stan’s segment function can speed computation on sparse matrices of pairwise neighbors in plant-plant interaction models. In addition, we present solutions to common problems of fitting neighborhood models with hierarchical effects, including a comparison of centered vs. non-centered parameterizations.</small>
@@ -105,11 +239,11 @@ License
 ## Bayesian Workflow for disease transmission modeling in Stan
 
 <small>
-This tutorial shows how to build, fit, and criticize disease transmission models in Stan, and should be useful to researchers interested in modeling the COVID-19 outbreak and doing Bayesian inference. 
-Bayesian modeling provides a principled way to quantify uncertainty and incorporate prior knowledge into the model. 
-What is more, Stan's main inference engine, Hamiltonian Monte Carlo sampling, is amiable to diagnostics, which means we can verify whether our inference is reliable. 
-Stan is an expressive probabilistic programing language that abstracts the inference and allows users to focus on the modeling. The resulting code is readable and easily extensible, which makes the modeler's work more transparent and flexible. 
-In this tutorial, we demonstrate with a simple Susceptible-Infected-Recovered (SIR) model how to formulate, fit, and diagnose a compartmental model in Stan. 
+This tutorial shows how to build, fit, and criticize disease transmission models in Stan, and should be useful to researchers interested in modeling the COVID-19 outbreak and doing Bayesian inference.
+Bayesian modeling provides a principled way to quantify uncertainty and incorporate prior knowledge into the model.
+What is more, Stan's main inference engine, Hamiltonian Monte Carlo sampling, is amiable to diagnostics, which means we can verify whether our inference is reliable.
+Stan is an expressive probabilistic programing language that abstracts the inference and allows users to focus on the modeling. The resulting code is readable and easily extensible, which makes the modeler's work more transparent and flexible.
+In this tutorial, we demonstrate with a simple Susceptible-Infected-Recovered (SIR) model how to formulate, fit, and diagnose a compartmental model in Stan.
 We also introduce more advanced topics which can help practitioners fit sophisticated models; notably, how to use simulations to probe our model and our priors, and computational techniques to scale ODE-based models.
 </small>
 
@@ -122,7 +256,7 @@ Keywords
 : Disease transmission, Compartment models, Ordinary Differential Equations, Bayesian Workflow
 
 Source Repository
-: [example-models/knitr/disease_transmission](https://github.com/stan-dev/example-models/tree/master/knitr/disease_transmission)
+: [charlesm93/disease\_transmission\_workflow](https://github.com/charlesm93/disease_transmission_workflow)
 <span class="note">(GitHub)</span>
 
 Dependencies
@@ -166,7 +300,7 @@ License
 model and data so that anyone with a modern web browser and a Google account
 can run your analysis with Google Colaboratory free cloud servers.  It shows
 you how to quickly set up a Stan installation in the cloud and introduces
-two lightweight interfaces: 
+two lightweight interfaces:
 [CmdStanR](https://mc-stan.org/cmdstanr/articles/cmdstanr.html) and
 [CmdStanPy](https://cmdstanpy.readthedocs.io/en/latest/index.html).</small>
 
@@ -213,11 +347,11 @@ Source Repository
 : [example-models/education/causal_rct](https://github.com/stan-dev/example-models/tree/master/education/causal_rct)
 
 R Package Dependencies
-: <tt style="font-size: 90%">rstan</tt>, 
-<tt style="font-size: 90%">rstanarm</tt>, 
-<tt style="font-size: 90%">bayesplot</tt>, 
-<tt style="font-size: 90%">tidyverse</tt>, 
-<tt style="font-size: 90%">gridExtra</tt>, 
+: <tt style="font-size: 90%">rstan</tt>,
+<tt style="font-size: 90%">rstanarm</tt>,
+<tt style="font-size: 90%">bayesplot</tt>,
+<tt style="font-size: 90%">tidyverse</tt>,
+<tt style="font-size: 90%">gridExtra</tt>,
 <tt style="font-size: 90%">Matching</tt>
 
 License
@@ -320,7 +454,7 @@ License
 
 ## Predator-Prey Population Dynamics: the Lotka-Volterra model in Stan
 
-<small>Lotka (1925) and Volterra (1926) formulated parameteric differential
+<small>Lotka (1925) and Volterra (1926) formulated parametric differential
 equations that characterize the oscillating populations of predators
 and prey. A statistical model to account for measurement error and
 unexplained variation uses the deterministic solutions to the
@@ -435,7 +569,7 @@ License
 Loss curves are a standard actuarial technique for helping
 insurance companies assess the amount of reserve capital they need to
 keep on hand to cover claims from a line of business. Claims made and
-reported for a given accounting period are tracked seperately over
+reported for a given accounting period are tracked separately over
 time. This enables the use of historical patterns of claim development
 to predict expected total claims for newer policies.
 </small>
@@ -498,25 +632,6 @@ Source Repository
 R Package Dependencies
 : <tt style="font-size: 90%">rstan</tt>,
   <tt style="font-size: 90%">splines</tt>
-
-License
-: Code: BSD (3 clause), Text: CC BY-NC 4.0
-
-[View](case-studies/splines_in_stan.html) <span class="note">(HTML)</span>
-
-Author
-: Milad Kharratzadeh
-
-Keywords
-: B-splines, piecewise regression, knots, priors
-
-Source Repository
-: [milkha/Splines_in_Stan](https://github.com/milkha/Splines_in_Stan)
-<span class="note">(GitHub)</span>
-
-R Package Dependencies
-: <tt style="font-size: 90%">splines</tt>,
-  <tt style="font-size: 90%">rstan</tt>,
 
 License
 : Code: BSD (3 clause), Text: CC BY-NC 4.0

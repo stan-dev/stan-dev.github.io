@@ -55,14 +55,6 @@ developer process followed by Stan, are listed in various places on:
   <span class="note">(on GitHub)</span>
   </p>
 
-There is a top-level list that is in the process of being moved
-over to the issue tracker.
-
-* <p><a href="https://github.com/stan-dev/stan/wiki/Longer-Term-To-Do-List">To-Do
-    List Wiki</a>
-  <span class="note">(on GitHub)</span>
-  </p>
-
 # Join the Development Team
 
 The Stan development team is always looking for developers
@@ -75,7 +67,7 @@ implement is available on the interface-specific
 
 If you'd like to join the development team and gain push access
 to the Stan code repository, please let us know by first creating
-a post in the _Project Proposals_ cateogry of the
+a post in the _Project Proposals_ category of the
 [Stan Forums](http://discourse.mc-stan.org/).  Be sure to include
 a brief description of your programming background and details of
 what you'd like to contribute.

@@ -14,8 +14,7 @@
   avatar: bob_carpenter.jpg
 
 - name: Daniel Lee
-  affiliation: Generable
-  web: http://syclik.com
+  web: https://syclik.com
   email: bearlee@alum.mit.edu
   linkedin: https://www.linkedin.com/in/syclik
   twitter: djsyclik
@@ -204,7 +203,7 @@
   avatar: yi_zhang.jpg
 
 - name: Paul Bürkner
-  affiliation: Aalto University
+  affiliation: University of Stuttgart
   github: paul-buerkner
   email: paul.buerkner@gmail.com
   web: https://paul-buerkner.github.io/
@@ -239,8 +238,12 @@
   avatar: edward_a_roualdes.jpg
 
 - name: Andre Zapico
-  affiliation: University of Electronic Science and Technology of China
+  affiliation: SAS
   github: drezap
+  email: likelyandre@gmail.com
+  linkedin: https://www.linkedin.com/in/andre-zapico/
+  web: https://likelyllc.com/
+  avatar: andre_zapico.jpg
 
 - name: Ryan Bernstein
   affiliation: Columbia University
@@ -309,3 +312,67 @@
   email: mhj1667@gmail.com
   github: hyunjimoon
   avatar: hyunji_moon.png
+
+- name: Sean Pinkney
+  affiliation: Comscore, Inc.
+  linkedin: https://www.linkedin.com/in/sean-pinkney123/
+  github: spinkney
+  twitter: thatpinkney
+  avatar: sean_pinkney.png
+
+- name: Simon Dirmeier
+  affiliation: Artificialy SA
+  web: simon-dirmeier.net
+  email: simon.dirmeier@web.de
+  github: dirmeier
+  avatar: simon_dirmeier.jpg
+
+- name: Shinyoung Kim
+  affiliation: Kookmin University
+  email: tttllshin@gmail.com
+  github: Dashadower
+
+- name: Måns Magnusson
+  affiliation: Uppsala University
+  web: mansmagnusson.com
+  email: mons.magnusson@gmail.com
+  github: MansMeg
+  linkedin: https://www.linkedin.com/in/m%C3%A5ns-magnusson-93843248/
+  twitter: mansmeg
+  avatar: mans_magnusson.png
+
+- name: Hamada S. Badr
+  affiliation: Johns Hopkins University
+  email: badr@jhu.edu
+  github: hsbadr
+  web: https://hsbadr.github.io
+  avatar: hamada_badr.jpeg
+
+- name: Yuling Yao
+  affiliation: Flatiron Institute
+  email: yyao@flatironinstitute.org
+  github: yao-yl
+  web: https://www.yulingyao.com
+  avatar: yuling-yao-sq.png
+
+- name: Brian Ward
+  affiliation: Flatiron Institute
+  email: bward@flatironinstitute.org
+  github: WardBrian
+  avatar: brian-ward-sq.jpg
+  linkedin: https://www.linkedin.com/in/ward-brianm/
+
+- name: Nicholas DiDio
+  affiliation: Stevens Institute of Technology
+  email: nicholasdidio@rocketmail.com
+  github: nickdidio
+  linkedin: https://www.linkedin.com/in/nick-didio/
+  avatar: nicholas-didio.jpeg
+
+- name: Johann D. Gaebler
+  affiliation: Stanford University
+  email: jgaeb@stanford.edu
+  github: jgaeb
+  twitter: jgaeb1
+  web: https://www.jgaeb.com
+  avatar: johann_gaebler.jpg

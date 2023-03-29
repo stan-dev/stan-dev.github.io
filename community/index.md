@@ -20,8 +20,11 @@ what you're doing with Stan then please post to the Stan Forums,
 <span class="note">(Discourse)</span></p>
 
 Everyone who joins the forum has posting privileges.  We love hearing about
-application of Stan and we try very hard to be as helpful as possible, so
+applications of Stan and we try very hard to be as helpful as possible, so
 please don't be shy to introduce yourself, share your work, or ask a question!
+
+There are also discussions happening over on Slack.
+All are welcome to join Slack at [mc-stan.slack.com](https://join.slack.com/t/mc-stan/shared_invite/zt-1le4ebi4m-UMtiOkJb4gcS16qz2wIYCw).
 
 #  Bug Reports, Feature Requests
 
@@ -30,7 +33,6 @@ then you can also post an issue to the appropriate interface-specific issue
 tracker.  For more information see
 
 * <p><a href="/users/issues/index.html">Submitting an Issue</a></p>
-
 
 # Events
 
