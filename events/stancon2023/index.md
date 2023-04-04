@@ -56,6 +56,9 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
 
+**Advances of model assessment, selection, and inference after model selection**\ 
+**Instructor:** Andrew Johnson (Aalto University)
+
 ### ....
 
 # [Talks](#talks)
