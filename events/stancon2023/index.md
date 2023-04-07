@@ -56,6 +56,9 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
 
+**Advances of model assessment, selection, and inference after model selection**\ 
+**Instructor:** Andrew Johnson (Aalto University)
+
 ### ....
 
 # [Talks](#talks)
@@ -92,6 +95,22 @@ William R Gillespie (Metrum Research Group)\
 **MCMC-Monitor: Browser-based Monitoring of Stan MCMC Samplers**\
 Jeff Soules (Flatiron Institute)\
 **Abstract**: We have developed MCMC-Monitor, a browser-based visualization tool for live-monitoring of MCMC samplers. It displays interactive plots of standard and user-specified variables for MCMC runs, both during sampling and after run completion. Plots include timeseries line charts showing the evolution of variables on a per-chain or cumulative basis; histograms; 2- and 3-D scatterplots of user-selected variable combinations; and autocorrelation function plots, as well as tabular data, including effective sample size estimates. Variables include user-requested subsets of model parameters, as well as Stan-computed descriptive variables like per-draw log probability, acceptance rate, stepsize, and more. By exposing these data in graphical format in real-time, MCMC-Monitor provides insight into the convergence of live runs, allowing users to make adjustments before expending time and compute resources. One distinctive feature of MCMC-Monitor is that it allows monitoring runs either on the local machine or on a remote computer.
+
+**Delayed rejection Hamiltonian Monte Carlo for sampling multiscale distributions**\
+Chirag Modi (Flatiron Institute)\
+**Abstract**: In this talk, I will discuss a new algorithm that combines delayed rejection (DR) techniques with  Hamiltonian Monte Carlo (HMC) for efficient sampling of pathological distributions such as Neal's funnel where the target distribution has a wide range of length scales and the small step sizes needed for stability in high-curvature regions can be inefficient elsewhere. I will focus on the DR variant where if an initial HMC trajectory is rejected, we make one or more subsequent proposals each using a step size geometrically smaller than the last. I will also extend the standard delayed rejection framework to allow the probability of a retry to depend on the probability of accepting the previous proposal. DRHMC enables up to five-fold performance gains over optimally-tuned HMC for multi-scale distributions and provides increased robustness to step size misspecification for simpler distributions. 
+
+**Fully Bayesian Economically Optimal Design for Spatially Varying Coefficient Linear Stochastic Plateau Model**\
+Davood Poursina (Oklahoma State University)\
+**Abstract**: Experimentation to guide optimal fertilizer selection is moving toward on-farm experimentation due to the uncertainty of small on-station experiments. However, there is no agreement on the optimal way to conduct on-farm experimentation, which motivated this paper. Optimal on-farm experimentation is addressed using fully Bayesian decision theory. Monte Carlo integration was used, assuming a linear stochastic plateau model with spatially correlated plateau parameters. The spatially varying coefficient model can be used to guide the application of site-specific nitrogen. The actual economic optimal nitrogen values vary from 130 to 180 for different plots based on the data-generating process used for simulation. Of the designs considered, the results show that experimenting on 15 plots of a field with treatment levels of 35, 130, 165, and 230 with 2, 3, 5, and 5 replications maximized the farmers' profit over several years. The third year was the best time to quit experimenting.
+
+**What do news readers want?**\
+Cameron Pfiffer (Stanford)\
+**Abstract**: We estimate a hierarchical Bayesian model of news readers' preferences for different types of news content. Using a novel dataset covering the complete history of individual-level web traffic and digital subscriptions from a major metropolitan newspaper in the United States from 2020 to 2021, we investigate consumers' willingness to pay for different kinds of content, such as investigative journalism, local news, sports, and political news. Our statistical identification relies on the quasi-random arrival of paywall events which force consumers to subscribe if they wish to continue reading. Using this variation, we estimate a model of consumer demand and construct the optimal content portfolio for the paper under different counterfactual revenue models: a fully subscription-based model and a fully ad-supported model. Preliminary results suggest that news consumers are willing to pay for investigative and local content, and that commonly used measures of demand based only on time-use substantially underestimate the value of investigative news.
+
+**Two Challenges for Bayesian Model Expansion**\
+Collin Cademartori (Columbia)\
+**Abstract**: The process of iterative model expansion often involves moving from some simple initial model to more complex, higher-dimensional models in order to obtain better fit to our observed data or to remove unrealistic assumptions. In this talk, I will argue that this model expansion process can create distinct challenges which motivate the use of more fine-grained posterior summaries in inference and model evaluation. In particular, a pair of theoretical results demonstrate how expansion can make typical model summaries and checks less informative as the model complexity grows. I will present some intuition for these results and discuss how the corresponding challenges can be mitigated by avoiding premature posterior marginalization. A brief example will tie these ideas together with a case in which certain conditional p-values contain substantially more information than the usual marginal counterpart.
 
 ### ...
 
