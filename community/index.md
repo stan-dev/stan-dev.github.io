@@ -36,7 +36,7 @@ tracker.  For more information see
 
 # Events
 
-[Past meetups, talks &amp; courses](/events)
+[Upcoming (and past) events, including conferences, meetups, and courses](/events)
 
 
 # Developers
