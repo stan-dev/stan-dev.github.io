@@ -22,6 +22,7 @@ image:
 - [**Call for proposals**](#call-for-proposals)
 - [**Schedules**](#schedules)
 - [**Registration**](#registration)
+- [**Scholarships**](#scholarships)
 - [**Organizers**](#organizers)
 
 ------
@@ -55,6 +56,9 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 # [Tutorials](#tutorials)
 
 _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and accepted on a rolling basis throughout April 30th._
+
+**Fundamentals of Stan**\
+**Instructor:** Charles Margossian (Flatiron Institute). This course serves as an introduction to Stan and may be used as a stepping stone before taking more advanced tutorials.
 
 **Introduction to Bayesian hierarchical modeling using Stan and brms**\
 **Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)
@@ -217,8 +221,6 @@ Details coming soon.
 
 Early bird window extended till April 30, 2023! Registration fees cover lunch, coffee & refreshment breaks, icebreaker reception (June 21 PM), and conference dinner.
 
-_Information about scholarships will be posted soon._
-
 ### Conference only
 
 $199(student) | $299(academic) | $449(industry)
@@ -226,6 +228,14 @@ $199(student) | $299(academic) | $449(industry)
 ### Tutorial & workshop + Conference
 
 $299(student) | $449(academic) | $599(industry)
+
+# [Scholarships](#scholarships)
+
+The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
+
+Participants who require financial assistance to attend the conference may apply for a scholarship by filling out this [form](https://forms.gle/4fbNbd4p32MFPR219). The StanCon scholarship covers registration for the tutorial and the main conference, as well as housing. Scholarships are awarded on a need-base, and are usually targeted at early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+
+Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
 # [Organizers](#organizers)
 - Charles Margossian (Flatiron Institute)
