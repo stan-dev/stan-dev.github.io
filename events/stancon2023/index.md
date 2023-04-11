@@ -169,10 +169,9 @@ To submit a proposal for a tutorial, submit a [form](https://forms.gle/tgGmaSrQM
 # [Sponsors](#sponsors)
 We would like to thank our sponsors who both support conference costs, scholarships, and Stan as a whole. If you’re interested in sponsoring StanCon, please email [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
 
-<!-- <center style="padding: 0.75em 0 0 0"> -->
-<!-- <span style="display:inline-block; width: 0.75em;"> -->
-<!-- </span> -->
-<!-- <a href="https://www.generable.com/"><img width="200" src="logos/generable_word_logo.png" /></a> -->
+<center style="padding: 0.75em 0 0 0">
+<a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
+</center>
 
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
 <!-- <hr> -->
