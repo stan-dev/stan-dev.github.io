@@ -38,9 +38,15 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 # [Invited speakers](#speakers)
 **Bob Carpenter** (Flatiron institute)
 
-**John Kruschke** (Indiana University)
+**John Kruschke** (Provost Professor Emeritus, Indiana University, Bloomington)\
+**Talk Title:** We all can benefit from Bayesian analysis reporting guidelines if we use them.
+**Abstract:** When reports of statistical analyses are opaque, then readers suffer, authors suffer, and science suffers. To alleviate suffering, I present the Bayesian analysis reporting guidelines – the BARG – published in Nature Human Behaviour. The BARG systematically explain essential ingredients for a report that is thorough, understandable, and reproducible. Software developers need to know the BARG so their software produces and displays all the relevant information. Educators can use the BARG to teach students the reasons behind statistical reports. Reviewers and editors, along with authors and analysts, can rely on the BARG to help research reports be clear and reproducible. In this talk I describe the BARG with a detailed example. The BARG can be beneficial for all users of Bayesian analysis and for the science they produce – if they use the BARG. Will you?
+
 
 **Mariel Finucane** (Mathematica Policy Research)
+**Talk Title:** Statistical Significance Makes our Mission: Impossible 
+**Abastract:** It’s an old trick among statisticians: when we can’t answer the question that our collaborators are substantively interested in, we answer a question that sounds like that question. We hope they won’t notice the bait and switch. That, in a nutshell, is the story of statistical significance in the field of social policy evaluation. People want some assurance that the policy being studied moved the needle for the individuals or communities it serves. Statistical significance and p-values sound like they can provide that assurance. They can’t, and when we pretend they can (which we still do horrifyingly often!), we can be making a large-magnitude – not just semantic – mistake. In this talk, we provide examples of how statistical significance is an obstacle to achieving our mission, and we describe how Bayesian methods using evidence-based priors can give us what we thought we were getting with statistical significance, and more.
+
 
 **Siddhartha Chib** (Washington University in St. Louis)
 
@@ -56,6 +62,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
+
 
 **Advances of model assessment, selection, and inference after model selection**\ 
 **Instructor:** Andrew Johnson (Aalto University)
