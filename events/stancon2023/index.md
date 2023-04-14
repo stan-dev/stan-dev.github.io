@@ -38,7 +38,15 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 
 # [Invited speakers](#speakers)
 **Bob Carpenter** (Senior Research Scientist, Flatiron institute)\
-**Talk Title: TBA**\
+**Talk Title: The efficient frontier: Bayes, neural nets, and the future of Stan**\
+**Abstract:** Stan has relied primarily on two types of inference, (Euclidan) Hamiltonian Monte Carlo (HMC), with the adaptive no-U-turn sampler (NUTS), and variational approximation using autodiff variational inference (ADVI).  I will provide a quick overview of the evolution of these algorithms before moving on to future prospects for Bayesian inference for differentiable target densities.
+
+1.  Pathfinder, quasi-Newton variational inference.  This is a massively parallelizable form of variational inference that is much faster, more accurate, and more robust than ADVI.  The Stan implementation is feature complete and being code reviewed for the next release (v2.33).
+
+2.  Partial momentum refresh, Metropolis-adjusted Langevin (MALA) with non-uniform acceptance, massively parallel adaptation, and delayed rejection HMC (DR).  This provides an easy-to-adapt, massively parallelizable HMC that can sample multiscale densities like the funnel.  This required revised convergence diagnostics.
+
+3.  Normalizing flows for variational inference.  Despite an absurd degree of overparameterization, deep neural networks with real non-volume preserving (RaelNVP) flows are massively parallelizable and super fast with state-of-the-art hardware on in-kernel GPU-based systems like JAX.  I'll provide some results both in high dimensions and for distributions with funnel- and banana-like properties.  Early results show that it outperforms a highly-tuned version of ADVI.
+
 
 **John Kruschke** (Provost Professor Emeritus, Indiana University, Bloomington)\
 **Talk Title: We all can benefit from Bayesian analysis reporting guidelines if we use them** \
