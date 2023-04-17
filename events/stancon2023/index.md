@@ -38,7 +38,15 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 
 # [Invited speakers](#speakers)
 **Bob Carpenter** (Senior Research Scientist, Flatiron institute)\
-**Talk Title: TBA**\
+**Talk Title: The efficient frontier: Bayes, neural nets, and the future of Stan**\
+**Abstract:** Stan has relied primarily on two types of inference, (Euclidan) Hamiltonian Monte Carlo (HMC), with the adaptive no-U-turn sampler (NUTS), and variational approximation using autodiff variational inference (ADVI).  I will provide a quick overview of the evolution of these algorithms before moving on to future prospects for Bayesian inference for differentiable target densities.
+
+1.  Pathfinder, quasi-Newton variational inference.  This is a massively parallelizable form of variational inference that is much faster, more accurate, and more robust than ADVI.  The Stan implementation is feature complete and being code reviewed for the next release (v2.33).
+
+2.  Partial momentum refresh, Metropolis-adjusted Langevin (MALA) with non-uniform acceptance, massively parallel adaptation, and delayed rejection HMC (DR).  This provides an easy-to-adapt, massively parallelizable HMC that can sample multiscale densities like the funnel.  This required revised convergence diagnostics.
+
+3.  Normalizing flows for variational inference.  Despite an absurd degree of overparameterization, deep neural networks with real non-volume preserving (RaelNVP) flows are massively parallelizable and super fast with state-of-the-art hardware on in-kernel GPU-based systems like JAX.  I'll provide some results both in high dimensions and for distributions with funnel- and banana-like properties.  Early results show that it outperforms a highly-tuned version of ADVI.
+
 
 **John Kruschke** (Provost Professor Emeritus, Indiana University, Bloomington)\
 **Talk Title: We all can benefit from Bayesian analysis reporting guidelines if we use them** \
@@ -126,6 +134,10 @@ Davood Poursina (Oklahoma State University)\
 **MCMC-Monitor: Browser-based Monitoring of Stan MCMC Samplers**\
 Jeff Soules (Flatiron Institute)\
 **Abstract**: We have developed MCMC-Monitor, a browser-based visualization tool for live-monitoring of MCMC samplers. It displays interactive plots of standard and user-specified variables for MCMC runs, both during sampling and after run completion. Plots include timeseries line charts showing the evolution of variables on a per-chain or cumulative basis; histograms; 2- and 3-D scatterplots of user-selected variable combinations; and autocorrelation function plots, as well as tabular data, including effective sample size estimates. Variables include user-requested subsets of model parameters, as well as Stan-computed descriptive variables like per-draw log probability, acceptance rate, stepsize, and more. By exposing these data in graphical format in real-time, MCMC-Monitor provides insight into the convergence of live runs, allowing users to make adjustments before expending time and compute resources. One distinctive feature of MCMC-Monitor is that it allows monitoring runs either on the local machine or on a remote computer.
+
+**Bayesian phase retrieval for image reconstruction using fast Fourier transforms in Stan**\
+Brian Ward (Flatiron Institute)\
+**Abstract**: In this talk, I will show how Stan's new complex number capabilities and 2D fast Fourier transform can be applied to biomedical image reconstruction problems from the field of holographic coherent diffraction imaging. These features in Stan allow us to directly represent a generative forward model for this problem called the HoloML model. This model uses photon counts observed during X-ray diffraction imaging as the rate for a Poisson likelihood to recover the missing phase information required to construct images of the desired specimen. I will present step-by-step how to simulate from the forward model, discuss which Stan developments made this model possible and efficient, and conclude with simulated results from both optimization and Bayesian sampling to solve the inverse problem.
 
 ### ...
 
@@ -233,7 +245,7 @@ $299(student) | $449(academic) | $599(industry)
 
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference may apply for a scholarship by filling out this [form](https://forms.gle/gro2kUpWrb3LGKpM7). The StanCon scholarship covers registration for the tutorial and the main conference, as well as housing. Scholarships are awarded on a need-base, and are usually targeted at early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+Participants who require financial assistance to attend the conference may apply for a scholarship by filling out this [form](https://forms.gle/gro2kUpWrb3LGKpM7). The StanCon scholarship covers registration for the tutorial and the main conference, as well as housing. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
 Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
