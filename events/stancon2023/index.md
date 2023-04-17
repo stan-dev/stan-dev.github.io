@@ -66,7 +66,7 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and accepted on a rolling basis throughout April 30th._
 
 **Fundamentals of Stan**\
-**Instructor:** Charles Margossian (Flatiron Institute). This course serves as an introduction to Stan and may be used as a stepping stone before taking more advanced tutorials.
+**Instructor:** Charles Margossian (Flatiron Institute). _This course serves as an introduction to Stan and may be used as a stepping stone before taking more advanced tutorials._ [Course description](img/outline_fundamentals_of_stan.pdf).
 
 **Introduction to Bayesian hierarchical modeling using Stan and brms**\
 **Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)
@@ -75,7 +75,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 **Instructor:** Daniel Lee.
 
 **Cognitive diagnostic models in R and Stan**\
-**Instructor:** Jake Thompson (University of Kansas). See tutorial summary [here](img/dcm-tutorial-description.pdf).
+**Instructor:** Jake Thompson (University of Kansas). [Course description](img/dcm-tutorial-description.pdf).
 
 
 **Advances of model assessment, selection, and inference after model selection**\ 
