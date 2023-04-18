@@ -139,11 +139,16 @@ Jeff Soules (Flatiron Institute)\
 Brian Ward (Flatiron Institute)\
 **Abstract**: In this talk, I will show how Stan's new complex number capabilities and 2D fast Fourier transform can be applied to biomedical image reconstruction problems from the field of holographic coherent diffraction imaging. These features in Stan allow us to directly represent a generative forward model for this problem called the HoloML model. This model uses photon counts observed during X-ray diffraction imaging as the rate for a Poisson likelihood to recover the missing phase information required to construct images of the desired specimen. I will present step-by-step how to simulate from the forward model, discuss which Stan developments made this model possible and efficient, and conclude with simulated results from both optimization and Bayesian sampling to solve the inverse problem.
 
+**Implementing an Almost Ideal Demand System of mobility expenditure in Stan**\
+Ariane Kehlbacher (German Aerospace Center DLR)\
+**Abstract**: The Almost Ideal Demand System (AIDS) by Deaton is widely used in economics to estimate systems of demand functions. The model predicts (across households and/or over time) how consumers change their demand in response to price and/or income changes. This is why the AIDS is often used to investigate the welfare implications of, for example, taxes or subsidies, or price changes. Reasons for the AIDS's popularity in econometrics is inter alia its flexibility as it gives an arbitrary first-order approximation to any demand system. In the majority of applications, the AIDS is estimated using frequentist methods. A few applications use Bayesian methods, but as of yet these studies employ Gibbs Sampling in their estimation. Taking advantage of the efficiency gains that arise from using Hamiltonian Monte Carlo to estimate the model, this work estimates an AIDS using Stan. Data on expenditures for three transport modes, car, train and bus/taxi, by different groups of households in Germany are used. The objective is to investigate substitute and complementary relationships between transport modes so as to better understand the impact of recent increases in energy costs on transport demand. The poster explains model specification including parameter restrictions, estimation in Stan, as well as the computation of the price and expenditure elasticities. Interesting issues arise in relation to 1) the prior specification in the light of the parameter restrictions required by economic theory, which leave only a subset of parameters free to be estimated, and 2) the imposition of curvature (i.e. a downward sloping demand function) which requires the computation of Eigenvalues of the matrix of second order derivatives and some kind of rejection step.
+
+
 ### ...
 
 # [Call for proposals](#call)
 
-We invite participants to submit proposals for contributed talks, thematic sessions, posters, and tutorials.
+We invite participants to submit proposals for contributed talks, thematic sessions, and tutorials.
 
 We are interested in a broad range of topics relevant to the Stan community, including:
 
@@ -169,18 +174,6 @@ To submit a proposal for a contributed talk, submit a [form](https://forms.gle/4
 Thematic sessions are an opportunity to dive deeper into a topic and comprise three talks (15 + 5 minutes each), with an additional 10 minutes which can be used for a panel discussion. Thematic sessions may be run in parallel.
 
 To submit a proposal for a contributed talk, submit a [form](https://forms.gle/HcfZPS3jMb8HGqsY8) by **April 30th**.
-
-## [Call for posters](#call-posters)
-
-We invite participants to submit abstracts for posters. These abstracts will be reviewed by the StanCon scientific committee. Accepted posters will be displayed in a dedicated room during the conference. In addition, an online version of the poster will be available. We encourage authors to share code with which the results and figures in the poster can be reproduced.
-
-Posters should be 24in x 48in.
-
-If the poster summarizes work presented in a longer document (e.g. a paper, a doc), please reference this document.
-
-An example poster from StanCon 2018 can be found [here](https://www.metrumrg.com/wp-content/uploads/2018/09/stan_pde_poster.pdf).
-
-To submit an abstract, submit a [form](https://forms.gle/rm2a6KFfhXJ5CyL67). We accept poster submission on a rolling basis.
 
 ## [Call for tutorials](#call-tutorials)
 
@@ -240,6 +233,14 @@ $199(student) | $299(academic) | $449(industry)
 ### Tutorial & workshop + Conference
 
 $299(student) | $449(academic) | $599(industry)
+
+### Conference only (after April 30)
+
+$199(student) | $299(academic) | $539(industry)
+
+### Tutorial & workshop + Conference (after April 30)
+
+$299(student) | $449(academic) | $719(industry)
 
 # [Scholarships](#scholarships)
 
