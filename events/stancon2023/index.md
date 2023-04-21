@@ -196,6 +196,8 @@ We would like to thank our sponsors who both support conference costs, scholarsh
 <a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.metrumrg.com/"><img width="200" src="img/mrg_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 </center>
 
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
