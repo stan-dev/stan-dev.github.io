@@ -15,7 +15,35 @@ image:
 <a href="https://buytickets.at/standevelopmentteam/835500" title="Buy tickets for StanCon 2023">Buy tickets for StanCon 2023</a>
 
 ------
-- [**Sponsors**](#sponsors)
+**Sponsors**
+
+We thank our sponsors who both support conference costs, scholarships, and Stan as a whole. If you’re interested in sponsoring StanCon, please email [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
+
+<center style="padding: 0.75em 0 0 0">
+<a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.metrumrg.com/"><img width="200" src="img/mrg_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
+</center>
+
+<!-- <span style="display:inline-block; width: 0.75em;"></span> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.astrazeneca.com/"><img width="200" src="logos/astrazeneca-logo.jpg" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.bayer.com/"><img width="200" src="logos/bayer.png" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.jumpingrivers.com/"><img width="200" src="logos/JumpingRivers.png" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://quantbet.com/"><img width="300" src="logos/quantBet.png" /></a> -->
+<!-- <hr> -->
+
+<!-- </center> -->
+------
 - [**Invited speakers**](#invited-speakers)
 - [**Tutorials**](#tutorials)
 - [**Talks**](#talks)
@@ -187,35 +215,6 @@ Tutorials are an opportunity to do an in-depth exploration of a particular topic
 Tutorials may comprise a single session of 2 or 3 hours (half-a-day) or two sessions of 2 or 3 hours each (full day).
 
 To submit a proposal for a tutorial, submit a [form](https://forms.gle/tgGmaSrQM7yTmHMA7) by **April 30th**.
-
-
-# [Sponsors](#sponsors)
-We would like to thank our sponsors who both support conference costs, scholarships, and Stan as a whole. If you’re interested in sponsoring StanCon, please email [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
-
-<center style="padding: 0.75em 0 0 0">
-<a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
-<span style="display:inline-block; width: 0.75em;"></span>
-<a href="https://www.metrumrg.com/"><img width="200" src="img/mrg_logo.png" /></a>
-<span style="display:inline-block; width: 0.75em;"></span>
-<a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
-</center>
-
-<!-- <span style="display:inline-block; width: 0.75em;"></span> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.astrazeneca.com/"><img width="200" src="logos/astrazeneca-logo.jpg" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.bayer.com/"><img width="200" src="logos/bayer.png" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.jumpingrivers.com/"><img width="200" src="logos/JumpingRivers.png" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://quantbet.com/"><img width="300" src="logos/quantBet.png" /></a> -->
-<!-- <hr> -->
-
-<!-- </center> -->
 
 # [Schedules](#schedules)
 <ul>
