@@ -194,6 +194,8 @@ We would like to thank our sponsors who both support conference costs, scholarsh
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.metrumrg.com/"><img width="200" src="img/mrg_logo.png" /></a>
 </center>
 
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
@@ -251,7 +253,7 @@ $299(student) | $449(academic) | $719(industry)
 
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference may apply for a scholarship by filling out this [form](https://forms.gle/gro2kUpWrb3LGKpM7). **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
 Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
