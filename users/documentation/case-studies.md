@@ -47,7 +47,7 @@ Keywords
 Bayesian Model Evaluation
 
 Source Repository
-: [example-models/education/sem](https://github.com/stan-dev/example-models/tree/master/education/sem)
+: [example-models/education/sem](https://github.com/education-stan/example-models/tree/master/education/sem)
 <span class="note">(GitHub)</span>
 
 Dependencies
