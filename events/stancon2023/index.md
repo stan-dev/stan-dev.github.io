@@ -96,8 +96,14 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 **Fundamentals of Stan**\
 **Instructor:** Charles Margossian (Flatiron Institute). _This course serves as an introduction to Stan and may be used as a stepping stone before taking more advanced tutorials._ [Course description](img/outline_fundamentals_of_stan.pdf).
 
-**Introduction to Bayesian hierarchical modeling using Stan and brms**\
-**Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)
+**Bayesian workflow illustrated using BRMS**\
+**Instructor:** Mitzi Morris (Columbia University) [Course description](img/outline_BRMS.pdf)
+
+**Hierarchical models in Stan: varieties, optimizations & nuances**\
+**Instructor:** Mike Lawrence (Axem Neurotechnology) [Course description](img/outline_hierarchical.pdf)
+
+<!--**Introduction to Bayesian hierarchical modeling using Stan and brms**\-->
+<!--**Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)-->
 
 **Ordinary differential equation (ODE) models in Stan**\
 **Instructor:** Daniel Lee.
