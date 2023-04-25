@@ -15,7 +15,35 @@ image:
 <a href="https://buytickets.at/standevelopmentteam/835500" title="Buy tickets for StanCon 2023">Buy tickets for StanCon 2023</a>
 
 ------
-- [**Sponsors**](#sponsors)
+**Sponsors**
+
+We thank our sponsors who both support conference costs, scholarships, and Stan as a whole. If you’re interested in sponsoring StanCon, please email [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
+
+<center style="padding: 0.75em 0 0 0">
+<a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.metrumrg.com/"><img width="200" src="img/mrg_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
+</center>
+
+<!-- <span style="display:inline-block; width: 0.75em;"></span> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.astrazeneca.com/"><img width="200" src="logos/astrazeneca-logo.jpg" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.bayer.com/"><img width="200" src="logos/bayer.png" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://www.jumpingrivers.com/"><img width="200" src="logos/JumpingRivers.png" /></a> -->
+<!-- <hr> -->
+
+<!-- <a href="https://quantbet.com/"><img width="300" src="logos/quantBet.png" /></a> -->
+<!-- <hr> -->
+
+<!-- </center> -->
+------
 - [**Invited speakers**](#invited-speakers)
 - [**Tutorials**](#tutorials)
 - [**Talks**](#talks)
@@ -139,11 +167,26 @@ Jeff Soules (Flatiron Institute)\
 Brian Ward (Flatiron Institute)\
 **Abstract**: In this talk, I will show how Stan's new complex number capabilities and 2D fast Fourier transform can be applied to biomedical image reconstruction problems from the field of holographic coherent diffraction imaging. These features in Stan allow us to directly represent a generative forward model for this problem called the HoloML model. This model uses photon counts observed during X-ray diffraction imaging as the rate for a Poisson likelihood to recover the missing phase information required to construct images of the desired specimen. I will present step-by-step how to simulate from the forward model, discuss which Stan developments made this model possible and efficient, and conclude with simulated results from both optimization and Bayesian sampling to solve the inverse problem.
 
-### ...
+**Implementing an Almost Ideal Demand System of mobility expenditure in Stan**\
+Ariane Kehlbacher (German Aerospace Center DLR)\
+**Abstract**: The Almost Ideal Demand System (AIDS) by Deaton is widely used in economics to estimate systems of demand functions. The model predicts (across households and/or over time) how consumers change their demand in response to price and/or income changes. This is why the AIDS is often used to investigate the welfare implications of, for example, taxes or subsidies, or price changes. Reasons for the AIDS's popularity in econometrics is inter alia its flexibility as it gives an arbitrary first-order approximation to any demand system. In the majority of applications, the AIDS is estimated using frequentist methods. A few applications use Bayesian methods, but as of yet these studies employ Gibbs Sampling in their estimation. Taking advantage of the efficiency gains that arise from using Hamiltonian Monte Carlo to estimate the model, this work estimates an AIDS using Stan. Data on expenditures for three transport modes, car, train and bus/taxi, by different groups of households in Germany are used. The objective is to investigate substitute and complementary relationships between transport modes so as to better understand the impact of recent increases in energy costs on transport demand. The poster explains model specification including parameter restrictions, estimation in Stan, as well as the computation of the price and expenditure elasticities. Interesting issues arise in relation to 1) the prior specification in the light of the parameter restrictions required by economic theory, which leave only a subset of parameters free to be estimated, and 2) the imposition of curvature (i.e. a downward sloping demand function) which requires the computation of Eigenvalues of the matrix of second order derivatives and some kind of rejection step.
+
+**Dimensionality Reduction via Probabilistic Inference**\
+Aditya Ravuri (University of Cambridge)\
+**Abstract**: Dimensionality reduction (DR) algorithms compress high-dimensional data into a lower dimensional representation while preserving important features of the data. DR is a critical step in many analysis pipelines as it enables visualisation, noise reduction and efficient downstream processing of the data. In this work, we introduce the ProbDR variational framework, which interprets a wide range of classical DR algorithms as probabilistic inference algorithms in this framework. The framework can be used to provide probabilistic interpretations of PCA, CMDS, LLE, LE, MVU, diffusion maps, kPCA, Isomap, (t-)SNE, and UMAP. By treating DR as probabilistic inference, we show how Stan can be used to perform posterior inference for the low-dimensional latent variables and other model parameters, enabling reasoning about unseen data. We hope that our framework facilitates communication, reasoning about uncertainties, model composition, and extensions, particularly when domain knowledge is present. Preprint: https://arxiv.org/abs/2304.07658
+
+
+**A Bayesian Nonparametric approach for modeling temporal local clusters**\
+Chetkar Jha (Washington University at St. Louis)\
+**Abstract**: We propose an unsupervised Bayesian nonparametric approach for dynamic modeling of local clusters over time. Clustering and in particular local clusters may change over time as cluster membership evolves. The evolution of cluster membership may undergo because of a known or unknown physical, chemical, or biological process and understanding this evolution may help us hypothesize about the underlying process. Our proposed approach induces a temporal evolution of local clusters by proposing an autoregressive Dirichlet process prior on global column level clusters, where the temporal weights are learned. Posterior inference is performed through a Monte Carlo Markov Chain that is efficient for large datasets. Our proposed approach facilitates flexible modeling of dynamic clusters over time. We demonstrate the performance of our method using simulation and real dataset analysis.
+
+**Probabilistic Tsunami Hazard Maps**\
+Georgios Boumis (University of Alabama)\
+**Abstract**: For sustainable tsunami disaster risk reduction and management, we need to be able to provide probabilistic tsunami hazard estimates in a spatially-continuous manner with small uncertainty. Current practices involve time consuming and cost intensive numerical modeling of complex tsunami processes, e.g., generation and propagation under multiple possible scenarios. Here, we instead present probabilistic tsunami hazard maps derived solely from tide gauge observations. Specifically, we leverage Stan and rstan to develop a Bayesian hierarchical model which allows us, via latent Gaussian processes, to map extreme tsunami amplitude along the entire stretch of California and Oregon shorelines, even at ungauged coasts. Our Bayesian hazard estimates show significantly reduced uncertainty compared to site-specific maximum likelihood analysis.
 
 # [Call for proposals](#call)
 
-We invite participants to submit proposals for contributed talks, thematic sessions, posters, and tutorials.
+We invite participants to submit proposals for contributed talks, thematic sessions, and tutorials.
 
 We are interested in a broad range of topics relevant to the Stan community, including:
 
@@ -170,18 +213,6 @@ Thematic sessions are an opportunity to dive deeper into a topic and comprise th
 
 To submit a proposal for a contributed talk, submit a [form](https://forms.gle/HcfZPS3jMb8HGqsY8) by **April 30th**.
 
-## [Call for posters](#call-posters)
-
-We invite participants to submit abstracts for posters. These abstracts will be reviewed by the StanCon scientific committee. Accepted posters will be displayed in a dedicated room during the conference. In addition, an online version of the poster will be available. We encourage authors to share code with which the results and figures in the poster can be reproduced.
-
-Posters should be 24in x 48in.
-
-If the poster summarizes work presented in a longer document (e.g. a paper, a doc), please reference this document.
-
-An example poster from StanCon 2018 can be found [here](https://www.metrumrg.com/wp-content/uploads/2018/09/stan_pde_poster.pdf).
-
-To submit an abstract, submit a [form](https://forms.gle/rm2a6KFfhXJ5CyL67). We accept poster submission on a rolling basis.
-
 ## [Call for tutorials](#call-tutorials)
 
 Tutorials are an opportunity to do an in-depth exploration of a particular topic and may focus on a class of models, certain features in the Stan language, or a new package in the broader Stan ecosystem. Tutorials typically include hands-on exercises, which participants can perform on their own computers.
@@ -189,31 +220,6 @@ Tutorials are an opportunity to do an in-depth exploration of a particular topic
 Tutorials may comprise a single session of 2 or 3 hours (half-a-day) or two sessions of 2 or 3 hours each (full day).
 
 To submit a proposal for a tutorial, submit a [form](https://forms.gle/tgGmaSrQM7yTmHMA7) by **April 30th**.
-
-
-# [Sponsors](#sponsors)
-We would like to thank our sponsors who both support conference costs, scholarships, and Stan as a whole. If you’re interested in sponsoring StanCon, please email [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
-
-<center style="padding: 0.75em 0 0 0">
-<a href="https://wustl.edu/"><img width="200" src="img/washu_logo.png" /></a>
-</center>
-
-<!-- <span style="display:inline-block; width: 0.75em;"></span> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.astrazeneca.com/"><img width="200" src="logos/astrazeneca-logo.jpg" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.bayer.com/"><img width="200" src="logos/bayer.png" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://www.jumpingrivers.com/"><img width="200" src="logos/JumpingRivers.png" /></a> -->
-<!-- <hr> -->
-
-<!-- <a href="https://quantbet.com/"><img width="300" src="logos/quantBet.png" /></a> -->
-<!-- <hr> -->
-
-<!-- </center> -->
 
 # [Schedules](#schedules)
 <ul>
@@ -241,11 +247,19 @@ $199(student) | $299(academic) | $449(industry)
 
 $299(student) | $449(academic) | $599(industry)
 
+### Conference only (after April 30)
+
+$199(student) | $299(academic) | $539(industry)
+
+### Tutorial & workshop + Conference (after April 30)
+
+$299(student) | $449(academic) | $719(industry)
+
 # [Scholarships](#scholarships)
 
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference may apply for a scholarship by filling out this [form](https://forms.gle/gro2kUpWrb3LGKpM7). The StanCon scholarship covers registration for the tutorial and the main conference, as well as housing. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
 Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
