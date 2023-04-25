@@ -180,7 +180,9 @@ Aditya Ravuri (University of Cambridge)\
 Chetkar Jha (Washington University at St. Louis)\
 **Abstract**: We propose an unsupervised Bayesian nonparametric approach for dynamic modeling of local clusters over time. Clustering and in particular local clusters may change over time as cluster membership evolves. The evolution of cluster membership may undergo because of a known or unknown physical, chemical, or biological process and understanding this evolution may help us hypothesize about the underlying process. Our proposed approach induces a temporal evolution of local clusters by proposing an autoregressive Dirichlet process prior on global column level clusters, where the temporal weights are learned. Posterior inference is performed through a Monte Carlo Markov Chain that is efficient for large datasets. Our proposed approach facilitates flexible modeling of dynamic clusters over time. We demonstrate the performance of our method using simulation and real dataset analysis.
 
-### ...
+**Probabilistic Tsunami Hazard Maps**\
+Georgios Boumis (University of Alabama)\
+**Abstract**: For sustainable tsunami disaster risk reduction and management, we need to be able to provide probabilistic tsunami hazard estimates in a spatially-continuous manner with small uncertainty. Current practices involve time consuming and cost intensive numerical modeling of complex tsunami processes, e.g., generation and propagation under multiple possible scenarios. Here, we instead present probabilistic tsunami hazard maps derived solely from tide gauge observations. Specifically, we leverage Stan and rstan to develop a Bayesian hierarchical model which allows us, via latent Gaussian processes, to map extreme tsunami amplitude along the entire stretch of California and Oregon shorelines, even at ungauged coasts. Our Bayesian hazard estimates show significantly reduced uncertainty compared to site-specific maximum likelihood analysis.
 
 # [Call for proposals](#call)
 
