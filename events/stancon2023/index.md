@@ -110,7 +110,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 <!--**Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)-->
 
 **Building a GPT in Stan**\
-**Instructor:** Daniel Lee. [Course description](img/outline_gpt.pdf)
+**Instructor:** Daniel Lee. [Course description](img/Building_a_GPT_in_Stan_Description.pdf)
 
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). [Course description](img/dcm-tutorial-description.pdf).
