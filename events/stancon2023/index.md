@@ -27,6 +27,10 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 </center>
 
+<center style="padding: 0.75em 0 0 0">
+<a href="https://wustl.edu/"><img width="200" src="img/sage-og.png" /></a>
+</center>v
+
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
 <!-- <hr> -->
 
