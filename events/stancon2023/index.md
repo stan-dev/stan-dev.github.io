@@ -28,7 +28,7 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 </center>
 
 <center style="padding: 0.75em 0 0 0">
-<a href="https://wustl.edu/"><img width="250" src="img/sage-og.png" /></a>
+<a href="https://www.sagerx.com/"><img width="250" src="img/sage-og.png" /></a>
 </center>
 
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
