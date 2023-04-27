@@ -109,8 +109,8 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 <!--**Introduction to Bayesian hierarchical modeling using Stan and brms**\-->
 <!--**Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)-->
 
-**Ordinary differential equation (ODE) models in Stan**\
-**Instructor:** Daniel Lee.
+**Building a GPT in Stan**\
+**Instructor:** Daniel Lee. [Course description](img/outline_gpt.pdf)
 
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). [Course description](img/dcm-tutorial-description.pdf).
