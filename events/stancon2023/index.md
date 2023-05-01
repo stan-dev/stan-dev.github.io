@@ -193,6 +193,22 @@ Chetkar Jha (Washington University at St. Louis)\
 Georgios Boumis (University of Alabama)\
 **Abstract**: For sustainable tsunami disaster risk reduction and management, we need to be able to provide probabilistic tsunami hazard estimates in a spatially-continuous manner with small uncertainty. Current practices involve time consuming and cost intensive numerical modeling of complex tsunami processes, e.g., generation and propagation under multiple possible scenarios. Here, we instead present probabilistic tsunami hazard maps derived solely from tide gauge observations. Specifically, we leverage Stan and rstan to develop a Bayesian hierarchical model which allows us, via latent Gaussian processes, to map extreme tsunami amplitude along the entire stretch of California and Oregon shorelines, even at ungauged coasts. Our Bayesian hazard estimates show significantly reduced uncertainty compared to site-specific maximum likelihood analysis.
 
+**Kolmogorov and Stan**\
+Ben Goodrich (Columbia University)\
+**Abstract**: Columbia received a NSF grant for which Andrew Gelman and I are the PIs whose goal is to make the evaluation of a (reparameterized) log-likelihood function faster by only evaluating it (and its autodiffed gradient) a limited number of times and thereafter relying on interpolation rather than evalu-
+ation to yield the value of the log-likelihood function (and its gradient) at a new point. In this talk, I will report on the progress made thus far. In theory, it is
+possible to interpolate any continuous function, including a log-likelihood, that is defined on the unit hypercube, which can usually be achieved by reparameterizing
+a Stan program so that the parameters block only contains a vector of cumulative probabilities on [−1, 1] that are mapped to the substantive parameters in the trans-
+formed parameters block using the quantile function of the prior distributions for the substantive parameters. The theory that supports interpolation of a function
+on the unit hypercube was established by Kolmogorov in 1963 and enhanced by other mathematicians in the following decade, but only in the past five years have
+researchers come close to implementing these ideas in floating-point software with sufficiently smooth functions. We have derived a candidate function for the critical
+component of Kolmogorov’s theory that is numerically accurate and are working toward proving that it is, in fact, admissible.
+
+**Unconstraining transforms in Stan: Sampling on a Simplex with Hamiltonian Monte Carlo**\
+Meenal Jhajharia (Aalto University)\
+**Abstract**: Stan uses unconstraining transforms to map a constrained variable to the unconstrained space to avoid the challenges of constructing HMC samplers for a constrained space.  We consider the task of sampling on a unit N - Simplex using Hamiltonian Monte Carlo. Simplexes are useful representations of multinomial probabilities - points on the standard N-simplex in N + 1 dimensions are the space of possible parameters (probabilities) of the categorical distribution on n + 1 possible outcomes. There's also a whole field of Compositional Data Analysis for points on a Simplex. Arbitrary transformations can serve as this mapping, not all of them work well when sampled from - owing to weak convexity, incompatible posterior geometry, numerical instability among other reasons. In this talk we construct a few of these transforms as Stan programs, discuss their change of variables adjustments, and evaluate their statistical properties,  computational efficiency and geometry. This serves two purposes: Providing a general idea on constructing unconstraining transforms, testing them and using them to sample in Stan. As well as, understanding the process of choosing a suitable transformation, when Stan's default under-the-hood transforms do not serve the bill.
+
+
 # [Call for proposals](#call)
 
 Call for submissions has been closed.
