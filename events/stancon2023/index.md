@@ -119,7 +119,6 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 **Advances of model assessment, selection, and inference after model selection**\ 
 **Instructor:** Andrew Johnson (Aalto University)
 
-### ....
 
 # [Talks](#talks)
 
@@ -196,40 +195,7 @@ Georgios Boumis (University of Alabama)\
 
 # [Call for proposals](#call)
 
-We invite participants to submit proposals for contributed talks, thematic sessions, and tutorials.
-
-We are interested in a broad range of topics relevant to the Stan community, including:
-
-* Applications of Bayesian statistics using Stan in all domains
-* Software development to support or complement the Stan ecosystem
-* Methods for Bayesian modeling, relevant to a broad range of users
-* Theoretical insights on common Bayesian methods and models
-* Visualization techniques
-* Tools for teaching Bayesian modeling
-
-Keep in mind that StanCon brings together a diverse audience. Material which focuses on an application should introduce the problem to non-field experts; theoretical insights should be linked to problems modelers are working on, etc.
-
-_We review proposals on a rolling basis and can often make decisions before the submission deadline. Accepted talks will progressively get added to the schedule._
-
-## [Call for contributed talks](#call-talks)
-
-Talks are 15 minutes long, with an additional 5 minutes dedicated to questions.
-
-To submit a proposal for a contributed talk, submit a [form](https://forms.gle/4fbNbd4p32MFPR219) by **April 30th**.
-
-## [Call for thematic sessions](#call-sessions)
-
-Thematic sessions are an opportunity to dive deeper into a topic and comprise three talks (15 + 5 minutes each), with an additional 10 minutes which can be used for a panel discussion. Thematic sessions may be run in parallel.
-
-To submit a proposal for a contributed talk, submit a [form](https://forms.gle/HcfZPS3jMb8HGqsY8) by **April 30th**.
-
-## [Call for tutorials](#call-tutorials)
-
-Tutorials are an opportunity to do an in-depth exploration of a particular topic and may focus on a class of models, certain features in the Stan language, or a new package in the broader Stan ecosystem. Tutorials typically include hands-on exercises, which participants can perform on their own computers.
-
-Tutorials may comprise a single session of 2 or 3 hours (half-a-day) or two sessions of 2 or 3 hours each (full day).
-
-To submit a proposal for a tutorial, submit a [form](https://forms.gle/tgGmaSrQM7yTmHMA7) by **April 30th**.
+Call for submissions has been closed.
 
 # [Schedules](#schedules)
 <ul>
@@ -251,17 +217,9 @@ Early bird window extended till April 30, 2023! Registration fees cover lunch, c
 
 ### Conference only
 
-$199(student) | $299(academic) | $449(industry)
-
-### Tutorial & workshop + Conference
-
-$299(student) | $449(academic) | $599(industry)
-
-### Conference only (after April 30)
-
 $199(student) | $299(academic) | $539(industry)
 
-### Tutorial & workshop + Conference (after April 30)
+### Tutorial & workshop + Conference
 
 $299(student) | $449(academic) | $719(industry)
 
