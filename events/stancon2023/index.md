@@ -267,7 +267,7 @@ Participants who require financial assistance to attend the conference may apply
 
 Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
-# [Lodging] (#lodging)
+# [Lodging](#lodging)
 The university has contract with two hotels. Complimentary hot breakfast and parking is included at the hotel only. Parking on campus is $9.00 per day https://parking.wustl.edu/.
 
 **Clayton Plaza (7750 Carondelet Avenue, Clayton, MO 63105)**.  $126.00 Room rate is non-commissionable, and is subject to applicable taxes. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change. The StanCon attendee can use the code **COLU** to book online at www.cpclayton.com or by the link https://bookings.travelclick.com/97426?groupID=3907022#/guestsandrooms. The link will take guests directly to our reservations webpage with the attendee code already entered. Additionally, they can call toll-free 1-407-992-7957 to make reservations. In order to be included in the block one must make reservations by **05/28/23**.     
