@@ -55,6 +55,7 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 - [**Schedules**](#schedules)
 - [**Registration**](#registration)
 - [**Scholarships**](#scholarships)
+- [**Lodging**](#lodging)
 - [**Organizers**](#organizers)
 
 ------
