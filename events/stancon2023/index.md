@@ -264,12 +264,13 @@ Participants who require financial assistance to attend the conference may apply
 Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
 
 # [Lodging](#lodging)
-The university has contract with the following hotels. Complimentary hot breakfast and parking is included at the hotel only. Parking on campus is $9.00 per day https://parking.wustl.edu/.
+The university has contract with the following hotels. Hotel price includes complimentary hot breakfast and parking is included at the hotel only. The hotel price is subject to applicable taxes. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change. 
 
-**Clayton Plaza (7750 Carondelet Avenue, Clayton, MO 63105)**.  $126.00 Room rate is non-commissionable, and is subject to applicable taxes. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change. The StanCon attendee can use the code **COLU** at www.cpclayton.com or follow the [link](https://bookings.travelclick.com/97426?groupID=3907022#/guestsandrooms) to reserve. The link will take guests directly to reservations webpage with the attendee code already entered. In order to be included in the block one must make reservations by **05/28/23**. 
+**Clayton Plaza (7750 Carondelet Avenue, Clayton, MO 63105)**.  $126.00 Room rate is non-commissionable. The StanCon attendee can use the code **COLU** at www.cpclayton.com or follow the [link](https://bookings.travelclick.com/97426?groupID=3907022#/guestsandrooms) to reserve. The link will take guests directly to reservations webpage with the attendee code already entered. In order to be included in the block one must make reservations by **05/28/23**. 
 
-**The Cheshire (6300 Clayton Rd, St. Louis, MO 63117)**. Standard King Suite and Standard Queen $155 per night. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change.  Complimentary hot breakfast and parking is included at the hotel only. Follow the [link](https://reservations.travelclick.com/98391?groupID=3911259) to reserve. The cutoff date will be 5/26/2023.
+**The Cheshire (6300 Clayton Rd, St. Louis, MO 63117)**. Standard King Suite and Standard Queen $155 per night. Follow the [link](https://reservations.travelclick.com/98391?groupID=3911259) to reserve. The cutoff date will be **5/26/2023**.
 
+Parking on campus is $9.00 per day. See https://parking.wustl.edu/.
 
 All scholarship receipients will stay at student dorms on campus, details coming soon.
 
