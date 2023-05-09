@@ -60,7 +60,7 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 
 ------
 
-Stan (http://mc-stan.org) is a probabilistic programming and statistical modeling language used by tens of thousands of scientists, engineers, and other researchers for statistical modeling, data analysis, and prediction. It is being applied academically and commercially across fields as diverse as ecology, pharmacometrics, physics, political science, finance and econometrics, professional sports, real estate, publishing, recommender systems, and educational testing.
+Registration is open for StanCon 2023, an **all-in-person** conference being held at the Washington University in St. Louis. The registration provides options of tutorial + conference and conference only.
 
 If you have questions regarding registration, payments, travel, please email
 [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
