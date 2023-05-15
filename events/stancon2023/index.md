@@ -141,10 +141,6 @@ Teddy Groves (Technical University of Denmark)\
 Paul Johnson (Vanderbilt University)\
 **Abstract**: Approximate Bayesian Computation (ABC) is a flexible approach that allows statisticians to perform Bayesian inference in cases where a likelihood function is either unknown or too complex to be represented in closed form (e.g., agent-based simulations). However, ABC is not as commonly featured in the literature compared to traditional MCMC sampling or surrogate modeling techniques. Here, we provide an overview of the ABC framework and demonstrate its utility with an applied case study analyzing economic risks of supply-chain disruptions due to flooding along the Upper Mississippi River. We show that with even one observational data point, the ABC framework can help researchers quantify uncertainties of parameters in complex models. 
 
-**Using Stan for Bayesian Discrete Choice Models: A Healthcare Case Study**\
-Srinivas Kowta\
-**Abstract**: This paper compares a traditional logit model vs. a Bayesian model using Stan in the R eco-system as applied to a discrete choice dataset in the healthcare arena. Additionally comparison is conducted on a sub-segment where two of the choice attributes may present multi-collinearity challenges in determining the best drivers of the brand chosen.
-
 **Bayesian pipelines with stantargets**\
 Will Landau (Eli Lilly)\
 **Abstract**: The stantargets R package is an extension of CmdStanR, a lightweight interface to Stan, and targets, a general-purpose pipeline tool for reproducible research and high-performance computing. In stantargets, a complicated Stan workflow becomes a concise targets pipeline, and targets orchestrates the pipeline to efficiently bring the results up to date with the underlying code and data. By simplifying pipeline creation, stantargets reduces the practical burden of developing and maintaining reproducible analysis workflows for Bayesian statistics.
