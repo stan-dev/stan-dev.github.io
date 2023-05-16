@@ -257,7 +257,7 @@ The purpose of the StanCon scholarship is to make StanCon a more accessible and 
 
 Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
-Applications are accepted and reviewed on a rolling basis until **May 28th (05/28/23)**, and scholarships are awarded based on available funds.
+Applications are accepted and reviewed on a rolling basis until **May 26th (05/26/23)** 12PM CST, and scholarships are awarded based on available funds.
 
 # [Lodging](#lodging)
 The university has contract with the following hotels. Hotel price includes complimentary hot breakfast and parking is included at the hotel only. The hotel price is subject to applicable taxes. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change. 
