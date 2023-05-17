@@ -10,6 +10,11 @@ image:
   creditlink:
 ---
 
+## Announcing StanCon 2023
+
+Registration is open for [StanCon 2023](/events/stancon2023/), an **all-in-person** conference being held at the Washington University in St. Louis!
+
+
 ## About Stan
 Stan is a state-of-the-art platform for statistical modeling
 and high-performance statistical computation.  Thousands of users rely
