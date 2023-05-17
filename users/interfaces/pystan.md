@@ -37,7 +37,7 @@ PyStan's API documentation is available from readthedocs.org.
 Stan's modeling language documentation is platform independent.
 
 * <p>
-  <a href="/documentation/">Stan Documentation</a>
+  <a href="/users/documentation/">Stan Documentation</a>
   </p>
 
 

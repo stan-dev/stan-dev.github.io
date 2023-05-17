@@ -27,6 +27,34 @@ versions noted and seeds fixed)</span> and
 * an open-source code license <span class="note">(preferably BSD or GPL
 for code, Creative Commons for text)</span>; authors retain all copyright.
 
+# *Stan Case Studies*, &nbsp; Volume 10 &nbsp; (2023)
+
+<hr style="margin:0.25em 0 0.25em 0;"/>
+<hr style="margin:0 0 2em 0;"/>
+
+##  Bayesian Structural Equation Modeling using blavaan
+<small> In this case study, we fit Bayesian structural equation models (SEM) using Hamiltonian Monte Carlo sampling in Stan-powered R package *blavaan* and illustrate how to use confirmtory factor analysis and latent growth curve modeling as SEM's special cases. We also compared the estimates from *blavaan* with its frequentist counterpart using *lavaan*.
+
+
+[View](case-studies/sem.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Feng Ji, Xingyao Xiao, Aybolek Amanmyradova, Sophia Rabe-Hesketh
+
+Keywords
+: Structural Equation Modeling (SEM), Lavant Variable Modeling, Latent Growth Curve Models, Confirmatory Factor Analysis (CFA), Growth Curve Modeling,
+Bayesian Model Evaluation
+
+Source Repository
+: [example-models/education/sem](https://github.com/education-stan/example-models/tree/master/education/sem)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> blavaan, lavaan, rstan, MASS, mvtnorm, tidyverse, semPlot, magrittr, lavaan.survey</tt>
+
+License
+:  BSD (3 clause), CC-BY
 
 # *Stan Case Studies*, &nbsp; Volume 9 &nbsp; (2022)
 

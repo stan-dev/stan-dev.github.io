@@ -38,7 +38,7 @@ MatlabStan's documentation is also on the wiki.
 Stan's modeling language documentation is platform independent.
 
 * <p>
-  <a href="/documentation/">Stan Documentation</a>
+  <a href="/users/documentation/">Stan Documentation</a>
   </p>
 
 
