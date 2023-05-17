@@ -269,7 +269,7 @@ The university has contract with the following hotels. Hotel price includes comp
 
 Parking on campus is $9.00 per day. See https://parking.wustl.edu/.
 
-All scholarship receipients will stay in student dorms on campus, details coming soon.
+WUSTL also provides residence hall dorms at the rate $44.50/night + fees. Each dorm room is for single occupancy and in a 3-bedroom suite with shared living area, bathroom, and kitchen. Details are included in the conference registration confirmation. This accomondation option is offered as part of scholarship. 
 
 # [Organizers](#organizers)
 - Charles Margossian (Flatiron Institute)
