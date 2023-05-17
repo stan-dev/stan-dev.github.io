@@ -92,7 +92,8 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 
 
 **Siddhartha Chib** (Harry C. Hartkopf Professor of Econometrics and Statistics, Washington University in St. Louis)\
-**Talk Title: TBA**
+**Talk Title: Regression Under Endogeneity: Bernstein-von Mises Theory and Bayes Factors Testing** \
+**Abstract:** We develop a semiparametric Bayesian analysis of linear regression with possibly endogenous regressors. To avoid the risk of distributional misspecification, the prior-posterior analysis is based solely on moment restrictions following the framework of Chib, Shin and Simoni (2018, JASA). We study the consequences of neglected endogeneity and derive a Berstenin-von Mises (BvM) theorem for the posterior distribution of a (default) base model when exogeneity is assumed, but that assumption is false. Due to the negative consequences of neglected endogeneity, we develop a Bayes factor test for endogeneity that compares the base model with an extended model that is immune from the problem of neglected endogeneity. We prove that this test is a consistent selection procedure: as the sample becomes large, it almost surely selects the base model if the treatments are exogenous, and the extended model if the treatments are endogenous. The theory is illustrated with problems concerning the causal effect of education on wages, financial asset pricing with possibly endogenous risk factors, and the causal effect of potentially endogenous airplane ticket prices on passenger volume
 
 # [Tutorials](#tutorials)
 
