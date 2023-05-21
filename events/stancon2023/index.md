@@ -130,9 +130,18 @@ _Listed below are confirmed talks. Proposals for talks are reviewed and accepted
 Collin Cademartori (Columbia University)\
 **Abstract**: The process of iterative model expansion often involves moving from some simple initial model to more complex, higher-dimensional models in order to obtain better fit to our observed data or to remove unrealistic assumptions. In this talk, I will argue that this model expansion process can create distinct challenges which motivate the use of more fine-grained posterior summaries in inference and model evaluation. In particular, a pair of theoretical results demonstrate how expansion can make typical model summaries and checks less informative as the model complexity grows. I will present some intuition for these results and discuss how the corresponding challenges can be mitigated by avoiding premature posterior marginalization. A brief example will tie these ideas together with a case in which certain conditional p-values contain substantially more information than the usual marginal counterpart.
 
-**Bayesian PBPK Modeling using R/Stan/Torsten and Julia/SciML/Turing.jl**\
+**Bayesian modeling workflow for pharmacometric applications using bbr.bayes with Stan/Torsten**\
 William R Gillespie (Metrum Research Group)\
-**Abstract**: Physiologically-based pharmacokinetic (PBPK) models are mechanistic models that are built based on an investigator's prior knowledge of the in vivo system of interest. Bayesian inference incorporates an investigator's prior knowledge of parameters while using the data to update this knowledge. As such, Bayesian tools are well-suited to infer PBPK model parameters using the strong prior knowledge available while quantifying the uncertainty on these parameters. This brief tutorial demonstrates a full population Bayesian PBPK analysis framework using R/Stan/Torsten and Julia/SciML/Turing.jl.
+**Abstract**: The R package bbr.bayes extends the bbr package by providing tools to facilitate traceable and reproducible Bayesian modeling workflows. The current version supports Stan models using cmdstanr. Future releases will add support for Bayesian modeling with NONMEM.
+bbr.bayes includes R functions for:
+
+•	Creating a new bbr model object de novo or by copying a pre-existing model. In the de novo case that includes creating template files for the Stan model and R scripts to generate a Stan data set, generate initial estimates and to set and record cmdstan arguments.
+
+•	Documenting a model object by providing a model description and tags.
+
+•	Creating a model log that summarizes multiple models. This may be used to create a tabular summary of model characteristics and fitting diagnostics, e.g., looCV results.
+bbr.bayes promotes a consistent approach to a Bayesian workflow that enhances traceability and reproducibility, facilitates QC, and simplifies summarization and comparison of multiple models. I will illustrate the use of bbr.bayes for a typical pharmacometric data analysis using Stan/Torsten. 
+
 
 **bibat: a batteries-included Bayesian analysis template**\
 Teddy Groves (Technical University of Denmark)\
