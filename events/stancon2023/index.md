@@ -236,16 +236,7 @@ Sabina Sagynbayeva (Stony Brook University)\
 Call for submissions has been closed.
 
 # [Schedules](#schedules)
-<ul>
-<li>Tutorials: June 20-21, 2023</li>
-
-<li>Conference: June 22-23, 2023</li>
-
-<li> Conference Dinner: June 22, 2023</li>
-
-
-</ul>
-Details coming soon.
+Download the full program [here](stancon_program.pdf).
 
 # [Registration](#registration)
 
