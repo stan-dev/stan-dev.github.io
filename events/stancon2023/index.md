@@ -119,7 +119,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 
 
 **Advances of model assessment, selection, and inference after model selection**\ 
-**Instructor:** Andrew Johnson (Aalto University)
+**Instructor:** Andrew Johnson (Aalto University). [Course description](img/johnson_model_assessment.pdf).
 
 
 # [Talks](#talks)
