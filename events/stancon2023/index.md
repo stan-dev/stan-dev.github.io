@@ -55,11 +55,12 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 - [**Schedules**](#schedules)
 - [**Registration**](#registration)
 - [**Scholarships**](#scholarships)
+- [**Lodging**](#lodging)
 - [**Organizers**](#organizers)
 
 ------
 
-Stan (http://mc-stan.org) is a probabilistic programming and statistical modeling language used by tens of thousands of scientists, engineers, and other researchers for statistical modeling, data analysis, and prediction. It is being applied academically and commercially across fields as diverse as ecology, pharmacometrics, physics, political science, finance and econometrics, professional sports, real estate, publishing, recommender systems, and educational testing.
+Registration is open for StanCon 2023, an **all-in-person** conference being held at the Washington University in St. Louis. The registration provides options of tutorial + conference and conference only.
 
 If you have questions regarding registration, payments, travel, please email
 [stancon2023@mc-stan.org](mailto:stancon2023@mc-stan.org).
@@ -91,7 +92,8 @@ StanCon participants are expected to abide by the [Stan code of conduct](https:/
 
 
 **Siddhartha Chib** (Harry C. Hartkopf Professor of Econometrics and Statistics, Washington University in St. Louis)\
-**Talk Title: TBA**
+**Talk Title: Regression Under Endogeneity: Bernstein-von Mises Theory and Bayes Factors Testing** \
+**Abstract:** We develop a semiparametric Bayesian analysis of linear regression with possibly endogenous regressors. To avoid the risk of distributional misspecification, the prior-posterior analysis is based solely on moment restrictions following the framework of Chib, Shin and Simoni (2018, JASA). We study the consequences of neglected endogeneity and derive a Berstenin-von Mises (BvM) theorem for the posterior distribution of a (default) base model when exogeneity is assumed, but that assumption is false. Due to the negative consequences of neglected endogeneity, we develop a Bayes factor test for endogeneity that compares the base model with an extended model that is immune from the problem of neglected endogeneity. We prove that this test is a consistent selection procedure: as the sample becomes large, it almost surely selects the base model if the treatments are exogenous, and the extended model if the treatments are endogenous. The theory is illustrated with problems concerning the causal effect of education on wages, financial asset pricing with possibly endogenous risk factors, and the causal effect of potentially endogenous airplane ticket prices on passenger volume
 
 # [Tutorials](#tutorials)
 
@@ -119,7 +121,6 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 **Advances of model assessment, selection, and inference after model selection**\ 
 **Instructor:** Andrew Johnson (Aalto University)
 
-### ....
 
 # [Talks](#talks)
 
@@ -129,9 +130,18 @@ _Listed below are confirmed talks. Proposals for talks are reviewed and accepted
 Collin Cademartori (Columbia University)\
 **Abstract**: The process of iterative model expansion often involves moving from some simple initial model to more complex, higher-dimensional models in order to obtain better fit to our observed data or to remove unrealistic assumptions. In this talk, I will argue that this model expansion process can create distinct challenges which motivate the use of more fine-grained posterior summaries in inference and model evaluation. In particular, a pair of theoretical results demonstrate how expansion can make typical model summaries and checks less informative as the model complexity grows. I will present some intuition for these results and discuss how the corresponding challenges can be mitigated by avoiding premature posterior marginalization. A brief example will tie these ideas together with a case in which certain conditional p-values contain substantially more information than the usual marginal counterpart.
 
-**Bayesian PBPK Modeling using R/Stan/Torsten and Julia/SciML/Turing.jl**\
+**Bayesian modeling workflow for pharmacometric applications using bbr.bayes with Stan/Torsten**\
 William R Gillespie (Metrum Research Group)\
-**Abstract**: Physiologically-based pharmacokinetic (PBPK) models are mechanistic models that are built based on an investigator's prior knowledge of the in vivo system of interest. Bayesian inference incorporates an investigator's prior knowledge of parameters while using the data to update this knowledge. As such, Bayesian tools are well-suited to infer PBPK model parameters using the strong prior knowledge available while quantifying the uncertainty on these parameters. This brief tutorial demonstrates a full population Bayesian PBPK analysis framework using R/Stan/Torsten and Julia/SciML/Turing.jl.
+**Abstract**: The R package bbr.bayes extends the bbr package by providing tools to facilitate traceable and reproducible Bayesian modeling workflows. The current version supports Stan models using cmdstanr. Future releases will add support for Bayesian modeling with NONMEM.
+bbr.bayes includes R functions for:
+
+•	Creating a new bbr model object de novo or by copying a pre-existing model. In the de novo case that includes creating template files for the Stan model and R scripts to generate a Stan data set, generate initial estimates and to set and record cmdstan arguments.
+
+•	Documenting a model object by providing a model description and tags.
+
+•	Creating a model log that summarizes multiple models. This may be used to create a tabular summary of model characteristics and fitting diagnostics, e.g., looCV results.
+bbr.bayes promotes a consistent approach to a Bayesian workflow that enhances traceability and reproducibility, facilitates QC, and simplifies summarization and comparison of multiple models. I will illustrate the use of bbr.bayes for a typical pharmacometric data analysis using Stan/Torsten. 
+
 
 **bibat: a batteries-included Bayesian analysis template**\
 Teddy Groves (Technical University of Denmark)\
@@ -140,10 +150,6 @@ Teddy Groves (Technical University of Denmark)\
 **Parameterization of complex models ... easy as ABC (Approximate Bayesian Computation)**\
 Paul Johnson (Vanderbilt University)\
 **Abstract**: Approximate Bayesian Computation (ABC) is a flexible approach that allows statisticians to perform Bayesian inference in cases where a likelihood function is either unknown or too complex to be represented in closed form (e.g., agent-based simulations). However, ABC is not as commonly featured in the literature compared to traditional MCMC sampling or surrogate modeling techniques. Here, we provide an overview of the ABC framework and demonstrate its utility with an applied case study analyzing economic risks of supply-chain disruptions due to flooding along the Upper Mississippi River. We show that with even one observational data point, the ABC framework can help researchers quantify uncertainties of parameters in complex models. 
-
-**Using Stan for Bayesian Discrete Choice Models: A Healthcare Case Study**\
-Srinivas Kowta\
-**Abstract**: This paper compares a traditional logit model vs. a Bayesian model using Stan in the R eco-system as applied to a discrete choice dataset in the healthcare arena. Additionally comparison is conducted on a sub-segment where two of the choice attributes may present multi-collinearity challenges in determining the best drivers of the brand chosen.
 
 **Bayesian pipelines with stantargets**\
 Will Landau (Eli Lilly)\
@@ -166,7 +172,7 @@ Cameron Pfiffer (Stanford University)\
 **Abstract**: We estimate a hierarchical Bayesian model of news readers' preferences for different types of news content. Using a novel dataset covering the complete history of individual-level web traffic and digital subscriptions from a major metropolitan newspaper in the United States from 2020 to 2021, we investigate consumers' willingness to pay for different kinds of content, such as investigative journalism, local news, sports, and political news. Our statistical identification relies on the quasi-random arrival of paywall events which force consumers to subscribe if they wish to continue reading. Using this variation, we estimate a model of consumer demand and construct the optimal content portfolio for the paper under different counterfactual revenue models: a fully subscription-based model and a fully ad-supported model. Preliminary results suggest that news consumers are willing to pay for investigative and local content, and that commonly used measures of demand based only on time-use substantially underestimate the value of investigative news.
 
 **Fully Bayesian Economically Optimal Design for Spatially Varying Coefficient Linear Stochastic Plateau Model**\
-Davood Poursina (Oklahoma State University)\
+B. Wade Brorsen (Oklahoma State University)\
 **Abstract**: Experimentation to guide optimal fertilizer selection is moving toward on-farm experimentation due to the uncertainty of small on-station experiments. However, there is no agreement on the optimal way to conduct on-farm experimentation, which motivated this paper. Optimal on-farm experimentation is addressed using fully Bayesian decision theory. Monte Carlo integration was used, assuming a linear stochastic plateau model with spatially correlated plateau parameters. The spatially varying coefficient model can be used to guide the application of site-specific nitrogen. The actual economic optimal nitrogen values vary from 130 to 180 for different plots based on the data-generating process used for simulation. Of the designs considered, the results show that experimenting on 15 plots of a field with treatment levels of 35, 130, 165, and 230 with 2, 3, 5, and 5 replications maximized the farmers' profit over several years. The third year was the best time to quit experimenting.
 
 **MCMC-Monitor: Browser-based Monitoring of Stan MCMC Samplers**\
@@ -194,54 +200,43 @@ Chetkar Jha (Washington University at St. Louis)\
 Georgios Boumis (University of Alabama)\
 **Abstract**: For sustainable tsunami disaster risk reduction and management, we need to be able to provide probabilistic tsunami hazard estimates in a spatially-continuous manner with small uncertainty. Current practices involve time consuming and cost intensive numerical modeling of complex tsunami processes, e.g., generation and propagation under multiple possible scenarios. Here, we instead present probabilistic tsunami hazard maps derived solely from tide gauge observations. Specifically, we leverage Stan and rstan to develop a Bayesian hierarchical model which allows us, via latent Gaussian processes, to map extreme tsunami amplitude along the entire stretch of California and Oregon shorelines, even at ungauged coasts. Our Bayesian hazard estimates show significantly reduced uncertainty compared to site-specific maximum likelihood analysis.
 
+**Kolmogorov and Stan**\
+Ben Goodrich (Columbia University)\
+**Abstract**: Columbia received a NSF grant for which Andrew Gelman and I are the PIs whose goal is to make the evaluation of a (reparameterized) log-likelihood function faster by only evaluating it (and its autodiffed gradient) a limited number of times and thereafter relying on interpolation rather than evalu-
+ation to yield the value of the log-likelihood function (and its gradient) at a new point. In this talk, I will report on the progress made thus far. In theory, it is
+possible to interpolate any continuous function, including a log-likelihood, that is defined on the unit hypercube, which can usually be achieved by reparameterizing
+a Stan program so that the parameters block only contains a vector of cumulative probabilities on [−1, 1] that are mapped to the substantive parameters in the trans-
+formed parameters block using the quantile function of the prior distributions for the substantive parameters. The theory that supports interpolation of a function
+on the unit hypercube was established by Kolmogorov in 1963 and enhanced by other mathematicians in the following decade, but only in the past five years have
+researchers come close to implementing these ideas in floating-point software with sufficiently smooth functions. We have derived a candidate function for the critical
+component of Kolmogorov’s theory that is numerically accurate and are working toward proving that it is, in fact, admissible.
+
+**Bayesian analysis of brain oscillation phase data in Stan**\
+Sydney Dimmock (University of Bristol)\
+**Abstract**: Electroencephalography and magnetoencephalography recordings are non-invasive and temporally precise, making them invaluable tools in the investigation of neural responses in humans. However, these recordings are noisy, both because the neuronal electrodynamics involved produces a muffled signal and because the neuronal processes of interest compete with numerous other processes, from blinking to day-dreaming. One fruitful response to this noisiness has been to use stimuli with a specific frequency and to look for the signal of interest in the response at that frequency. Typically this signal involves measuring the coherence of response phase: here a Bayesian approach to measuring phase coherence is described. This Bayesian approach is illustrated using an example from neurolinguistics and is more descriptive and more data-efficient than the traditional statistical approaches.
+
+**Incidences of Early Life Immune System and Neurodevelopmental Disorders are Linked with Peri- and Postpartum Health Factors**\
+Yanan Long (University of Chicago)\
+**Abstract**: In this work, we demonstrate how to use Stan/brms to estimate Bayesian models for studying the relationship between exogenous factors  and early-life health outcomes such as immune system disorders and neurodevelopemental disorders, using a very large healthcare insurance dataset from 2003-2011. As part of the study, we also showcase a custom extension to brms enabling the estimation of cure models, which are a class of survival (time-to-event) models that include a fraction of the population not experiencing the event.
+
+**Estimating Tumor Growth/Inhibition Dynamics from Published Progression-Free Survival Curves Using a Bayesian Generative Approach**\
+Arya Pourzanjani (Amgen)\
+**Abstract**: Mechanistic modeling of tumor growth/inhibition dynamics is crucial for early decision making in oncology drug development because of its ability to quantify and predict efficacy across various drug treatments as well as various dosing regimens of the same drug. Unfortunately, the scope of such models is limited by data sparsity and lack of control subjects in early oncology data. Although longitudinal tumor size data from historical trials is rarely publicly available, progression-free survival (PFS) curves are directly derived from longitudinal tumor size data and have become ubiquitous in the published literature on historical trials due to the increasing use of PFS as a primary endpoint in clinical trials. We utilize this relationship between PFS curves and longitudinal tumor size measurements to create a Bayesian generative model of PFS curves to estimate underlying tumor growth/inhibition dynamics from published literature. The model accounts for both response and non-target progression in the data-generating process to more accurately estimate underlying tumor dynamics in a range of historical studies regardless of their outcome. Our approach allows for more stable estimation of tumor in dynamics in early oncology trials as well as the comparison of early-stage therapies to published standards of care.
+
+**It Pays to be Bayes: On Creating Investment-grade Securities out of Pure Insurance Risk**\
+Nathaniel Haines (Ledger Investing)\
+**Abstract**: At Ledger Investing, we securitize insurance risk, which appeals to investors because these securities are uncorrelated with most other asset classes. For context, insurers allow insured parties to trade the possibility of experiencing a risky, high severity loss for a certain, low severity premium. We define the loss ratio as the ratio of money paid to settle claims for a pool of policies to the premium collected on those policies; our goal is to forecast loss ratios for pools of policies that have not yet been written. We then use such forecasted loss ratios to help the insurer and investor agree on a price. Notably, the data-generating process underlying the loss ratio for a given time period is quite complicated. Claims are often not reported for months or years, and they may take years more to settle. As a result, loss ratios for recent time periods have not yet reached their ultimate state. Further, the pool of policies written by an insurer and premiums charged is in constant flux due to market demands. In this talk, we illustrate how our Bayesian workflow tackles these complexities by using: (1) theoretically informed time-series and state-space models to capture how loss ratios develop and change over time; (2) historic industry data to inform prior distributions of models fit to individual programs; and (3) hierarchical stacking to combine loss ratio predictions from candidate models.
+
+**Gaussian Processes and bayesian modeling for stellar research**\
+Sabina Sagynbayeva (Stony Brook University)\
+**Abstract**: The wealth of data from the Kepler telescope made it possible to study planets orbiting other stars (exoplanets) and exoplanets-hosting stars. Many of the light curves that we get from Kepler or TESS are variable, often due to star spots, and other surface features that rotate into and out of view over the course of a stellar rotation. Using multiple light curves from Kepler, we are interested in mapping the surface of the star HAT-P-11 using the planet that's orbiting it. Even though the stars are unresolved, we can in principle use their light curves to learn about what their surfaces look like by understanding the physical parameters of starspots, because we have the data for the planet crossing the starspots while orbiting the star and blocking its brightness (transits). This can be efficiently done using hierarchical Bayesian modeling treating the starspots as a statistical population and using the exoplanet to put constraints on our statistical model. We are considering the properties of the starspots as hyperparameters of our Gaussian Process (GP) model with a quasi-periodic kernel. 
+
 # [Call for proposals](#call)
 
-We invite participants to submit proposals for contributed talks, thematic sessions, and tutorials.
-
-We are interested in a broad range of topics relevant to the Stan community, including:
-
-* Applications of Bayesian statistics using Stan in all domains
-* Software development to support or complement the Stan ecosystem
-* Methods for Bayesian modeling, relevant to a broad range of users
-* Theoretical insights on common Bayesian methods and models
-* Visualization techniques
-* Tools for teaching Bayesian modeling
-
-Keep in mind that StanCon brings together a diverse audience. Material which focuses on an application should introduce the problem to non-field experts; theoretical insights should be linked to problems modelers are working on, etc.
-
-_We review proposals on a rolling basis and can often make decisions before the submission deadline. Accepted talks will progressively get added to the schedule._
-
-## [Call for contributed talks](#call-talks)
-
-Talks are 15 minutes long, with an additional 5 minutes dedicated to questions.
-
-To submit a proposal for a contributed talk, submit a [form](https://forms.gle/4fbNbd4p32MFPR219) by **April 30th**.
-
-## [Call for thematic sessions](#call-sessions)
-
-Thematic sessions are an opportunity to dive deeper into a topic and comprise three talks (15 + 5 minutes each), with an additional 10 minutes which can be used for a panel discussion. Thematic sessions may be run in parallel.
-
-To submit a proposal for a contributed talk, submit a [form](https://forms.gle/HcfZPS3jMb8HGqsY8) by **April 30th**.
-
-## [Call for tutorials](#call-tutorials)
-
-Tutorials are an opportunity to do an in-depth exploration of a particular topic and may focus on a class of models, certain features in the Stan language, or a new package in the broader Stan ecosystem. Tutorials typically include hands-on exercises, which participants can perform on their own computers.
-
-Tutorials may comprise a single session of 2 or 3 hours (half-a-day) or two sessions of 2 or 3 hours each (full day).
-
-To submit a proposal for a tutorial, submit a [form](https://forms.gle/tgGmaSrQM7yTmHMA7) by **April 30th**.
+Call for submissions has been closed.
 
 # [Schedules](#schedules)
-<ul>
-<li>Tutorials: June 20-21, 2023</li>
-
-<li>Conference: June 22-23, 2023</li>
-
-<li> Conference Dinner: June 22, 2023</li>
-
-
-</ul>
-Details coming soon.
+Download the full program [here](stancon_program.pdf).
 
 # [Registration](#registration)
 
@@ -251,17 +246,9 @@ Early bird window extended till April 30, 2023! Registration fees cover lunch, c
 
 ### Conference only
 
-$199(student) | $299(academic) | $449(industry)
-
-### Tutorial & workshop + Conference
-
-$299(student) | $449(academic) | $599(industry)
-
-### Conference only (after April 30)
-
 $199(student) | $299(academic) | $539(industry)
 
-### Tutorial & workshop + Conference (after April 30)
+### Tutorial & workshop + Conference
 
 $299(student) | $449(academic) | $719(industry)
 
@@ -271,7 +258,18 @@ The purpose of the StanCon scholarship is to make StanCon a more accessible and 
 
 Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
-Applications are reviewed on a rolling basis, and scholarships are awarded based on available funds.
+Applications are accepted and reviewed on a rolling basis until **May 26th (05/26/23)** 12PM CST, and scholarships are awarded based on available funds.
+
+# [Lodging](#lodging)
+The university has contract with the following hotels. Hotel price includes complimentary hot breakfast and parking is included at the hotel only. The hotel price is subject to applicable taxes. The current tax rates are 9.238% (state) and 7.25% (occupancy). Tax rates are subject to change. 
+
+**Clayton Plaza (7750 Carondelet Avenue, Clayton, MO 63105)**.  $126.00 Room rate is non-commissionable. The StanCon attendee can use the code **COLU** at www.cpclayton.com or follow the [link](https://bookings.travelclick.com/97426?groupID=3907022#/guestsandrooms) to reserve. The link will take guests directly to reservations webpage with the attendee code already entered. In order to be included in the block one must make reservations by **05/28/23**. 
+
+**The Cheshire (6300 Clayton Rd, St. Louis, MO 63117)**. Standard King Suite and Standard Queen $155 per night. Follow the [link](https://reservations.travelclick.com/98391?groupID=3911259) to reserve. The cutoff date will be **5/26/2023**.
+
+Parking on campus is $9.00 per day. See https://parking.wustl.edu/.
+
+WUSTL also provides residence hall dorms at the rate $44.50/night + fees. Each dorm room is for single occupancy and in a 3-bedroom suite with shared living area, bathroom, and kitchen. Details are included in the conference registration confirmation. This accomondation option is offered as part of scholarship. 
 
 # [Organizers](#organizers)
 - Charles Margossian (Flatiron Institute)
