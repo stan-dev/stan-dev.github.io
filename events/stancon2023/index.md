@@ -256,7 +256,7 @@ $299(student) | $449(academic) | $719(industry)
 
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+Participants who require financial assistance to attend the conference contact us. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
 Applications are accepted and reviewed on a rolling basis until **May 26th (05/26/23)** 12PM CST, and scholarships are awarded based on available funds.
 
