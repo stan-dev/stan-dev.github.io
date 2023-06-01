@@ -95,10 +95,10 @@ please email <board@mc-stan.org>.
 The current SGB members are:
 
 * Vianey Leos Barajas <span class="note">(University of Toronto)</span>
+* Caetano Souto Maior <span class="note">(National Institutes of Health)</span>
+* Charles Margossian <span class="note">(Flatiron Institute)</span>
+* Simon Maskell <span class="note">(University of Liverpool)</span>
 * Mitzi Morris <span class="note">(Columbia University)</span>
-* Sean Pinkney <span class="note">(Bully Pulpit Interactive Media)</span>
-* Jose Storopoli <span class="note">(UNINOVE, Brazil and Pumas-AI, Inc.)</span>
-* Yi Zhang <span class="note">(Metrum Research Group)</span>
 
 
 ## [SGB public updates]
