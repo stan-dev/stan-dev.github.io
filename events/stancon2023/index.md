@@ -119,7 +119,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 
 
 **Advances of model assessment, selection, and inference after model selection**\ 
-**Instructor:** Andrew Johnson (Aalto University)
+**Instructor:** Andrew Johnson (Aalto University). [Course description](img/johnson_model_assessment.pdf).
 
 
 # [Talks](#talks)
@@ -130,9 +130,18 @@ _Listed below are confirmed talks. Proposals for talks are reviewed and accepted
 Collin Cademartori (Columbia University)\
 **Abstract**: The process of iterative model expansion often involves moving from some simple initial model to more complex, higher-dimensional models in order to obtain better fit to our observed data or to remove unrealistic assumptions. In this talk, I will argue that this model expansion process can create distinct challenges which motivate the use of more fine-grained posterior summaries in inference and model evaluation. In particular, a pair of theoretical results demonstrate how expansion can make typical model summaries and checks less informative as the model complexity grows. I will present some intuition for these results and discuss how the corresponding challenges can be mitigated by avoiding premature posterior marginalization. A brief example will tie these ideas together with a case in which certain conditional p-values contain substantially more information than the usual marginal counterpart.
 
-**Bayesian PBPK Modeling using R/Stan/Torsten and Julia/SciML/Turing.jl**\
+**Bayesian modeling workflow for pharmacometric applications using bbr.bayes with Stan/Torsten**\
 William R Gillespie (Metrum Research Group)\
-**Abstract**: Physiologically-based pharmacokinetic (PBPK) models are mechanistic models that are built based on an investigator's prior knowledge of the in vivo system of interest. Bayesian inference incorporates an investigator's prior knowledge of parameters while using the data to update this knowledge. As such, Bayesian tools are well-suited to infer PBPK model parameters using the strong prior knowledge available while quantifying the uncertainty on these parameters. This brief tutorial demonstrates a full population Bayesian PBPK analysis framework using R/Stan/Torsten and Julia/SciML/Turing.jl.
+**Abstract**: The R package bbr.bayes extends the bbr package by providing tools to facilitate traceable and reproducible Bayesian modeling workflows. The current version supports Stan models using cmdstanr. Future releases will add support for Bayesian modeling with NONMEM.
+bbr.bayes includes R functions for:
+
+•	Creating a new bbr model object de novo or by copying a pre-existing model. In the de novo case that includes creating template files for the Stan model and R scripts to generate a Stan data set, generate initial estimates and to set and record cmdstan arguments.
+
+•	Documenting a model object by providing a model description and tags.
+
+•	Creating a model log that summarizes multiple models. This may be used to create a tabular summary of model characteristics and fitting diagnostics, e.g., looCV results.
+bbr.bayes promotes a consistent approach to a Bayesian workflow that enhances traceability and reproducibility, facilitates QC, and simplifies summarization and comparison of multiple models. I will illustrate the use of bbr.bayes for a typical pharmacometric data analysis using Stan/Torsten. 
+
 
 **bibat: a batteries-included Bayesian analysis template**\
 Teddy Groves (Technical University of Denmark)\
@@ -227,16 +236,7 @@ Sabina Sagynbayeva (Stony Brook University)\
 Call for submissions has been closed.
 
 # [Schedules](#schedules)
-<ul>
-<li>Tutorials: June 20-21, 2023</li>
-
-<li>Conference: June 22-23, 2023</li>
-
-<li> Conference Dinner: June 22, 2023</li>
-
-
-</ul>
-Details coming soon.
+Download the full program [here](stancon_program.pdf).
 
 # [Registration](#registration)
 
@@ -256,7 +256,7 @@ $299(student) | $449(academic) | $719(industry)
 
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference may apply for a scholarship by filling out **this [form](https://forms.gle/gro2kUpWrb3LGKpM7)**. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+Participants who require financial assistance to attend the conference contact us. **The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging**. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
 Applications are accepted and reviewed on a rolling basis until **May 26th (05/26/23)** 12PM CST, and scholarships are awarded based on available funds.
 
