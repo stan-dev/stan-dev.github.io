@@ -238,7 +238,7 @@ Sabina Sagynbayeva (Stony Brook University)\
 Call for submissions has been closed.
 
 # [Schedules](#schedules)
-Download the full program [here](stancon_program.pdf).
+Download the full program [here](stancon_program.pdf). The campus map that highlights the venues can be found [here](Danforth-Campus-Map).
 
 # [Registration](#registration)
 
