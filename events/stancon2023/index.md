@@ -29,6 +29,8 @@ We thank our sponsors who both support conference costs, scholarships, and Stan 
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.sagerx.com/"><img width="250" src="img/sage-og.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.jumpingrivers.com/"><img width="200" src="img/JR_logo_black.png" /></a>
 </center>
 
 <!-- <span style="display:inline-block; width: 0.75em;"></span> -->
@@ -112,7 +114,7 @@ _Listed below are confirmed tutorials. Proposals for tutorials are reviewed and 
 <!--**Instructor:** Mitzi Morris (Columbia University) and Mike Lawrence (Axem Neurotechnology)-->
 
 **Building a GPT in Stan**\
-**Instructor:** Daniel Lee. [Course description](img/Building_a_GPT_in_Stan_Description.pdf)
+**Instructor:** Daniel Lee (Zelus Analytics). [Course description](img/Building_a_GPT_in_Stan_Description.pdf)
 
 **Cognitive diagnostic models in R and Stan**\
 **Instructor:** Jake Thompson (University of Kansas). [Course description](img/dcm-tutorial-description.pdf).
@@ -236,7 +238,7 @@ Sabina Sagynbayeva (Stony Brook University)\
 Call for submissions has been closed.
 
 # [Schedules](#schedules)
-Download the full program [here](stancon_program.pdf).
+Download the full program [here](stancon_program.pdf). The campus map that highlights the venues can be found [here](Danforth-Campus-Map.pdf).
 
 # [Registration](#registration)
 
