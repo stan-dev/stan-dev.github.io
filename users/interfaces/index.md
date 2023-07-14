@@ -29,7 +29,7 @@ through interfaces into many popular computing environments.
 * [CmdStanR](https://mc-stan.org/cmdstanr)
   <span class="note">(R, lightweight wrapper for CmdStan)</span>
 
-* [CmdStanPy](https://cmdstanpy.readthedocs.io/en/latest/getting_started.html)
+* [CmdStanPy](https://mc-stan.org/cmdstanpy)
   <span class="note">(Python, lightweight wrapper for CmdStan)</span>
 
 * [MatlabStan](matlab-stan.html)

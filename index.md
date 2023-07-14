@@ -10,9 +10,14 @@ image:
   creditlink:
 ---
 
-## Announcing StanCon 2023
+## StanCon 2023
 
-Registration is open for [StanCon 2023](/events/stancon2023/), an **all-in-person** conference being held at the Washington University in St. Louis!
+[StanCon 2023](/events/stancon2023/) on June 20-21, 2023 at the Washington University in St. Louis was a great success!
+We thank our sponsors, all of the speakers for sharing generously of their time and expertise,
+the StanCon organizing committee and the local organizers for many, many hours of hard work, the staff at Washington University.
+Finally, huge thanks to all of the participants for making this a rewarding experience!
+
+Slides and materials from the talks and presentations are available at https://github.com/stan-dev/stancon2023
 
 
 ## About Stan
