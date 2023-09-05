@@ -32,6 +32,29 @@ for code, Creative Commons for text)</span>; authors retain all copyright.
 <hr style="margin:0.25em 0 0.25em 0;"/>
 <hr style="margin:0 0 2em 0;"/>
 
+## Instrumental Variables Analysis of Randomized Experiments with One-Sided Noncompliance
+<small> In this document, we demonstrate how to implement Bayesian inference for causal effects in randomized experiments with one-sided noncompliance using Stan. Specifically, we aim to replicate the analysis presented in Imbens and Rubin (1997). We present Stan models with and without the exclusion restriction assumption, showcasing a significant advantage of the Bayesian model-based approach.
+
+
+[View](case-studies/IV_one-sided.html) <span
+class="note">(HTML)</span>
+
+Authors
+: JoonHo Lee, Avi Feller, Sophia Rabe-Hesketh
+
+Keywords
+: causal inference, instrumental variables analysis, one-sided compliance, principal stratification
+
+Source Repository
+: [example-models/education/causal_iv_one-sided](https://github.com/joonho112/example-models/tree/master/education/causal_iv_one-sided)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> tidyverse, rstan, bayesplot, patchwork</tt>
+
+License
+:  BSD (3 clause), CC-BY</small>
+
 ##  Bayesian Structural Equation Modeling using blavaan
 <small> In this case study, we fit Bayesian structural equation models (SEM) using Hamiltonian Monte Carlo sampling in Stan-powered R package *blavaan* and illustrate how to use confirmtory factor analysis and latent growth curve modeling as SEM's special cases. We also compared the estimates from *blavaan* with its frequentist counterpart using *lavaan*.
 
