@@ -692,8 +692,7 @@ Source Repository
 <span class="note">(GitHub)</span>
 
 R Package Dependencies
-: <tt style="font-size: 90%">rstan</tt>,
-  <tt style="font-size: 90%">rstanarm</tt>,
+: <tt style="font-size: 90%">cmdstanr</tt>,
   <tt style="font-size: 90%">ggplot2</tt>,
   <tt style="font-size: 90%">broom</tt>,
   <tt style="font-size: 90%">reshape2</tt>,
