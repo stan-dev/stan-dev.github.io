@@ -1103,7 +1103,7 @@ Keywords
 : education, item response theory, rasch model, two-parameter logistic model
 
 Source Repository
-: [example-models/education/rasch_and_2pl.html](https://github.com/stan-dev/example-models/tree/master/education/rasch_and_2pl.html)
+: [example-models/education/rasch_and_2pl.html](https://github.com/stan-dev/example-models/tree/master/education/rasch_and_2pl)
 <span class="note">(GitHub)</span>
 
 R Package Dependencies
