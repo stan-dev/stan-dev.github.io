@@ -12,13 +12,12 @@ image:
 {:.center-txt}
 open-source methods and models
 
-The case studies on this page are intended to reflect best practices
-in Bayesian methodology and Stan programming.
+The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming. We aim to keep them current with the latest version of the Stan language, but there may be times when case studies need updating to reflect the latest Stan features and syntax.
 
 # Contributing Case Studies
 
 To contribute a case study, please contact us through the
-[Stan Forums](http://discourse.mc-stan.org/).  We require
+[Stan Forums](https://discourse.mc-stan.org/).  We require
 
 * a documented, reproducible example with narrative documentation
 <span class="note">(e.g., knitr or Jupyter with software/compiler
