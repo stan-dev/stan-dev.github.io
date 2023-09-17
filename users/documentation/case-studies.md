@@ -36,7 +36,7 @@ for code, Creative Commons for text)</span>; authors retain all copyright.
 <small> In this document, we demonstrate how to implement Bayesian inference for causal effects in randomized experiments with one-sided noncompliance using Stan. Specifically, we aim to replicate the analysis presented in Imbens and Rubin (1997). We present Stan models with and without the exclusion restriction assumption, showcasing a significant advantage of the Bayesian model-based approach.
 
 
-[View](case-studies/iv_one-sided.html) <span
+[View](case-studies/cace_one-sided.html) <span
 class="note">(HTML)</span>
 
 Authors
