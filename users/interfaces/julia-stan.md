@@ -35,7 +35,7 @@ Stan.jl's example-based documentation is also on its GitHub page.
 Stan's modeling language documentation is platform independent.
 
 * <p>
-  <a href="/documentation/">Stan Documentation</a>
+  <a href="/users/documentation/">Stan Documentation</a>
   </p>
 
 

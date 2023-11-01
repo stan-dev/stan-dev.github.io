@@ -12,13 +12,12 @@ image:
 {:.center-txt}
 open-source methods and models
 
-The case studies on this page are intended to reflect best practices
-in Bayesian methodology and Stan programming.
+The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming. We aim to keep them current with the latest version of the Stan language, but there may be times when case studies need updating to reflect the latest Stan features and syntax.
 
 # Contributing Case Studies
 
 To contribute a case study, please contact us through the
-[Stan Forums](http://discourse.mc-stan.org/).  We require
+[Stan Forums](https://discourse.mc-stan.org/).  We require
 
 * a documented, reproducible example with narrative documentation
 <span class="note">(e.g., knitr or Jupyter with software/compiler
@@ -26,6 +25,115 @@ versions noted and seeds fixed)</span> and
 
 * an open-source code license <span class="note">(preferably BSD or GPL
 for code, Creative Commons for text)</span>; authors retain all copyright.
+
+# *Stan Case Studies*, &nbsp; Volume 10 &nbsp; (2023)
+
+<hr style="margin:0.25em 0 0.25em 0;"/>
+<hr style="margin:0 0 2em 0;"/>
+
+## Instrumental Variables Analysis of Randomized Experiments with One-Sided Noncompliance
+<small> In this document, we demonstrate how to implement Bayesian inference for causal effects in randomized experiments with one-sided noncompliance using Stan. Specifically, we aim to replicate the analysis presented in Imbens and Rubin (1997). We present Stan models with and without the exclusion restriction assumption, showcasing a significant advantage of the Bayesian model-based approach.
+
+
+[View](case-studies/cace_one-sided.html) <span
+class="note">(HTML)</span>
+
+Authors
+: JoonHo Lee, Avi Feller, Sophia Rabe-Hesketh
+
+Keywords
+: causal inference, instrumental variables analysis, one-sided compliance, principal stratification
+
+Source Repository
+: [example-models/education/causal_iv_one-sided](https://github.com/joonho112/example-models/tree/master/education/causal_iv_one-sided)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> tidyverse, rstan, bayesplot, patchwork</tt>
+
+License
+:  BSD (3 clause), CC-BY</small>
+
+##  Bayesian Structural Equation Modeling using blavaan
+<small> In this case study, we fit Bayesian structural equation models (SEM) using Hamiltonian Monte Carlo sampling in Stan-powered R package *blavaan* and illustrate how to use confirmtory factor analysis and latent growth curve modeling as SEM's special cases. We also compared the estimates from *blavaan* with its frequentist counterpart using *lavaan*.
+
+
+[View](case-studies/sem.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Feng Ji, Xingyao Xiao, Aybolek Amanmyradova, Sophia Rabe-Hesketh
+
+Keywords
+: Structural Equation Modeling (SEM), Lavant Variable Modeling, Latent Growth Curve Models, Confirmatory Factor Analysis (CFA), Growth Curve Modeling,
+Bayesian Model Evaluation
+
+Source Repository
+: [example-models/education/sem](https://github.com/education-stan/example-models/tree/master/education/sem)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> blavaan, lavaan, rstan, MASS, mvtnorm, tidyverse, semPlot, magrittr, lavaan.survey</tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+# *Stan Case Studies*, &nbsp; Volume 9 &nbsp; (2022)
+
+<hr style="margin:0.25em 0 0.25em 0;"/>
+<hr style="margin:0 0 2em 0;"/>
+
+##  Multilevel regression modeling with CmdStanPy and plotnine
+<small> This notebook is a short introduction to multilevel regression modeling
+using the [CmdStanPy](https://mc-stan.org/cmdstanpy/) interface and
+[plotnine](https://plotnine.readthedocs.io/en/stable/), a Python implementation
+of a [_grammar of graphics_](https://vita.had.co.nz/papers/layered-grammar.pdf)
+based on [ggplot2](https://en.wikipedia.org/wiki/Ggplot2).
+
+
+[View](case-studies/radon_cmdstanpy_plotnine.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Mitzi Morris
+
+Keywords
+: Python, CmdStanPy, plotnine, hierarchical/multilevel modeling,
+linear regression, posterior predictive checks, radon
+
+Source Repository
+: [example-models/jupyter/radon](https://github.com/stan-dev/example-models/tree/master/jupyter/radon)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> cmdstanpy, numpy, pandas, matplotlib, plotnine, jupyter </tt>
+
+License
+:  BSD (3 clause), CC-BY
+
+
+
+## HoloML in Stan: Low-photon Image Reconstruction
+<small> In this case study, we perform image reconstruction in Stan by implementing the HoloML phase retrieval model and then solving the inverse problem with optimization. This case study requires Stan 2.30 or greater in order to use the Fourier transform functions added in that version. </small>
+
+[View](case-studies/HoloML_in_Stan.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Brian Ward, Bob Carpenter, and David Barmherzig
+
+Keywords
+: image reconstruction, phase retrieval, Fourier transforms, deconvolution
+
+Source Repository
+: [WardBrian/holoml-in-stan](https://github.com/WardBrian/holoml-in-stan)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> cmdstanpy, numpy, matplotlib, scipy, jupyter </tt>
+
+License
+:  BSD (3 clause), CC-BY
 
 
 
@@ -52,7 +160,6 @@ Source Repository
 
 Dependencies
 : <tt style="font-size: 90%"> label.switching, rstan, magrittr, knitr, poLCA </tt>
->>>>>>> origin/master
 
 License
 :  BSD (3 clause), CC-BY
@@ -81,7 +188,6 @@ Source Repository
 
 Dependencies
 : <tt style="font-size: 90%"> CmdStanR, posterior, ggplot2, dplyr, plyr, tidyr, boot, latex2exp </tt>
->>>>>>> origin/master
 
 License
 :  BSD (3 clause), CC-BY
@@ -183,11 +289,11 @@ License
 ## Bayesian Workflow for disease transmission modeling in Stan
 
 <small>
-This tutorial shows how to build, fit, and criticize disease transmission models in Stan, and should be useful to researchers interested in modeling the COVID-19 outbreak and doing Bayesian inference. 
-Bayesian modeling provides a principled way to quantify uncertainty and incorporate prior knowledge into the model. 
-What is more, Stan's main inference engine, Hamiltonian Monte Carlo sampling, is amiable to diagnostics, which means we can verify whether our inference is reliable. 
-Stan is an expressive probabilistic programing language that abstracts the inference and allows users to focus on the modeling. The resulting code is readable and easily extensible, which makes the modeler's work more transparent and flexible. 
-In this tutorial, we demonstrate with a simple Susceptible-Infected-Recovered (SIR) model how to formulate, fit, and diagnose a compartmental model in Stan. 
+This tutorial shows how to build, fit, and criticize disease transmission models in Stan, and should be useful to researchers interested in modeling the COVID-19 outbreak and doing Bayesian inference.
+Bayesian modeling provides a principled way to quantify uncertainty and incorporate prior knowledge into the model.
+What is more, Stan's main inference engine, Hamiltonian Monte Carlo sampling, is amiable to diagnostics, which means we can verify whether our inference is reliable.
+Stan is an expressive probabilistic programing language that abstracts the inference and allows users to focus on the modeling. The resulting code is readable and easily extensible, which makes the modeler's work more transparent and flexible.
+In this tutorial, we demonstrate with a simple Susceptible-Infected-Recovered (SIR) model how to formulate, fit, and diagnose a compartmental model in Stan.
 We also introduce more advanced topics which can help practitioners fit sophisticated models; notably, how to use simulations to probe our model and our priors, and computational techniques to scale ODE-based models.
 </small>
 
@@ -244,7 +350,7 @@ License
 model and data so that anyone with a modern web browser and a Google account
 can run your analysis with Google Colaboratory free cloud servers.  It shows
 you how to quickly set up a Stan installation in the cloud and introduces
-two lightweight interfaces: 
+two lightweight interfaces:
 [CmdStanR](https://mc-stan.org/cmdstanr/articles/cmdstanr.html) and
 [CmdStanPy](https://cmdstanpy.readthedocs.io/en/latest/index.html).</small>
 
@@ -291,11 +397,11 @@ Source Repository
 : [example-models/education/causal_rct](https://github.com/stan-dev/example-models/tree/master/education/causal_rct)
 
 R Package Dependencies
-: <tt style="font-size: 90%">rstan</tt>, 
-<tt style="font-size: 90%">rstanarm</tt>, 
-<tt style="font-size: 90%">bayesplot</tt>, 
-<tt style="font-size: 90%">tidyverse</tt>, 
-<tt style="font-size: 90%">gridExtra</tt>, 
+: <tt style="font-size: 90%">rstan</tt>,
+<tt style="font-size: 90%">rstanarm</tt>,
+<tt style="font-size: 90%">bayesplot</tt>,
+<tt style="font-size: 90%">tidyverse</tt>,
+<tt style="font-size: 90%">gridExtra</tt>,
 <tt style="font-size: 90%">Matching</tt>
 
 License
@@ -398,7 +504,7 @@ License
 
 ## Predator-Prey Population Dynamics: the Lotka-Volterra model in Stan
 
-<small>Lotka (1925) and Volterra (1926) formulated parameteric differential
+<small>Lotka (1925) and Volterra (1926) formulated parametric differential
 equations that characterize the oscillating populations of predators
 and prey. A statistical model to account for measurement error and
 unexplained variation uses the deterministic solutions to the
@@ -513,7 +619,7 @@ License
 Loss curves are a standard actuarial technique for helping
 insurance companies assess the amount of reserve capital they need to
 keep on hand to cover claims from a line of business. Claims made and
-reported for a given accounting period are tracked seperately over
+reported for a given accounting period are tracked separately over
 time. This enables the use of historical patterns of claim development
 to predict expected total claims for newer policies.
 </small>
@@ -580,25 +686,6 @@ R Package Dependencies
 License
 : Code: BSD (3 clause), Text: CC BY-NC 4.0
 
-[View](case-studies/splines_in_stan.html) <span class="note">(HTML)</span>
-
-Author
-: Milad Kharratzadeh
-
-Keywords
-: B-splines, piecewise regression, knots, priors
-
-Source Repository
-: [milkha/Splines_in_Stan](https://github.com/milkha/Splines_in_Stan)
-<span class="note">(GitHub)</span>
-
-R Package Dependencies
-: <tt style="font-size: 90%">splines</tt>,
-  <tt style="font-size: 90%">rstan</tt>,
-
-License
-: Code: BSD (3 clause), Text: CC BY-NC 4.0
-
 
 ## Spatial Models in Stan: Intrinsic Auto-Regressive Models for Areal Data
 
@@ -627,8 +714,7 @@ Source Repository
 <span class="note">(GitHub)</span>
 
 R Package Dependencies
-: <tt style="font-size: 90%">rstan</tt>,
-  <tt style="font-size: 90%">rstanarm</tt>,
+: <tt style="font-size: 90%">cmdstanr</tt>,
   <tt style="font-size: 90%">ggplot2</tt>,
   <tt style="font-size: 90%">broom</tt>,
   <tt style="font-size: 90%">reshape2</tt>,
@@ -1039,7 +1125,7 @@ Keywords
 : education, item response theory, rasch model, two-parameter logistic model
 
 Source Repository
-: [example-models/education/rasch_and_2pl.html](https://github.com/stan-dev/example-models/tree/master/education/rasch_and_2pl.html)
+: [example-models/education/rasch_and_2pl.html](https://github.com/stan-dev/example-models/tree/master/education/rasch_and_2pl)
 <span class="note">(GitHub)</span>
 
 R Package Dependencies

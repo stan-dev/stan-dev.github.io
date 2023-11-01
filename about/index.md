@@ -21,59 +21,14 @@ volunteer developers from around the world.
 
 * <p><a href="/about/team/">The Stan Development Team</a></p>
 
-# Stan Governing Body (SGB)
 
-The scope of the SGB’s authority is all things Stan. That includes
-ownership/management of trademarks, online resources like Discourse
-and GitHub and membership in the Stan community. The SGB has authority
-over:
+# Stan Logo
 
-* ownership and management of trademarks
-* online resources including the Stan Discourse, the stan-dev GitHub
-  organization
-* NumFOCUS funds
-* fundraising in support of Stan
-* authorizing and/or running Stan conferences
-* licensing requirements for contributed code and documentation
+The Stan name and logo are registered trademarks of NumFOCUS
+under the direction of the [Stan Governing Body](#stan-governing-body-sgb).
+For details on when you can use the logo see
 
-The SGB is intended to be a transparent body in service of the Stan
-community and electorate. To this end the SGB will post regular updates 
-about its activities on the [Stan forums](http://discourse.mc-stan.org) 
-in the [Stan Governance category](https://discourse.mc-stan.org/c/stan-governance/41).
-
-The SGB is to advance diversity in under-represented communities in
-the Stan ecosystem. The SGB will actively develop and implement
-strategies to improve inclusion and diversity at all levels of the
-Stan project and will prepare an annual diversity report.
-
-To reach the current SGB with any questions, concerns, or feedback,
-please email <board@mc-stan.org>.
-
-The current SGB members are:
-
-* Arman Oganisian <span class="note">(University of Pennsylvania)</span>
-* Duco Veen <span class="note">(University Medical Center Utrecht)</span>
-* Leah Comment <span class="note">(Foundation Medicine Inc.)</span>
-* Max Mantei <span class="note">(University of Hamburg)</span>
-* Yi Zhang <span class="note">(Metrum Research Group)</span>
-
-
-## [SGB public updates and minutes](/about/sgb/minutes)
-
-- [SGB 2021 general updates](https://discourse.mc-stan.org/t/sgb-2021-general-updates/20241)
-- [SGB 2020 general updates](https://discourse.mc-stan.org/t/sgb-2020-general-updates/13385)
-
-- [Summary of motions of the provisional SGB (08/2018-11/2019)](/about/sgb/minutes.html#summary-of-motions-of-the-provisional-sgb-082018-112019)
-
-- [Minutes of the provisional SGB (08/2018-11/2019)](/about/sgb/minutes.html#minutes-of-the-provisional-sgb-082018-112019)
-	- [Regular online meeting 09/18/2018](/about/sgb/minutes.html#20180918-regular-online-meeting)
-	- [Regular online meeting 09/26/2018](/about/sgb/minutes.html#20180926-regular-online-meeting)
-	- [Regular online meeting 10/03/2018](/about/sgb/minutes.html#20181003-regular-online-meeting)
-	- [Regular online meeting 09/26/2019](/about/sgb/minutes.html#20190926-regular-online-meeting)
-	- [Regular online meeting 10/07/2019](/about/sgb/minutes.html#20191007-regular-online-meeting)
-	- [Regular online meeting 10/14/2019](/about/sgb/minutes.html#20191014-regular-online-meeting)
-	- [Regular online meeting 10/21/2019](/about/sgb/minutes.html#20191021-regular-online-meeting)
-	- [Regular online meeting 10/28/2019](/about/sgb/minutes.html#20191028-regular-online-meeting)
+* <p><a href="/about/logo/index.html">Stan Logo</a></p>
 
 # Funding
 
@@ -109,11 +64,47 @@ and communication within the scientific computing community.
 [NumFOCUS home page](http://numfocus.org)</span>
 
 
+# Stan Governing Body (SGB)
 
-# Stan Logo
+The Stan Governing Body provides project governance structure
+in accord with the NumFOCUS requirements and is the liaison between
+the project and NumFOCUS for all fiscally sponsored initiatives.
+The SGB has authority over:
 
-The Stan name and logo are registered trademarks of NumFOCUS
-under the direction of the [Stan Governing Body](#stan-governing-body-sgb).  For details
-on when you can use the logo see
+* ownership and management of trademarks
+* online resources including the Stan Discourse, the stan-dev GitHub
+  organization
+* NumFOCUS funds
+* fundraising in support of Stan
+* authorizing and/or running Stan conferences
+* licensing requirements for contributed code and documentation
 
-* <p><a href="/about/logo/index.html">Stan Logo</a></p>
+The SGB is intended to be a transparent body in service of the Stan
+community and electorate. To this end the SGB will post regular updates 
+about its activities on the [Stan forums](http://discourse.mc-stan.org) 
+in the [Stan Governance category](https://discourse.mc-stan.org/c/stan-governance/41).
+
+The SGB is to advance diversity in under-represented communities in
+the Stan ecosystem. The SGB will actively develop and implement
+strategies to improve inclusion and diversity at all levels of the
+Stan project and will prepare an annual diversity report.
+
+To reach the current SGB with any questions, concerns, or feedback,
+please email <board@mc-stan.org>.
+
+The current SGB members are:
+
+* Vianey Leos Barajas <span class="note">(University of Toronto)</span>
+* Caetano Souto Maior <span class="note">(National Institutes of Health)</span>
+* Charles Margossian <span class="note">(Flatiron Institute)</span>
+* Simon Maskell <span class="note">(University of Liverpool)</span>
+* Mitzi Morris <span class="note">(Columbia University)</span>
+
+
+## [SGB public updates]
+
+- [SGB 2021 general updates](https://discourse.mc-stan.org/t/sgb-2021-general-updates/20241)
+- [SGB 2020 general updates](https://discourse.mc-stan.org/t/sgb-2020-general-updates/13385)
+
+- [Minutes of the provisional SGB, 2018-2019](/about/sgb/minutes)
+- [Summary of motions of the provisional SGB (08/2018-11/2019)](/about/sgb/minutes.html#summary-of-motions-of-the-provisional-sgb-082018-112019)

@@ -32,7 +32,6 @@ by Session Chair.
 | Martin Modrák | Researcher | Czech Academy of Sciences | Using Hidden Markov Models as a complement/alternative to survival models |
 | Teddy Groves | Postdoctoral researcher | Technical University of Denmark | Summarising enzyme information from online databases using Stan and Arviz |
 | Nicholas Cowie | PhD student | Technical University of Denmark | Automated kinetic modelling in Stan and its application to the methionine cycle |
-| Alejandra Avalos-Pacheco | Postdoctoral researcher | Harvard Medical School | Leveraging external data in Bayesian adaptive platform designs using Stan |
 
 **Organizers:**
 
@@ -40,7 +39,7 @@ Session Chair: Luiz Max Carvalho, PhD - Getúlio Vargas Foundation
 
 ## Registration
 
-Details will be made available as soon as possible. 
+Register [here](https://www.eventbrite.com/e/159548589125){:target="_blank"} 
 
 
 

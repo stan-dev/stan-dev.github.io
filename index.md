@@ -10,6 +10,18 @@ image:
   creditlink:
 ---
 
+## StanCon 2023
+
+[StanCon 2023](/events/stancon2023/) June 20-21, at the Washington University in St. Louis was a great success.
+
+Slides and materials from the talks and presentations are available at https://github.com/stan-dev/stancon2023
+
+We thank our sponsors for their generosity, all of the speakers for sharing their expertise,
+the StanCon organizing committee and the local organizers for many, many hours of hard work,
+and the WUSTL staff for their hospitality.
+Many, many thanks to all of the participants for making this a rewarding experience!
+
+
 ## About Stan
 Stan is a state-of-the-art platform for statistical modeling
 and high-performance statistical computation.  Thousands of users rely
@@ -59,3 +71,6 @@ Stan](/support/).
 <center style="padding: 0.75em 0 0 0">
 <a href="http://numfocus.org"><img width="200" src="images/numfocus.png" /></a>
 </center>
+
+
+<a rel="me" href="https://bayes.club/@mcmc_stan">Follow us on Mastodon!</a>

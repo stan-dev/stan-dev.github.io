@@ -14,8 +14,7 @@
   avatar: bob_carpenter.jpg
 
 - name: Daniel Lee
-  affiliation: Generable
-  web: http://syclik.com
+  web: https://syclik.com
   email: bearlee@alum.mit.edu
   linkedin: https://www.linkedin.com/in/syclik
   twitter: djsyclik
@@ -239,10 +238,11 @@
   avatar: edward_a_roualdes.jpg
 
 - name: Andre Zapico
-  affiliation: University of Electronic Science and Technology of China
+  affiliation: SAS
   github: drezap
-  email: andrezapico@yahoo.com
+  email: likelyandre@gmail.com
   linkedin: https://www.linkedin.com/in/andre-zapico/
+  web: https://likelyllc.com/
   avatar: andre_zapico.jpg
 
 - name: Ryan Bernstein
@@ -368,3 +368,11 @@
   github: nickdidio
   linkedin: https://www.linkedin.com/in/nick-didio/
   avatar: nicholas-didio.jpeg
+
+- name: Johann D. Gaebler
+  affiliation: Stanford University
+  email: jgaeb@stanford.edu
+  github: jgaeb
+  twitter: jgaeb1
+  web: https://www.jgaeb.com
+  avatar: johann_gaebler.jpg
