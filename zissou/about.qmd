@@ -1,0 +1,45 @@
+Stan has grown from a 3-person research project started at Columbia University in 2011 to
+a global community of developers, researchers, and users.
+
+## Open Code &amp; Reproducible Science
+
+Stan is freedom-respecting, open-source software <span
+class="note">(new BSD core, some interfaces GPLv3)</span>.&nbsp; Stan
+is associated with NumFOCUS, a 501(c)(3) nonprofit supporting open code
+and reproducible science, through which you can [help support
+Stan](support.html#contribute-money).
+
+<center style="padding: 0.75em 0 0 0">
+<a href="http://numfocus.org"><img width="200" src="img/numfocus.png" /></a>
+</center>
+
+## Acknowledgements {-}
+
+The Stan project owes its success to the contributions from hundreds of
+developers, researchers, active users, and funders.
+Individual contributions to the software and documentation can be tracked through GitHub.
+We are grateful to all the users who have taken the time to file bug reports and
+feature requests via the GitHub and the Stan forums; this feedback has greatly
+improved Stan's usability and reliability.
+
+Stan has been funded through grants for Stan and its developers,
+through in-kind donations in the form of companies contributing
+developer time to Stan and individuals contributing their own time to
+Stan, and through donations to the open-source scientific software
+non-profit NumFOCUS.
+
+
+## Copyright and trademark {-}
+
+* Copyright 2011--2022, Stan Development Team and their assignees.
+
+* The Stan name and logo are registered trademarks of NumFOCUS.
+
+
+## Licensing {-}
+
+* *Text content:*  [CC-BY ND 4.0 license](https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+
+* *Computer code:*  [BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause)
+
+* *Logo:*  [Stan logo usage guidelines](https://mc-stan.org/about/logo/)

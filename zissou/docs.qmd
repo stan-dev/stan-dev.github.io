@@ -1,0 +1,14 @@
+---
+title: "Stan Documentation"
+author: "Stan Development Team"
+---
+
+
+* The Stan User's Guide provides example models and programming techniques for coding statistical models in Stan.
+
+* The Stan Reference Manual specifies the Stan programming language and inference algorithms.
+
+* The Stan Functions Reference specifies the functions built into the Stan programming language.
+
+* The CmdStan User's Guide documents the command-line interface to the Stan inference engine.
+

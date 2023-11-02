@@ -1,0 +1,80 @@
+/* css styles */
+:root{
+    --quarto-body-bg: #FEF8E8;
+    --quarto-body-color: #052744;
+    --quarto-text-muted: #053A42;
+    --bs-body-bg: #FEF8E8;
+    --bs-body-color: #052744;
+    --bs-dark: #052744;
+    --bs-dark-warm: #053A42;
+    --warm-beige: #F2E5BD;
+    --palest-beige: #FEF8E8;
+    --aquatic-blue: #3E8EBC;
+}
+
+a { color: #3E8EBC;}
+a.nav-link.active { color: #3E8EBC;}
+a.sidebar-item-text.sidebar-link.active { color: #3E8EBC; }
+.sidebar.a.active { color: #3E8EBC; }
+
+
+div [data-bs-target^="#quarto-sidebar-section"] {
+    font-weight: bold;
+    font-style: italic;
+    color: #3E8EBC;
+}
+
+p.big-top {
+  margin-top: 2em;
+}
+
+
+pre {
+    word-break: normal;
+    word-wrap: normal;
+}
+pre.sourceCode {
+    margin: 0;
+    padding: 0;
+    color: #053A42;
+    background-color: #FEFBEE;
+}
+
+pre code {
+    margin: 0;
+    padding: 0;
+    color: #053A42;
+    background-color: #FEFBEE;
+}
+
+p code:not(.sourceCode) {
+    color: #053A42;
+    background-color: #FEFBEE;
+}
+
+code {
+    color: #053A42;
+    background-color: #FEFBEE;
+}
+
+#quarto-appendix {
+    color: #053A42;
+    background-color: #FEFBEE;
+}
+
+.align-equations {
+    text-align: left;
+    margin-left: 2em; /* Adjust as needed */
+}
+
+
+/* headings */
+
+h1 {
+  margin: 1.1em 0em 0.5em 0em;
+  font-weight: 400;
+}
+h2 { 
+  margin: 1em 0em 0.4em 0em;
+  border-bottom: 0px;}
+}

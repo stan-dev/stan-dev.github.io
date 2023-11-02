@@ -1,0 +1,149 @@
+project:
+  type: website
+
+bibliography: all.bib
+
+website:
+  favicon: img/logo_tm.svg
+  title: "Stan"
+  image: "img/logo_tm.png"
+  reader-mode: true
+
+  navbar:
+    logo: "img/logo_tm.png"
+    logo-alt: "Stan logo"
+    title: false
+    foreground: "#F2E5BD"
+    background: "#052744"
+    left:
+      - text: "Installation"
+        href: install.qmd
+      - text: "Documentation"
+        menu:
+          - text: "Users Guide"
+            url: docs/stan-users-guide/index.Rmd
+          - text: "Reference Manual"
+            url: docs/reference-manual/index.Rmd
+          - text: "Stan Functions Reference"
+            url: docs/functions-reference/index.Rmd
+      - text: "Interfaces"
+        menu:
+          - text: "BRMS"
+            url: https://paul-buerkner.github.io/brms/
+          - text: "CmdStan"
+            url: docs/cmdstan-guide/index.Rmd
+          - text: "CmdStanPy"
+            url: https://mc-stan.org/cmdstanpy
+          - text: "CmdStanR"
+            url: https://mc-stan.org/cmdstanr
+          - text: "PyStan"
+            url: https://mc-stan.org/pystan
+          - text: "RStan"
+            url: https://mc-stan.org/rstan
+          - text: "RStanArm"
+            url: https://mc-stan.org/rstanarm
+          - text: "Stan.jl"
+            url: http://stanjulia.github.io/Stan.jl/stable/INTRO/
+      - text: "Community"
+        href: community.qmd
+      - text: "Contribute"
+        href: support.qmd
+      - text: "About"
+        href: about.qmd
+    tools:
+      - icon: github
+        url: https://github.com/stan-dev
+      - icon: mastodon
+        href: "https://bayes.club/%40mcmc_stan"
+
+  sidebar:
+    - title: "Stan Users Guide"
+      style: "floating"
+      foreground: "#052744"
+      background: "#FEF8E8"
+      contents:
+        - docs/stan-users-guide/index.Rmd
+        - section: "Example Models"
+          contents: 
+          - docs/stan-users-guide/regression.Rmd
+          - docs/stan-users-guide/time-series.Rmd
+          - docs/stan-users-guide/missing-data.Rmd
+        - text: "  "  
+        - section: "Programming Techniques"
+          contents:
+          - docs/stan-users-guide/floating-point.Rmd
+          - docs/stan-users-guide/matrices-arrays.Rmd
+          - docs/stan-users-guide/multi-indexing.Rmd
+        - text: "  "  
+        - section: "Posterior Inference & Model Checking"
+          contents:
+          - docs/stan-users-guide/posterior-prediction.Rmd
+          - docs/stan-users-guide/simulation-based-calibration.Rmd
+          - docs/stan-users-guide/posterior-predictive-checks.Rmd
+        - text: "  "  
+        - section: "Appendices"
+          contents:
+          - docs/stan-users-guide/using-stanc.Rmd
+          - docs/stan-users-guide/style-guide.Rmd
+          - docs/stan-users-guide/for-bugs-users.Rmd
+
+    - title: "Stan Reference Manual"
+      contents:
+        - docs/reference-manual/index.Rmd
+        - section: "Language"
+          contents: 
+          - docs/reference-manual/encoding.Rmd
+          - docs/reference-manual/includes.Rmd
+          - docs/reference-manual/comments.Rmd
+        - text: "  "  
+        - section: "Algorithms"
+          contents: 
+          - docs/reference-manual/mcmc.Rmd
+          - docs/reference-manual/analysis.Rmd
+        - text: "  "  
+        - section: "Usage"
+          contents: 
+          - docs/reference-manual/reproducibility.Rmd
+          - docs/reference-manual/licenses.Rmd
+
+    - title: "Stan Functions Reference"
+      contents:
+        - docs/functions-reference/index.Rmd
+        - section: "Built-in Functions"
+          contents: 
+          - docs/functions-reference/void_functions.Rmd
+          - docs/functions-reference/integer-valued_basic_functions.Rmd
+          - docs/functions-reference/real-valued_basic_functions.Rmd
+          - docs/functions-reference/complex-valued_basic_functions.Rmd
+        - text: "  "  
+        - section: "Discrete Distributions"
+          contents: 
+          - docs/functions-reference/binary_distributions.Rmd
+          - docs/functions-reference/bounded_discrete_distributions.Rmd
+          - docs/functions-reference/unbounded_discrete_distributions.Rmd
+          - docs/functions-reference/multivariate_discrete_distributions.Rmd
+        - text: "  "  
+        - section: "Continuous Distributions"
+          contents: 
+          - docs/functions-reference/unbounded_continuous_distributions.Rmd
+          - docs/functions-reference/positive_continuous_distributions.Rmd
+          - docs/functions-reference/positive_lower-bounded_distributions.Rmd
+        - text: "  "  
+        - section: "Additional Distributions"
+          contents: 
+          - docs/functions-reference/hidden_markov_models.Rmd
+        - text: "  "  
+        - section: "Appendix"
+          contents: 
+          - docs/functions-reference/mathematical_functions.Rmd
+
+
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
+    fontfamily: sans
+
+

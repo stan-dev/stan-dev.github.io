@@ -1,0 +1,21 @@
+## Contribute Expertise
+
+We welcome new Stan contributors!
+
+* Code
+
+* Write
+
+* Communicate
+
+
+## Contribute Money
+
+Stan is now linked to [NumFOCUS](https://numfocus.org/), a
+U.S. 501(c)(3) nonprofit organization that serves many open-source software projects
+including NumPy, Julia, Jupyter, ScikitLearn.
+
+
+* [Contribute to Stan via NumFOCUS](https://numfocus.salsalabs.org/donate-to-stan) &nbsp;&nbsp; (Salsa Labs payment processing)
+
+* [Sponsor Stan via GitHub](https://github.com/sponsors/stan-dev)

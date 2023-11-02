@@ -1,0 +1,12 @@
+---
+title: "Get Stan"
+---
+
+This page should provide a gallery view of the Stan interfaces and Stan-adjacent tools
+
+Julia / Python  / R
+
+
+
+
+

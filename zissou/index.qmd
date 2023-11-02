@@ -1,0 +1,44 @@
+---
+toc: false
+---
+
+<p class="big-top">
+Welcome to Stan, the open-source software project for statistical modeling.
+</p>
+
+:::{.column-body-outset}
+::: {.grid}
+::: {.g-col-4}
+## [Downloads](install)
+
+Get the software
+:::
+::: {.g-col-4}
+## [Documentation](docs)
+
+Read the docs
+:::
+::: {.g-col-4}
+## [Community](community)
+
+Ask questions,<br/>
+get answers,<br/>
+discuss solutions
+:::
+:::
+:::
+
+<p class="big-top">
+Latest Stan news goes here.
+</p>
+
+::: {.grid}
+::: {.g-col-3}
+:::
+::: {.g-col-6}
+<img style="center" src="../img/logo_tm.svg" width="300" alt="Stan logo" />
+:::
+::: {.g-col-3}
+:::
+:::
+
