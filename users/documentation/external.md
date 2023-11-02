@@ -97,6 +97,9 @@ Code may be found in the  [Stan example models repo](https://github.com/stan-dev
 
 * Suzuki, J.  2023. [*WAIC and WBIC with R Stan: 100 Exercises for Building Logic*](https://link.springer.com/book/10.1007/978-981-99-3838-4).  Springer.
 
+* Matsuura, K.. 2022. [*Bayesian Statistical Modeling with Stan, R, and
+  Python.*](https://link.springer.com/book/10.1007/978-981-19-4755-1) Springer.
+
 * Holmes, E. E., M. D. Scheuerell, and E. J. Ward.  2019.
   [*Applied Time Series Analysis for Fisheries and Environmental Sciences*](
   https://nwfsc-timeseries.github.io/atsa-labs/). NOAA Fisheries,
