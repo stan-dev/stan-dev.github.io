@@ -16,7 +16,7 @@ website:
     foreground: "#F2E5BD"
     background: "#052744"
     left:
-      - text: "Installation"
+      - text: "Getting Started"
         href: install.qmd
       - text: "Documentation"
         menu:
@@ -44,17 +44,19 @@ website:
             url: https://mc-stan.org/rstanarm
           - text: "Stan.jl"
             url: http://stanjulia.github.io/Stan.jl/stable/INTRO/
+      - text: "About"
+        href: about.qmd
       - text: "Community"
         href: community.qmd
       - text: "Contribute"
         href: support.qmd
-      - text: "About"
-        href: about.qmd
     tools:
       - icon: github
         url: https://github.com/stan-dev
       - icon: mastodon
         href: "https://bayes.club/%40mcmc_stan"
+      - icon: youtube
+        href: "https://www.youtube.com/channel/UCwgN5srGpBH4M-Zc2cAluOA"
 
   sidebar:
     - title: "Stan Users Guide"
@@ -141,9 +143,14 @@ website:
 
 format:
   html:
-    theme: litera
-    css: styles.css
     toc: true
-    fontfamily: sans
-
-
+    theme:
+      light: [cosmo, theme.scss]
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    include-after-body: js.html
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px

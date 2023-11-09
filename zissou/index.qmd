@@ -9,17 +9,17 @@ Welcome to Stan, the open-source software project for statistical modeling.
 :::{.column-body-outset}
 ::: {.grid}
 ::: {.g-col-4}
-## [Downloads](install)
+## [Downloads](install.qmd)
 
 Get the software
 :::
 ::: {.g-col-4}
-## [Documentation](docs)
+## [Documentation](docs/index.qmd)
 
 Read the docs
 :::
 ::: {.g-col-4}
-## [Community](community)
+## [Community](community.qmd)
 
 Ask questions,<br/>
 get answers,<br/>
