@@ -9,6 +9,20 @@ image:
   creditlink:
 ---
 
+
+## StanCon 2023
+
+[StanCon 2023](/events/stancon2023/) June 20-21, at the Washington University in St. Louis was a great success.
+
+Slides and materials from the talks and presentations are available at https://github.com/stan-dev/stancon2023
+
+We thank our sponsors for their generosity, all of the speakers for sharing their expertise,
+the StanCon organizing committee and the local organizers for many, many hours of hard work,
+and the WUSTL staff for their hospitality.
+Many, many thanks to all of the participants for making this a rewarding experience!
+
+
+
 # StanConnect
 
 ## [StanConnect - Simulation Based Calibration, 31 August 2021](/events/stanconnect_SBC)
