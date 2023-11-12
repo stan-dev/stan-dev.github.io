@@ -6,6 +6,7 @@ is associated with NumFOCUS, a 501(c)(3) nonprofit supporting open code
 and reproducible science, through which you can [help support
 Stan](support.html#contribute-money).
 
+
 ## Acknowledgements {-}
 
 Stan has grown from a small research project started in 2011 at Columbia University
@@ -44,3 +45,37 @@ improved Stan's usability and reliability.
 We appreciate citations for the Stan software because it lets us find out what 
 people have been doing with Stan and motivate further grant funding. See 
 [How to Cite Stan](https://mc-stan.org/users/citations/) for more details.
+
+## Contribute Expertise
+
+We welcome new Stan contributors!
+
+* Code
+
+* Write
+
+* Communicate
+
+
+## Contribute Money
+
+Stan is now linked to [NumFOCUS](https://numfocus.org/), a
+U.S. 501(c)(3) nonprofit organization that serves many open-source software projects
+including NumPy, Julia, Jupyter, ScikitLearn.
+
+
+* [Contribute to Stan via NumFOCUS](https://numfocus.salsalabs.org/donate-to-stan) &nbsp;&nbsp; (Salsa Labs payment processing)
+
+* [Sponsor Stan via GitHub](https://github.com/sponsors/stan-dev)
+
+## Stan Shop
+
+If you're looking to infer in style, stop by one of our shops for Stan
+t-shirts and mugs.
+
+* [Stan Shop [US]](https://shop.spreadshirt.com/mc-stan/)
+  &nbsp; <span class="note">(Spreadshirt US)</span>
+
+* [Stan Shop [UK]](https://shop.spreadshirt.co.uk/mc-stan/)
+  &nbsp; <span class="note">(Spreadshirt UK)</span>
+

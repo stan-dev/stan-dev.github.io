@@ -44,12 +44,10 @@ website:
             url: https://mc-stan.org/rstanarm
           - text: "Stan.jl"
             url: http://stanjulia.github.io/Stan.jl/stable/INTRO/
+      - text: "Discussion"
+        href: community.qmd
       - text: "About"
         href: about.qmd
-      - text: "Community"
-        href: community.qmd
-      - text: "Contribute"
-        href: support.qmd
     tools:
       - icon: github
         url: https://github.com/stan-dev

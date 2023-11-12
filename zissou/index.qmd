@@ -1,24 +1,34 @@
 ---
+pagetitle: "Stan"
+page-layout: custom
 toc: false
+description: | 
+  Stan is an open-source software project for statistical modeling and Bayesian inference.
+hide-description: true
 ---
 
-<p class="big-top">
-Welcome to Stan, the open-source software project for statistical modeling.
-</p>
-
-:::{.column-body-outset}
 ::: {.grid}
-::: {.g-col-4}
-## [Downloads](install.qmd)
+::: {.g-col-12}
+<img height=175 style="center" src="img/landing_banner.png" alt="Stan" />
+:::
+:::
+
+
+::: {.grid}
+::: {.g-col-1}
+:::
+::: {.g-col-3}
+## [Downloads](docs/install.qmd)
 
 Get the software
+
 :::
-::: {.g-col-4}
+::: {.g-col-3}
 ## [Documentation](docs/index.qmd)
 
 Read the docs
 :::
-::: {.g-col-4}
+::: {.g-col-3}
 ## [Community](community.qmd)
 
 Ask questions,<br/>
@@ -26,19 +36,14 @@ get answers,<br/>
 discuss solutions
 :::
 :::
-:::
 
+
+::: {.grid}
+::: {.g-col-1}
+:::
+::: {.g-col-10}
 <p class="big-top">
 Latest Stan news goes here.
 </p>
-
-::: {.grid}
-::: {.g-col-3}
-:::
-::: {.g-col-6}
-<img style="center" src="../img/logo_tm.svg" width="300" alt="Stan logo" />
-:::
-::: {.g-col-3}
 :::
 :::
-

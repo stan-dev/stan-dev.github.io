@@ -1,6 +1,6 @@
 ---
 title: "Stan Documentation"
-author: "Stan Development Team"
+toc: false
 ---
 
 

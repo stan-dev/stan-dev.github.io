@@ -1,0 +1,25 @@
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   xmlns="http://www.w3.org/2000/svg">
+  <g
+     id="g1"
+     transform="matrix(2.4262712,0,0,2.4262712,20.724641,35.910497)">
+    <path
+       d="m 12,16 4,-5 H 13 V 4 h -2 v 7 H 8 Z"
+       style="fill:#052744;fill-opacity:1" />
+    <path
+       d="M 20,18 H 4 V 11 H 2 v 7 c 0,1.103 0.897,2 2,2 h 16 c 1.103,0 2,-0.897 2,-2 v -7 h -2 z"
+       style="fill:#052744;fill-opacity:1" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0%;font-family:'\'Liberation', Arial, 'sans-serif\'';-inkscape-font-specification:'\'Liberation, Arial, sans-serif\', Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0;word-spacing:0;writing-mode:lr-tb;text-anchor:start;fill:#052744;fill-opacity:1;stroke:none;stroke-width:1"
+     x="15.793671"
+     y="33.450058"
+     id="text1"><tspan
+       x="15.793671"
+       y="33.450058"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0%;font-family:'\'Liberation', Arial, 'sans-serif\'';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0;word-spacing:0;writing-mode:lr-tb;text-anchor:start;fill:#052744;fill-opacity:1;stroke:none;stroke-width:1">Downloads</tspan></text>
+</svg>
