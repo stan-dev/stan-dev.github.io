@@ -31,6 +31,28 @@ for code, Creative Commons for text)</span>; authors retain all copyright.
 <hr style="margin:0.25em 0 0.25em 0;"/>
 <hr style="margin:0 0 2em 0;"/>
 
+## Estimating Dynamic Cross-National Opinion Using Existing Survey Data
+<small> This case study describes a method for estimating dynamic, cross-national, latent public opinion using existing survey data. It outlines the model and its coding in Stan, explains how to set the model up in R and run it using cmdstanr, then walks through an example where the model is used to estimate public support for democracy in 144 countries from 1988 to 2020.
+
+[View](case-studies/estimating-dynamic-latent-opinion.html) <span
+class="note">(HTML)</span>
+
+Authors
+: Christopher Claassen
+
+Keywords
+: latent variable models, public opinion, longitudinal model
+
+Source Repository
+: [example-models/education/dynamic-opinion](https://github.com/joonho112/example-models/tree/master/education/dynamic-opinion)
+<span class="note">(GitHub)</span>
+
+Dependencies
+: <tt style="font-size: 90%"> tidyverse, dplyr, bayesplot, ggplot2, arm, cmdstanr</tt>
+
+License
+:  BSD (3 clause), CC-BY</small>
+
 ## Instrumental Variables Analysis of Randomized Experiments with One-Sided Noncompliance
 <small> In this document, we demonstrate how to implement Bayesian inference for causal effects in randomized experiments with one-sided noncompliance using Stan. Specifically, we aim to replicate the analysis presented in Imbens and Rubin (1997). We present Stan models with and without the exclusion restriction assumption, showcasing a significant advantage of the Bayesian model-based approach.
 
