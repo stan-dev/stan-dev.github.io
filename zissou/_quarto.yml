@@ -17,7 +17,7 @@ website:
     background: "#052744"
     left:
       - text: "Getting Started"
-        href: install.qmd
+        href: download.qmd
       - text: "Documentation"
         menu:
           - text: "Users Guide"
@@ -45,7 +45,7 @@ website:
           - text: "Stan.jl"
             url: http://stanjulia.github.io/Stan.jl/stable/INTRO/
       - text: "Discussion"
-        href: community.qmd
+        href: discussions.qmd
       - text: "About"
         href: about.qmd
     tools:

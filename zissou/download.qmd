@@ -1,0 +1,13 @@
+---
+title: "Download and Install Stan"
+---
+
+On this page is a grid that allows the user to choose their platform (pre-specified) and programming environment of choice.
+
+Considerations:   C++ toolchain,  package managers
+
+
+
+
+
+

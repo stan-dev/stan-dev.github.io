@@ -1,0 +1,50 @@
+<svg
+   height="180px"
+   width="210px"
+   xmlns="http://www.w3.org/2000/svg">
+  <rect
+     width="100%"
+     height="100%"
+     fill="#f2e5bd"
+     id="rect1"
+     x="0"
+     y="0"
+     style="stroke-width:0.592251" />
+  <g
+     id="g1"
+     transform="matrix(5.7765303,0,0,6.2160398,35.856065,32.033282)">
+    <path
+       id="secondary"
+       d="m 6,13 a 2,2 0 1 0 2,2 2,2 0 0 0 -2,-2 z m 3,7 A 3,3 0 0 0 6,17 v 0 a 3,3 0 0 0 -3,3 v 1 H 9 Z M 14,8 H 4 A 1,1 0 0 1 3,7 V 4 A 1,1 0 0 1 4,3 h 10 a 1,1 0 0 1 1,1 v 3 a 1,1 0 0 1 -1,1 z"
+       style="stroke:#052744;stroke-width:0.3" />
+    <path
+       id="primary"
+       d="m 6,13 a 2,2 0 1 0 2,2 2,2 0 0 0 -2,-2 z m 3,7 A 3,3 0 0 0 6,17 v 0 a 3,3 0 0 0 -3,3 v 1 h 6 z"
+       style="fill:#3e8ebc;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round" />
+    <path
+       id="primary-2"
+       data-name="primary"
+       d="m 15,6 h 5 a 1,1 0 0 1 1,1 v 3 a 1,1 0 0 1 -1,1 h -4 l -4,2 V 11 A 1,1 0 0 1 11,10 V 8"
+       style="fill:#3e8ebc;stroke:#052744;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       id="primary-3"
+       data-name="primary"
+       x="6.5"
+       y="-0.5"
+       width="5"
+       height="12"
+       rx="1"
+       transform="rotate(90,9,5.5)"
+       style="fill:#3e8ebc;stroke:#052744;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0%;font-family:'\'Liberation', Arial, 'sans-serif\'';-inkscape-font-specification:'\'Liberation, Arial, sans-serif\', Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0;word-spacing:0;writing-mode:lr-tb;text-anchor:start;fill:#052744;fill-opacity:1;stroke:none;stroke-width:1"
+     x="27.234348"
+     y="33.450058"
+     id="text1"><tspan
+       x="27.234348"
+       y="33.450058"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:0%;font-family:'\'Liberation', Arial, 'sans-serif\'';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0;word-spacing:0;writing-mode:lr-tb;text-anchor:start;fill:#052744;fill-opacity:1;stroke:none;stroke-width:1"
+       id="tspan2">Discussions</tspan></text>
+</svg>
