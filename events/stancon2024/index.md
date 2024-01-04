@@ -8,12 +8,13 @@ image:
   credit:
   creditlink:
 ---
+
 <center style="padding: 0.75em 0 0 0">
-<img width="700" src="./img/banner.png" /><br>
+<img width="500" src="./img/Oxford.png" /><br>
 </center>
 
 <center style="padding: 0.75em 0 0 0">
-<img width="900" src="./img/Oxford.png" /><br>
+<img width="700" src="./img/banner.png" /><br>
 </center>
 
 ------
