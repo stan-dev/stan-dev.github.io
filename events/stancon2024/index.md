@@ -1,0 +1,41 @@
+---
+layout: page
+title: StanCon 2024
+excerpt: ""
+modified:
+image:
+  feature: feature/wide_ensemble.png
+  credit:
+  creditlink:
+---
+<center style="padding: 0.75em 0 0 0">
+<img width="700" src="./img/banner.png" /><br>
+</center>
+
+<center style="padding: 0.75em 0 0 0">
+<img width="900" src="./img/Oxford.png" /><br>
+</center>
+
+------
+*Tentative Dates:* September 9 - 13th 2024
+
+Information regarded travelling, accomodation, participation and call for tutorials and talks will be posted soon!
+
+**Sponsors**
+
+Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
+
+If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
+
+# [Organizers](#organizers)
+
+- Michael Collyer (University of Oxford)
+- Joss Wright (University of Oxford)
+- Richard McElreath (Max Planck Institute for Evolutionary Anthropology)
+- Elizaveta Semenova (University of Oxford)
+- Ben Lambert (University of Oxford)
+- Seth Flaxman (University of Oxford)
+- Charles Margossian (Flatiron Institute)
+- Juliette Unwin (Imperial College London)
+- Will Pearse (Imperial College London)
+- Makkunda Sharma (University of Oxford)
