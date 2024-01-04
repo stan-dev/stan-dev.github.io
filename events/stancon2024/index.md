@@ -14,14 +14,15 @@ image:
 </center>
 
 <center style="padding: 0.75em 0 0 0">
-<img width="700" src="./img/banner.png" /><br>
+<img width="600" src="./img/banner.png" /><br>
 </center>
 
 ------
 *Tentative Dates:* September 9 - 13th 2024
 
-Information regarded travelling, accomodation, participation and call for tutorials and talks will be posted soon!
+Information regarding travelling, accomodation, participation and call for tutorials and talks will be posted soon!
 
+------
 **Sponsors**
 
 Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
