@@ -9,6 +9,9 @@ image:
   creditlink:
 ---
 
+## StanCon 2024
+
+[StanCon 2024](/events/stancon2024) Tentative date: September 9-13, at the University of Oxford, UK.
 
 ## StanCon 2023
 
