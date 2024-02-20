@@ -1,0 +1,20 @@
+---
+title: "Stan"
+toc: false
+---
+
+<img style="float:right; margin: -2em 0em 4em 4em" src="img/logo_tm.png" width="225" alt="Stan logo" />
+
+This is the Stan Home Page
+
+The most important information is
+
+a) How to install Stan
+
+b) How to use Stan
+
+c) How to get help
+
+d) How to contribute
+
+

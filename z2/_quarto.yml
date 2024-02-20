@@ -1,0 +1,119 @@
+project:
+  title: "Stan"
+  type: website
+  output-dir: _website
+  render:
+    - index.qmd
+    - 404.qmd
+    - mc-stan-org/*.qmd
+    - learn-stan/*.qmd
+  resources:
+    - learn-stan/case-studies/*.html
+
+
+website:
+  favicon: img/logo_tm.png
+  image: img/logo_tm.png
+  page-navigation: true
+  back-to-top-navigation: true
+  
+  navbar:
+    logo: "img/logo_tm.png"
+    logo-alt: "Stan logo"
+    foreground: "#F2E5BD"
+    background: "#052744"
+    title: false
+    left:
+      - href: index.qmd
+      - text: "Getting Started"
+        href: installation/install.qmd
+      - text: "Documentation"
+        menu:
+          - text: "Stan Users Guide"
+            url: http://localhost:7785/stan-users-guide/overview.html
+          - text: "Reference Manual"
+            url: http://localhost:7785/reference-manual/overview.html
+          - text: "Functions Reference"
+            url: http://localhost:7785/functions-reference/overview.html
+      - text: "Examples and Tutorials"
+        href: learn-stan/index.qmd
+      - text: "Interfaces"
+        menu:
+          - text: "CmdStan"
+            url: http://localhost:7785/cmdstan-guide/overview.html
+          - text: "CmdStanPy"
+            url: https://mc-stan.org/cmdstanpy
+          - text: "CmdStanR"
+            url: https://mc-stan.org/cmdstanr
+          - text: "PyStan"
+            url: https://mc-stan.org/pystan
+          - text: "RStan"
+            url: https://mc-stan.org/rstan
+          - text: "Stan.jl"
+            url: http://stanjulia.github.io/Stan.jl/stable/INTRO/
+      - text: "Related Tools"
+        menu:
+          - text: "Bayesplot"
+            href: https://mc-stan.org/bayesplot/
+          - text: "BridgeStan"
+            href: https://roualdes.github.io/bridgestan/latest/
+          - text: "BRMS"
+            url: https://paul-buerkner.github.io/brms/
+          - text: "loo"
+            href: https://mc-stan.org/loo/
+          - text: "RStanArm"
+            url: https://mc-stan.org/rstanarm
+          - text: "Stan Math Library"
+            url: https://mc-stan.org/math
+      - text: "About Stan"
+        href: mc-stan-org/about.qmd
+    tools:
+      - icon: github
+        url: https://github.com/stan-dev
+      - icon: chat-text-fill
+        href: "https://discourse.mc-stan.org"
+
+  sidebar:
+    - id: installation
+      title: "Download, Install Stan"
+      foreground: "#052744"
+      background: "#FEFCF9"
+      contents:
+        - installation/install.qmd
+
+    - id: mc-stan-org
+      title: "Stan Project"
+      foreground: "#052744"
+      background: "#FEFCF9"
+      contents:
+        - mc-stan-org/about.qmd
+        - mc-stan-org/license.qmd
+        - mc-stan-org/community.qmd
+        - mc-stan-org/support.qmd
+        - mc-stan-org/shop.qmd
+
+    - id: learn-stan
+      title: "Examples and Tutorials"
+      foreground: "#052744"
+      background: "#FEFCF9"
+      contents:
+        - learn-stan/index.qmd
+        - learn-stan/case-studies.qmd
+
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+    syntax-definitions:
+      - stan.xml
+    highlight-style: tango
+    code-copy: true
+    code-overflow: wrap
+    css: quarto_styles.css
+    include-after-body: js.html
+    toc: true
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
