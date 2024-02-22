@@ -21,15 +21,6 @@ volunteer developers from around the world.
 
 * <p><a href="/about/team/">The Stan Development Team</a></p>
 
-
-# Stan Logo
-
-The Stan name and logo are registered trademarks of NumFOCUS
-under the direction of the [Stan Governing Body](#stan-governing-body-sgb).
-For details on when you can use the logo see
-
-* <p><a href="/about/logo/index.html">Stan Logo</a></p>
-
 # Funding
 
 Stan would not exist or continue to exist without the
@@ -42,15 +33,27 @@ Stan then please see our [support page](/support/)
 detailing the ways in which you can contribute.
 
 
+# Stan Logo
+
+The Stan name and logo are registered trademarks of NumFOCUS
+under the direction of the [Stan Governing Body](#stan-governing-body-sgb).
+For details on when you can use the logo see
+
+* <p><a href="/about/logo/index.html">Stan Logo</a></p>
+
+## Citing Stan
+
+We appreciate citations for the Stan software because it lets us find out what 
+people have been doing with Stan and motivate further grant funding. See 
+[How to Cite Stan](/users/citations/) for more details.
+
+
 # NumFOCUS
 
 Stan is now linked to [NumFOCUS](http://numfocus.org/), a
 U.S. 501(c)(3) nonprofit organization that serves several other
 open-source software projects, including NumPy, Julia, Jupyter, and
 others.
-
-All financial decisions related to NumFOCUS are made by the
-[Stan Governing Body](#stan-governing-body-sgb).
 
 <blockquote style="margin:1em 0 0 0;">
 The mission of NumFOCUS is to promote sustainable high-level
@@ -80,14 +83,8 @@ The SGB has authority over:
 * licensing requirements for contributed code and documentation
 
 The SGB is intended to be a transparent body in service of the Stan
-community and electorate. To this end the SGB will post regular updates 
-about its activities on the [Stan forums](http://discourse.mc-stan.org) 
-in the [Stan Governance category](https://discourse.mc-stan.org/c/stan-governance/41).
-
-The SGB is to advance diversity in under-represented communities in
-the Stan ecosystem. The SGB will actively develop and implement
-strategies to improve inclusion and diversity at all levels of the
-Stan project and will prepare an annual diversity report.
+community and electorate. It is committed to improving
+inclusion and diversity at all levels of the Stan project.
 
 To reach the current SGB with any questions, concerns, or feedback,
 please email <board@mc-stan.org>.
@@ -95,16 +92,7 @@ please email <board@mc-stan.org>.
 The current SGB members are:
 
 * Vianey Leos Barajas <span class="note">(University of Toronto)</span>
+* Caetano Souto Maior <span class="note">(National Institutes of Health)</span>
+* Charles Margossian <span class="note">(Flatiron Institute)</span>
+* Simon Maskell <span class="note">(University of Liverpool)</span>
 * Mitzi Morris <span class="note">(Columbia University)</span>
-* Sean Pinkney <span class="note">(Bully Pulpit Interactive Media)</span>
-* Jose Storopoli <span class="note">(UNINOVE, Brazil and Pumas-AI, Inc.)</span>
-* Yi Zhang <span class="note">(Metrum Research Group)</span>
-
-
-## [SGB public updates]
-
-- [SGB 2021 general updates](https://discourse.mc-stan.org/t/sgb-2021-general-updates/20241)
-- [SGB 2020 general updates](https://discourse.mc-stan.org/t/sgb-2020-general-updates/13385)
-
-- [Minutes of the provisional SGB, 2018-2019](/about/sgb/minutes)
-- [Summary of motions of the provisional SGB (08/2018-11/2019)](/about/sgb/minutes.html#summary-of-motions-of-the-provisional-sgb-082018-112019)
