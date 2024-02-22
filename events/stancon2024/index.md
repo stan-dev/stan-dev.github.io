@@ -18,9 +18,11 @@ image:
 </center>
 
 ------
-*Tentative Dates:* September 9 - 13th 2024
+Dates: September 10 - 12th 2024
 
 Information regarding travelling, accomodation, participation and call for tutorials and talks will be posted soon!
+
+Registration opens on March 1st.
 
 ------
 **Sponsors**
@@ -28,6 +30,7 @@ Information regarding travelling, accomodation, participation and call for tutor
 Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
+
 
 # [Organizers](#organizers)
 
