@@ -31,7 +31,7 @@ programming language and then fit the models to data using:
 class="note">(NUTS, HMC)</span>
 
 * approximate Bayesian inference with variational inference <span
-class="note">(ADVI)</span>
+class="note">(ADVI, Pathfinder)</span>
 
 * penalized maximum likelihood estimation with optimization <span
 class="note">(L-BFGS)</span>
