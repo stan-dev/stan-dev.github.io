@@ -22,7 +22,7 @@ Dates: September 10 - 12th 2024
 
 Information regarding travelling, accomodation, participation and call for tutorials and talks will be posted soon!
 
-Registration opens on March 1st.
+Registration opens on March 15th.
 
 ------
 **Sponsors**
