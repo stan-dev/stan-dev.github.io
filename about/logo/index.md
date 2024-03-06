@@ -26,4 +26,4 @@ When using the Stan logo please use the official image versions linked below,
   disableOn = 0;
 </script>
 * <p><a href="https://github.com/stan-dev/logos/blob/master/logo_tm.png">PNG</a></p>
-* <p><a href="https://github.com/stan-dev/logos/blob/master/logo_tm.eps">EPS</a></p>
+* <p><a href="https://github.com/stan-dev/logos/blob/master/logo_tm.svg">SVG</a></p>
