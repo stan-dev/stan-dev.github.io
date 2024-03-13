@@ -25,6 +25,23 @@ Information regarding travelling, accomodation, participation and call for tutor
 Registration opens on March 15th.
 
 ------
+**Call for proposals**
+
+We're now accepting proposals for contributed talks and tutorials. Proposals are reviewed by the organization committee on a rolling basis.
+
+Contributed talks are 15 minutes long, with an additional 5 minutes for questions. Talks can cover a diversity of topics, including:
+* Data analysis and modeling using Stan in any field
+* Software development within Stan or the Stan ecosystem, and more broadly software relevant to Stan users
+* Methodological development for Bayesian modeling
+
+To submit a proposal for a talk, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSecIfstHZUqdGEyQEaeMNW9gwuM97ofD3iWmFPJnoe11iHEvw/viewform). 
+
+Tutorials are either half-a-day or one day long, with each half-day 2 or 3 hours long. Tutorials should be introductory, though certain pre-requisites may be assumed (e.g. basic knowledge of Stan, R, Python, probability, etc.). When submitting a proposal be specific about the pre-requisites.
+
+We will provide an "introduction to Stan" tutorial, aimed at participants who have not used Stan before.
+
+
+------
 **Sponsors**
 
 Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
