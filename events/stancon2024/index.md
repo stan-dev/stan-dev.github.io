@@ -40,6 +40,8 @@ Tutorials are either half-a-day or one day long, with each half-day 2 or 3 hours
 
 We will provide an "introduction to Stan" tutorial, aimed at participants who have not used Stan before.
 
+To submit a proposal for a tutorial, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLScTJJDpSFArDcrdyD8Hrd_ImnUvYLvmHGc-Ci6Om3AJx5ryzg/viewform).
+
 
 ------
 **Sponsors**
