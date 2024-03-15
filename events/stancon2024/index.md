@@ -20,9 +20,8 @@ image:
 ------
 Dates: September 10 - 12th 2024
 
-Information regarding travelling, accomodation, participation and call for tutorials and talks will be posted soon!
+Information regarding travelling and accomodation will be posted soon!
 
-Registration opens on March 15th.
 
 ------
 **Call for proposals**
@@ -49,6 +48,22 @@ To submit a proposal for a tutorial, please fill out this [form](https://docs.go
 Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
+
+------
+**Registration**
+
+Tickets can be purchased at [link](https://www.tickettailor.com/events/standevelopmentteam/1182660).
+
+Prices for early bird registration are listed below:
+* Students (Conference only) £199.0
+* Students (Conference and tutorials) £299.0
+* Academics (Conference only) £299.0
+* Academics (Conference and tutorials) £449.0
+* Industry (Conference only) £599.0
+* Industry (Conference and tutorials) £799.0
+
+After July 1st, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
+
 
 
 # [Organizers](#organizers)
