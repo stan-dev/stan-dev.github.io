@@ -20,8 +20,19 @@ image:
 ------
 Dates: September 10 - 12th 2024
 
-Information regarding travelling and accomodation will be posted soon!
+Information regarding travelling and accomodation, and applications for scholarships will be posted soon!
 
+------
+**Keynote speakers**
+
+These are the confirmed keynote speakers:
+
+* Chris Wymant (Pandemic Sciences Institute, Oxford University)
+* Mitzi Morris (Columbia University)
+* Vianey Leos Barajas (University of Toronto)
+* Sebastian Weber (Novartis Pharma)
+
+Talk titles and abstracts will be posted soon!
 
 ------
 **Call for proposals**
@@ -48,6 +59,13 @@ To submit a proposal for a tutorial, please fill out this [form](https://docs.go
 Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
+
+We thank our current sponsors and supporting institutions.
+
+<center style="padding: 0.75em 0 0 0">
+<a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+
 
 ------
 **Registration**
