@@ -65,6 +65,7 @@ We thank our current sponsors and supporting institutions.
 <center style="padding: 0.75em 0 0 0">
 <a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
+</center>
 
 
 ------
