@@ -12,7 +12,7 @@ redirect_from: "/documentation/"
 
 # General Documentation 
 
-The official Stan documentation website https://mc-stan.org/docs/ contains 
+The official Stan documentation website [https://mc-stan.org/docs/](https://mc-stan.org/docs/) contains 
 
 * the [Stan User's Guide](/docs/stan-users-guide/index.html) which provides
 example models, programming techniques for building statistical models in Stan,
@@ -20,11 +20,11 @@ and methods for calibration and model checking.
 
 
 * the [Stan Reference Manual](https://mc-stan.org/docs/reference-manual/)
-specifies the Stan programming language and inference algorithms.
+which specifies the Stan programming language and inference algorithms.
 
 
 * the [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/)
-specifies the functions built into the Stan programming language.
+which specifies the functions built into the Stan programming language.
 
 # Stan Software Development Lifecycle
 
@@ -33,24 +33,19 @@ by the Stan project is hosted at
 
 * [Stan Software Development Lifecycle](/docs/sdlc.html)
 
-# CmdStan Documentation 
+# CmdStan, CmdStanR, CmdStanPy Documentation 
 
-* [CmdStan User's Guide 2.34](/docs/cmdstan-guide/index.html)
-<span class="note">&nbsp; &nbsp; (html)</span>
+CmdStan is the command-line interface to Stan.
+New versions are released several times a year.
+CmdStanR and CmdStanPy provide access to CmdStan from R and Python, respectively.
+They use minimal memory beyond what is used by CmdStan itself to run and record an analysis,
+therefore they can be used to fit complex models and/or large datasets.
+They are highly recommended for users on Windows machines.
 
-* [CmdStan User's Guide 2.34 pdf](/docs/2_34/cmdstan-guide-2_34.pdf)
-<span class="note">&nbsp; &nbsp; (GitHub pdf,&nbsp; CC-BY 4.0 license)</span>
-
-# CmdStanR, CmdStanPy Documentation 
-
-CmdStanPy and CmdStanR provide access to the latest version of Stan,
-or earlier versions, as specified. 
-They use minimal memory beyond what is used by CmdStan itself to
-run and record an analysis, therefore they can be used to fit
-more complex models and/or large datasets.
-
+* [CmdStan User's Guide]((https://mc-stan.org/docs/cmdstan/)
 
 *  [CmdStanR Vignettes, tutorials, and other package information](/cmdstanr) 
+
 *  [CmdStanPy documentation](/cmdstanpy) 
 
 # RStan Documentation
