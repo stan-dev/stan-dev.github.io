@@ -24,14 +24,6 @@ which specifies the Stan programming language and inference algorithms.
 
 
 * the [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/)
-which specifies the functions built into the Stan programming language.
-
-# Stan Software Development Lifecycle
-
-The software development practices underlying the code managed
-by the Stan project is hosted at
-
-* [Stan Software Development Lifecycle](/docs/sdlc.html)
 
 # CmdStan, CmdStanR, CmdStanPy Documentation 
 
@@ -55,6 +47,16 @@ They are highly recommended for users on Windows machines.
 # PyStan Documentation
 
 * [PyStan Documentation on readthedocs.org](https://pystan.readthedocs.org/en/latest/)
+
+# The Stan Forums
+
+Discussion of modeling techniques and computational issues.
+
+* <p><a href="http://discourse.mc-stan.org/">Stan Forums</a>
+<span class="note">(Discourse)</span></p>
+
+Discussions prior to June 2017 are archived and public on the now deprecated
+<a href="https://groups.google.com/forum/?fromgroups#!forum/stan-users">Stan Users Google Group</a>.
 
 # Case Studies and Notebooks
 
@@ -109,17 +111,6 @@ out on the Stan forums.
   &nbsp; <span class="note">(GitHub)</span>
   </p>  
 
-# The Stan Forums
-
-The most up to date discussion of modeling techniques and computational
-issues if often found in the Stan Forums before it ends up in a case study
-or a paper.
-
-* <p><a href="http://discourse.mc-stan.org/">Stan Forums</a>
-<span class="note">(Discourse)</span></p>
-
-Discussions prior to June 2017 are archived and public on the now deprecated
-<a href="https://groups.google.com/forum/?fromgroups#!forum/stan-users">Stan Users Google Group</a>.
 
 # GitHub Stan Developer Wiki
 
@@ -136,6 +127,16 @@ One particularly recommended page is
   <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations">
   Prior Choice Recommendations</a> &nbsp; &nbsp; <span class="note">(GitHub)</span>
   </p>
+
+which specifies the functions built into the Stan programming language.
+
+# Stan Software Development Lifecycle
+
+The software development practices underlying the code managed
+by the Stan project is hosted at
+
+* [Stan Software Development Lifecycle](/docs/sdlc.html)
+
 
 # Further References
 
