@@ -11,17 +11,24 @@ redirect_from: "/interfaces/"
 ---
 
 {:.center-txt}
-ways to run Stan
+ways to install and run Stan
+
+# Installation
+
+Installation procedures vary according to your choice of preferred programming environment.
+
+* The core Stan C++ libraries and command line interface can be installed from [conda](https://mc-stan.org/docs/cmdstan-guide/installation.html#conda-install)
+
+* Source code and pre-built binaries for linux can be installed from the [Github stan-dev releases](https://github.com/stan-dev/cmdstan/releases) page.
+
+
 
 # Stan Interfaces
 
 The Stan modeling language and statistical algorithms are exposed
 through interfaces into many popular computing environments.
 
-* [RStan](rstan.html) <span class="note">(R)</span>
-
-* [PyStan](pystan.html)
-  <span class="note">(Python)</span>
+## Actively supported interfaces
 
 * [CmdStan](cmdstan.html)
   <span class="note">(shell, command-line terminal)</span>
@@ -32,11 +39,18 @@ through interfaces into many popular computing environments.
 * [CmdStanPy](https://mc-stan.org/cmdstanpy)
   <span class="note">(Python, lightweight wrapper for CmdStan)</span>
 
-* [MatlabStan](matlab-stan.html)
-  <span class="note">(MATLAB)</span>
-
 * [Stan.jl](julia-stan.html)
   <span class="note">(Julia)</span>
+
+* [PyStan](pystan.html)
+  <span class="note">(Python)</span>
+
+* [RStan](rstan.html) <span class="note">(R)</span>
+
+## Unsupported interfaces
+
+* [MatlabStan](matlab-stan.html)
+  <span class="note">(MATLAB)</span>
 
 * [StataStan](stata-stan.html)
   <span class="note">(Stata)</span>

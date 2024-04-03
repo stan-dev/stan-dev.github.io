@@ -10,46 +10,21 @@ image:
 redirect_from: "/documentation/"
 ---
 
-# Stan User's Guide
+# General Documentation 
 
-The Stan user's guide provides example models and programming
-techniques for coding statistical models in Stan.
-It also serves as an example-driven introduction to Bayesian modeling
-and inference.
-For versions 2.18 and later, this is titled _Stan User's Guide_.
-For versions 2.17 and earlier, this is part of the _Stan Reference Manual_.
+The official Stan documentation website https://mc-stan.org/docs/ contains 
 
-* [Stan User's Guide 2.34](/docs/stan-users-guide/index.html)
-<span class="note">&nbsp; &nbsp; (html)</span>
-
-* [Stan User's Guide 2.34 pdf](/docs/2_34/stan-users-guide-2_34.pdf)
-<span class="note">&nbsp; &nbsp; (GitHub pdf,&nbsp; CC-BY 4.0 license)</span>
-
-# Stan Language Reference Manual
-
-The manual for Stan's programming language for coding probability models,
-inference algorithms for fitting models and making predictions,
-and posterior analysis tools for evaluating the results.
-This manual applies to all Stan interfaces.
-
-* [Stan Language Reference Manual 2.34](/docs/reference-manual/index.html)
-<span class="note">&nbsp; &nbsp; (html)</span>
+* the [Stan User's Guide](/docs/stan-users-guide/index.html) which provides
+example models, programming techniques for building statistical models in Stan,
+and methods for calibration and model checking.
 
 
-* [Stan Language Reference Manual 2.34 pdf](/docs/2_34/reference-manual-2_34.pdf)
-<span class="note">&nbsp; &nbsp; (GitHub pdf,&nbsp; CC-BY 4.0 license)</span>
+* the [Stan Reference Manual](https://mc-stan.org/docs/reference-manual/)
+specifies the Stan programming language and inference algorithms.
 
-# Stan Language Functions Reference
 
-The reference for the functions defined in the Stan math
-library and available in the Stan programming language.
-For versions 2.17 and earlier, this is part of the _Stan Reference Manual_.
-
-* [Stan Language Functions Reference 2.34](/docs/functions-reference/index.html)
-<span class="note">&nbsp; &nbsp; (html)</span>
-
-* [Stan Language Functions Reference 2.34 pdf](/docs/2_34/functions-reference-2_34.pdf)
-<span class="note">&nbsp; &nbsp; (GitHub pdf,&nbsp; CC-BY 4.0 license)</span>
+* the [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/)
+specifies the functions built into the Stan programming language.
 
 # Stan Software Development Lifecycle
 
