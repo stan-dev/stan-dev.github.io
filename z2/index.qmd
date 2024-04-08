@@ -1,20 +1,59 @@
 ---
-title: "Stan"
+pagetitle: "Stan"
 toc: false
+page-layout: custom
+section-divs: false
+hide-description: true
+description: | 
+  Stan combines powerful statistical modeling capabilities with user-friendly interfaces, an active community, and a commitment to open-source development.  
 ---
 
-<img style="float:right; margin: -2em 0em 4em 4em" src="img/logo_tm.png" width="225" alt="Stan logo" />
+::: {.hero-banner}
 
-This is the Stan Home Page
+::: {.grid}
 
-The most important information is
+::: {.g-col-1}
+:::
 
-a) How to install Stan
+::: {.g-col-11}
 
-b) How to use Stan
+# Welcome to the Stan Project!
 
-c) How to get help
+## Open-Source Software for Statistical Modeling
 
-d) How to contribute
+Stan combines powerful statistical modeling capabilities, an active community, and a commitment to open-source development.
+
+Interfaces for Python, Julia, R, and the Unix shell make it easy to use Stan in any programming environment,
+from laptops, clusters, or the cloud.
+
+::: {.hero-buttons}
+[Get Started](installation/install.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+::: 
+
+:::
+:::
+:::
 
 
+::: {style="position: relative; display: flex; justify-content: center;"}
+
+::: {.grid}
+
+::: {.g-col-11}
+
+## Join the Community Discussions
+
+* [Stan forum](https://discourse.mc-stan.org): message board
+for questions, discussion, and announcements related to Stan for
+both users and developers.
+
+* Stan slack - developer discussions
+
+* GitHub issues - report bugs
+
+
+<a rel="me" href="https://bayes.club/@mcmc_stan">Follow us on Mastodon!</a>
+
+:::
+:::
+:::

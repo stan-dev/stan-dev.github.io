@@ -1,0 +1,26 @@
+## Software Packages which Use Stan
+
+* McElreath, R. &nbsp; *rethinking: Statistical Rethinking book
+  package*, version 1.58.  GitHub project rmcelreath/rethinking.
+  Language: R
+
+* Bürkner, P.-C.  &nbsp; *brms: Bayesian Regression Models using Stan*.
+  CRAN package brms.  Language: R
+
+* Facebook.  &nbsp; [*PROPHET: Forecasting at
+  Scale*](https://facebookincubator.github.io/prophet/).
+  Languages: R and Python
+
+Additional CRAN packages using Stan in R can be found in the reverse
+links from the packages
+[rstan](https://cran.r-project.org/web/packages/rstan/index.html)
+and
+[rstanarm](https://cran.r-project.org/web/packages/rstanarm/index.html).
+
+## Software using the No-U-Turn Sampler
+
+* ICON, plc.  2017.  *NONMEM 7.4, Nonlinear mixed effects models for
+  pharmacometrics*. [commercial paid license, *not* open source]
+
+* PyMC Developers. 2016. *PyMC3: Probabilistic programming in
+  Python*.  GitHub project <tt>pymc-devs/pymc3</tt>.
