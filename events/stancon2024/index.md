@@ -23,19 +23,45 @@ Dates: September 10 - 12th 2024
 Information regarding travelling and accomodation, and applications for scholarships will be posted soon!
 
 ------
-**Keynote speakers**
+**Sponsors**
+
+Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
+
+If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
+
+We thank our current sponsors and supporting institutions.
+
+<center style="padding: 0.75em 0 0 0">
+<a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
+</center>
+
+
+------
+- [**Keynote speakers**](#keynote-speakers)
+- [**Call for proposals**](#call-for-proposals)
+- [**Registration**](#registration)
+- [**Scholarships**](#scholarships)
+- [**Lodging**](#lodging)
+- [**Organizers**](#organizers)
+
+------
+
+------
+# [Keynote speakers](#keynote-speakers)
 
 These are the confirmed keynote speakers:
 
-* Chris Wymant (Pandemic Sciences Institute, Oxford University)
-* Mitzi Morris (Columbia University)
-* Vianey Leos Barajas (University of Toronto)
-* Sebastian Weber (Novartis Pharma)
+* Chris Wymant (Senior Researcher, Pandemic Sciences Institute, Oxford University)
+* Mitzi Morris (Stan Developer, Columbia University)
+* Vianey Leos Barajas (Assistant Professor, Department of Statistical Sciences & School of the Environment, University of Toronto)
+* Sebastian Weber (Director Statistical Methods & Consulting, Advanced Exploratory Analytics, Novartis Pharma AG, Basel)
 
 Talk titles and abstracts will be posted soon!
 
 ------
-**Call for proposals**
+# [Call for proposals](#call-for-proposals)
 
 We're now accepting proposals for contributed talks and tutorials. Proposals are reviewed by the organization committee on a rolling basis.
 
@@ -52,24 +78,8 @@ We will provide an "introduction to Stan" tutorial, aimed at participants who ha
 
 To submit a proposal for a tutorial, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLScTJJDpSFArDcrdyD8Hrd_ImnUvYLvmHGc-Ci6Om3AJx5ryzg/viewform).
 
-
 ------
-**Sponsors**
-
-Sponsors support StanCon in various ways and help us book venues, create high quality online content, provide scholarships for early career researchers and participants from underrepresented groups in the sciences, and more.
-
-If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
-
-We thank our current sponsors and supporting institutions.
-
-<center style="padding: 0.75em 0 0 0">
-<a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
-<span style="display:inline-block; width: 0.75em;"></span>
-</center>
-
-
-------
-**Registration**
+# [Registration](#registration)
 
 Tickets can be purchased at [link](https://www.tickettailor.com/events/standevelopmentteam/1182660).
 
@@ -82,6 +92,22 @@ Prices for early bird registration are listed below:
 * Industry (Conference and tutorials) £799.0
 
 After July 1st, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
+
+------
+# [Scholarships](#sholarships)
+
+The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
+
+Participants who require financial assistance to attend the conference should fill out an [application form](https://docs.google.com/forms/d/e/1FAIpQLSffo0TumZ4ndFJulzyBtHifh3bfz05IvjWQNBwtdHtrxSb5XA/viewform?ts=65b6a720). 
+
+The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
+
+Applications are accepted and reviewed on a rolling basis, and scholarships are awarded based on available funds.
+
+------
+# [Lodging](#lodging)
+
+Information regarding lodging will be posted soon!
 
 
 
