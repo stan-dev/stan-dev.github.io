@@ -29,7 +29,7 @@ Sponsors support StanCon in various ways and help us book venues, create high qu
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
 
-We thank our current sponsors and supporting institutions: Metrum Research Group, Taylor and Francis, NumFocus, and the University of Oxford.
+We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the University of Oxford.
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.metrumrg.com/"><img width="200" src="img/metrum_new_logo.png" /></a>
