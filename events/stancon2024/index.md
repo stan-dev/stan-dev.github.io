@@ -32,9 +32,10 @@ If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mai
 We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the University of Oxford.
 
 <center style="padding: 0.75em 0 0 0">
+<a href="https://www.daiichisankyo.com/"><img width="200" src="img/DS_logo_portrait_format_4color_rgb_large.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.metrumrg.com/"><img width="200" src="img/metrum_new_logo.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
-<center style="padding: 0.75em 0 0 0">
 <a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
