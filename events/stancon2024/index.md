@@ -111,9 +111,21 @@ Applications are accepted and reviewed on a rolling basis, and scholarships are 
 ------
 # [Lodging](#lodging)
 
-Information regarding lodging will be posted soon!
+There are several options for securing your accommodation in Oxford, these include B&Bs, colleges, or hotels. Please see some examples below at various price points.
 
+- [The Mercure Eastgate Hotel](https://all.accor.com/hotel/6668/index.en.shtml?utm_term=mar&gclid=CjwKCAjwitShBhA6EiwAq3RqA8-oaLC3J99IhoOqH-F0M3WKBE2xBOiAoxYi3DoKHw-mhuWMYbXOyxoCFTwQAvD_BwE&utm_campaign=ppc-mer-mar-goo-uk-en-dom_top-mix-se&utm_medium=cpc&utm_content=uk-en-GB-V2968&utm_source=google)
+- [The Buttery](http://www.thebutteryhotel.co.uk/)
+- [The Old Parsonage](https://www.oldparsonagehotel.co.uk/?msclkid=3bb5d8be55e71ee49867bea8deb485ca&utm_source=bing&utm_medium=cpc&utm_campaign=Old%20Parsonage%20-%20Brand%20-%20RLSA%20-%20UK%20-%20EN&utm_term=old%20parsonage%20hotel%20oxford&utm_content=Brand%20-%20Location%20Oxford%20-%20Exact)
+- [The Randolph Hotel](https://graduatehotels.com/oxford-uk/?msclkid=ca9f60b5471512f6555806a3cc238be8&utm_source=bing&utm_medium=cpc&utm_campaign=LOB%20LRN%20Brand%20UK&utm_term=the%20randolph%20hotel%20oxford&utm_content=AG%20Brand%20-%20Randolph%20Hotel)
+- [Premier Inn Oxford City Centre (Westgate) Hotel](https://www.premierinn.com/gb/en/hotels/england/oxfordshire/oxford/oxford-city-centre-westgate.html?cid=GLBC_OXFORD) 
+- [Malmaison Oxford](https://www.malmaison.com/locations/oxford/) 
+- [100 Banbury Road](https://www.100banburyroadoxford.co.uk/)
+- [Courtyard by Marriott Oxford City Centre](https://www.marriott.com/en-gb/hotels/oxfcy-courtyard-oxford-city-centre/overview/)
+- [Linton Lodge a BW Signature Collection Hotel](https://www.bestwestern.co.uk/hotels/linton-lodge-hotel-bw-signature-collection-by-best-western-83647)
 
+We also recommend looking into any available rooms at [Oxford Colleges](https://conference-oxford.com//bb-self-catering) or [SpeedyBooker](https://www.speedybooker.com/), many of which offer ensuite accommodation with breakfast in an Oxford Hall and are an idyllic way to experience Oxford.  Please note not all college accommodation is located in central Oxford, not all rooms offer hotel style amenities, and many have shared bathrooms, so please ensure you look for these when booking.
+
+We'll post information about travel soon!
 
 # [Organizers](#organizers)
 
