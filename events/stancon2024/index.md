@@ -20,6 +20,10 @@ image:
 ------
 Dates: September 10 - 12th 2024
 
+[Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
+
+The conference comprises two days of tutorials (with introductory and advanced courses) and two days of contributed talks.
+
 ------
 **Sponsors**
 
