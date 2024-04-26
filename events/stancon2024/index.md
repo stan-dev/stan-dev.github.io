@@ -27,7 +27,7 @@ Sponsors support StanCon in various ways and help us book venues, create high qu
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
 
-We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the University of Oxford.
+We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the Oxford Internet Institute.
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.daiichisankyo.com/"><img width="200" src="img/DS_logo_portrait_format_4color_rgb_large.png" /></a>
@@ -37,6 +37,8 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 <a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.oii.ox.ac.uk/"><img width="200" src="img/oxford_logo.png" /></a>
 </center>
 
 
