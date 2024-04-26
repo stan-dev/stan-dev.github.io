@@ -20,8 +20,6 @@ image:
 ------
 Dates: September 10 - 12th 2024
 
-Information regarding travelling and accomodation, and applications for scholarships will be posted soon!
-
 ------
 **Sponsors**
 
@@ -48,6 +46,7 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 - [**Registration**](#registration)
 - [**Scholarships**](#scholarships)
 - [**Lodging**](#lodging)
+- [**Travelling**](#travelling)
 - [**Organizers**](#organizers)
 
 ------
@@ -125,7 +124,13 @@ There are several options for securing your accommodation in Oxford, these inclu
 
 We also recommend looking into any available rooms at [Oxford Colleges](https://conference-oxford.com//bb-self-catering) or [SpeedyBooker](https://www.speedybooker.com/), many of which offer ensuite accommodation with breakfast in an Oxford Hall and are an idyllic way to experience Oxford.  Please note not all college accommodation is located in central Oxford, not all rooms offer hotel style amenities, and many have shared bathrooms, so please ensure you look for these when booking.
 
-We'll post information about travel soon!
+# [Travelling](#travelling)
+
+If you are travelling from within the UK, taking a bus or train directly into Oxford would be the easiest option. Check the national providers for appropriate routes.
+
+If you are travelling from outside the UK, we would suggest first to travel into London via train or plane. If you are travelling via plane, and arriving/departing via Gatwick or Heathrow airport, we recommend booking a return ticket on [the airline](https://www.theairlineoxford.co.uk/) – a bus service that will take you directly from the airport to the central Oxford bus station at Glouster Green. If you are arriving into London via train, and arriving/departing from St Pancras Station, we recommend taking the underground tube to Paddington Station and then a train to Oxford Station. Tickets can be bought at [Great Western Railway](https://www.gwr.com/), [Trainline](https://www.thetrainline.com/en-us), and many other online providers. You can also purchase train tickets at the station if preferred. Travelling via the London underground is easiest using a contactless card. Alternatively, there are regular buses from London and Oxford through the “Oxford Tube” that provide travel at an affordable price.
+
+For further information, please see the university’s advice on [How to get to Oxford](https://www.ox.ac.uk/visitors/visiting-oxford/how-get-oxford) and some advice for [international travel into Oxford](https://www.ox.ac.uk/sites/files/oxford/field/field_document/finding%20your%20way%20to%20Oxford%20guide%202017.pdf), however, please check any travel independently as some information may be outdated.
 
 # [Organizers](#organizers)
 
