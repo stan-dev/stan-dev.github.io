@@ -116,7 +116,9 @@ Applications are accepted and reviewed on a rolling basis, and scholarships are 
 ------
 # [Lodging](#lodging)
 
-There are several options for securing your accommodation in Oxford, these include B&Bs, colleges, or hotels. Please see some examples below at various price points.
+The conference will be held at the Department of Engineering Science, University of Oxford, Thom Building, Parks Road, Oxford OX1 3PJ.
+
+There are several options for securing your accommodation nearby. These include B&Bs, colleges, or hotels. Please see some examples below at various price points.
 
 - [The Mercure Eastgate Hotel](https://all.accor.com/hotel/6668/index.en.shtml?utm_term=mar&gclid=CjwKCAjwitShBhA6EiwAq3RqA8-oaLC3J99IhoOqH-F0M3WKBE2xBOiAoxYi3DoKHw-mhuWMYbXOyxoCFTwQAvD_BwE&utm_campaign=ppc-mer-mar-goo-uk-en-dom_top-mix-se&utm_medium=cpc&utm_content=uk-en-GB-V2968&utm_source=google)
 - [The Buttery](http://www.thebutteryhotel.co.uk/)
