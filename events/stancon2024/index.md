@@ -75,6 +75,7 @@ These are the confirmed keynote speakers:
 **Applied modeling for drug development**
 
 * Mitzi Morris (Stan Developer, Columbia University)
+**The Pragmatic Probabilistic Programmer**
 
 Talk titles and abstracts will be posted soon!
 
