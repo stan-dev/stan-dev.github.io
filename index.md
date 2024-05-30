@@ -42,3 +42,6 @@ Additional R packages provide expression-based linear modeling,
 posterior visualization, and leave-one-out cross-validation.
 
 <a rel="me" href="https://bayes.club/@mcmc_stan">Follow us on Mastodon!</a>
+
+
+* [StanCon 2024](https://mc-stan.org/events/stancon2024/) will take place September 10th - 12th!

@@ -14,15 +14,17 @@ image:
 </center>
 
 <center style="padding: 0.75em 0 0 0">
-<img width="600" src="./img/banner.png" /><br>
+<img width="600" src="./img/banner_new.png" /><br>
 </center>
 
 ------
 Dates: September 10 - 12th 2024
 
+The main conference is Tuesday 10th - Thursday 12th. We also plan to have informal half-days on Monday 9th and Friday 13th, for additional meetings and brainstorming sessions.
+
 [Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
 
-The conference comprises two days of tutorials (with introductory and advanced courses) and two days of contributed talks.
+The conference comprises one day of tutorial (with introductory and advanced courses) and two days of contributed talks.
 
 For any questions, please reach out to stancon2024 at mc-stan dot org.
 
@@ -33,7 +35,7 @@ Sponsors support StanCon in various ways and help us book venues, create high qu
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
 
-We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the Oxford Internet Institute.
+We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, the Oxford Internet Institute, and the Max Planck Institute for Evolutionary Anthropology.
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.daiichisankyo.com/"><img width="200" src="img/DS_logo_portrait_format_4color_rgb_large.png" /></a>
@@ -45,6 +47,7 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.oii.ox.ac.uk/"><img width="200" src="img/oxford_logo.png" /></a>
+<a href="https://www.eva.mpg.de/index/"><img width="200" src="img/max_planck_logo.jpg /"></a>
 </center>
 
 
