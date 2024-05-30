@@ -47,7 +47,7 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.oii.ox.ac.uk/"><img width="200" src="img/oxford_logo.png" /></a>
-<a href="https://www.eva.mpg.de/index/"><img width="200" src="img/max_planck_logo.jpg /"></a>
+<a href="https://www.eva.mpg.de/index/"><img width="200" src="img/max_planck_logo.jpg" /></a>
 </center>
 
 
