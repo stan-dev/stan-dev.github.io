@@ -35,7 +35,7 @@ Sponsors support StanCon in various ways and help us book venues, create high qu
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
 
-We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, the Oxford Internet Institute, and the Max Planck Institute for Evolutionary Anthropology.
+We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Jumping Rivers, Taylor and Francis, NumFocus, the Oxford Internet Institute, and the Max Planck Institute for Evolutionary Anthropology.
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.daiichisankyo.com/"><img width="200" src="img/DS_logo_portrait_format_4color_rgb_large.png" /></a>
@@ -43,6 +43,8 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 <a href="https://www.metrumrg.com/"><img width="200" src="img/metrum_new_logo.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.jumpingrivers.com/"><img width="200" src="img/JR_logo_black.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
@@ -99,6 +101,32 @@ Tutorials are either half-a-day or one day long, with each half-day 2 or 3 hours
 We will provide an "introduction to Stan" tutorial, aimed at participants who have not used Stan before.
 
 To submit a proposal for a tutorial, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLScTJJDpSFArDcrdyD8Hrd_ImnUvYLvmHGc-Ci6Om3AJx5ryzg/viewform).
+
+
+------ 
+# [Talks](#talks)
+
+Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
+
+* Ethan Budge
+**Sharing the Spotlight: How Artist Collaboration affects Song Popularity**
+
+* Brynjólfur Gauti Guðrúnar Jónsson
+**Copulas in Stan: Modeling Spatial Dependence in Generalized Extreme Value Distributions**
+
+* Xingyao (Doria) Xiao (UC Berkeley)
+**Bayesian Identification, Estimation, and Diagnostic Techniques for Growth Mixture Models using Stan**
+
+------ 
+# [Talks](#talks)
+
+Tutorials will be posted here as they get accepted.
+
+* (Instructor to be confirmed)
+**Introduction to Stan**
+
+* Sean Pinkney 
+**Coding correlation matrix constraint transforms in Stan**
 
 ------
 # [Registration](#registration)
