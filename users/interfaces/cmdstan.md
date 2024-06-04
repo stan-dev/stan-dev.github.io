@@ -30,10 +30,10 @@ Unpack the distribution and consult the <a href="/docs/cmdstan-guide/cmdstan-ins
 
 CmdStan User’s Guide
 
-* [CmdStan User's Guide 2.34](/docs/cmdstan-guide/index.html)
+* [CmdStan User's Guide 2.35](/docs/cmdstan-guide/index.html)
   <span class="note">(html)</span>
 
-* [CmdStan User's Guide 2.34](/docs/2_34/cmdstan-guide-2_34.pdf)
+* [CmdStan User's Guide 2.35](/docs/2_35/cmdstan-guide-2_35.pdf)
   <span class="note">&nbsp; &nbsp; (GitHub pdf,&nbsp; CC-BY 4.0 license)</span>
 
 Stan's modeling language documentation is platform independent.
