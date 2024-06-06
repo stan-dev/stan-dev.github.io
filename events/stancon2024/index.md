@@ -49,7 +49,7 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.oii.ox.ac.uk/"><img width="200" src="img/oxford_logo.png" /></a>
-<a href="https://www.eva.mpg.de/index/"><img width="200" src="img/max_planck_logo.jpg" /></a>
+<a href="https://www.eva.mpg.de/index/"><img width="150" src="img/max_planck_logo.jpg" /></a>
 </center>
 
 
@@ -79,7 +79,7 @@ These are the confirmed keynote speakers:
 * Sebastian Weber (Director Statistical Methods & Consulting, Advanced Exploratory Analytics, Novartis Pharma AG, Basel)  
 **Applied modeling for drug development**
 
-* Mitzi Morris (Stan Developer, Columbia University)
+* Mitzi Morris (Stan Developer, Columbia University)  
 **The Pragmatic Probabilistic Programmer**
 
 Talk titles and abstracts will be posted soon!
@@ -108,13 +108,13 @@ To submit a proposal for a tutorial, please fill out this [form](https://docs.go
 
 Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
 
-* Ethan Budge
+* Ethan Budge  
 **Sharing the Spotlight: How Artist Collaboration affects Song Popularity**
 
-* Brynjólfur Gauti Guðrúnar Jónsson
+* Brynjólfur Gauti Guðrúnar Jónsson  
 **Copulas in Stan: Modeling Spatial Dependence in Generalized Extreme Value Distributions**
 
-* Xingyao (Doria) Xiao (UC Berkeley)
+* Xingyao (Doria) Xiao (UC Berkeley)  
 **Bayesian Identification, Estimation, and Diagnostic Techniques for Growth Mixture Models using Stan**
 
 ------ 
@@ -122,10 +122,10 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 
 Tutorials will be posted here as they get accepted.
 
-* (Instructor to be confirmed)
+* (Instructor to be confirmed)  
 **Introduction to Stan**
 
-* Sean Pinkney 
+* Sean Pinkney  
 **Coding correlation matrix constraint transforms in Stan**
 
 ------
