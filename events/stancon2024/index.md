@@ -56,6 +56,8 @@ We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metru
 ------
 - [**Keynote speakers**](#keynote-speakers)
 - [**Call for proposals**](#call-for-proposals)
+- [**Talks**](#talks)
+- [**Tutorials**](#tutorials)
 - [**Registration**](#registration)
 - [**Scholarships**](#scholarships)
 - [**Lodging**](#lodging)
@@ -118,7 +120,7 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 **Bayesian Identification, Estimation, and Diagnostic Techniques for Growth Mixture Models using Stan**
 
 ------ 
-# [Talks](#talks)
+# [Tutorials](#tutorials)
 
 Tutorials will be posted here as they get accepted.
 
