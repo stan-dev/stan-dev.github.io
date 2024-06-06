@@ -184,10 +184,11 @@
   avatar: matthijs_vakar.jpg
 
 - name: Andrew Johnson
-  affiliation: Curtin University
+  affiliation: Aalto University
   github: andrjohns
-  email: andrew.r.johnson@postgrad.curtin.edu.au
-  avatar: andrew_johnson.jpg
+  email: andrew.johnson@arjohnsonau.com
+  web: https://andrjohns.github.io/
+  avatar: andrew_johnson.png
 
 - name: Dan Simpson
   affiliation: University of Toronto
