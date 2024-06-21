@@ -18,13 +18,15 @@ image:
 </center>
 
 ------
-Dates: September 10 - 12th 2024
-
-The main conference is Tuesday 10th - Thursday 12th. We also plan to have informal half-days on Monday 9th and Friday 13th, for additional meetings and brainstorming sessions.
+Dates: September 9 - 13th 2024
 
 [Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
 
-The conference comprises one day of tutorial (with introductory and advanced courses) and two days of contributed talks.
+The main conference is Tuesday 10th - Thursday 12th. 
+
+Monday 9th afternoon we will have a half-day of workshops, including an introductory tutorial on Stan, and we will have an additional day of workshops on Friday 13th. 
+
+The conference comprises one and half day of tutorial (with introductory and advanced courses) and three days of contributed talks.
 
 For any questions, please reach out to stancon2024 at mc-stan dot org.
 
@@ -110,7 +112,7 @@ To submit a proposal for a tutorial, please fill out this [form](https://docs.go
 
 Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
 
-* Ethan Budge  
+* Ethan Budge (Brigham Young University)
 **Sharing the Spotlight: How Artist Collaboration affects Song Popularity**
 
 * Brynjólfur Gauti Guðrúnar Jónsson  
@@ -119,16 +121,35 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 * Xingyao (Doria) Xiao (UC Berkeley)  
 **Bayesian Identification, Estimation, and Diagnostic Techniques for Growth Mixture Models using Stan**
 
+* Bob Carpenter (Flatiron Institute)  
+**What's your favorite sushi? Combining ranking and rating models in Stan**
+
+* Chirag Modi (Flatiron Institute)  
+**Atlas: Adapting Trajectory Length and Stepsize**
+
+* Jari Turkia (University of Eastern Finland)  
+**Inferring Personalized Diet Recommendations Using a Conditional Mixture of Health Outcomes and Personal Preferences**
+
+* Simon Maskell (Liverpool University)  
+**Running Multiple Short MCMC Chains on a GPU Using JAX for Fast Inference with Stan**
+
+* Brian Ward (Flatiron Institute)  
+**Stan without installing Stan? How (and why) to sample inside your browser**
+
 ------ 
 # [Tutorials](#tutorials)
 
-Tutorials will be posted here as they get accepted.
+Tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
 
-* (Instructor to be confirmed)  
+* (Instructor to be confirmed, Monday 9th)  
 **Introduction to Stan**
 
-* Sean Pinkney  
+* Sean Pinkney (Monday 9th)
 **Coding correlation matrix constraint transforms in Stan**
+
+* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova (Friday 13th)  
+**Bayesian optimisation with Stan**
+
 
 ------
 # [Registration](#registration)
