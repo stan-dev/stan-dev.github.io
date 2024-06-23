@@ -148,11 +148,11 @@ Monday 9th
 * (Instructor to be confirmed)  
 **Introduction to Stan**
 
-* Sean Pinkney
+* Sean Pinkney  
 **Coding correlation matrix constraint transforms in Stan**
 
 Friday 13th  
-* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova 
+* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova  
 **Bayesian optimisation with Stan**
 
 
