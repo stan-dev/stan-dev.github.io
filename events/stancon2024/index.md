@@ -112,7 +112,7 @@ To submit a proposal for a tutorial, please fill out this [form](https://docs.go
 
 Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
 
-* Ethan Budge (Brigham Young University)
+* Ethan Budge (Brigham Young University)  
 **Sharing the Spotlight: How Artist Collaboration affects Song Popularity**
 
 * Brynjólfur Gauti Guðrúnar Jónsson  
@@ -136,18 +136,23 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 * Brian Ward (Flatiron Institute)  
 **Stan without installing Stan? How (and why) to sample inside your browser**
 
+* Conor Goold (Ledger Investing)  
+**Joint estimation of body and tail loss development factors in insurance: a case study using hidden Markov models in Stan**
+
 ------ 
 # [Tutorials](#tutorials)
 
-Tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
+Confirmed tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
 
-* (Instructor to be confirmed, Monday 9th)  
+Monday 9th  
+* (Instructor to be confirmed)  
 **Introduction to Stan**
 
-* Sean Pinkney (Monday 9th)
+* Sean Pinkney
 **Coding correlation matrix constraint transforms in Stan**
 
-* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova (Friday 13th)  
+Friday 13th  
+* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova 
 **Bayesian optimisation with Stan**
 
 
