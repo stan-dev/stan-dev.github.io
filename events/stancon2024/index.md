@@ -139,6 +139,10 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 * Conor Goold (Ledger Investing)  
 **Joint estimation of body and tail loss development factors in insurance: a case study using hidden Markov models in Stan**
 
+* David Kohns (Aalto University)  
+**The ARR2 prior: flexible predictive prior definition for Bayesian auto-regressions**
+
+
 ------ 
 # [Tutorials](#tutorials)
 
