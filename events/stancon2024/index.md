@@ -153,7 +153,7 @@ Monday 9th
 **Introduction to Stan**
 
 * Sean Pinkney  
-**Coding correlation matrix constraint transforms in Stan**
+**Bayesian hierarchical models in Stan**
 
 Friday 13th  
 * Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova  
