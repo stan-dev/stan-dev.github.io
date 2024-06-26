@@ -149,7 +149,7 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 Confirmed tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
 
 Monday 9th  
-* (Instructor to be confirmed)  
+* Richard McElreath   
 **Introduction to Stan**
 
 * Sean Pinkney  
