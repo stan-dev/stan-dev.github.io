@@ -142,6 +142,10 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 * David Kohns (Aalto University)  
 **The ARR2 prior: flexible predictive prior definition for Bayesian auto-regressions**
 
+* Laura Jenniches (Helmholtz Institute for RNA-based Infection Research)  
+**Advancing functional genomics analysis with Stan: Case studies in RNA decay and pathogen
+invasion models**
+
 
 ------ 
 # [Tutorials](#tutorials)
