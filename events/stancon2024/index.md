@@ -177,7 +177,8 @@ Prices for early bird registration are listed below:
 * Industry (Conference only) £599.0
 * Industry (Conference and tutorials) £799.0
 
-After July 1st, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
+**The early bird registration has been extended from July 1st to Julu 15th**  
+After July 15th, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
 
 ------
 # [Scholarships](#sholarships)
