@@ -75,7 +75,6 @@ These are the confirmed keynote speakers:
 
 * Chris Wymant (Senior Researcher, Pandemic Sciences Institute, Oxford University)  
 **Bayesian multilevel causal modelling of the frequency and implications of having two HIV infections**  
-<!--**Abstract:** _Individuals with a second HIV infection—a state called dual infection—are those with two distinct strains of HIV virus, which could have been acquired sequentially (“superinfection”) or simultaneously (“coinfection”). Many previous studies have analysed the frequency and implications of dual infection in datasets of less than 200 individuals. These studies have provided limited data to answer a question often raised in clinical contexts: does getting infected again worsen prognosis? We investigated this question in the BEEHIVE project, using data from 2693 individuals from seven national European cohorts and Uganda. We developed a Bayesian multilevel causal model to jointly estimate the set of causal effects connecting age, sex, mode of transmission, viral loads, longitudinal measurements of CD4 (immune system) cells, being dually or singly infected, and numbers of viral strains detected in deep-sequencing data along the whole viral genome. We determined the latter using phylogenetic ancestral state reconstruction of which person each virus was in. We allowed for reverse-causal association between two viral strains and viral load due to detection bias. Four types of random effect defined per individual were all analytically marginalised. To account for frequent low-level contamination in deep-sequence data we used a mixture model for signal and noise, imposed thresholds on the number of genetic sequence fragments supporting a second viral strain, and varied these with sensitivity analyses. Results indicate only a small effect of dual infection on viral loads and CD4 cell decline during untreated infection._-->
 
 * Vianey Leos Barajas (Assistant Professor, Department of Statistical Sciences & School of the Environment, University of Toronto)  
 **From the Depths to the Stars: How Modeling Shark Movements Illuminates Star Behavior**
@@ -146,6 +145,22 @@ Below are the confirmed talks (in no particular order). These are talks which ha
 **Advancing functional genomics analysis with Stan: Case studies in RNA decay and pathogen
 invasion models**
 
+* Aditya Ravuri (Cambridge University)  
+**GPLVM Equivalences in UMAP, Isomap and Beyond**  
+
+* Nicolas Irons (University of Washington)
+**Evaluating and optimizing non-pharmaceutical interventions to combat infectious disease transmission **  
+**Causally sound priors for binary experiments**
+
+* Adam Gorm Hoffmann (University of Copenhagen)  
+**Efficient Hierarchical Gaussian Process Regression**  
+
+* Jonas Mikhaeil (Columbia University)  
+**Hierarchical Bayesian Models to Mitigate Systematic Disparities in Prediction with Proxy Outcomes**
+
+* Jouni Helske (University of Turku)  
+**dynamite: An R Package for Dynamic Multivariate Panel Models**
+
 
 ------ 
 # [Tutorials](#tutorials)
@@ -153,15 +168,18 @@ invasion models**
 Confirmed tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
 
 Monday 9th  
-* Richard McElreath   
+* Richard McElreath (Max Planck Institute for Evolutionary Anthropology)  
 **Introduction to Stan**
 
-* Sean Pinkney  
+* Sean Pinkney (Stan Developer) 
 **Bayesian hierarchical models in Stan**
 
 Friday 13th  
-* Anna Elisabeth Riha, Adam Howes, Seth Flaxman, Elizaveta Semenova  
+* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (Imperial College London), Elizaveta Semenova  (Imperial College London)
 **Bayesian optimisation with Stan**
+
+* Will Pearse (Imperial College London)  
+**Biodiversity modelling and forecasting**
 
 
 ------
