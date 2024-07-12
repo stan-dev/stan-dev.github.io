@@ -167,6 +167,9 @@ invasion models**
 * Judith Bouman (University of Bern)  
 **Bayesian workflow for time-varying transmission in stratified compartmental infectious disease transmission models**
 
+* Sean Pinkney (Stan Developer)  
+**Structured Correlation Matrices**
+
 ------ 
 # [Tutorials](#tutorials)
 
