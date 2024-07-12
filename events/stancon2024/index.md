@@ -161,6 +161,11 @@ invasion models**
 * Jouni Helske (University of Turku)  
 **dynamite: An R Package for Dynamic Multivariate Panel Models**
 
+* Yann McLatchie (Univeristy College London)  
+**Predictive performance of power posteriors**
+
+* Judith Bouman (University of Bern)  
+**Bayesian workflow for time-varying transmission in stratified compartmental infectious disease transmission models**
 
 ------ 
 # [Tutorials](#tutorials)
