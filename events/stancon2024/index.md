@@ -179,10 +179,13 @@ Monday 9th
 * Richard McElreath (Max Planck Institute for Evolutionary Anthropology)  
 **Introduction to Stan**
 
+* Aki Vehtari (Aalto University)  
+**Model selection**
+
+Friday 13th  
 * Sean Pinkney (Stan Developer) 
 **Bayesian hierarchical models in Stan**
 
-Friday 13th  
 * Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (Imperial College London), Elizaveta Semenova  (Imperial College London)
 **Bayesian optimisation with Stan**
 
