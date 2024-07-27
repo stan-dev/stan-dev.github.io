@@ -170,6 +170,30 @@ invasion models**
 * Sean Pinkney (Stan Developer)  
 **Structured Correlation Matrices**
 
+* Aki Vehtari (Aalto University)  
+**Pareto-k diagnostic and sample size needed for CLT to hold**
+
+* Gabriel Riutort-Mayol (FISABIO)  
+**Bayesian Gaussian processes with correlated group effects**
+
+* Sophie Van Den Neucker (Maastricht University)  
+**A Bayesian approach to combined chemical exposure assessment for more informed public health decisions**
+
+* Ziyuan Zhag (Boston University and Shanghai University of Finance and Economics)  
+**Collaborative Translation and Continuous Updates: Advancing the Stan Chinese Documentation**  
+
+* Zhi Ling (National University of Singapore)  
+**New fast heavy-tail count models in Stan**
+
+* Charlotte Wilhelm (daiichi-sankyo)  
+**The use of Bayesian Hierarchical Modelling using simulated data**
+
+* Adrian Seybolt (PyMC Labs)  
+**Nutpie: Fast and Efficient Bayesian Inference with Rust and Python**
+
+* Paul Buerkner (TU Dortmund University)  
+**Generative Bayesian Modeling with Implicit Priors**
+
 ------ 
 # [Tutorials](#tutorials)
 
