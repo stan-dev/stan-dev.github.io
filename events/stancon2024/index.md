@@ -194,6 +194,16 @@ invasion models**
 * Paul Buerkner (TU Dortmund University)  
 **Generative Bayesian Modeling with Implicit Priors**
 
+* Jesse Piburn (Oak Ridge National Laboratory)  
+**Priors, Posteriors, and Office Politics: Implementing Bayesian Workflow in a Large Organization**
+
+* Jacqueline Buros (Generable)  
+**A Semi-Mechanistic Longitudinal Gaussian Process Regression Model for Estimating Tumor Response to Treatment**
+
+* Enzo Cerullo (University of Leicester)  
+**Efficiently estimating latent class (and standard) multivariate probit models**
+
+
 ------ 
 # [Tutorials](#tutorials)
 
@@ -210,7 +220,7 @@ Friday 13th
 * Sean Pinkney (Stan Developer) 
 **Bayesian hierarchical models in Stan**
 
-* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (Imperial College London), Elizaveta Semenova  (Imperial College London)
+* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (Imperial College London), Elizaveta Semenova  (Imperial College London)  
 **Bayesian optimisation with Stan**
 
 * Will Pearse (Imperial College London)  
