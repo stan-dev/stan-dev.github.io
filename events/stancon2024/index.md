@@ -220,7 +220,7 @@ Friday 13th
 * Sean Pinkney (Stan Developer) 
 **Bayesian hierarchical models in Stan**
 
-* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (Imperial College London), Elizaveta Semenova  (Imperial College London)  
+* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (University of Oxford), Elizaveta Semenova  (Imperial College London)  
 **Bayesian optimisation with Stan**
 
 * Will Pearse (Imperial College London)  
