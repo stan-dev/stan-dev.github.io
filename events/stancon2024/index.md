@@ -226,6 +226,8 @@ Friday 13th
 * Will Pearse (Imperial College London)  
 **Biodiversity modelling and forecasting**
 
+* Marco Antonio Gallegos Herrada (University of Toronto)  
+**Exploring a Bayesian inference approach for the analysis of blue whale movement data**
 
 ------
 # [Registration](#registration)
