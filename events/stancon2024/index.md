@@ -217,7 +217,7 @@ Monday 9th
 * Richard McElreath (Max Planck Institute for Evolutionary Anthropology)  
 **Introduction to Stan**
 
-* Aki Vehtari (Aalto University)  
+* Aki Vehtari, Noa Kallioinen and Teemu Säilynoja (all Aalto University)     
 **Model selection**
 
 Friday 13th  
@@ -229,6 +229,9 @@ Friday 13th
 
 * Will Pearse (Imperial College London)  
 **Biodiversity modelling and forecasting**
+
+* Juliette Unwin (University of Bristol)  
+**Infectious Disease Modelling using Stan**
 
 ------
 # [Registration](#registration)
