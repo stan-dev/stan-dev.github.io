@@ -14,15 +14,19 @@ image:
 </center>
 
 <center style="padding: 0.75em 0 0 0">
-<img width="600" src="./img/banner.png" /><br>
+<img width="600" src="./img/banner_new.png" /><br>
 </center>
 
 ------
-Dates: September 10 - 12th 2024
+Dates: September 9 - 13th 2024
 
 [Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
 
-The conference comprises two days of tutorials (with introductory and advanced courses) and two days of contributed talks.
+The main conference is Tuesday 10th - Thursday 12th. 
+
+Monday 9th afternoon we will have a half-day of workshops, including an introductory tutorial on Stan, and we will have an additional day of workshops on Friday 13th. 
+
+The conference comprises one and half day of tutorial (with introductory and advanced courses) and three days of contributed talks.
 
 For any questions, please reach out to stancon2024 at mc-stan dot org.
 
@@ -33,24 +37,31 @@ Sponsors support StanCon in various ways and help us book venues, create high qu
 
 If you're interested in sponsoring StanCon, please email [board@mc-stan.org](mailto:board@mc-stan.org).
 
-We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Taylor and Francis, NumFocus, and the Oxford Internet Institute.
+We thank our current sponsors and supporting institutions: Daiichi-Sankyo, Metrum Research Group, Generable, Jumping Rivers, Taylor and Francis, NumFocus, the Oxford Internet Institute, and the Max Planck Institute for Evolutionary Anthropology.
 
 <center style="padding: 0.75em 0 0 0">
 <a href="https://www.daiichisankyo.com/"><img width="200" src="img/DS_logo_portrait_format_4color_rgb_large.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.metrumrg.com/"><img width="200" src="img/metrum_new_logo.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.generable.com/"><img width="200" src="img/generable_word_logo.png" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://taylorandfrancis.com/"><img width="200" src="img/logo_CRC.jpg" /></a>
+<span style="display:inline-block; width: 0.75em;"></span>
+<a href="https://www.jumpingrivers.com/"><img width="200" src="img/JR_logo_black.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://numfocus.org/project/stan/"><img width="200" src="img/NumFocus_LRG.png" /></a>
 <span style="display:inline-block; width: 0.75em;"></span>
 <a href="https://www.oii.ox.ac.uk/"><img width="200" src="img/oxford_logo.png" /></a>
+<a href="https://www.eva.mpg.de/index/"><img width="150" src="img/max_planck_logo.jpg" /></a>
 </center>
 
 
 ------
 - [**Keynote speakers**](#keynote-speakers)
 - [**Call for proposals**](#call-for-proposals)
+- [**Talks**](#talks)
+- [**Tutorials**](#tutorials)
 - [**Registration**](#registration)
 - [**Scholarships**](#scholarships)
 - [**Lodging**](#lodging)
@@ -66,7 +77,6 @@ These are the confirmed keynote speakers:
 
 * Chris Wymant (Senior Researcher, Pandemic Sciences Institute, Oxford University)  
 **Bayesian multilevel causal modelling of the frequency and implications of having two HIV infections**  
-<!--**Abstract:** _Individuals with a second HIV infection—a state called dual infection—are those with two distinct strains of HIV virus, which could have been acquired sequentially (“superinfection”) or simultaneously (“coinfection”). Many previous studies have analysed the frequency and implications of dual infection in datasets of less than 200 individuals. These studies have provided limited data to answer a question often raised in clinical contexts: does getting infected again worsen prognosis? We investigated this question in the BEEHIVE project, using data from 2693 individuals from seven national European cohorts and Uganda. We developed a Bayesian multilevel causal model to jointly estimate the set of causal effects connecting age, sex, mode of transmission, viral loads, longitudinal measurements of CD4 (immune system) cells, being dually or singly infected, and numbers of viral strains detected in deep-sequencing data along the whole viral genome. We determined the latter using phylogenetic ancestral state reconstruction of which person each virus was in. We allowed for reverse-causal association between two viral strains and viral load due to detection bias. Four types of random effect defined per individual were all analytically marginalised. To account for frequent low-level contamination in deep-sequence data we used a mixture model for signal and noise, imposed thresholds on the number of genetic sequence fragments supporting a second viral strain, and varied these with sensitivity analyses. Results indicate only a small effect of dual infection on viral loads and CD4 cell decline during untreated infection._-->
 
 * Vianey Leos Barajas (Assistant Professor, Department of Statistical Sciences & School of the Environment, University of Toronto)  
 **From the Depths to the Stars: How Modeling Shark Movements Illuminates Star Behavior**
@@ -74,7 +84,7 @@ These are the confirmed keynote speakers:
 * Sebastian Weber (Director Statistical Methods & Consulting, Advanced Exploratory Analytics, Novartis Pharma AG, Basel)  
 **Applied modeling for drug development**
 
-* Mitzi Morris (Stan Developer, Columbia University)
+* Mitzi Morris (Stan Developer, Columbia University)  
 **The Pragmatic Probabilistic Programmer**
 
 Talk titles and abstracts will be posted soon!
@@ -97,6 +107,132 @@ We will provide an "introduction to Stan" tutorial, aimed at participants who ha
 
 To submit a proposal for a tutorial, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLScTJJDpSFArDcrdyD8Hrd_ImnUvYLvmHGc-Ci6Om3AJx5ryzg/viewform).
 
+
+------ 
+# [Talks](#talks)
+
+Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
+
+* Ethan Budge (Brigham Young University)  
+**Sharing the Spotlight: How Artist Collaboration affects Song Popularity**
+
+* Brynjólfur Gauti Guðrúnar Jónsson  
+**Copulas in Stan: Modeling Spatial Dependence in Generalized Extreme Value Distributions**
+
+* Xingyao (Doria) Xiao (UC Berkeley)  
+**Bayesian Identification, Estimation, and Diagnostic Techniques for Growth Mixture Models using Stan**
+
+* Bob Carpenter (Flatiron Institute)  
+**What's your favorite sushi? Combining ranking and rating models in Stan**
+
+* Chirag Modi (Flatiron Institute)  
+**Atlas: Adapting Trajectory Length and Stepsize**
+
+* Jari Turkia (University of Eastern Finland)  
+**Inferring Personalized Diet Recommendations Using a Conditional Mixture of Health Outcomes and Personal Preferences**
+
+* Simon Maskell (Liverpool University)  
+**Running Multiple Short MCMC Chains on a GPU Using JAX for Fast Inference with Stan**
+
+* Brian Ward (Flatiron Institute)  
+**Stan without installing Stan? How (and why) to sample inside your browser**
+
+* Conor Goold (Ledger Investing)  
+**Joint estimation of body and tail loss development factors in insurance: a case study using hidden Markov models in Stan**
+
+* David Kohns (Aalto University)  
+**The ARR2 prior: flexible predictive prior definition for Bayesian auto-regressions**
+
+* Laura Jenniches (Helmholtz Institute for RNA-based Infection Research)  
+**Advancing functional genomics analysis with Stan: Case studies in RNA decay and pathogen
+invasion models**
+
+* Aditya Ravuri (Cambridge University)  
+**GPLVM Equivalences in UMAP, Isomap and Beyond**  
+
+* Nicolas Irons (University of Washington)
+**Evaluating and optimizing non-pharmaceutical interventions to combat infectious disease transmission **  
+**Causally sound priors for binary experiments**
+
+* Adam Gorm Hoffmann (University of Copenhagen)  
+**Efficient Hierarchical Gaussian Process Regression**  
+
+* Jonas Mikhaeil (Columbia University)  
+**Hierarchical Bayesian Models to Mitigate Systematic Disparities in Prediction with Proxy Outcomes**
+
+* Jouni Helske (University of Turku)  
+**dynamite: An R Package for Dynamic Multivariate Panel Models**
+
+* Yann McLatchie (Univeristy College London)  
+**Predictive performance of power posteriors**
+
+* Judith Bouman (University of Bern)  
+**Bayesian workflow for time-varying transmission in stratified compartmental infectious disease transmission models**
+
+* Sean Pinkney (Stan Developer)  
+**Structured Correlation Matrices**
+
+* Aki Vehtari (Aalto University)  
+**Pareto-k diagnostic and sample size needed for CLT to hold**
+
+* Gabriel Riutort-Mayol (FISABIO)  
+**Bayesian Gaussian processes with correlated group effects**
+
+* Sophie Van Den Neucker (Maastricht University)  
+**A Bayesian approach to combined chemical exposure assessment for more informed public health decisions**
+
+* Ziyuan Zhag (Boston University and Shanghai University of Finance and Economics)  
+**Collaborative Translation and Continuous Updates: Advancing the Stan Chinese Documentation**  
+
+* Zhi Ling (National University of Singapore)  
+**New fast heavy-tail count models in Stan**
+
+* Charlotte Wilhelm (daiichi-sankyo)  
+**The use of Bayesian Hierarchical Modelling using simulated data**
+
+* Adrian Seybolt (PyMC Labs)  
+**Nutpie: Fast and Efficient Bayesian Inference with Rust and Python**
+
+* Paul Buerkner (TU Dortmund University)  
+**Generative Bayesian Modeling with Implicit Priors**
+
+* Jesse Piburn (Oak Ridge National Laboratory)  
+**Priors, Posteriors, and Office Politics: Implementing Bayesian Workflow in a Large Organization**
+
+* Jacqueline Buros (Generable)  
+**A Semi-Mechanistic Longitudinal Gaussian Process Regression Model for Estimating Tumor Response to Treatment**
+
+* Enzo Cerullo (University of Leicester)  
+**Efficiently estimating latent class (and standard) multivariate probit models**
+
+* Marco Antonio Gallegos Herrada (University of Toronto)  
+**Exploring a Bayesian inference approach for the analysis of blue whale movement data**
+
+------ 
+# [Tutorials](#tutorials)
+
+Confirmed tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
+
+Monday 9th  
+* Richard McElreath (Max Planck Institute for Evolutionary Anthropology)  
+**Introduction to Stan**
+
+* Aki Vehtari, Noa Kallioinen and Teemu Säilynoja (all Aalto University)     
+**Model selection**
+
+Friday 13th  
+* Sean Pinkney (Stan Developer) 
+**Bayesian hierarchical models in Stan**
+
+* Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (University of Oxford), Elizaveta Semenova  (Imperial College London)  
+**Bayesian optimisation with Stan**
+
+* Will Pearse (Imperial College London)  
+**Biodiversity modelling and forecasting**
+
+* Juliette Unwin (University of Bristol)  
+**Infectious Disease Modelling using Stan**
+
 ------
 # [Registration](#registration)
 
@@ -110,7 +246,8 @@ Prices for early bird registration are listed below:
 * Industry (Conference only) £599.0
 * Industry (Conference and tutorials) £799.0
 
-After July 1st, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
+**The early bird registration has been extended from July 1st to July 15th!**  
+After July 15th, all ticket prices for non-student participants increase by £100.0 (prices for students will not increase).
 
 ------
 # [Scholarships](#sholarships)

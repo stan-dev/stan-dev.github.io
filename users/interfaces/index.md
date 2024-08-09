@@ -161,7 +161,7 @@ Stan.
 **VSCode**
 
 * <p>
-  <a href="https://github.com/ivan-bocharov/stan-vscode">Stan language support for Visual Studio Code</a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=wardbrian.vscode-stan-extension">Stan language support for Visual Studio Code</a>
   </p>
 
 **Atom** has a language definition plugin for Stan, which also provides the

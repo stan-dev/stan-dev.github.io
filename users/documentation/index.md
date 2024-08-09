@@ -34,7 +34,7 @@ They use minimal memory beyond what is used by CmdStan itself to run and record 
 therefore they can be used to fit complex models and/or large datasets.
 They are highly recommended for users on Windows machines.
 
-*  [CmdStan User's Guide](https://mc-stan.org/docs/cmdstan/)
+*  [CmdStan User's Guide](https://mc-stan.org/docs/cmdstan-guide/)
 
 *  [CmdStanR Vignettes, tutorials, and other package information](/cmdstanr) 
 
