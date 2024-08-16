@@ -208,6 +208,9 @@ invasion models**
 * Marco Antonio Gallegos Herrada (University of Toronto)  
 **Exploring a Bayesian inference approach for the analysis of blue whale movement data**
 
+* Matti Vuorre (Tilburg University)  
+**Understaning psychological heterogeneity with Bayesian hierarchical models using the brms R package**
+
 ------ 
 # [Tutorials](#tutorials)
 
