@@ -39,24 +39,25 @@ through interfaces into many popular computing environments.
 * [CmdStanPy](https://mc-stan.org/cmdstanpy)
   <span class="note">(Python, lightweight wrapper for CmdStan)</span>
 
+* [MathematicaStan](mathematica-stan.html)
+  <span class="note">(Mathematica)</span>
+
+* [RStan](rstan.html) <span class="note">(R)</span>
+
 * [Stan.jl](julia-stan.html)
   <span class="note">(Julia)</span>
 
-* [PyStan](pystan.html)
-  <span class="note">(Python)</span>
-
-* [RStan](rstan.html) <span class="note">(R)</span>
 
 ## Unsupported interfaces
 
 * [MatlabStan](matlab-stan.html)
   <span class="note">(MATLAB)</span>
 
+* [PyStan](pystan.html)
+  <span class="note">(Python)</span>
+
 * [StataStan](stata-stan.html)
   <span class="note">(Stata)</span>
-
-* [MathematicaStan](mathematica-stan.html)
-  <span class="note">(Mathematica)</span>
 
 * [ScalaStan](https://github.com/cibotech/ScalaStan)
   <span class="note">(Scala)</span>
