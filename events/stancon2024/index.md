@@ -187,7 +187,7 @@ invasion models**
 * Zhi Ling (National University of Singapore)  
 **New fast heavy-tail count models in Stan**
 
-* Charlotte Wilhelm (daiichi-sankyo)  
+* Charlotte Wilhelm-Benartzi (Daiichi-Sankyo)  
 **The use of Bayesian Hierarchical Modelling using simulated data**
 
 * Adrian Seybolt (PyMC Labs)  
