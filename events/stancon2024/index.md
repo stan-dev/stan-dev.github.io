@@ -211,6 +211,9 @@ invasion models**
 * Matti Vuorre (Tilburg University)  
 **Understaning psychological heterogeneity with Bayesian hierarchical models using the brms R package**
 
+* Angie Moon (MIT)  
+**Integrating Bayesian Inference and System Dynamics with Case Studies in Epidemiology**
+
 ------ 
 # [Tutorials](#tutorials)
 
