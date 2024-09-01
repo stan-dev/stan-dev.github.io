@@ -242,7 +242,10 @@ Friday 13th
 ------
 # [Registration](#registration)
 
-Tickets can be purchased at [link](https://www.tickettailor.com/events/standevelopmentteam/1182660).
+<!--Tickets can be purchased at [link](https://www.tickettailor.com/events/standevelopmentteam/1182660).
+-->
+
+_At this point, registration for the conference is closed. If you are still interested in attending, please contact the organization committee at [board@mc-stan.org](mailto:board@mc-stan.org)._
 
 Prices for early bird registration are listed below:
 * Students (Conference only) £199.0
