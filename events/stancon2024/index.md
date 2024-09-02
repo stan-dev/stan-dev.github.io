@@ -263,9 +263,11 @@ After July 15th, all ticket prices for non-student participants increase by £10
 ------
 # [Scholarships](#sholarships)
 
+_At this time, all scholarships for StanCon 2024 have been awarded, and so we are no longer accepting applications._
+
 The purpose of the StanCon scholarship is to make StanCon a more accessible and inclusive event.
 
-Participants who require financial assistance to attend the conference should fill out an [application form](https://docs.google.com/forms/d/e/1FAIpQLSffo0TumZ4ndFJulzyBtHifh3bfz05IvjWQNBwtdHtrxSb5XA/viewform?ts=65b6a720). 
+<!--Participants who require financial assistance to attend the conference should fill out an [application form](https://docs.google.com/forms/d/e/1FAIpQLSffo0TumZ4ndFJulzyBtHifh3bfz05IvjWQNBwtdHtrxSb5XA/viewform?ts=65b6a720). -->
 
 The StanCon scholarship covers registration for the tutorial and the main conference, as well as local lodging. Scholarships are awarded on a need-base, and prioritize early career scientists, including students and post-docs, and members of underrepresented groups in STEM.
 
