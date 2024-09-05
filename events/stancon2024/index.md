@@ -20,7 +20,6 @@ image:
 ------
 Dates: September 9 - 13th 2024
 
-The full schedule for the conference is available [here](https://docs.google.com/spreadsheets/d/1UcnY_ItdctMjWbuNsfGdjOLW_kCQp6Iy/edit?gid=204460881#gid=204460881).
 
 [Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
 
@@ -31,6 +30,11 @@ Monday 9th afternoon we will have a half-day of workshops, including an introduc
 The conference comprises one and half day of tutorial (with introductory and advanced courses) and three days of contributed talks.
 
 For any questions, please reach out to stancon2024 at mc-stan dot org.
+
+------
+**Schedule**
+
+The full schedule for the conference is available here: https://docs.google.com/spreadsheets/d/1UcnY_ItdctMjWbuNsfGdjOLW_kCQp6Iy/edit?gid=204460881#gid=204460881
 
 ------
 **Sponsors**
