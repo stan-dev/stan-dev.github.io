@@ -34,7 +34,7 @@ For any questions, please reach out to stancon2024 at mc-stan dot org.
 ------
 **Schedule**
 
-The full schedule for the conference is available here: https://docs.google.com/spreadsheets/d/1UcnY_ItdctMjWbuNsfGdjOLW_kCQp6Iy/edit?gid=204460881#gid=204460881
+The full schedule for the conference is available here: [https://docs.google.com/spreadsheets/d/1UcnY_ItdctMjWbuNsfGdjOLW_kCQp6Iy/edit?gid=204460881#gid=204460881](https://docs.google.com/spreadsheets/d/1UcnY_ItdctMjWbuNsfGdjOLW_kCQp6Iy/edit?gid=204460881#gid=204460881)
 
 ------
 **Sponsors**
