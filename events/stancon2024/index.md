@@ -20,16 +20,18 @@ image:
 ------
 Dates: September 9 - 13th 2024
 
+Recordings of the talks are now on the [Stan Youtube Channel](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzNzh6mjWsWUu-lSK59VXP6)!
 
 [Stan](https://mc-stan.org/) is a widely used Bayesian inference software, which has found many applications across academia and industry, including political science, pharmacometrics, epidemiology, astrophysics, advertising, and more. The conference brings together both veteran and novice users, and serves as a focused event to discuss practical deployment and application of Bayesian modeling.
 
-The main conference is Tuesday 10th - Thursday 12th. 
+The main conference is Tuesday 10th - Thursday 12th.
 
-Monday 9th afternoon we will have a half-day of workshops, including an introductory tutorial on Stan, and we will have an additional day of workshops on Friday 13th. 
+Monday 9th afternoon we will have a half-day of workshops, including an introductory tutorial on Stan, and we will have an additional day of workshops on Friday 13th.
 
 The conference comprises one and half day of tutorial (with introductory and advanced courses) and three days of contributed talks.
 
 For any questions, please reach out to stancon2024 at mc-stan dot org.
+
 
 ------
 **Schedule**
@@ -105,7 +107,7 @@ Contributed talks are 15 minutes long, with an additional 5 minutes for question
 * Software development within Stan or the Stan ecosystem, and more broadly software relevant to Stan users
 * Methodological development for Bayesian modeling
 
-To submit a proposal for a talk, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSecIfstHZUqdGEyQEaeMNW9gwuM97ofD3iWmFPJnoe11iHEvw/viewform). 
+To submit a proposal for a talk, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSecIfstHZUqdGEyQEaeMNW9gwuM97ofD3iWmFPJnoe11iHEvw/viewform).
 
 Tutorials are either half-a-day or one day long, with each half-day 2 or 3 hours long. Tutorials should be introductory, though certain pre-requisites may be assumed (e.g. basic knowledge of Stan, R, Python, probability, etc.). When submitting a proposal be specific about the pre-requisites.
 
@@ -114,7 +116,7 @@ We will provide an "introduction to Stan" tutorial, aimed at participants who ha
 To submit a proposal for a tutorial, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLScTJJDpSFArDcrdyD8Hrd_ImnUvYLvmHGc-Ci6Om3AJx5ryzg/viewform).
 
 
------- 
+------
 # [Talks](#talks)
 
 Below are the confirmed talks (in no particular order). These are talks which have been accepted by the scientific committee _and_ for which speakers have confirmed their attendance.
@@ -220,7 +222,7 @@ invasion models**
 * Angie Moon (MIT)  
 **Integrating Bayesian Inference and System Dynamics with Case Studies in Epidemiology**
 
------- 
+------
 # [Tutorials](#tutorials)
 
 Confirmed tutorials will be posted here as they get accepted. The schedule for tutorials is tentative and subject to change.
@@ -233,7 +235,7 @@ Monday 9th
 **Model selection**
 
 Friday 13th  
-* Sean Pinkney (Stan Developer) 
+* Sean Pinkney (Stan Developer)
 **Bayesian hierarchical models in Stan**
 
 * Anna Elisabeth Riha (Aalto University), Adam Howes (CDC), Seth Flaxman (University of Oxford), Elizaveta Semenova  (Imperial College London)  
@@ -288,8 +290,8 @@ There are several options for securing your accommodation nearby. These include 
 - [The Buttery](http://www.thebutteryhotel.co.uk/)
 - [The Old Parsonage](https://www.oldparsonagehotel.co.uk/?msclkid=3bb5d8be55e71ee49867bea8deb485ca&utm_source=bing&utm_medium=cpc&utm_campaign=Old%20Parsonage%20-%20Brand%20-%20RLSA%20-%20UK%20-%20EN&utm_term=old%20parsonage%20hotel%20oxford&utm_content=Brand%20-%20Location%20Oxford%20-%20Exact)
 - [The Randolph Hotel](https://graduatehotels.com/oxford-uk/?msclkid=ca9f60b5471512f6555806a3cc238be8&utm_source=bing&utm_medium=cpc&utm_campaign=LOB%20LRN%20Brand%20UK&utm_term=the%20randolph%20hotel%20oxford&utm_content=AG%20Brand%20-%20Randolph%20Hotel)
-- [Premier Inn Oxford City Centre (Westgate) Hotel](https://www.premierinn.com/gb/en/hotels/england/oxfordshire/oxford/oxford-city-centre-westgate.html?cid=GLBC_OXFORD) 
-- [Malmaison Oxford](https://www.malmaison.com/locations/oxford/) 
+- [Premier Inn Oxford City Centre (Westgate) Hotel](https://www.premierinn.com/gb/en/hotels/england/oxfordshire/oxford/oxford-city-centre-westgate.html?cid=GLBC_OXFORD)
+- [Malmaison Oxford](https://www.malmaison.com/locations/oxford/)
 - [100 Banbury Road](https://www.100banburyroadoxford.co.uk/)
 - [Courtyard by Marriott Oxford City Centre](https://www.marriott.com/en-gb/hotels/oxfcy-courtyard-oxford-city-centre/overview/)
 - [Linton Lodge a BW Signature Collection Hotel](https://www.bestwestern.co.uk/hotels/linton-lodge-hotel-bw-signature-collection-by-best-western-83647)
