@@ -360,6 +360,7 @@
   affiliation: Flatiron Institute
   email: bward@flatironinstitute.org
   github: WardBrian
+  web: https://brianward.dev/
   avatar: brian-ward-sq.jpg
   linkedin: https://www.linkedin.com/in/ward-brianm/
 
@@ -377,3 +378,10 @@
   twitter: jgaeb1
   web: https://www.jgaeb.com
   avatar: johann_gaebler.jpg
+
+- name: Zhi Ling
+  affiliation: National University of Singapore
+  email: lingzhi@nus.edu.sg
+  github: lingium
+  web: http://lingzhi.dev/
+  avatar: zhi_avatar.jpg
