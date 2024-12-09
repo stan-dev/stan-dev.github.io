@@ -204,12 +204,11 @@
   avatar: yi_zhang.jpg
 
 - name: Paul Bürkner
-  affiliation: University of Stuttgart
+  affiliation: TU Dortmund University
   github: paul-buerkner
   email: paul.buerkner@gmail.com
-  web: https://paul-buerkner.github.io/
-  twitter: paulbuerkner
-  avatar: paul_buerkner.jpg
+  web: https://paulbuerkner.com/
+  avatar: paul_buerkner.png
 
 - name: Steve Bronder
   affiliation: Capital One, Columbia University
