@@ -1,0 +1,47 @@
+name: Render and Publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+concurrency:
+  group: production
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment: production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.6.39
+
+      - name: Render with Quarto
+        run: |
+          mkdir -p site
+          quarto render --to html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_website'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

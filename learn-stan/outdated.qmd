@@ -1,0 +1,62 @@
+---
+title: "The resource you are looking for is out of date!"
+page-layout: full
+toc-location: right
+
+aliases:
+ - ../workshops/ASA2016/index.html
+ - ../workshops/az2017/index.html
+ - ../workshops/az2017/secret/index.html
+ - ../workshops/birds/index.html
+ - ../workshops/cppFunctions2018/stan-cpp.html
+ - ../workshops/dec2017/1.1.slides.html
+ - ../workshops/dec2017/2.2.slides.html
+ - ../workshops/dec2017/3.1.slides.html
+ - ../workshops/dec2017/exercises_1_2_curse_of_dim.html
+ - ../workshops/dec2017/exercises_1_2_MC_simulation.html
+ - ../workshops/dec2017/exercises_2_1_model_checking_shinystan.html
+ - ../workshops/dec2017/index.html
+ - ../workshops/dec2017/spatial_smoothing_icar.html
+ - ../workshops/halifax2017/exercise_1.html
+ - ../workshops/halifax2017/exercise_2.html
+ - ../workshops/halifax2017/exercise_3.html
+ - ../workshops/halifax2017/index.html
+ - ../workshops/icl_epi/index.html
+ - ../workshops/IMPS2016/half1.html
+ - ../workshops/IMPS2016/index.html
+ - ../workshops/IMPS2016/irt_with_stan.html
+ - ../workshops/index.html
+ - ../workshops/isba2016/index.html
+ - ../workshops/JSM2016/index.html
+ - ../workshops/JSM2016/third1.html
+ - ../workshops/JSM2016/third2.html
+ - ../workshops/meetup/index.html
+ - ../workshops/ness2016/index.html
+ - ../workshops/nips2015.html
+ - ../workshops/nyc/index.html
+ - ../workshops/pg2017/index.html
+ - ../workshops/pg2017/secret/index.html
+ - ../workshops/pydataNYC2017/index.html
+ - ../workshops/pydataNYC2019/index.html
+ - ../workshops/Rmedicine2018/index.html
+ - ../workshops/Rmedicine2018/Stan_tutorial.html
+ - ../workshops/stancon2018_hierarchical/index.html
+ - ../workshops/stancon2018_intro/index.html
+ - ../workshops/stancon2018_intro/radon_slides.html
+ - ../workshops/stancon2019_hierarchical/index.html
+ - ../workshops/ub_tisi/index.html
+ - ../workshops/useR2016/half1.html
+ - ../workshops/useR2016/half2.html
+ - ../workshops/useR2016/index.html
+ - ../workshops/vanderbilt2016/index.html
+---
+
+You've been directed here because you tried to navigate to a url for a
+learning resource that no longer exists. As Stan evolves, some resources
+are removed from the website.
+
+You can look for more recent replacements under the "Learning Resources" drop down
+above, or in the [documentation](https://mc-stan.org/docs/).
+
+If you **really** need to find the old resource, you can try looking in the
+[GitHub repository history for this site](https://github.com/stan-dev/stan-dev.github.io/commits/master/).

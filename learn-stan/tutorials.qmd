@@ -1,0 +1,45 @@
+---
+pagetitle: Introductory Materials
+page-layout: full
+toc-location: right
+aliases:
+  - /users/documentation/tutorials.html
+---
+
+## Tutorials
+
+* [Getting Started with Bayesian Statistics using Stan and Python](https://github.com/bob-carpenter/stan-getting-started){target="_blank"} &nbsp;Bob Carpenter
+
+* [Fundamentals of Stan](https://github.com/charlesm93/stanTutorial/tree/main/StanCon2023)  &nbsp;Charles Margossian</br>
+StanCon 2023 tutorial, includes slides, models, and a [Google colab notebook](https://github.com/charlesm93/stanTutorial/blob/main/StanCon2023/Stan_tutorial.ipynb) for R users.
+
+
+## Videos
+
+The official Stan YouTube channel is:  [https://www.youtube.com/channel/UCwgN5srGpBH4M-Zc2cAluOA](https://www.youtube.com/channel/UCwgN5srGpBH4M-Zc2cAluOA){target="_blank"}
+
+### Introductory Videos
+
+* [Stan Tutorials](https://www.youtube.com/playlist?list=PLCrWEzJgSUqwL85xIj1wubGdY15C5Gf7H){target="_blank"} &nbsp; Maggie Lieu.</br>
+A series of 8 videos that will get you started using Stan in R and Python.
+
+### Contributed Videos
+
+* [Statistical Rethinking Winter 2019 Lecture 15](https://www.youtube.com/watch?v=AALYPv5xSos&list=PLCrWEzJgSUqzcQOaXB_Sz0hIF5VsFeW86&index=1&pp=gAQBiAQB){target="_blank"} &nbsp; Richard McElreath.
+
+* [How to write your first Stan program](https://youtu.be/YZZSYIx1-mw?si=7l1IBbmbQLPfwZAH){target="_blank"} &nbsp; Ben Lambert.
+
+* [Bayesian Modeling with R and Stan](https://youtu.be/QqwCqPYbatA?si=9V24gXbdSg35kw8H){target="_blank"} &nbsp; Sean Raleigh for the R Users Group, Salt Lake City, UT.
+
+* [brms: Bayesian Multilevel Models using Stan](https://www.youtube.com/watch?v=40o0_0XTB6E&list=PLCrWEzJgSUqzcQOaXB_Sz0hIF5VsFeW86&index=5&t=10s){target="_blank"} &nbsp; Paul-Christian B&uuml;rkner.
+
+
+## Podcasts
+
+* [Learning Bayesian Statistics](https://creators.spotify.com/pod/show/learn-bayes-stats){target="_blank"} &nbsp; Alexandre Andorra.
+A fortnightly podcast on Bayesian inference - the methods, the projects, and the people who make it possible!
+
+* [Bayesian Statistics](https://www.superdatascience.com/podcast/bayesian-statistics){target="_blank"} &nbsp; John Krohn and Rob Trangucci.
+An intro to Bayesian statistics - its history, tools you can use, plus a discussion of the uses of a PhD in statistics.
+
+

@@ -1,0 +1,122 @@
+# StanConnect 2022: Stan Through Space and Time
+
+
+
+Speakers and topics
+
+Edgar Santos Fernandez
+Time and tide wait for no one: spatio-temporal modelling in river networks
+Abstract:
+
+Spatio-temporal models are widely used in many research areas including ecology and conservation. The recent proliferation of the use of in-situ sensors in streams and rivers supports space-time water quality modelling and monitoring in near real-time. In this presentation, we introduce a new family of Bayesian spatio-temporal models for river networks, in which spatial dependence is established based on stream distance and flow connectivity, and temporal autocorrelation is incorporated using vector autoregression approaches. We have developed several variations of these models within a Bayesian framework which have led to the creation of an R package (SSNbayes). Our results show that the proposed models perform well in terms of out-of-sample performance measures.
+
+Bio:
+
+Dr. Santos-Fernandez works on the development of statistical methodology across many domains such as ecology and conservation, citizen science, risk assessment and sports analytics. This includes advancing sampling techniques, spatio-temporal modelling, multivariate statistics, and anomaly detection.
+
+He is currently working on spatio-temporal applications in river networks.
+
+More details and recent publications can be found here: https://www.researchgate.net/profile/Edgar-Santos-Fernandez
+
+Stan Yip
+Spatio-temporal modelling of mosquitoes vector and its environmental drivers in Hong Kong
+Abstract:
+
+In this talk, we present an application of a spatio-temporal beta regression model in modelling mosquito vectors implemented in Stan language. The mosquito abundance indices, namely ovitrap and gravitrap indices are captured through a beta distribution model with support from zero to one. A hurdle model extension to this framework is also discussed.
+
+Bio:
+
+Dr Yip is a researcher in various areas in statistical applications primarily environmental sciences and climatology. Prior to his role in the Hong Kong Polytechnic University, he has spent a few years in multiple R&D roles in industry before returning to academia. He was a research scientist in National Centre for Atmospheric Science, a research associate in University of Exeter, a junior member of Isaac Newton Institute for Mathematical Sciences in Cambridge and a visiting scholar in Duke University.
+
+Rafael Cabral
+Robust non-Gaussian models and how to fit them in Stan
+Abstract:
+
+Traditionally the excitation noise of spatial and temporal models is Gaussian. However, real-world data may not be Gaussian in nature, and it is well known that outliers can adversely affect the inferences and predictions made from a Gaussian model. In this talk, I will present a generic and robust class of non-Gaussian models that leads to more robust estimates and better predictions. If you already have a Gaussian model implemented in Stan you will only need to change one line of code!
+
+Bio:
+
+My name is Rafael and I am PhD candidate at KAUST, Saudi Arabia, being supervised by Profs. Haavard Rue, and David Bolin. My PhD research revolves around building more flexible, robust, and computationally efficient modeling frameworks for spatial and temporal data. I’ve worked with Gaussian and non-Gaussian processes, model criticism and robustness, and approximate inference with Stan, INLA, and variational inference.
+
+Pierfrancesco Alaimo Di Loro
+A space-time extension of the Poisson auto-regression to model Covid-19 cases at the England local authorities level
+Abstract:
+
+The incidence of an infectious disease is one of the main indicators to describe the evolution of an epidemic process in a population. Understanding its pattern is key to addressing public health policies and verifying their effectiveness.
+
+Here, we propose a space-time extension of the Poisson auto-regression to model the local incidences collected over different areas. We set up a generalized linear framework to link the auto-regressive coefficient and the baseline rate to observed covariates and space-time CAR-AR Leroux random effects.
+
+The estimation is carried out in a Bayesian Framework through STAN. The fit of such a complex model requires adopting efficient strategies to speed up the likelihood evaluation and reach convergence in due time.
+
+We model the number of weekly COVID-19 cases recorded in 313 English districts during the second and third waves of the COVID-19 pandemic. We consider two alternative sets of observed covariates: the level of local restriction currently in place; the value of various Google mobility indices. We first verify the convergence of the estimation mechanism and the ability of the model to recover the true parameters in an extensive simulation study. Then, we fit the model and simpler versions of it on the observed data. The full model outplays all others according to multiple metrics. It allows quantifying the relative importance of previous lags and evaluating the relative importance of the hidden cases across space and time.
+
+Bio:
+
+I am a Junior Assistant Professor at the Dpt. GEPLI of LUMSA University and collaborator with the S3RI institute of the University of Southampton. My research interests concern the study of spatial and spatio-temporal phenomena, with a particular focus on the Bayesian Hierarchical Modeling of large geo-referenced data.
+
+Sujit Sahu
+Fitting spatio-temporal geostatistical models in Stan using the bmstdr R package.
+Abstract:
+
+In this talk I present the recently published R package bmstdr that is able to fit several Bayesian spatial and spatio-temporal models. Point referenced data are modeled using Gaussian processes and Gaussian error distributions. Two model fitting engines: Bspatial for spatial only point referenced data and Bsptime for spatio-temporal data are included in the package. Both of these engines admit "Stan" as one of the package options among other possibilities such as spBayes, spTimer, spTDyn and INLA. A third model fitting function, Bmoving_sptime, is provided for fitting irregularly observed spatio-temporal data possibly from a set of moving sensors.
+
+The user of bmstdr is afforded the flexibility to name particular rows of their input data frame for validation purposes.
+
+The package allows quick comparison of models using both model choice criteria, such as DIC and WAIC, and K-fold cross-validation without much programming effort. Familiar linear model fit exploration tools and diagnostic plots are included through the S3 methods such as summary, residuals and plot implemented for the three bmstdr functions. Our illustrations show that compared to some other packages Stan fitted spatio-temporal models validate better, and also perform better according to some model choice criteria such as the WAIC.
+
+Bio:
+
+Sujit Sahu is a Professor of Statistics at the University of Southampton. He is the author of the book Bayesian modeling of spatio-temporal data with R published by Chapman and Hall/CRC Press.
+
+Package site: https://cran.r-project.org/web/packages/bmstdr/vignettes/bmstdr-vig_bookdown.html
+
+Silvia De Nicolo
+tipsae: Tools for Handling Indices and Proportions in Small Area Estimation
+Abstract:
+
+The tipsae package implements a set of small area estimation tools for mapping proportions and indicators defined on the unit interval. It provides for small area models defined at area level, including the classical Beta regression, Zero and/or One Inflated Beta and Flexible Beta ones. The models, developed within a Bayesian framework, are estimated through Stan language, allowing fast estimation and customized parallel computing. To account for possible dependency structure in the data, we enable the inclusion of spatial and/or temporal random effects in the linear predictor by means of Intrinsic Conditional Auto-Regressive and Random Walk priors. The additional features of the tipsae package, such as diagnostics, visualization and exporting functions as well as variance smoothing and benchmarking functions, improve the user experience through the entire process of estimation, validation and outcome presentation. A Shiny application with a user-friendly interface further eases the implementation of Bayesian models for small area analysis.
+
+Bio:
+
+Post-Doctoral Fellow at the University of Bologna, her main research interests concern Bayesian hierarchical models, small area estimation and their application to inequality and poverty measurement.
+
+Connor Donegan
+geostan: An R package for Bayesian spatial analysis
+Abstract:
+
+This presentation will introduce geostan, an R package that provides access to pre-built Stan models and other functions for analyzing spatial data. The project aims to support and facilitate a full spatial analysis workflow, from exploratory analysis to modeling and model evaluation. A unique feature of the package is its spatial measurement error models, which enable researchers to incorporate data quality information from error-laden, survey-based covariates. In addition to providing access to a variety of pre-built models (GLMs, CAR, BYM, SAR, ESF), geostan provides tools for building custom, computationally efficient spatial models in Stan. A geostan workflow will be illustrated through an analysis of small-area colorectal cancer incidence in Texas metropolitan areas.
+
+Bio:
+
+Connor Donegan is a doctoral candidate in Geospatial Information Sciences at The University of Texas at Dallas, and a research assistant in the Peter O'Donnell Jr. School of Public Health at UT Southwestern Medical Center. He studies health geography, spatial statistics, and epistemology.
+
+Marco Gramatica
+Structure induced by a multiple membership transformation on the conditional autoregressive model
+Abstract:
+
+The usual context for disease mapping is to model data aggregated at the areal level. In some contexts, however, (e.g. residential histories, general practitioner catchment areas) the data are not recorded on a particular spatial framework, but it is possible to specify spatial random effects, or covariate effects, at the areal level, by using a multiple membership principle (MM). In fact, both Petrof (2020) and Gramatica (2021) use a weighted average of conditional autoregressive (CAR) spatial random effects to embed spatial information for a spatially-misaligned outcome and estimate relative risk for both frameworks (areas and memberships). In this talk we investigate the application of the MM principle to the CAR prior in terms of its parameterisation, properness and identifiability. We carry out simulations involving different numbers of memberships as compared to number of areas and assess impact of this on estimating of CAR parameters and relative risks. Results show that overall posterior samples are well calibrated for both frameworks across all simulation scenarios. Finally, we present the results of an application of the MM modelling strategy to diabetes prevalence data in South London.
+
+Bio:
+
+Marco Gramatica has just completed his PhD with a thesis on Bayesian modelling of spatially misaligned data. His research focused on the use of CAR priors and Multiple Membership to jointly model data recorded on different spatial frameworks. He is now a Postdoctoral Research Assistant at Queen Mary University of London.
+
+Victoire Michal
+A Bayesian hierarchical model for disease mapping that accounts for scaling and heavy-tailed latent effects
+Abstract:
+
+In disease mapping, we estimate the relative risk of a disease across different areas within a region of interest. The number of cases in an area is often modelled through a Poisson distribution with mean given by the product between an offset and the logarithm of the relative risk of the disease. The Besag, York and Mollié model, commonly used to account for potential overdispersion and a spatial correlation structure among the counts, does not accommodate outliers. An area may be one of two types of outliers: it may be an outlier in the usual sense, exhibiting an extreme disease risk, or it may be a spatial outlier. Spatial outliers refer to risks that are outliers with respect to their neighbors. We build on the Bayesian hierarchical model proposed by Riebler et al. (2016) and assume a scale mixture structure wherein the variance of the latent process changes across areas and allows for outlier identification. We compare our approach with that proposed by Congdon (2017), in an analysis of cases of Zika during the 2015-2016 epidemic in Rio de Janeiro. This is joint work with Laís Picinini Freitas (Université de Montréal) and Alexandra M. Schmidt (McGill University).
+
+Bio:
+
+Victoire is a PhD student in the Biostatistics graduate program at McGill University. She studies Spatial Statistics and Disease Mapping to model the cases of Zika in Rio de Janeiro as well as Small Area Estimation and Record Linkage to estimate the household consumption in Ghana at a fine aggregation level. She holds a Bachelor’s degree in Mathematics and a Master’s degree in Statistics, both from the University of Montreal.
+
+Rachary Roman
+Bayesian latent spatial autoregressive growth modeling.
+Abstract:
+
+Structural Equation Models (SEM) are widely used in behavioral research for measuring and testing multi-faceted constructs. The integration of spatial models to behavioral phenomena particularly in psychology has been limited. This in part may be due to the requirements for observed variables that traditional spatial approaches require. In this talk I will present a recent adaptation I developed to accommodate spatial autoregressive effects with a common latent variable approach, Latent Growth Modeling (LGM). This approach can be seen as a latent parameterization of mixed effects models with the added flexibility of the latent variable framework. I will emphasize the MCMC application written in Stan, an example applied to German Covid-19 data will also be presented.
+
+Bio:
+
+Dr. Zachary Roman is a postdoctoral researcher in the psychology department at the University of Zurich, he is also affiliated with the Method Center at the University of Tuebingen. Zachary completed his Ph.D. in quantitative psychology at the University of Kansas in 2019. His research interests include the applications of spatial / social network autoregressive approaches in the behavioral sciences, specifically focused on methodological developments in this area.
+

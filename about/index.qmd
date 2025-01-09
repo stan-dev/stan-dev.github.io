@@ -1,0 +1,162 @@
+---
+title: "About the Stan Project"
+page-layout: full
+toc-location: right
+
+aliases:
+ - ../community/index.html
+---
+
+## Open Code &amp; Reproducible Science
+
+Stan is freedom-respecting, open-source software <span
+class="note">(new BSD core, some interfaces GPLv3)</span>.&nbsp; Stan
+is associated with NumFOCUS, a 501(c)(3) nonprofit supporting open code
+and reproducible science, through which you can [help support
+Stan](#support-stan).
+
+## Licensing
+
+* *Computer code:*  [BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause),
+
+* *Text content:*  [CC-BY ND 4.0 license](https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+
+### Copyright and trademark
+
+* Copyright 2011--2024, Stan Development Team and their assignees.
+
+* The Stan name and logo are registered trademarks of [NumFOCUS](http://numfocus.org/) under the direction of the Stan Governing Body.
+
+Both the Stan name and logo may be freely used when referencing Stan, for example, in blog posts, lecture notes,
+or open source software packages, but they may not be used in the branding of commercial entities,
+such as paid software packages or paid courses, without the express license of the Stan Governing Body.
+If you have any questions or would like to inquire about licensing the Stan name
+and/or logo for a commercial venture then please contact NumFOCUS at <mailto:admin@numfocus.org>.
+
+The Stan name and Stan logo may not be used in ways that suggest the usage
+is endorsed by the Stan project without written permission from the Stan Governing Body.
+
+When using the Stan logo please use either the [Stan Logo png](https://github.com/stan-dev/logos/blob/master/logo_tm.png) or the
+[Stan Logo svg](https://github.com/stan-dev/logos/blob/master/logo_tm.svg).
+
+
+## Stan Development Team
+
+The project is a team effort comprised of full time and volunteer developers from around the world.
+
+* [Development Team Members and Collaborators](https://github.com/orgs/stan-dev/people)
+
+## Stan Community Forums
+
+* [Stan forums](https://discourse.mc-stan.org) -  message board
+for questions, discussion, and announcements related to Stan for
+both users and developers.
+
+* [Stan slack](https://join.slack.com/t/mc-stan/shared_invite/zt-1le4ebi4m-UMtiOkJb4gcS16qz2wIYCw) - developer discussions
+
+* [GitHub issues](https://github.com/stan-dev/) - report bugs or suggest new features or enhancements.
+
+## How to Report Bugs
+
+The key to a successful bug report is to *provide as much context as
+possible*, ideally in the form of a small reproducible example.
+Useful information includes:
+
+* A description of what you were trying to do
+* The specific call to Stan that caused the bug
+* The complete error message.   If the error message includes references a specific program line, then please include the Stan program.
+* Stan version information, ideally including the core Stan version, and version of the Stan interface.
+* Your compute environment:  operating system and C++ compiler.
+
+## How to Contribute to Stan
+
+We welcome new Stan contributors!
+
+* Code - If you'd like to contribute code, please consult the
+[Developer Process Wiki](https://github.com/stan-dev/stan/wiki/Developer-process-overview)
+or check out the GitHub issues on the Stan repositories for the tool that you'd like to contribute to
+and look for issues tagged "good first issue" or "help wanted".
+The GitHub issues as well as the Stan Forums and Stan slack channel are all good places
+to discuss what you want to do beforehand.
+
+
+* Write - If you'd like to contribute [case studies](../learn-stan/case-studies),
+[tutorials](../learn-stan/tutorials) and similar materials, please make a post on the
+[Stan forums publicity category](https://discourse.mc-stan.org/c/publicity), and tag
+the `@Stan_Development_Team`.
+
+* Host events - If you would like to organize a workshop or hackathon, please reach out to the community at large, via the Stan forums, or contact the Stan Governing Body at `board@mc-stan.org`.
+
+
+## How to Cite Stan
+
+We appreciate citations for the Stan software because it lets us find out what
+people have been doing with Stan and motivate further grant funding.
+
+
+We appreciate citations for the Stan software because it lets us find
+out what people have been doing with Stan and motivate further grant
+funding. When citing Stan we recommend citing both Stan itself as well
+as the particular interface used.
+
+To cite Stan itself you can cite the Stan Reference Manual or Stan User's Guide
+taking the year and version from the latest release on the Stan Project's Github releases page:
+[https://github.com/stan-dev/stan/releases](https://github.com/stan-dev/stan/releases).
+
+* Stan Development Team. YEAR. Stan Reference Manual, VERSION. https://mc-stan.org
+* Stan Development Team. YEAR. Stan User's Guide, VERSION. https://mc-stan.org
+
+To cite the interface or post-processing package you used we recommend using the citation conventions
+for the language (R, Python, Julia, etc.) associated with the interface or package. For example, to cite
+RStan use the standard conventions for citing R packages.
+
+## Help Fund Stan
+
+Stan operates through [NumFOCUS](https://numfocus.org/), a
+U.S. 501(c)(3) nonprofit organization that serves open-source software projects
+including NumPy, Julia, Jupyter, ScikitLearn, and many more.
+
+
+* [Contribute to Stan via NumFOCUS](https://numfocus.salsalabs.org/donate-to-stan) &nbsp;&nbsp; (Salsa Labs payment processing)
+
+* [Sponsor Stan via GitHub](https://github.com/sponsors/stan-dev)
+
+
+## Shop for Stan Swag
+
+If you're looking to infer in style, stop by one of our shops for Stan
+t-shirts and mugs.
+
+* [Stan Shop [US]](https://shop.spreadshirt.com/mc-stan/)
+  &nbsp; <span class="note">(Spreadshirt US)</span>
+
+* [Stan Shop [UK]](https://shop.spreadshirt.co.uk/mc-stan/)
+  &nbsp; <span class="note">(Spreadshirt UK)</span>
+
+## Acknowledgements
+
+Stan has grown from a small research project started in 2011 at Columbia University
+to a global community of developers, researchers, and users.
+The Stan project owes its success to the contributions from hundreds of
+developers, researchers, active users, and funders.
+Individual contributions to the software and documentation can be tracked through GitHub.
+
+We are grateful to all the users who have taken the time to file bug reports and
+feature requests via the GitHub and the Stan forums; this feedback has greatly
+improved Stan's usability and reliability.
+
+Stan has been funded through grants for Stan and its developers,
+through in-kind donations in the form of companies contributing
+developer time to Stan and individuals contributing their own time to
+Stan, and through donations to the open-source scientific software
+non-profit NumFOCUS.   Stan development has been funded by grants from
+the U.S. Department of Energy,
+the U.S. Department of Education,
+the U.S. National Science Foundation,
+the U.S. Office of Naval Research,
+the U.S. National Institutes of Health,
+the Alfred P. Sloan Foundation,
+and the Chan Zuckerberg Foundation,
+and by gifts from Novartis, Google, and Facebook.
+Hosting and support for Stan's continuous integration testing is generously provided by the Simons Foundation.
+

@@ -1,0 +1,88 @@
+---
+pagetitle: "Stan"
+toc: false
+page-layout: custom
+section-divs: false
+hide-description: true
+description: | 
+  Stan combines powerful statistical modeling capabilities with user-friendly interfaces, an active community, and a commitment to open-source development.  
+
+aliases:
+ - events/index.html
+ - users/index.html
+
+
+---
+
+
+::: {.hero-banner}
+::: {.grid}
+::: {.g-col-1}
+:::
+::: {.g-col-8}
+# Stan: Software&nbsp;for&nbsp;Bayesian&nbsp;Data&nbsp;Analysis
+:::
+:::
+:::
+
+
+::: {.second-banner}
+::: {.grid}
+::: {.g-col-1}
+:::
+::: {.g-col-8}
+### Bayesian Modeling
+
+Stan enables sophisticated statistical modeling using Bayesian inference, allowing for more accurate and interpretable results in complex data scenarios.
+
+### Flexible and Scalable
+
+Stan's probabilistic programming language is suitable for a wide range of applications, from simple linear regression to multi-level models and time-series analysis.
+
+### Multi-Language, Cross-Platform Toolkit
+
+Interfaces for Python, Julia, R, and the Unix shell make it easy to use Stan in any programming environment,
+on  laptops, clusters, or in the cloud.  A rich ecosystem of tools for validation and visualization support
+decision-making and communication.
+
+::: {.hero-buttons style="position: relative; display: flex; justify-content: center;"}
+[Get Started](install/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
+::: 
+
+:::
+:::
+:::
+
+
+
+::: {.second-banner}
+::: {.grid}
+::: {.g-col-1}
+:::
+::: {.g-col-8}
+## Community Resources
+* The Stan [forums](https://discourse.mc-stan.org) provide support for all user levels and topics, from installing software, to writing Stan programs, to advanced Bayesian modeling techniques and methodology.
+
+* Stan's [documentation](https://mc-stan.org/docs), [tutorials](learn-stan/tutorials.qmd), and [case studies](learn-stan/case-studies.qmd) help users learn and use Stan effectively in their own projects.
+The [Prior Choice Recommendations](https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations) wiki page provides guidance on appropriate priors for use with Stan.
+:::
+:::
+:::
+
+::: {.second-banner}
+::: {.grid}
+::: {.g-col-1}
+:::
+
+::: {.g-col-8}
+## Developer Resources
+* The [Stan Developer Wiki](https://github.com/stan-dev/stan/wiki)
+
+* The [Stan Forums Developers category](https://discourse.mc-stan.org/c/stan-dev/10)
+
+* The Stan slack channel [mc-stan.slack.com](https://join.slack.com/t/mc-stan/shared_invite/zt-1le4ebi4m-UMtiOkJb4gcS16qz2wIYCw)
+is for informal developer discussions.
+:::
+:::
+:::
+

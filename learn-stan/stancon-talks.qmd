@@ -1,0 +1,106 @@
+---
+title: StanCon Talks
+page-layout: full
+toc-location: right
+
+aliases:
+ - ../events/stancon-code_of_conduct.html 
+ - ../events/stancon.html
+ - ../events/stancon-submissions.html
+
+---
+
+## StanCon 2024 Oxford
+
+* Location & Date: Oxford University, England -- September 9-13, 2024
+* [Program](stancon/StanCon2024-program.pdf){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzNzh6mjWsWUu-lSK59VXP6)
+* Tutorials  (not recorded)
+  + Introduction to Stan -- Richard McElreath
+  + Model selection -- Aki Vehtari, Noa Kallioinen, and Teemu Säilynoja
+  + Bayesian hierarchical models in Stan -- Sean Pinkney
+  + Bayesian optmization with Stan -- Anna Riha and Elizaveta Semenova
+  + Biodiversity modeling and forecasting -- Will Pearse
+  + Infectious disease modeling in Stan -- Juliette Unwin
+* Organizers: Charles Margossian, Will Pearse, 
+
+
+## StanCon 2023 St. Louis
+
+* Location & Date: Washington University, USA -- June 20-23, 2023
+* [Program](stancon/StanCon2023-program.pdf){target="_blank"}
+* GitHub repository of slides and course materials from StanCon 2023: [https://github.com/stan-dev/stancon2023](https://github.com/stan-dev/stancon2023){target="_blank"}
+* Tutorials
+    + Fundamentals of Stan -- Charles Margossian
+    + Bayesian workflow illustrated using BRMS -- Mitzi Morris
+    + Hierarchical models in Stan: varieties, optimizations & nuances -- Mike Lawrence
+    + Building a GPT in Stan -- Daniel Lee
+    + Cognitive diagnostic models in R and Stan -- Jake Thompson
+    + Advances of model assessment, selection, and inference after model selection --  Andrew Johnson
+* Organizers: Charles Margossian, Debashis Mondal, Yi Zhang, Eric Ward
+
+
+## StanCon 2020 Global
+
+* Location & Date: Online, 24 hour event, August 13, 2020
+* [Program](stancon/StanCon2020-program.qmd){target="_blank"}
+* Recorded StanCon 2020 Videos on YouTube
+  + [Session 1](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzSg_N87tVF2YWebmoHB7Bp)
+  + [Session 2](https://www.youtube.com/playlist?list=PLCrWEzJgSUqwychgV5Q72Nsaq08FU48aQ)
+  + [Session 3](https://www.youtube.com/playlist?list=PLCrWEzJgSUqwj78wmC7vLklk8Zg158Htk)
+  + [All videos](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzI3goQEAKkDsHg72inmqbe) 
+* Organizers: Susana Marquez, Daniel Lee, Kelli Cassidy, Simon Maskell
+
+
+## StanCon 2019 Cambridge
+
+* Location & Date: University of Cambridge -- August 20-23, 2019
+* [Program](stancon/StanCon2019-program.qmd){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://youtube.com/playlist?list=PLCrWEzJgSUqwERifw7IhR593ehWg2tYLs&si=c2h_lAlQtHeXXlV8)
+* Tutorials (not recorded)
+    + Population and ODE-based models using Stan and Torsten -- Charles Margossian & Yi Zhang
+    + Hierarchical Modeling with Stan -- Ben Goodrich
+    + Model assessment and selection -- Aki Vehtari
+    + A Dive into Stan’s C++ Model Concept -- Daniel Lee
+    + Introduction to Stan for Programmers -- Jonathan Auerbach & Breck Baldwin
+    + Basics of Bayesian inference and Stan -- Jonah Gabry & Lauren Kennedy
+* Organizers: University of Cambridge
+
+## StanCon 2018  Helsinki
+
+* [GitHub Repo for StanCon 2018 Helsinki](https://github.com/stan-dev/stancon_talks/tree/master/2018-helsinki){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://youtube.com/playlist?list=PLCrWEzJgSUqxG_CmS5Y6TaHqWij-Oak9T&si=mrbye44NnR8qGOXL)
+* Tutorials:
+   + Basics of Bayesian inference and Stan -- Jonah Gabry & Lauren Kennedy
+   + Hierarchical models -- Ben Goodrich
+   + Stan C++ development: adding a new function to Stan -- Bob Carpenter, Sean Talts & Mitzi Morris
+   + Ordinary differential equation (ODE) models in Stan -- Daniel Lee
+   + Productization of Stan -- Eric Novik
+   + Model assessment and selection -- Aki Vehtari
+* Location & Date: Aalto University, Helsinki, Finland -- August 29-31, 2018
+* Organizers: Aalto University 
+
+
+## StanCon 2018 Asilomar
+
+* [GitHub Repo for StanCon 2018 Asilomar](https://github.com/stan-dev/stancon_talks/tree/master/2018#materials-from-stancon-2018-asilomar){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://youtube.com/playlist?list=PLCrWEzJgSUqwd7RCSyAmE26YJaPWHm8tD&si=wjdPNJtFwpAvalTn)
+* Tutorials (not recorded)
+    + Introduction to Stan -- Jonah Sol Gabry, Mitzi Morris & Sean Talts
+    + Executive decision making the Bayesian way -- Jonathan Auerback & Eric Novik
+    + Advanced Hierarchical Models in Stan -- Ben Goodrich
+    + Model assessment, selection and inference after model selection -- Aki Vehtari
+    + How to develop for Stan at the C++ level -- Charles Margossian
+    + A Dive into Stan’s C++ Model Concept -- Daniel Lee
+* Location & Date: Asilomar Conference Center, Pacific Grove, California, USA -- Jan 10-12, 2018
+* Organizers: Columbia University
+
+
+## StanCon 2017 New York City
+
+* [Program](stancon/StanCon2017-program.pdf){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://youtube.com/playlist?list=PLCrWEzJgSUqyTrwjUMarPeqtmparZ4y33&si=lgKunWEOUSQkNlfW)
+* [Github Repo with Contributed Talks](https://github.com/stan-dev/stancon_talks/tree/master/2017/Contributed-Talks){target="_blank"}
+* Location & Date: Columbia University, New York, USA - Jan 17, 2017
+* Organizers: Columbia University
+
