@@ -17,7 +17,7 @@ eliminating the need to learn how to write Stan programs.
 
 ## Download and Install Stan
 
-To compile and run Stan models directly from within R, Python, or Julia, 
+To compile and run Stan models directly from within R, Python, or Julia,
 select your OS, programming language interface, and preferred installation method in the grid below.
 For other programming environments, skip to [Other Programming Environments](#other-programming-environments)
 
@@ -138,6 +138,9 @@ Then follow [these instructions to build CmdStan](https://mc-stan.org/docs/cmdst
 ::::: {.install #install-rstan-cran .hidden}
 In R, run `install.packages("rstan")`
 
+Note that this version is often much more out of date than R-Universe,
+and should only be used when CRAN is a requirement.
+
 For more information, see the
 [RStan Getting Started wiki](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started){target="_blank"}
 :::::
@@ -153,7 +156,7 @@ Run `conda install -c conda-forge r-rstan`.
 Note: this will also install any system prerequisites.
 :::::
 ::::: {.install #install-rstan-github-src .hidden}
-remotes::install_github("stan-dev/rstan", ref = "develop", subdir = "rstan/rstan")
+`remotes::install_github("stan-dev/rstan", ref = "develop", subdir = "rstan/rstan")`
 
 For more information, see the
 RStan wiki page [Installing RStan from Source](https://github.com/stan-dev/rstan/wiki/Installing-RStan-from-Source)
