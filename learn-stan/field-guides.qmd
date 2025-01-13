@@ -1,0 +1,121 @@
+---
+title: Domain-Specific Resources
+page-layout: full
+toc-location: right
+---
+
+## Field Guides
+
+These guides provide applied researchers with 
+curated lists of tutorials, case studies, and resources
+which contain Stan implementations of the most commonly used models in their domain.
+If you would like to contribute one for your field,
+see this Discourse post:  [Fostering Stan user communities through domain-specific resource pages ](https://discourse.mc-stan.org/t/fostering-stan-user-communities-through-domain-specific-resource-pages/11544){target="_blank"}
+
+
+### [Education Research Using Stan](https://education-stan.github.io){target="_blank"}
+
+* Topics:  Item Response Theory, Cognitive Diagnosis Models, Multilevel Modeling
+* Maintainer: [Sofia Rabe-Hesketh](https://bse.berkeley.edu/sophia-rabe-hesketh){target="_blank"}
+
+
+### [Stan for Ecology](https://stanecology.github.io/){target="_blank"}
+
+* Topics:  Ecological times series models, population models, predator-prey dynamics, species site-occupancy models.
+* Maintainer: [Vianey Leos Barajas](https://www.statistics.utoronto.ca/people/directories/all-faculty/vianey-leos-barajas){target="_blank"}
+
+### [Stan for Epidemiology](https://epidemiology-stan.github.io/){target="_blank"}
+
+* Topics:  Disease transmission (SIR models), disease mapping (ICAR, BYM models), survival analysis, longitudinal data.
+* Maintainer: [Léo Grinsztajn](https://www.isir.upmc.fr/personnel/grinsztajn/){target="_blank"}
+
+  
+### [Stan for Cognitive Science](https://cognitive-science-stan.github.io/){target="_blank"}
+
+* Cognitive Science and Neuroscience papers which use Stan, brms, or RStanArm.
+* Maintainer: [Bruno Nicenboim](https://www.tilburguniversity.edu/staff/b-nicenboim){target="_blank"}
+
+### [Applied Modelling in Drug Development](https://opensource.nibr.com/bamdd/)
+
+* Case studies using brms which address clinical questions for drug development.
+* Editor: [Sebastian Weber](mailto:sebastian.weber@novartis.com) and colleagues.
+
+
+## StanConnect Sessions
+
+StanConnect is a virtual miniseries which consists of 3-hour meetings/mini-symposia
+where each meeting is like "session" of an organized conference.
+This series was started in 2021 and reprised in 2022.
+Future StanConnect series will be announced on [Discourse](https://discourse.mc-stan.org/tag/stanconnect).
+
+
+### Stan Through Space and Time (2022)
+
+A half-day event showcasing the use of Stan in spatial statistics and for modeling time series data.
+
+* Date: October 31, 2022
+* GitHub repository of slides and materials: [https://github.com/stan-dev/connect22-space-time](https://github.com/stan-dev/connect22-space-time){target="_blank"}
+* Program: 
+   + *Time and tide wait for no one: spatio-temporal modelling in river networks* - Edgar Santos Fernandez
+   + *Spatio-temporal modelling of mosquitoes vector and its environmental drivers in Hong Kong* - Stan Yip
+   + *Robust non-Gaussian models and how to fit them in Stan* - Rafael Cabral
+   + *A space-time extension of the Poisson auto-regression to model Covid-19 cases at the England local authorities level* - Pierfrancesco Alaimo Di Loro
+   + *Fitting spatio-temporal geostatistical models in Stan using the bmstdr R package* - Sujit Sahu
+   + *tipsae: Tools for Handling Indices and Proportions in Small Area Estimation* - Silvia De Nicolo
+   + *geostan: An R package for Bayesian spatial analysis* - Connor Donegan
+   + *Structure induced by a multiple membership transformation on the conditional autoregressive model* - Marco Gramatica
+   + *A Bayesian hierarchical model for disease mapping that accounts for scaling and heavy-tailed latent effects* - Victoire Michal
+   + *Bayesian latent spatial autoregressive growth modeling* - Zachary Roman
+* [Abstracts](stancon/StanConnect2022_space_time.qmd){target="_blank"}
+* Organizer: James Hogg
+
+
+### Cognitive Science and Neuroscience (2021)
+
+* Date: November 19, 2021
+* Recorded Talks: [YouTube](https://youtu.be/rsY3dVAP9gQ?si=jfQKc7sQvfyPCuQB){target="_blank"}
+* Program:
+    + *Resolving the multiple testing issue in neuroimaging through Bayesian multilevel modeling* - Gang Chen	
+    + *Implementation of the Diffusion Decision Model with Across-Trial Variability in the Drift Rate* - Kendal Foster and Henrik Singmann	
+    + *It’s complicated: Some observations on the nuanced constraints of the multivariate normal in high dimensions* - Mike Lawrence	
+    + *Using computational modeling parameters to measure working memory processes* - Jan Göttmann	
+* [Abstracts](https://cognitive-science-stan.github.io/stanconnect2021-cogsci/){target="_blank"}
+* Organizer: Bruno Nicenboim
+
+
+### Biostats (2021)
+
+* Date: October 19, 2021
+* Recorded Talks: [YouTube](https://youtu.be/cq5r0sSTPIg?si=t1VBM5zCMRILzbvk){target="_blank"}
+* GitHub repository of slides and materials: [https://github.com/maxbiostat/StanConnect2021_Biostatistics](https://github.com/maxbiostat/StanConnect2021_Biostatistics){target="_blank"}
+* Program: 
+  + [Coding in Stan: the BYM2 model for disconnected graphs](https://github.com/maxbiostat/StanConnect2021_Biostatistics/tree/main/talk_1){target="_blank"}&nbsp; Mitzi Morris
+  + [Normalized power prior models in Stan](https://github.com/maxbiostat/StanConnect2021_Biostatistics/blob/main/talk_2/ethan.md){target="_blank"}&nbsp; Ethan Alt
+  + [Summarising enzyme information from online databases using Stan and Arviz](https://github.com/maxbiostat/StanConnect2021_Biostatistics/blob/main/talk_3/slides.pdf), &nbsp; Teddy Groves
+  + [Automated kinetic modelling in Stan and its application to the methionine cycle](https://github.com/maxbiostat/StanConnect2021_Biostatistics/tree/main/talk_4){target="_blank"}&nbsp; Nicholas Cowie
+  + [Using Hidden Markov Models as a complement/alternative to survival models](https://github.com/maxbiostat/StanConnect2021_Biostatistics/tree/main/talk_5){target="_blank"}Martin Modrák
+* Organizer:  Luiz Max Carvalho, PhD - Getúlio Vargas Foundation
+
+
+### Ecology, models for biological survey data (2021)
+
+A 2-day event showcasing applications of Stan for ecological analyses
+
+* Day 1: September 30, 2021
+* Day 1 Recorded Talks: [YouTube](https://youtu.be/yn7jIHzvqXU?si=MypOndaKmKOvLDo9){target="_blank"}
+* Program Day 1:
+   + *Using Stan to build better community* - Ara Winter
+   + *Using Stan to diagnose and fit high-dimensional multispecies abundance models* - Harold Eyster
+   + *250000 parameters: the story of an occupancy model for Colombia’s birdlife in Stan* - Jacob Socolar 
+   + *MLOps in a Bayesian workflow: tracking experiments with MLFlow* - Maxwell Joseph
+
+* Day 2: October 4, 2021
+* Program Day 2:
+* Day 2 Recorded Talks: [YouTube](https://youtu.be/Ie0WGa6vAws?si=KmJsUtQrv_k7Xed-){target="_blank"}
+   + *Evolution of habitat use and coexistence under intraguild predation: a principled Bayesian approach* - Josh Goldberg
+   + *Drift algae controls the consumption of kelp: using data from in-situ subtidal experimentation and ordinary differential equations to mechanistically model the sea urchin behavioral switch* - Zach Randell
+   + *Linking the SPDE method with Stan* - Joaquin Cavieres
+   + *Using Stan to characterize large-scale morphological change in North American birds* - Casey Youngflesh
+   + *Fitting hidden Markov models to ecological time series data in Stan* - Vianey Leos Barajas
+* Organizer: Jacob B. Socolar, Cornell Lab of Ornithology
+* Panelist Day 1: Vianey Leos Barajas: Assistant Professor, University of Toronto, Department of Statistical Sciences

@@ -1,0 +1,99 @@
+---
+pagetitle: StanCon 2019
+page-layout: full
+toc-location: right
+---
+
+# StanCon 2019 Schedule
+
+## Tuesday, August 20, Tutorials
+
+- 8:00am-9:00am Registration
+- 9:00am-11:30am Tutorials with Break
+  - Track 1: Basics of Bayesian inference and Stan.
+  - Track 2: Stan for Programmers.
+  - Track 3: Hierarchical Modeling with Stan.
+- 11:30am-12:30pm Open Developers Meeting (loo, projpred, bayesplot, discourse)
+- 12:30pm-2:00pm Provided Lunch
+- 2:00pm-4:30pm Tutorials with Break
+  - Track 1: Basics of Bayesian inference and Stan.
+  - Track 2: A Dive into Stan’s C++ Model Concept.
+  - Track 3: Population and ODE-based models using Stan and Torsten.
+- 4:30pm-5:30pm Open Developers Meeting (posteriordb = reference model and posterior database, bayesbenchr = framework for benchmarking inference algorithms)
+
+
+## Wednesday, August 21, Tutorials
+
+- 8:00am-9:00am Registration
+- 9:00am-11:30am Tutorials with Break
+  - Track 1: Basics of Bayesian inference and Stan.
+  - Track 2: Stan for Programmers.
+  - Track 3: Hierarchical Modeling with Stan.
+- 11:30am-12:30pm Open Developers Meeting, (bayesflow for Bayesian workflow, parallelization, optimization, KINSOL solver)
+- 12:30pm-2:00pm Provided Lunch
+- 2:00pm-4:30pm Tutorials with Break
+  - Track 1: Basics of Bayesian inference and Stan.
+  - Track 2: Model assessment and selection.
+  - Track 3: Population and ODE-based models using Stan and Torsten.
+- 4:30pm-5:30pm Open Developers Meeting, (sparse matrices, Laplace for GLVMs)
+
+
+## Thursday, August 22, Conference
+
+
+- 8:00am-9:00am Registration
+- 9:00am-10:00am Submitted Talks
+  - ***Prior choice in logit models of discrete choice***. Jim Savage. &nbsp;[Abstract](stancon2019-abstracts.qmd#14) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=3428)
+  - ***Approximate leave-future-out cross-validation for Bayesian time series models***. Paul Bürkner, Jonah Gabry, Aki Vehtari. &nbsp;[Abstract](stancon2019-abstracts.qmd#20) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=4653)
+  - ***The Currency of Place and the Short-Term Rental Market***. Mikael Brunila. &nbsp;[Abstract](stancon2019-abstracts.qmd#24) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=5838)
+- 10:00am-10:40am Break
+- 10:40am-11:40am Submitted Talks
+  - ***Modelling enzyme kinetics with Stan***. Teddy Groves. **DTU BIOSUSTAIN Quantitative Modelling of Cell Metabolism Team** &nbsp;[Abstract](stancon2019-abstracts.qmd#17) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=9305)
+  - ***The emergence of HIV resistance to antiretroviral therapy in southern Africa: a mechanistic meta-analysis of survey data***. Julien Riou, Matthias Egger, Christian Althaus. **Institute of Social and Preventive Medicine, University of Bern, Switzerland** &nbsp;[Abstract](stancon2019-abstracts.qmd#18) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=10581)
+  - ***Handling missing data, censored values and measurement error in machine learning models using multiple imputation for early stage drug discovery***. Rowan Swiers. **AstraZeneca** &nbsp;[Abstract](stancon2019-abstracts.qmd#19) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=11826)
+- 11:40am-12:00pm Sponsor Talks and Birds of Feather
+- 12:00pm-1:00pm Provided Lunch
+- 1:00pm-2:00pm Stan Community Meeting
+- 2:00pm-3:00pm Submitted Talks
+  - ***Fast Forward Like a Lambo (skrrt skrrt)***. Daniel Lee. **Generable** &nbsp;[Abstract](stancon2019-abstracts.qmd#23) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=21410)
+  - ***Profit-Maximizing A/B Tests***. Elea McDonnell Feit, Ron Berman. **Drexel University, The Wharton School** &nbsp;[Abstract](stancon2019-abstracts.qmd#25) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=22351)
+  - ***When seasonality meets Bayesian: Decomposing seasonalities in Stan***. Hyunji Moon, SNU, Hyeonseop Lee, PUBG. &nbsp;[Abstract](stancon2019-abstracts.qmd#21) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=23821)
+- 3:00pm-3:40pm Break
+- 3:40pm-4:20pm Submitted Talks
+  - ***Chronikis: a Bayesian time-series modeling language***. Kevin S. Van Horn. **Adobe Inc.** &nbsp;[Abstract](stancon2019-abstracts.qmd#27), [Docker link](http://opensource.adobe.com/Chronikis/docker.html) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=27391)
+  - ***Estimating the prevalence of HIV infection in England using Bayesian evidence synthesis***. Anne Presanis, Christopher Jackson (presenting author), Daniela De Angelis (MRC Biostatistics Unit, University of Cambridge); Peter Kirwan, Alison Brown, Ada Miltz, Ross Harris, Cuong Chau, Stephanie Migchelsen, Hamish Mohammed, Katy Davison, Sara Croxford, Sarika Desai, Kathy Lowndes, Valerie Delpech, Noel Gill (Public Health England). &nbsp;[Abstract](stancon2019-abstracts.qmd#8) &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=28593)
+- 4:20pm-5:10pm David Spiegelhalter ***Communicating Uncertainty about Facts, Numbers and Science*** &nbsp;[Video](https://youtu.be/KH4jN9EBTtE?t=29990)
+- 5:10pm-6:30pm Networking at the Pub and pickup football (soccer) match
+- 6:30pm Dinner at King's College
+
+
+
+## Friday, August 23
+
+- 8:00am-9:00am Registration
+- 9:00am-10:00am Submitted Talks
+  - ***Extending Stan's Automatic Differentiation (AD) capabilities using dco/c++***. Philip Maybank. **Numerical Algorithms Group (NAG)** &nbsp;[Abstract](stancon2019-abstracts.qmd#9) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=3398)
+  - ***The State of GPU Computation Support for Stan***. Rok Češnovar (University of Ljubljana - UL), Steve Bronder (Capital One), Davor Sluga (UL), Jure Demšar (UL), Tadej Ciglarič (UL), Sean Talts (Columbia University), Erik Štrumbelj (UL). &nbsp;[Abstract](stancon2019-abstracts.qmd#10) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=4419)
+  - ***Modeling cocoa bean fermentation processes***. Mauricio Moreno-Zambrano, Sergio Grimbs, Matthias S. Ullrich, and Marc-Thorsten Hütt. **Department of Life Sciences & Chemistry, Jacobs University Bremen** &nbsp;[Abstract](stancon2019-abstracts.qmd#16) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=5408)
+- 10:00am-10:40am Break
+- 10:40am-12:00pm Submitted Talks
+  - ***Bayesian analyses of time-to-event data using the rstanarm R package***. Eren M. Elçi, Sam Brilleman. **Public Health and Preventive Medicine, Monash University** &nbsp;[Abstract](stancon2019-abstracts.qmd#15) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=9283)
+  - ***A Decision-Theoretic Journey From Early Clinical Data to Late Stage Efficacy using Hierarchical Joint Models.*** Krzysztof Sakrejda, Eric Novik. **Generable** &nbsp;[Abstract](stancon2019-abstracts.qmd#11) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=10652)
+  - ***Stacking for multimodal posterior distributions***. Yuling Yao, Aki Vehtari, and Andrew Gelman. &nbsp;[Abstract](stancon2019-abstracts.qmd#28) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=11874)
+  - ***Bayesian leave-one-out cross-validation for large data***. Måns Magnusson (Aalto), Michael Riis Andersen (Danish Technical University), Johan Jonasson (Chalmers Technical University), Aki Vehtari (Aalto). &nbsp;[Abstract](stancon2019-abstracts.qmd#29) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=13090)
+- 12:00pm-1:00pm Provided Lunch
+- 1:00pm-2:00pm Open Developers Meeting, (stanc optimization)
+- 2:00pm-3:00pm Submitted Talks
+  - ***Simulation of Statistic Mechanical Systems using Stan***. Forrest Eli Hurley. **North Carolina State University** &nbsp;[Abstract](stancon2019-abstracts.qmd#31) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=21174)
+  - ***Structured priors for survey estimates in the presence of non-representative data***. Yuxiang Gao (University of Toronto), Lauren Kennedy (Columbia University), Daniel Simpson (University of Toronto). &nbsp;[Abstract](stancon2019-abstracts.qmd#26) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=22373)
+  - ***Prediction and causal inference for time-to-event outcomes truncated by death***. Leah Comment. &nbsp;[Abstract](stancon2019-abstracts.qmd#22) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=23731)
+- 3:00pm-3:40pm Break
+- 3:40pm-4:00pm Submitted Talk
+  - ***Getting the Lead out--Does New York City's childhood lead testing make statistical sense?*** Jonathan Auerbach, Breck Baldwin. **Columbia University** &nbsp;[Abstract](stancon2019-abstracts.qmd#32) &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=26935)
+- 4:00pm-4:50pm Lauren Kennedy ***Out of Sample Prediction and the Quest for Generalization*** &nbsp;[Video](https://youtu.be/rP1Voi9bpz0?t=28463)
+	
+
+# Invited speakers
+[David Spiegelhalter](http://www.statslab.cam.ac.uk/~david/), will speak on "Communicating Uncertainty about Facts, Numbers and Science" 
+
+[Lauren Kennedy](https://www.linkedin.com/in/lauren-kennedy-783864bb/), will speak on "Out of sample prediction and the quest for generalization"

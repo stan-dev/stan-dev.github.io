@@ -1,0 +1,303 @@
+---
+title: "Getting Started"
+page-layout: full
+toc-location: right
+toc-depth: 3
+---
+
+To analyze your data with Stan, you can either
+
+- Use Stan directly from within your preferred programming environment.
+This option lets you write custom models using the Stan language and then fit them to data.
+
+- Use a Stan based-modeling package - skip to [High-level Stan Interfaces](#high-level-stan-interfaces).
+This option lets you specify your model using formula-based syntax, as in R packages `lm` and `lme4`,
+eliminating the need to learn how to write Stan programs.
+
+
+## Download and Install Stan
+
+To compile and run Stan models directly from within R, Python, or Julia, 
+select your OS, programming language interface, and preferred installation method in the grid below.
+For other programming environments, skip to [Other Programming Environments](#other-programming-environments)
+
+::: {#install-grid}
+ <!-- Filled in by JS -->
+:::
+
+<!-- The following two boxes contain divs which are hidden/unhidden based on the above grid.
+  They can contain normal markdown as we see fit
+ -->
+::: {#prerequsite-box .flex-grid}
+:::: {.row-label}
+Prerequisites
+::::
+:::: {.col .highlight-box}
+
+::::: {.prereq #prereq-windows .hidden}
+Stan requires a C++17 compiler and some build utilities.. The `conda`
+option of certain packages can install these for you, otherwise these are bundled together
+by [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"}.
+:::::
+
+::::: {.prereq #prereq-macos .hidden}
+Stan requires a C++17 compiler. The `conda` option of certain packages can install
+this for you, or we recommend to install Xcode from the App Store and then run `xcode-select --install`.
+:::::
+
+::::: {.prereq #prereq-linux .hidden}
+Stan requires a C++17 compiler. The `conda` option of certain packages can install
+this for you, or on .deb based distros, `sudo apt-get install build-essential` will install what you need.
+:::::
+
+::::
+
+:::
+
+::: {#install-box .flex-grid}
+
+:::: {.row-label}
+How to Install
+::::
+:::: {.col .highlight-box}
+
+::::: {.install #install-please-select}
+Please select interface and preferred package manager.
+:::::
+
+<!-- ---------- CmdStanPy ---------- -->
+
+::::: {.install #install-cmdstanpy-pip .hidden}
+Run `pip install cmdstanpy`. Then, in Python, run
+`import cmdstanpy; cmdstanpy.install_cmdstan()` or follow the manual
+installation instructions for CmdStan.
+
+For more information, see the
+[CmdStanPy documentation](https://mc-stan.org/cmdstanpy/installation.html){target="_blank"}.
+:::::
+
+::::: {.install #install-cmdstanpy-conda .hidden}
+Run `conda install -c conda-forge cmdstanpy`.
+
+Note: this will also install CmdStan and any system prerequisites.
+:::::
+
+::::: {.install #install-cmdstanpy-github-src .hidden}
+Run `pip install -e git+https://github.com/stan-dev/cmdstanpy@develop#egg=cmdstanpy`.
+Then, in Python, run `import cmdstanpy; cmdstanpy.install_cmdstan()`
+or follow the manual installation instructions for CmdStan.
+
+For more information, see the
+[CmdStanPy documentation](https://mc-stan.org/cmdstanpy/installation.html){target="_blank"}.
+:::::
+
+<!-- ---------- CmdStanR ---------- -->
+::::: {.install #install-cmdstanr-runiverse .hidden}
+In R, run `install.packages("cmdstanr", repos = c('https://stan-dev.r-universe.dev', getOption("repos")))`.
+Then run `cmdstanr::install_cmdstan()` or follow the manual installation instructions for CmdStan.
+
+For more information, see the
+[CmdStanR documentation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan){target="_blank"}
+:::::
+
+::::: {.install #install-cmdstanr-conda .hidden}
+Run `conda install -c conda-forge r-cmdstanr`.
+
+Note: this will also install CmdStan and any system prerequisites.
+:::::
+
+::::: {.install #install-cmdstanr-github-src .hidden}
+In R, run `remotes::install_github("stan-dev/cmdstanr")`.
+
+Then run `cmdstanr::install_cmdstan()` or follow the manual installation instructions for CmdStan.
+
+For more information, see the
+[CmdStanR documentation](https://mc-stan.org/cmdstanr/articles/cmdstanr.html#installing-cmdstan){target="_blank"}
+:::::
+
+<!-- ---------- CmdStan ---------- -->
+::::: {.install #install-cmdstan-github-rel .hidden}
+Download a release from GitHub:  https://github.com/stan-dev/cmdstan/releases.
+
+Then follow [these instructions to build CmdStan](https://mc-stan.org/docs/cmdstan-guide/installation.html#building-cmdstan){target="_blank"}.
+:::::
+::::: {.install #install-cmdstan-conda .hidden}
+Run `conda install -c conda-forge cmdstan`.
+
+Note: this will also install CmdStan and any system prerequisites.
+:::::
+::::: {.install #install-cmdstan-github-src .hidden}
+Run `git clone https://github.com/stan-dev/cmdstan.git --recursive`
+
+This will download the source code from the current development branch of CmdStan into a directory named cmdstan,
+along with the submodules for core Stan code and the Stan math library.
+
+Then follow [these instructions to build CmdStan](https://mc-stan.org/docs/cmdstan-guide/installation.html#building-cmdstan){target="_blank"}.
+:::::
+<!-- ---------- RStan ---------- -->
+::::: {.install #install-rstan-cran .hidden}
+In R, run `install.packages("rstan")`
+
+For more information, see the
+[RStan Getting Started wiki](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started){target="_blank"}
+:::::
+::::: {.install #install-rstan-runiverse .hidden}
+In R, run `install.packages("rstan", repos = c('https://stan-dev.r-universe.dev', getOption("repos")))`.
+
+For more information, see the
+[RStan Getting Started wiki](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started){target="_blank"}
+:::::
+::::: {.install #install-rstan-conda .hidden}
+Run `conda install -c conda-forge r-rstan`.
+
+Note: this will also install any system prerequisites.
+:::::
+::::: {.install #install-rstan-github-src .hidden}
+remotes::install_github("stan-dev/rstan", ref = "develop", subdir = "rstan/rstan")
+
+For more information, see the
+RStan wiki page [Installing RStan from Source](https://github.com/stan-dev/rstan/wiki/Installing-RStan-from-Source)
+:::::
+<!-- ---------- Stan.jl ---------- -->
+::::: {.install #install-stan.jl-julia-pkg .hidden}
+To install Stan.jl e.g. in the Julia REPL: `] add Stan`,
+then use Conda.jl or conda to install CmdStan.
+
+See [Stan.jl documentation](http://stanjulia.github.io/Stan.jl/v6.0/INSTALLATION.html) for further details.
+:::::
+::::: {.install #install-stan.jl-github-src .hidden}
+Run `https://github.com/StanJulia/Stan.jl.git`,
+then follow instructions in the README file.
+:::::
+
+::::
+:::
+
+<script src="installer.js"></script>
+
+
+
+::: {.callout-note}
+Conda simplifies the installation process by ensuring that all required libraries and tools are compatible with each other
+and is available for Linux, Mac, and Windows platforms.
+
+You can either install [miniconda](https://docs.conda.io/en/latest/miniconda.html){target="_blank"}, a free, minimal installer for conda
+or you can get the full [Anaconda](https://docs.continuum.io/anaconda/){target="_blank"} system
+which provides graphical installer wizards for [MacOS](https://www.anaconda.com/products/distribution#macos){target="_blank"}
+and [Windows](https://www.anaconda.com/products/distribution#windows){target="_blank"} users.
+
+Julia users can install [Conda.jl](https://github.com/JuliaPy/Conda.jl){target="_blank"}.
+:::
+
+### Other Programming Environments
+
+| **Language** | **Tool** | **Description** |
+|--------------|----------|-----------------|
+| **R, Python**      | [**Google Colab**](https://github.com/stan-dev/cmdstan/releases){target="_blank"} | Prebuilt CmdStan binaries for Google Colab are available from the GitHub CmdStan releases page. Installing these binaries at the start of a Colab session is much faster than installing CmdStan during a Colab session.                            |
+| **Mathematica** | [**MathematicaStan**](https://github.com/stan-dev/MathematicaStan){target="_blank"} | Stan interface for Mathematica. Available from its GitHub repository.|
+| **MATLAB**      | [**MatlabStan**](https://github.com/brian-lau/MatlabStan/wiki){target="_blank"} | Installation instructions available on the MatlabStan wiki.|
+| **Python**      | [**PyStan**](https://pystan.readthedocs.io/){target="_blank"}                             | Available via pip. Run command: `python -m pip install pystan`.|
+: {tbl-colwidths="[10, 20, 70]"}
+
+::: {.callout-note}
+As of Release 3.10.0, PyStan is no longer being actively supported.
+:::
+
+
+
+## Prerequisite:  C++17 toolchain
+
+Stan models are specified using the Stan language which are then compiled to executable programs that can be run on your data to perform inference and make predictions.
+To use Stan from within your preferred programming environment, you need a **C++ toolchain** comprised of a C++17 compiler and the GNU Make utility.
+
+* On Linux, these are bundled into the meta-package `build-essential`.
+To install, run command:\
+`sudo apt-get install build-essential`
+
+
+* On Mac, the Clang compiler and GNU Make are included with Xcode, the Apple toolset for software developers.
+Install Xcode from the App Store and then run command:\
+`xcode-select --install`
+
+\tightlist
+* On Windows 10, there are two ways to get a Stan-compatible C++ toolchain:
+   + Use the conda installer for CmdStan, CmdStanPy or CmdStanR or RStan, since these packages all include the required toolchain.
+   + Get [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"}
+which includes a C++17 compiler, GNU Make for windows, and a few Unix utilities.\
+CmdStanR users can call the internal function `cmdstanr:::install_toolchain`.\
+CmdStanPy provides both the function `cmdstanpy::get_cxx_toolchain` and command line script `get_cxx_toolchain`.
+
+## Local CmdStan installations for CmdStanPy, CmdStanR, and Stan.jl
+
+CmdStanPy, CmdStanR, and Stan.jl and require a local CmdStan installation.
+Both CmdStanPy and CmdStanR provide method `install_cmdstan` to do this from within Python or R;
+and CmdStanPy also provides this as a command-line function.
+See the online documentation:
+
+* CmdStanPy:  [install_cmdstan function](https://mc-stan.org/cmdstanpy/installation.html#function-install-cmdstan){target="_blank"}
+* CmdStanR: [install_cmdstan function](https://mc-stan.org/cmdstanr/reference/install_cmdstan.html){target="_blank"}
+* Stan.jl [build instructions](https://github.com/StanJulia/Stan.jl/blob/master/INSTALLING_CMDSTAN.md){target="_blank"}
+
+The default installation location is in the user's home directory and is named `.cmdstan` (a hidden directory).
+This directory contains one or more versions of CmdStan.
+
+Both CmdStanPy and CmdStanR provide the following functions:
+
+* `rebuild_cmdstan` - rebuild the specified release.  On Mac, often required after an Xcode update.
+* `cmdstan_path` - displays the path to the local install of CmdStan; path name includes version number.
+* `set_cmdstan_path` - specify which version of CmdStan to use.
+
+## Troubleshooting the Install
+
+To help troubleshoot problems that arise when trying to use Stan,
+we provide the following summary of the chain of events in conditioning a model on data and doing inference:
+
+* Compile model
+  + Stan compiler translates Stan file to C++ file
+  + C++ file is compiled to executable program, via GNU Make
+
+* Run inference algorithm
+  + Interfaces run compiled executable program
+  + Compiled executable generates per-chain outputs
+
+If the program contains syntax errors, these will be caught and reported by the Stan compiler (program `stanc`).
+If the Stan program is successfully translated to C++, then it should compile; error messages from the C++ compiler indicate a problem with the C++ toolchain.
+
+If a model fails to run or appears to run slowly, this is a strong indication that the model is poorly specified given the data.
+Consult the [Stan User's Guide](https://mc-stan.org/docs/stan-users-guide/){target="_blank"} or search the [Stan Forums on Discourse](https://discourse.mc-stan.org){target="_blank"}
+
+
+Common Points of failure; how to address them.
+
+* Software download failed.
+  + workaround:  check internet connectivity, disk space, and file permissions
+
+* C++ components fail to compile
+  + Workaround: we highly recommend installing using conda to create a clean environment for Stan and its toolchain.
+
+* Stan model fails to compile with error message about a "".(PCH file)()
+  + Fix:  for CmdStan based systems, rebuild CmdStan.
+
+See CmdStan Guide section [Troubleshooting the Installation](https://mc-stan.org/docs/cmdstan-guide/installation.html#troubleshooting-the-installation){target="_blank"} for further details.
+
+## High-level Stan Interfaces
+
+| **Language** | **Tool** | **Description** |
+|--------------|----------|-----------------|
+| **R**        | [**brms**](https://paul-buerkner.github.io/brms/){target="_blank"} | Use extended `lme4`-like formula syntax to specify and fit multivariate and multilevel models in Stan. *(Requires CmdStanR and C++ compiler.)* |
+| **R**        | [**RStanArm**](https://mc-stan.org/rstanarm){target="_blank"} | Provides stable, efficient Stan versions of R model-fitting packages. *(Stan models are pre-compiled, no C++ compiler needed.)* |
+| **R**        | [**Rethinking**](https://github.com/rmcelreath/rethinking){target="_blank"} | Accompanies the book and course materials for [Statistical Rethinking, 2nd Ed](https://www.taylorfrancis.com/books/mono/10.1201/9780429029608/statistical-rethinking-richard-mcelreath){target="_blank"} by Richard McElreath. *(Requires CmdStanR and C++ compiler.)*|
+: {tbl-colwidths="[10, 15, 75]"}
+
+
+## Introductory Notebooks,&nbsp; Vignettes,&nbsp; and Tutorials
+
+| **Interface**     | **Title**                                                                                      |
+|--------------------|-----------------------------------------------------------------------------------------------|
+| **CmdStanPy**      | [CmdStanPy "Hello, World!"](https://mc-stan.org/cmdstanpy/users-guide/hello_world.html){target="_blank"}</br>[Getting Started with Bayesian Statistics using Stan and Python](https://github.com/bob-carpenter/stan-getting-started){target="_blank"}</br>[Multilevel regression modeling with CmdStanPy and plotnine](../learn-stan/case-studies/radon_cmdstanpy_plotnine.html){target="_blank"} |
+| **CmdStanR**       | [Getting Started with CmdStanR](https://mc-stan.org/cmdstanr/articles/cmdstanr.html){target="_blank"}</br>[StanCon2023/Stan_tutorial.ipynb](https://github.com/charlesm93/stanTutorial/blob/main/StanCon2023/Stan_tutorial.ipynb){target="_blank"} |
+| **Julia**          | [Stan.jl Examples](https://github.com/StanJulia/Stan.jl/tree/master/Examples){target="_blank"}                |
+| **Google Colab**   | [Stan Notebooks in the Cloud](https://mc-stan.org/users/documentation/case-studies/jupyter_colab_notebooks_2020.html){target="_blank"} |
+: {tbl-colwidths="[20, 80]"}
+
+For more learning resources, see the [Tutorials](../learn-stan/tutorials.qmd), [Publications](../learn-stan/publications.qmd) and [Stan Case Studies](../learn-stan/case-studies.qmd) pages.
