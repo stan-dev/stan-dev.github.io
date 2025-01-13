@@ -4,35 +4,35 @@ page-layout: full
 toc-location: right
 
 aliases:
- - ../interfaces/loo.html 
- - ../interfaces/rstanarm.html 
- - ../interfaces/pystan.html 
- - ../interfaces/mathematica-stan.html 
- - ../interfaces/rstantools.html 
- - ../interfaces/stata-stan.html 
- - ../interfaces/bayesplot.html 
- - ../interfaces/index.html 
- - ../interfaces/matlab-stan.html 
- - ../interfaces/rstan.html 
- - ../interfaces/stan.html 
- - ../interfaces/cmdstan.html 
- - ../interfaces/julia-stan.html 
- - ../interfaces/shinystan.html 
- - ../users/interfaces/loo.html 
- - ../users/interfaces/rstanarm.html 
- - ../users/interfaces/pystan.html 
- - ../users/interfaces/mathematica-stan.html  
- - ../users/interfaces/rstantools.html 
- - ../users/interfaces/brms.html 
- - ../users/interfaces/stata-stan.html 
- - ../users/interfaces/bayesplot.html 
- - ../users/interfaces/index.html 
- - ../users/interfaces/matlab-stan.html 
- - ../users/interfaces/rstan.html 
- - ../users/interfaces/stan.html 
- - ../users/interfaces/cmdstan.html 
- - ../users/interfaces/julia-stan.html 
- - ../users/interfaces/shinystan.html 
+ - ../interfaces/loo.html
+ - ../interfaces/rstanarm.html
+ - ../interfaces/pystan.html
+ - ../interfaces/mathematica-stan.html
+ - ../interfaces/rstantools.html
+ - ../interfaces/stata-stan.html
+ - ../interfaces/bayesplot.html
+ - ../interfaces/index.html
+ - ../interfaces/matlab-stan.html
+ - ../interfaces/rstan.html
+ - ../interfaces/stan.html
+ - ../interfaces/cmdstan.html
+ - ../interfaces/julia-stan.html
+ - ../interfaces/shinystan.html
+ - ../users/interfaces/loo.html
+ - ../users/interfaces/rstanarm.html
+ - ../users/interfaces/pystan.html
+ - ../users/interfaces/mathematica-stan.html
+ - ../users/interfaces/rstantools.html
+ - ../users/interfaces/brms.html
+ - ../users/interfaces/stata-stan.html
+ - ../users/interfaces/bayesplot.html
+ - ../users/interfaces/index.html
+ - ../users/interfaces/matlab-stan.html
+ - ../users/interfaces/rstan.html
+ - ../users/interfaces/stan.html
+ - ../users/interfaces/cmdstan.html
+ - ../users/interfaces/julia-stan.html
+ - ../users/interfaces/shinystan.html
 
 
 ---
@@ -99,6 +99,7 @@ For detailed installation instructions see [Getting Started](../install/).
 | **C++**                | [**Stan Math Library**](https://mc-stan.org/math/){target="_blank"} | Automatic differentiation and mathematical functions used by Stan. |
 | **Multiple Languages** | [**BridgeStan**](https://roualdes.github.io/bridgestan/latest/){target="_blank"} | Library providing bindings to a model's log densities, gradients, and more for C++, Python, Julia, R, and Rust. |
 | **R**                  | [**rstantools**](https://mc-stan.org/rstantools/){target="_blank"} | Tools for developers of R packages interfacing with Stan. |
+| **OCaml**              | [**stanc3**](https://mc-stan.org/stanc3/stanc/){target="_blank"} | The Stan compiler and programatic tools for manipulating Stan programs. |
 : {tbl-colwidths="[10, 20, 70]"}
 
 ---
