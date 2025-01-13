@@ -6,7 +6,6 @@ on:
       - master
   workflow_dispatch:
 
-
 concurrency:
   group: production
   cancel-in-progress: true
@@ -29,11 +28,11 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
+          # note: when updating, make sure merge_docs_search.py still works
           version: 1.6.39
 
       - name: Render with Quarto
         run: |
-          mkdir -p site
           quarto render --to html
 
       - name: Setup Pages
@@ -41,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './_website'
+          path: "./_website"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

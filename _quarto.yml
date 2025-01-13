@@ -2,8 +2,9 @@ project:
   title: "Stan"
   type: website
   output-dir: _website
-  post-render: quarto-config/generate_redirects.py redirects.txt --output_dir=_website
-              # TODO merge search.json with docs search.json
+  post-render:
+    - quarto-config/generate_redirects.py redirects.txt --output_dir=_website
+    - ./merge_docs_search.py --output_dir=_website
   render:
     - "index.qmd"
     - "404.qmd"
