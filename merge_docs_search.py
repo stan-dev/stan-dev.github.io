@@ -6,8 +6,12 @@ documentation stubs as well
 import pathlib
 import argparse
 import json
-
+import os
 import requests
+
+if not os.getenv("QUARTO_PROJECT_RENDER_ALL"):
+    print("Quarto not fully rendering, skipping")
+    exit(0)
 
 
 DOCS_JSON_URL = "https://mc-stan.org/docs/search.json"
