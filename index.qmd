@@ -4,8 +4,8 @@ toc: false
 page-layout: custom
 section-divs: false
 hide-description: true
-description: | 
-  Stan combines powerful statistical modeling capabilities with user-friendly interfaces, an active community, and a commitment to open-source development.  
+description: |
+  Stan combines powerful statistical modeling capabilities with user-friendly interfaces, an active community, and a commitment to open-source development.
 
 aliases:
  - events/index.html
@@ -19,8 +19,8 @@ aliases:
 ::: {.grid}
 ::: {.g-col-1}
 :::
-::: {.g-col-8}
-# Stan: Software&nbsp;for&nbsp;Bayesian&nbsp;Data&nbsp;Analysis
+::: {.g-col-8 }
+# Stan: Software for Bayesian Data&nbsp;Analysis
 :::
 :::
 :::
@@ -47,7 +47,7 @@ decision-making and communication.
 
 ::: {.hero-buttons style="position: relative; display: flex; justify-content: center;"}
 [Get Started](install/){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
-::: 
+:::
 
 :::
 :::
