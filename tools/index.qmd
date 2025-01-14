@@ -1,0 +1,136 @@
+---
+title: "Stan Toolkit"
+page-layout: full
+toc-location: right
+
+aliases:
+ - ../interfaces/loo.html
+ - ../interfaces/rstanarm.html
+ - ../interfaces/pystan.html
+ - ../interfaces/mathematica-stan.html
+ - ../interfaces/rstantools.html
+ - ../interfaces/stata-stan.html
+ - ../interfaces/bayesplot.html
+ - ../interfaces/index.html
+ - ../interfaces/matlab-stan.html
+ - ../interfaces/rstan.html
+ - ../interfaces/stan.html
+ - ../interfaces/cmdstan.html
+ - ../interfaces/julia-stan.html
+ - ../interfaces/shinystan.html
+ - ../users/interfaces/loo.html
+ - ../users/interfaces/rstanarm.html
+ - ../users/interfaces/pystan.html
+ - ../users/interfaces/mathematica-stan.html
+ - ../users/interfaces/rstantools.html
+ - ../users/interfaces/brms.html
+ - ../users/interfaces/stata-stan.html
+ - ../users/interfaces/bayesplot.html
+ - ../users/interfaces/index.html
+ - ../users/interfaces/matlab-stan.html
+ - ../users/interfaces/rstan.html
+ - ../users/interfaces/stan.html
+ - ../users/interfaces/cmdstan.html
+ - ../users/interfaces/julia-stan.html
+ - ../users/interfaces/shinystan.html
+
+
+---
+
+A curated collection of tools and interfaces to help you work effectively with Stan across various programming environments and stages of your modeling workflow.
+
+---
+
+## Language-Specific Stan Interfaces
+
+*Write, compile, and run Stan models directly within your programming environment.*
+
+| **Language** | **Tool** | **Description** |
+|--------------|----------|-----------------|
+| **R**        | [**CmdStanR**](https://mc-stan.org/cmdstanr){target="_blank"} | Interface to Stan for R, based on CmdStan. **Recommended interface for R users.** |
+| **Python**   | [**CmdStanPy**](https://mc-stan.org/cmdstanpy){target="_blank"} | Interface to Stan for Python, based on CmdStan. **Recommended interface for Python users.** |
+| **Web**      | [**Stan Playground**](https://stan-playground.flatironinstitute.org/){target="_blank"} | Browser-based editor and runtime environment for Stan models. **Highly recommended for new users.** |
+| **Julia**    | [**Stan.jl**](http://stanjulia.github.io/Stan.jl/stable/INTRO/){target="_blank"} | Interface to Stan for Julia users. |
+| **MATLAB**   | [**MatlabStan**](https://github.com/brian-lau/MatlabStan/wiki){target="_blank"} | Interface to Stan for MATLAB users. |
+| **Shell**    | [**CmdStan**](https://mc-stan.org/docs/cmdstan-guide){target="_blank"} | Command-line interface to Stan, usable from any shell environment. |
+| **R**   | [**RStan**](https://mc-stan.org/rstan){target="_blank"} | R interface to Stan. |
+| **Python**   | [**PyStan**](https://pystan.readthedocs.io/en/latest/){target="_blank"} | Legacy Python interface to Stan. |
+: {tbl-colwidths="[10, 20, 70]"}
+
+For detailed installation instructions see [Getting Started](../install/).
+
+---
+
+## High-Level Modeling Interfaces
+
+*Simplify model specification in R.*
+
+| **Language** | **Tool** | **Description** |
+|--------------|----------|-----------------|
+| **R**        | [**brms**](https://paul-buerkner.github.io/brms/){target="_blank"} | Use extended `lme4`-like formula syntax to specify and fit multivariate and multilevel models in Stan. *Requires CmdStanR or RStan, plus C++ compiler.* |
+| **R**        | [**rstanarm**](https://mc-stan.org/rstanarm){target="_blank"} | Provides robust and efficient pre-compiled Stan versions of R model-fitting packages.  Easily installed from CRAN, no C++ compiler needed. |
+: {tbl-colwidths="[10, 20, 70]"}
+
+---
+
+## Visualization, Diagnostics, and Validation Tools
+
+*Validate, visualize, and compare fitted models to ensure robust results.*
+
+| **Language** | **Tool** | **Description** |
+|--------------|----------|-----------------|
+| **R**        | [**bayesplot**](https://mc-stan.org/bayesplot/){target="_blank"} | Plotting functions for posterior analysis, diagnostics, and model checking. |
+| **R**        | [**loo**](https://mc-stan.org/loo/){target="_blank"} | Efficient leave-one-out cross-validation and WAIC for Bayesian models. |
+| **R**        | [**posterior**](https://mc-stan.org/posterior){target="_blank"} | Tools for working with posterior distributions. |
+| **R**        | [**projpred**](https://mc-stan.org/projpred){target="_blank"} | Projection predictive variable selection for Bayesian models. |
+| **Python**   | [**ArviZ**](https://python.arviz.org/en/stable/){target="_blank"} | Exploratory analysis of Bayesian models with extensive visualization capabilities. |
+| **Julia**    | [**ArviZ.jl**](https://julia.arviz.org/ArviZ/stable/){target="_blank"} | Julia interface to ArviZ for Bayesian analysis. |
+| **Web**      | [**MCMC Monitor**](https://github.com/flatironinstitute/mcmc-monitor){target="_blank"} | Web-based tool for monitoring MCMC diagnostics. |
+: {tbl-colwidths="[10, 20, 70]"}
+
+---
+
+## Developer Tools and APIs
+
+*Access Stan's computational backend for advanced applications and development.*
+
+| **Language**           | **Tool** | **Description** |
+|------------------------|----------|-----------------|
+| **C++**                | [**Stan Math Library**](https://mc-stan.org/math/){target="_blank"} | Automatic differentiation and mathematical functions used by Stan. |
+| **Multiple Languages** | [**BridgeStan**](https://roualdes.github.io/bridgestan/latest/){target="_blank"} | Library providing bindings to a model's log densities, gradients, and more for C++, Python, Julia, R, and Rust. |
+| **R**                  | [**rstantools**](https://mc-stan.org/rstantools/){target="_blank"} | Tools for developers of R packages interfacing with Stan. |
+| **OCaml**              | [**stanc3**](https://mc-stan.org/stanc3/stanc/){target="_blank"} | The Stan compiler and programatic tools for manipulating Stan programs. |
+: {tbl-colwidths="[10, 20, 70]"}
+
+---
+
+## Editor and IDE Support
+
+*Enhance your coding experience with Stan language support in your favorite editor.*
+
+| **Editor/IDE**         | **Tool** | **Description** |
+|------------------------|----------|-----------------|
+| **RStudio**            | **Built-in Support** | RStudio 1.2+ includes Stan syntax highlighting and code snippets.  [(Source code)](https://github.com/rstudio/rstudio/blob/main/src/gwt/acesupport/acemode/stan_highlight_rules.js){target="_blank"} |
+| **Visual Studio Code** | [**Stan VSCode Extension**](https://marketplace.visualstudio.com/items?itemName=ivan-bocharov.stan-vscode){target="_blank"} | Stan language support with syntax highlighting, autocompletion, and snippets. |
+| **Emacs**              | [**stan-mode**](https://github.com/stan-dev/stan-mode){target="_blank"} | Major mode for Stan with syntax highlighting and indentation. |
+| **Vim**                | [**stan-vim**](https://github.com/eigenfoo/stan-vim){target="_blank"} | Syntax highlighting, indentation, and code folding for Stan in Vim. |
+| **Atom**               | [**language-stan**](https://github.com/stan-dev/atom-language-stan){target="_blank"} | Stan language support in Atom editor. |
+| **Sublime Text**       | [**SublimeStan**](https://github.com/djsutherland/sublime-stan){target="_blank"} | Syntax highlighting for Stan in Sublime Text. |
+| **JupyterLab**         | [**jupyterlab-stan-highlight**](https://www.npmjs.com/package/jupyterlab-stan-highlight){target="_blank"} | Syntax highlighting for Stan code blocks in JupyterLab. |
+| **Javascript**         | [**Prism**](https://prismjs.com/){target="_blank"} </br> [**Highlight.js**](https://github.com/highlightjs/highlight.js){target="_blank"} | Lightweight syntax highlighting library - [(Source code)](https://github.com/PrismJS/prism/blob/master/components/prism-stan.js){target="_blank"}. </br> Syntax highlighter written in javascript - [(Source code)](https://github.com/highlightjs/highlight.js/blob/main/src/languages/stan.js){target="_blank"} |
+ **Markdown Editors**   | [**Pandoc**](https://pandoc.org/){target="_blank"} </br> [**Pygments**](https://pygments.org/){target="_blank"} | Stan syntax highlighting for document formats. [(Source code)](https://invent.kde.org/frameworks/syntax-highlighting/-/blob/master/data/syntax/stan.xml)</br>Python highlighter for Stan code blocks [(Source code)](https://github.com/pygments/pygments/blob/master/pygments/lexers/modeling.py){target="_blank"} |
+| **LaTeX**              | [**lstbayes**](https://github.com/jrnold/lstbayes){target="_blank"} | LaTeX listings for Stan syntax highlighting. |
+: {tbl-colwidths="[15, 25, 60]"}
+
+---
+
+## Software Packages built on Stan
+
+| **Language**           | **Tool** | **Description** |
+|------------------------|----------|-----------------|
+| **Python**, **R**      | [**PROPHET**](https://facebook.github.io/prophet/){target="_blank"} | Forecasting at scale for time series data. |
+| **R**                  | [**blavaan**](https://ecmerkle.github.io/blavaan){target="_blank"} | R package for Bayesian latent variable analysis. |
+| **R**                  | [**rethinking**](https://github.com/rmcelreath/rethinking/){target="_blank"} | Software for book *Statistical Rethinking* |
+: {tbl-colwidths="[10, 20, 70]"}
+
+Additional R packages on CRAN which are built on Stan can be found in the reverse links from the packages [rstan](https://cran.r-project.org/web/packages/rstan/index.html){target="_blank"} and [rstanarm](https://cran.r-project.org/web/packages/rstanarm/index.html){target="_blank"}.

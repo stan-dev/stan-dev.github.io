@@ -1,12 +1,3 @@
-_site
-.DS_Store
-*.sublime-project
-*.sublime-workspace
-codekit-config.json
-node_modules
-.sass-cache
-*~
+/.quarto/
+_website/
 .Rproj.user
-.Rhistory
-Gemfile.lock
-Gemfile
