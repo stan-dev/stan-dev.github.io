@@ -21,7 +21,8 @@ website:
   image: img/logo_tm.png
   page-navigation: true
   back-to-top-navigation: true
-
+  open-graph: true
+  
   navbar:
     logo: "img/logo_tm.png"
     logo-alt: "Stan logo"
