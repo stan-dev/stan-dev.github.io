@@ -52,6 +52,11 @@
     padding-top: 1rem;
   }
 
+  .hero-code .sourceCode {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
   .hero-code pre,
   .hero-code code {
     color: var(--bs-body-color);
@@ -60,6 +65,8 @@
 
   .hero-code .code-with-filename-file {
     border: 1px solid rgba(233, 236, 239, 0.2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: var(--stan-secondary);
   }
   .hero-code .code-with-filename-file pre {
