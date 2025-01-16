@@ -11,7 +11,8 @@ aliases:
  - events/index.html
  - users/index.html
 
-
+css: index.css
+code-copy: false
 ---
 
 
@@ -20,7 +21,8 @@ aliases:
 
 # Stan: Software for Bayesian Data&nbsp;Analysis
 
-::::: {.hero-text}
+::::: {.hero-text .grid}
+:::::: {.g-col-12 .g-col-md-8}
 
 ### Bayesian Modeling
 
@@ -35,7 +37,26 @@ Stan's probabilistic programming language is suitable for a wide range of applic
 Interfaces for Python, Julia, R, and the Unix shell make it easy to use Stan in any programming environment,
 on  laptops, clusters, or in the cloud.  A rich ecosystem of tools for validation and visualization support
 decision-making and communication.
+::::::
 
+:::::: {.g-col-12 .g-col-md-4 .hero-code}
+
+```{.stan filename="bernoulli.stan"}
+data {
+  int<lower=0> N;
+  array[N] int<lower=0, upper=1> y;
+}
+parameters {
+  real<lower=0, upper=1> theta;
+}
+model {
+  // uniform prior on interval 0,1
+  theta ~ beta(1, 1);
+  y ~ bernoulli(theta);
+}
+```
+
+::::::
 
 :::::
 ::::: {.hero-buttons style="position: relative; display: flex; justify-content: center;"}
