@@ -2,7 +2,7 @@
 https://mc-stan.org/shop/index.html https://mc-stan.org/about/#shop-for-stan-swag
 https://mc-stan.org/about/team/index.html https://mc-stan.org/about/#stan-development-team
 https://mc-stan.org/about/developers/index.html https://mc-stan.org/about/#stan-development-team
-https://mc-stan.org/support/index.html https://mc-stan.org/about/#support-stan
+https://mc-stan.org/support/index.html https://mc-stan.org/about/#help-fund-stan
 https://mc-stan.org/events/stanconnect_Ecology1/index.html https://mc-stan.org/learn-stan/field-guides.html#stanconnect-sessions
 https://mc-stan.org/events/stanconnect_CogNeuro/index.html https://mc-stan.org/learn-stan/field-guides.html#stanconnect-sessions
 https://mc-stan.org/events/stanconnect_Biomedical/index.html https://mc-stan.org/learn-stan/field-guides.html#stanconnect-sessions
