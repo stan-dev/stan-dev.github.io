@@ -110,16 +110,18 @@ For detailed installation instructions see [Getting Started](../install/).
 
 | **Editor/IDE**         | **Tool** | **Description** |
 |------------------------|----------|-----------------|
-| **RStudio**            | **Built-in Support** | RStudio 1.2+ includes Stan syntax highlighting and code snippets.  [(Source code)](https://github.com/rstudio/rstudio/blob/main/src/gwt/acesupport/acemode/stan_highlight_rules.js){target="_blank"} |
-| **Visual Studio Code** | [**Stan VSCode Extension**](https://marketplace.visualstudio.com/items?itemName=ivan-bocharov.stan-vscode){target="_blank"} | Stan language support with syntax highlighting, autocompletion, and snippets. |
-| **Emacs**              | [**stan-mode**](https://github.com/stan-dev/stan-mode){target="_blank"} | Major mode for Stan with syntax highlighting and indentation. |
-| **Vim**                | [**stan-vim**](https://github.com/eigenfoo/stan-vim){target="_blank"} | Syntax highlighting, indentation, and code folding for Stan in Vim. |
-| **Atom**               | [**language-stan**](https://github.com/stan-dev/atom-language-stan){target="_blank"} | Stan language support in Atom editor. |
-| **Sublime Text**       | [**SublimeStan**](https://github.com/djsutherland/sublime-stan){target="_blank"} | Syntax highlighting for Stan in Sublime Text. |
-| **JupyterLab**         | [**jupyterlab-stan-highlight**](https://www.npmjs.com/package/jupyterlab-stan-highlight){target="_blank"} | Syntax highlighting for Stan code blocks in JupyterLab. |
-| **Javascript**         | [**Prism**](https://prismjs.com/){target="_blank"} </br> [**Highlight.js**](https://github.com/highlightjs/highlight.js){target="_blank"} | Lightweight syntax highlighting library - [(Source code)](https://github.com/PrismJS/prism/blob/master/components/prism-stan.js){target="_blank"}. </br> Syntax highlighter written in javascript - [(Source code)](https://github.com/highlightjs/highlight.js/blob/main/src/languages/stan.js){target="_blank"} |
- **Markdown Editors**   | [**Pandoc**](https://pandoc.org/){target="_blank"} </br> [**Pygments**](https://pygments.org/){target="_blank"} | Stan syntax highlighting for document formats. [(Source code)](https://invent.kde.org/frameworks/syntax-highlighting/-/blob/master/data/syntax/stan.xml)</br>Python highlighter for Stan code blocks [(Source code)](https://github.com/pygments/pygments/blob/master/pygments/lexers/modeling.py){target="_blank"} |
-| **LaTeX**              | [**lstbayes**](https://github.com/jrnold/lstbayes){target="_blank"} | LaTeX listings for Stan syntax highlighting. |
+| **RStudio**            | **Built-in Support** | RStudio 1.2+ includes Stan syntax highlighting and code snippets  [(Source code)](https://github.com/rstudio/rstudio/blob/main/src/gwt/acesupport/acemode/stan_highlight_rules.js){target="_blank"} |
+| **Visual Studio Code** | [**VSCode Stan Extension**](https://marketplace.visualstudio.com/items?itemName=wardbrian.vscode-stan-extension){target="_blank"} | Stan language support with syntax highlighting, linting, autocompletion, and snippets |
+| **Emacs**              | [**stan-mode**](https://github.com/stan-dev/stan-mode){target="_blank"} <br/> [**stan-ts-mode**](https://github.com/WardBrian/stan-ts-mode){target="_blank"} | Major mode for Stan with syntax highlighting and indentation <br /> Tree-sitter based (Emacs 29+) major mode for Stan. Fewer features than stan-mode, but generally more up to date syntax highlighting. |
+| **Vim**                | [**stan-vim**](https://github.com/eigenfoo/stan-vim){target="_blank"} | Syntax highlighting, indentation, and code folding for Stan in Vim |
+| **JupyterLab**         | [**jupyterlab-stan-highlight**](https://www.npmjs.com/package/jupyterlab-stan-highlight){target="_blank"} | Syntax highlighting for Stan code blocks in JupyterLab |
+| **Javascript**         | [**Prism**](https://prismjs.com/){target="_blank"} </br> [**Highlight.js**](https://github.com/highlightjs/highlight.js){target="_blank"} | Lightweight syntax highlighting library [(Source code)](https://github.com/PrismJS/prism/blob/master/components/prism-stan.js){target="_blank"} </br> Syntax highlighter written in javascript [(Source code)](https://github.com/highlightjs/highlight.js/blob/main/src/languages/stan.js){target="_blank"} |
+ **Markdown**   | [**Pandoc**](https://pandoc.org/){target="_blank"} </br> [**Pygments**](https://pygments.org/){target="_blank"} | Stan syntax highlighting for document formats [(Source code)](https://invent.kde.org/frameworks/syntax-highlighting/-/blob/master/data/syntax/stan.xml)</br>Python highlighter for Stan code blocks [(Source code)](https://github.com/pygments/pygments/blob/master/pygments/lexers/modeling.py){target="_blank"} |
+| **Zed**                | [**zed-stan-extension**](https://github.com/wardbrian/zed-stan-extension){target="_blank"} | Syntax highlighting for Stan in the Zed editor |
+| **LaTeX**              | [**lstbayes**](https://github.com/jrnold/lstbayes){target="_blank"} | LaTeX listings for Stan syntax highlighting |
+| **Sublime Text**       | [**SublimeStan**](https://github.com/djsutherland/sublime-stan){target="_blank"} | Syntax highlighting for Stan in Sublime Text |
+| **Atom**               | [**atom-language-stan**](https://github.com/stan-dev/atom-language-stan){target="_blank"} | Stan language support in Atom editor and GitHub.com |
+
 : {tbl-colwidths="[15, 25, 60]"}
 
 ---
