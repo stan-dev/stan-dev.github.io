@@ -466,7 +466,7 @@ Keywords
 equations, posterior predictive checks
 
 Source Repository
-: [stan-dev/example-models/knitr/lotka-volterra](){target="_blank"}
+: [stan-dev/example-models/knitr/lotka-volterra](https://github.com/stan-dev/example-models/tree/master/knitr/lotka-volterra){target="_blank"}
 (GitHub)
 
 R Package Dependencies
