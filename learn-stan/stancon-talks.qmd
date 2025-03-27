@@ -51,6 +51,7 @@ aliases:
     + Advances of model assessment, selection, and inference after model selection --  Andrew Johnson
 * Organizers: Charles Margossian, Debashis Mondal, Eric Ward, Vianey Leos Barajas, Yi Zhang
 * Sponsors: Washington University in St Louis, Metrum Research Group, NumFocus, Sage Therapeutics, Jumping Rivers
+* [Archived event page](https://github.com/stan-dev/stan-dev.github.io/blob/df6b188d6e1057863dddf110c109c1b8bc51b36e/events/stancon2023/index.md)
 
 ## StanCon 2020 Global
 
