@@ -1,0 +1,75 @@
+/* custom CSS only for the home page */
+/* all other CSS is shared with docs and in the quarto-config submodule */
+
+
+
+.content-block {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  @media (min-width: 900px) {
+    .content-block {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .content-block {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .hero-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: var(--stan-hero);
+    background-color: var(--stan-hero-bg);
+    border: 10px solid var(--stan-secondary);
+  }
+
+  .hero-banner h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .hero-banner .content-block {
+    padding-top: 0;
+  }
+
+  .hero-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .hero-code .sourceCode {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .hero-code pre,
+  .hero-code code {
+    color: var(--bs-body-color);
+    padding: 0.25em;
+  }
+
+  .hero-code .code-with-filename-file {
+    border: 1px solid rgba(233, 236, 239, 0.2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: var(--stan-secondary);
+  }
+  .hero-code .code-with-filename-file pre {
+    background-color: inherit;
+    color: var(--stan-hero);
+  }

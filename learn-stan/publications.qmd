@@ -1,0 +1,112 @@
+---
+title: Published Articles and Books
+page-layout: full
+toc-location: right
+aliases:
+  - /users/documentation/external.html
+---
+
+## Stan Language and Algorithms
+
+* Bob Carpenter, Andrew Gelman, Matthew D. Hoffman, Daniel Lee, Ben
+  Goodrich, Michael Betancourt, Marcus Brubaker, Jiqiang Guo,
+  Peter Li, and Allen Riddell.  2017.  [Stan: A probabilistic programming language](http://dx.doi.org/10.18637/jss.v076.i01){target="_blank"}.
+  *Journal of Statistical Software* 76(1). 
+
+* Andrew Gelman, Daniel Lee, and Jiqiang Guo.  2015.
+  [Stan: A probabilistic programming language for Bayesian inference and optimization](http://www.stat.columbia.edu/~gelman/research/published/stan_jebs_2.pdf){target="_blank"}.
+  *Journal of Education and Behavioral Statistics*. 40(5):530--543.
+
+* Alp Kucukelbir, Rajesh Ranganath, Andrew Gelman and David M. Blei. 2015.
+  [Automatic variational inference in Stan](https://proceedings.neurips.cc/paper_files/paper/2015/file/352fe25daf686bdb4edca223c921acea-Paper.pdf){target="_blank"}
+
+* Lu Zhang, Bob Carpenter, Andrew Gelman, Aki Vehtari. 2022.
+  [Pathfinder: Parallel quasi-Newton variational inference](https://jmlr.org/papers/v23/21-0889.html){target="_blank"}
+  *Journal of Machine Learning Research*.  23(306):1−49, 2022.
+
+* Michael Betancourt. 2017. A Conceptual Introduction to
+  Hamiltonian Monte Carlo.  *arXiv*:1701.02434.
+
+* Matthew D. Hoffman, Andrew Gelman. 2014.
+  [The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo.](http://jmlr.org/papers/v15/hoffman14a.html){target="_blank"}
+  *Journal of Machine Learning Research*. 15(47):1593−1623.
+
+* Cole C. Monnahan, James T. Thorson, and Trevor A. Branch. 2017.
+  Faster estimation of Bayesian models in ecology using Hamiltonian Monte Carlo
+  *Methods in Ecology and Evolution*.  8(3):339-348.
+
+* Radford Neal. 2011. MCMC Using Hamiltonian Dynamics.  In *Handbook of Markov Chain Monte
+  Carlo*, edited by Steve Brooks, Andrew Gelman, Galin L. Jones, and Xiao-Li Meng.  Chapman-Hall/CRC.
+
+* Bob Carpenter, Matthew D. Hoffman, Marcus Brubaker, Daniel Lee, Peter Li, and Michael J. Betancourt.  2015.
+  [The Stan Math Library: Reverse-Mode Automatic Differentiation in C++](https://arxiv.org/abs/1509.07164){target="_blank"}.
+  &nbsp; *arXiv* 1509.07164.
+
+
+## Bayesian Workflow
+
+* Andrew Gelman, Aki Vehtari, Daniel Simpson, Charles C. Margossian, Bob Carpenter, Yuling Yao, Lauren Kennedy, Jonah Gabry, Paul-Christian Bürkner, Martin Modrák. 2020. [Bayesian Workflow](https://doi.org/10.48550/arXiv.2011.01808){target="_blank"}
+
+
+* Aki Vehtari, Andrew Gelman, Daniel Simpson, Bob Carpenter, Paul-Christian Bürkner, 2021.
+  [Rank-Normalization, Folding, and Localization: An Improved R-hat for Assessing Convergence of MCMC (with Discussion)](http://dx.doi.org/10.1214/20-BA1221){target="_blank"}
+  *Bayesian Analysis* 16(2).
+  
+* Aki Vehtari, Andrew Gelman, and Jonah Gabry. 2016.
+  [Practical Bayesian model evaluation using leave-one-out cross-validation and WAIC.](https://arxiv.org/abs/1507.04544){target="_blank"}
+   *Statistics and Computing*. doi:10.1007/s11222-016-9696-4.
+
+* Jonah Gabry, Daniel Simpson, Aki Vehtari, Michael Betancourt, Andrew Gelman. 2019
+  [Visualization in Bayesian workflow.](https://arxiv.org/pdf/1709.01449){target="_blank"}
+  *Journal of the Royal Statistical Society Series A: Statistics in Society* 182(2):389–402.
+
+* Robert L. Grant, Daniel C. Furr, Bob Carpenter, and Andrew
+  Gelman. 2016. [Fitting Bayesian item response models in Stata and Stan](https://arxiv.org/abs/1601.03443){target="_blank"}.
+  *arXiv* 1601.03443.
+
+                       
+## Books using Stan
+
+* Gelman, A., Hill, J., and Vehtari A. 2020.
+  [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/){target="_blank"}
+
+* Gelman, A. and Vehtari A. 2024.
+  [Active Statistics](https://avehtari.github.io/ActiveStatistics/){target="_blank"}
+
+* Korner-Nievergelt, F., Roth, T., Von Felten, S., Guélat, J., Almasi,
+  B. and Korner-Nievergelt, P.  2024. [*Bayesian Data Analysis in
+  Ecology Using Linear Models with R and Stan*](https://tobiasroth.github.io/BDAEcology/){target="_blank"}.  Online.
+
+* Suzuki, J.  2023. [*WAIC and WBIC with R Stan: 100 Exercises for Building Logic*](https://link.springer.com/book/10.1007/978-981-99-3838-4){target="_blank"}.  Springer.
+
+* Matsuura, K.. 2022. [*Bayesian Statistical Modeling with Stan, R, and
+  Python.*](https://link.springer.com/book/10.1007/978-981-19-4755-1){target="_blank"} Springer.
+
+* Johnson, A.A., M. Q. Ott, M. Dogucu. 2021. [*Bayes Rules! An Introduction to Applied Bayesian Modeling*](https://www.bayesrulesbook.com){target="_blank"} CRC Press.
+
+* Holmes, E. E., M. D. Scheuerell, and E. J. Ward.  2019.
+  [*Applied Time Series Analysis for Fisheries and Environmental Sciences*](https://atsa-es.github.io/atsa-labs/){target="_blank"}. NOAA Fisheries,
+  Northwest Fisheries Science Center.
+
+* Hilbe, J. M., R.S. de Souza, and E. E. O. Ishida.  2017. [*Bayesian
+  Models for Astrophysical Data Using R, JAGS, Python and Stan*](https://www.bayesianmodelsforastrophysicaldata.com){target="_blank"}.
+  Cambridge University Press.
+
+* Matsuura, K.. 2016. [*Bayesian Statistical Modeling Using Stan
+  and R*](https://link.springer.com/book/10.1007/978-981-19-4755-1){target="_blank"}. Wonderful R Series, Volume 2. Kyoritsu Shuppan Co.,
+  Ltd.  [in Japanese]
+
+* McElreath, R.  2016. [*Statistical Rethinking:  A Bayesian
+  Course with R and Stan*](https://xcelab.net/rm/){target="_blank"}.  Chapman-Hall/CRC.
+
+* Korner-Nievergelt, F., Roth, T., Von Felten, S., Guélat, J., Almasi,
+  B. and Korner-Nievergelt, P.  2015. *Bayesian Data Analysis in
+  Ecology Using Linear Models with R, BUGS, and Stan*.  Academic Press.
+
+* Kruschke, J. 2014.  *Doing Bayesian Data Analysis: A Tutorial with R,
+  JAGS, and Stan*. Academic Press.
+
+* Gelman, A., Carlin, J.B., Stern, H.S., Dunson, D.B., Vehtari, A. and
+  Rubin, D.B. 2013. [*Bayesian Data Analysis*](http://www.stat.columbia.edu/~gelman/book/){target="_blank"}, Third
+  Edition. Chapman-Hall/CRC.
+

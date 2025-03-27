@@ -1,2 +1,0 @@
-## ---- hwpy ----
-print("Hello World!");
