@@ -22,7 +22,7 @@ website:
   page-navigation: true
   back-to-top-navigation: true
   open-graph: true
-  
+
   navbar:
     logo: "img/logo_tm.png"
     logo-alt: "Stan logo"
@@ -31,7 +31,7 @@ website:
       - text: "Stan"
         href: index.qmd
       - text: "Getting Started"
-        href: install/
+        href: install/index.qmd
       - text: "Documentation"
         href: "https://mc-stan.org/docs"
       - text: "Learning Resources"
@@ -49,9 +49,9 @@ website:
           - text: "Diagnostics and Warnings"
             href: learn-stan/diagnostics-warnings.qmd
       - text: "Tools"
-        href: tools/
+        href: tools/index.qmd
       - text: "About"
-        href: about/
+        href: about/index.qmd
     tools:
       - icon: github
         url: https://github.com/stan-dev

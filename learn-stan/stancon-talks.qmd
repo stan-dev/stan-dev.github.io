@@ -1,5 +1,5 @@
 ---
-title: StanCon Talks
+title: StanCon
 page-layout: full
 toc-location: right
 
@@ -15,6 +15,11 @@ aliases:
 * Location & Date: Oxford University, England -- September 9-13, 2024
 * [Program](stancon/StanCon2024-program.pdf){target="_blank"}
 * Recorded Talks: [YouTube playlist](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzNzh6mjWsWUu-lSK59VXP6)
+* Keynotes:
+  + The Pragmatic Probabilistic Programmer -- Mitzi Morris
+  + Applied modeling for drug development -- Sebastian Weber
+  + From the Depths to the Stars: How Modeling Shark Movements Illuminates Star Behavior -- Vianey Leos Barajas
+  + Bayesian multilevel causal modelling of the frequency and implications of having two HIV infections -- Chris Wymant
 * Tutorials  (not recorded)
   + Introduction to Stan -- Richard McElreath
   + Model selection -- Aki Vehtari, Noa Kallioinen, and Teemu Säilynoja
@@ -22,7 +27,9 @@ aliases:
   + Bayesian optmization with Stan -- Anna Riha and Elizaveta Semenova
   + Biodiversity modeling and forecasting -- Will Pearse
   + Infectious disease modeling in Stan -- Juliette Unwin
-* Organizers: Charles Margossian, Will Pearse, 
+* Organizers: Michael Collyer, Ellen Mobbs, Joss Wright, Richard McElreath, Elizaveta Semenova, Ben Lambert, Seth Flaxman, Charles Margossian, Juliette Unwin, Will Pearse, Makkunda Sharma
+* Sponsors: Daiichi-Sankyo, Metrum Research Group, Generable, Jumping Rivers, Taylor and Francis, NumFocus, the Oxford Internet Institute, and the Max Planck Institute for Evolutionary Anthropology
+* [Archived event page](https://github.com/stan-dev/stan-dev.github.io/blob/df6b188d6e1057863dddf110c109c1b8bc51b36e/events/stancon2024/index.md)
 
 
 ## StanCon 2023 St. Louis
@@ -30,6 +37,11 @@ aliases:
 * Location & Date: Washington University, USA -- June 20-23, 2023
 * [Program](stancon/StanCon2023-program.pdf){target="_blank"}
 * GitHub repository of slides and course materials from StanCon 2023: [https://github.com/stan-dev/stancon2023](https://github.com/stan-dev/stancon2023){target="_blank"}
+* Keynotes
+    + The efficient frontier: Bayes, neural nets, and the future of Stan -- Bob Carpenter
+    + We all can benefit from Bayesian analysis reporting guidelines if we use them -- John Kruschke
+    + Statistical Significance Makes our Mission: Impossible -- Mariel Finucane
+    + Regression Under Endogeneity: Bernstein-von Mises Theory and Bayes Factors Testing -- Siddhartha Chib
 * Tutorials
     + Fundamentals of Stan -- Charles Margossian
     + Bayesian workflow illustrated using BRMS -- Mitzi Morris
@@ -37,8 +49,9 @@ aliases:
     + Building a GPT in Stan -- Daniel Lee
     + Cognitive diagnostic models in R and Stan -- Jake Thompson
     + Advances of model assessment, selection, and inference after model selection --  Andrew Johnson
-* Organizers: Charles Margossian, Debashis Mondal, Yi Zhang, Eric Ward
-
+* Organizers: Charles Margossian, Debashis Mondal, Eric Ward, Vianey Leos Barajas, Yi Zhang
+* Sponsors: Washington University in St Louis, Metrum Research Group, NumFocus, Sage Therapeutics, Jumping Rivers
+* [Archived event page](https://github.com/stan-dev/stan-dev.github.io/blob/df6b188d6e1057863dddf110c109c1b8bc51b36e/events/stancon2023/index.md)
 
 ## StanCon 2020 Global
 
