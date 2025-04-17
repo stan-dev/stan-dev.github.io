@@ -8,6 +8,35 @@ aliases:
 
 The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming. We aim to keep them current with the latest version of the Stan language, but there may be times when case studies need updating to reflect the latest Stan features and syntax.
 
+
+## Volume 11 (2025)
+
+### The Sum-to-Zero Constraint in Stan
+
+The [`sum_to_zero_vector`](https://mc-stan.org/docs/reference-manual/transforms.html#zero-sum-vector)
+constrained parameter type was introduced in the [Stan 2.36 release](https://github.com/stan-dev/cmdstan/releases/tag/v2.36.0).
+This case study demonstrates the efficiency and robustness of this constrained type; how to adjust the marginal variances for a normal prior, and how to implement the sum-to-zero constraining transform as a Stan function, to extend its use beyond a simple vector.
+
+<a href="case-studies/sum_to_zero_vector.html" target="_blank" rel="noopener noreferrer">View HTML</a>
+*(link opens in new tab)*
+
+Author
+: Mitzi Morris
+
+Keywords
+: sum-to-zero, group-level categorical predictors, spatial models
+
+Source Repository
+: [example-models/jupyter/sum-to-zero](https://github.com/stan-dev/example-models/tree/master/jupyter/sum-to-zero){target="_blank"}
+(GitHub)
+
+Dependencies
+: `cmdstanpy`, `numpy`, `pandas`, `geopandas`, `libpysal`, `plotnine`
+
+License
+:  BSD (3 clause), CC-BY
+
+
 ## Volume 10 (2023)
 
 ### Instrumental Variables Analysis of Randomized Experiments with One-Sided Noncompliance
