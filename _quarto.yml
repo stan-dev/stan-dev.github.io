@@ -42,7 +42,9 @@ website:
             href: learn-stan/case-studies.qmd
           - text: "StanCon Talks"
             href: learn-stan/stancon-talks.qmd
-          - text: "Domain-specific"
+          - text: "StanConnect Sessions"
+            href: learn-stan/stanconnect-sessions.qmd
+          - text: "Field Guides"
             href: learn-stan/field-guides.qmd
           - text: "Publications"
             href: learn-stan/publications.qmd
