@@ -22,7 +22,12 @@ website:
   page-navigation: true
   back-to-top-navigation: true
   open-graph: true
-
+  announcement:
+    icon: calendar-week
+    dismissable: true
+    content: "StanCon 2026 has been announced! Join us August 17-21 in Uppsala, Sweden. [Learn more](https://www.stancon2026.org/){target=\"_blank\"}."
+    type: primary
+    position: below-navbar
   navbar:
     logo: "img/logo_tm.png"
     logo-alt: "Stan logo"

@@ -4,11 +4,16 @@ page-layout: full
 toc-location: right
 
 aliases:
- - ../events/stancon-code_of_conduct.html 
+ - ../events/stancon-code_of_conduct.html
  - ../events/stancon.html
  - ../events/stancon-submissions.html
 
 ---
+
+## StanCon 2026 Uppsala
+
+More information available at [stancon2026.org](https://www.stancon2026.org/){target="_blank"}
+
 
 ## StanCon 2024 Oxford
 
@@ -61,7 +66,7 @@ aliases:
   + [Session 1](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzSg_N87tVF2YWebmoHB7Bp)
   + [Session 2](https://www.youtube.com/playlist?list=PLCrWEzJgSUqwychgV5Q72Nsaq08FU48aQ)
   + [Session 3](https://www.youtube.com/playlist?list=PLCrWEzJgSUqwj78wmC7vLklk8Zg158Htk)
-  + [All videos](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzI3goQEAKkDsHg72inmqbe) 
+  + [All videos](https://www.youtube.com/playlist?list=PLCrWEzJgSUqzI3goQEAKkDsHg72inmqbe)
 * Organizers: Susana Marquez, Daniel Lee, Kelli Cassidy, Simon Maskell
 
 
@@ -91,7 +96,7 @@ aliases:
    + Productization of Stan -- Eric Novik
    + Model assessment and selection -- Aki Vehtari
 * Location & Date: Aalto University, Helsinki, Finland -- August 29-31, 2018
-* Organizers: Aalto University 
+* Organizers: Aalto University
 
 
 ## StanCon 2018 Asilomar
