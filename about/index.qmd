@@ -23,7 +23,7 @@ Stan](#help-fund-stan).
 
 ### Copyright and trademark
 
-* Copyright 2011--2024, Stan Development Team and their assignees.
+* Copyright 2011--2026, Stan Development Team and their assignees.
 
 * The Stan name and logo are registered trademarks of [NumFOCUS](http://numfocus.org/) under the direction of the Stan Governing Body.
 
@@ -133,6 +133,54 @@ t-shirts and mugs.
 * [Stan Shop [UK]](https://shop.spreadshirt.co.uk/mc-stan/)
   &nbsp; <span class="note">(Spreadshirt UK)</span>
 
+## Stan Governance
+
+### NumFOCUS
+
+Stan is [NumFOCUS](http://numfocus.org/) sponsored project. NumFOCUS
+is a U.S. 501(c)(3) nonprofit organization that serves several other
+open-source software projects. As a NumFOCUS sponsored project, Stan's
+financial administration, operational and legal support is provided by
+NumFOCUS. NumFOCUS is also providing resources and infrastructure to
+help raise money.
+
+### Stan Governing Body (SGB)
+
+The Stan Governing Body provides project governance structure
+in accord with the NumFOCUS requirements and is the liaison between
+the project and NumFOCUS for all fiscally sponsored initiatives.
+The SGB has authority over:
+
+* ownership and management of trademarks
+* online resources including [Stan web page](https://mc-stan.org/), the [stan-dev GitHub organization](https://github.com/stan-dev/), and [Stan Discourse](https://discourse.mc-stan.org/)
+* NumFOCUS funds
+* fundraising in support of Stan
+* authorizing and/or running Stan conferences
+* licensing requirements for contributed code and documentation
+
+Current SGB members are:
+
+* Jesse Piburn, Oak Ridge National Laboratory, USA
+* Teddy Groves, Danish Technical University, Denmark
+* Aki Vehtari, ELLIS Institute Finland, Aalto University, Finland
+
+SGB members are elected for 1-2 years. Anyone can nominate themselves
+for the SGB. See more about [SGB elections in Stan
+Wiki](https://github.com/stan-dev/stan/wiki/SGB).
+
+### Code of Conduct
+
+Stan follows [The NumFOCUS Code of
+Conduct](https://numfocus.org/code-of-conduct). You can report Code of
+Conduct issues using [NumFOCUS Code of Consuct
+form](https://numfocus.org/code-of-conduct).
+
+### Software development process
+
+[Stan Developer Wiki](https://github.com/stan-dev/stan/wiki) includes
+links to roadmap, developer process overview, and other useful
+information about Stan software development process.
+
 ## Acknowledgements
 
 Stan has grown from a small research project started in 2011 at Columbia University
@@ -156,7 +204,7 @@ the U.S. National Science Foundation,
 the U.S. Office of Naval Research,
 the U.S. National Institutes of Health,
 the Alfred P. Sloan Foundation,
-and the Chan Zuckerberg Foundation,
+the Chan Zuckerberg Foundation,
+the Research Council of Finland,
 and by gifts from Novartis, Google, and Facebook.
 Hosting and support for Stan's continuous integration testing is generously provided by the Simons Foundation.
-
