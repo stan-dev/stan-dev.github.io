@@ -74,7 +74,7 @@ We welcome new Stan contributors!
 
 * Code - If you'd like to contribute code, please consult the
 [Developer Process Wiki](https://github.com/stan-dev/stan/wiki/Developer-process-overview)
-as well as Stan's [AI Contribution Policy](https://github.com/stan-dev/stan/wiki/AI-Contribution-Policy)
+as well as Stan's [AI Contribution Policy](https://github.com/stan-dev/stan/wiki/AI-Contribution-Policy),
 or check out the GitHub issues on the Stan repositories for the tool that you'd like to contribute to
 and look for issues tagged "good first issue" or "help wanted".
 The GitHub issues as well as the Stan Forums and Stan slack channel are all good places
@@ -179,8 +179,8 @@ form](https://numfocus.org/code-of-conduct).
 ### Software development process
 
 [Stan Developer Wiki](https://github.com/stan-dev/stan/wiki) includes
-links to roadmap, developer process overview, Stan's 
-[AI Contribution Policy](https://github.com/stan-dev/stan/wiki/AI-Contribution-Policy)
+links to the roadmap, developer process overview, Stan's 
+[AI Contribution Policy](https://github.com/stan-dev/stan/wiki/AI-Contribution-Policy),
 and other useful information about Stan software development process.
 
 ## Acknowledgements
