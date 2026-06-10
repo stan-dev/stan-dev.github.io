@@ -91,10 +91,6 @@ the `@Stan_Development_Team`.
 
 ## How to Cite Stan
 
-We appreciate citations for the Stan software because it lets us find out what
-people have been doing with Stan and motivate further grant funding.
-
-
 We appreciate citations for the Stan software because it lets us find
 out what people have been doing with Stan and motivate further grant
 funding. When citing Stan we recommend citing both Stan itself as well
