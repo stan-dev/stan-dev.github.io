@@ -12,7 +12,24 @@ aliases:
 
 ## StanCon 2026 Uppsala
 
-More information available at [stancon2026.org](https://www.stancon2026.org/){target="_blank"}
+* Location & Date: Uppsala University, Sweden -- August 17-21, 2026
+* [Program](stancon/StanCon2026-program.pdf){target="_blank"}
+* Recorded Talks: [YouTube playlist](https://www.youtube.com/watch?v=drngQr8eyXg&list=PLe7iuYj_G4ds)
+* Keynotes:
+  + Systematic uncertainty visualization design (and its foundation in probabilistic models) -- Matthew Kay
+  + (Predicting) replications and generalizability of (mainly experimental) social science results -- Anna Dreber
+  + Joint modelling to infer transmission and evolutionary dynamics of infectious diseases from multiple different data sources -- Kaitlyn Johnson
+  + Universal probabilistic programming for phylogenetics: challenges and opportunities -- Fredrik Ronquist
+* Tutorials & Workshops (not recorded)
+  + An introduction to applied Bayesian statistics with Stan -- Mitzi Morris
+  + Bayesian model diagnostics: Workflows and software tools -- Osvaldo Martin, Teemu Säilynoja, and Noa Kallioinen
+  + Contributing to Stan: A Developer’s Guide to the Core, Interfaces, and First Contributions -- Aki Vehtari, Brian Ward, Steve Bronder, and Florence Bockting
+  + Stan for pharmacometrics -- Julie Bertrand and Nathanael Hoze
+  + Bayesian Inference for Sparsity-Promoting and Edge-Preserving Priors in Probabilistic Programming -- Jan Glaubitz, Yiqiu Dong, and Lassi Roininen
+  + Stan Contribution Hackathon -- Aki Vehtari, Steve Bronder, and Florence Bockting
+* Organizers: Måns Magnusson, Sara Hamis, Aki Vehtari, Mitzi Morris, Mattias Villani, Vianey Leos Barajas, and Mariel M. Finucane
+* Sponsors: Beijerstiftelsen, Carl Tryggers Stiftelse, eSSENCE, and SweCSS
+* [Event page](https://www.stancon2026.org/){target="_blank"}
 
 
 ## StanCon 2024 Oxford
