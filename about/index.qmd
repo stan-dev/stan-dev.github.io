@@ -169,7 +169,7 @@ Wiki](https://github.com/stan-dev/stan/wiki/SGB).
 
 Stan follows [The NumFOCUS Code of
 Conduct](https://numfocus.org/code-of-conduct). You can report Code of
-Conduct issues using [NumFOCUS Code of Consuct
+Conduct issues using [NumFOCUS Code of Conduct
 form](https://numfocus.org/code-of-conduct).
 
 ### Software development process
