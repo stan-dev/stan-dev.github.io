@@ -9,6 +9,41 @@ aliases:
 The case studies on this page are intended to reflect best practices in Bayesian methodology and Stan programming. We aim to keep them current with the latest version of the Stan language, but there may be times when case studies need updating to reflect the latest Stan features and syntax.
 
 
+## Volume 12 (2026)
+
+### Bayesian Probabilistic Knowledge Structures
+
+Knowledge structure theory (KST) seeks to provide procedures for
+the effective diagnosis of a student's knowledge state in a certain domain
+(such as algebra, geometry, physics, or statistics; Doignon & Falmagne, 1999;
+Heller & Stefanutti, 2024). Here, we introduce Bayesian versions of two
+prevalent probabilistic KST models: the basic local independence model and the
+simple learning model. We demonstrate how these models can be coded in Stan
+and interfaced with R. The Bayesian framework can then be leveraged to assess
+model adequacy via posterior predictive checks and for model comparison via
+cross-validation. These procedures are illustrated with simulated responses
+and a real-data example.
+
+<a href="case-studies/probabilistic_knowledge_structures.html" target="_blank" rel="noopener noreferrer">View HTML</a>
+*(link opens in new tab)*
+
+Authors
+: Florian Wickelmaier, Julian Mollenhauer, and Alice Jenisch
+
+Keywords
+: psychometrics, knowledge structures, knowledge spaces, BLIM, SLM
+
+Source Repository
+: [fwickel/BayesianPKS](https://codeberg.org/fwickel/BayesianPKS){target="_blank"}
+(Codeberg)
+
+Dependencies
+: `rstan`, `pks`, `loo`
+
+License
+:  BSD (3 clause), CC-BY
+
+
 ## Volume 11 (2025)
 
 ### The Sum-to-Zero Constraint in Stan
