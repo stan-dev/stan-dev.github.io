@@ -134,6 +134,7 @@ For detailed installation instructions see [Getting Started](../install/).
 |------------------------|----------|-----------------|
 | **Python**, **R**      | [**PROPHET**](https://facebook.github.io/prophet/){target="_blank"} | Forecasting at scale for time series data. |
 | **R**                  | [**blavaan**](https://ecmerkle.github.io/blavaan){target="_blank"} | R package for Bayesian latent variable analysis. |
+| **R**                  | [**mvgam**](https://nicholasjclark.github.io/mvgam/){target="_blank"} | Bayesian State-Space models for multivariate time series and ecological data. `brms` writes the observation model and `mvgam` adds latent dynamics such as vector autoregressions and dynamic factors. |
 | **R**                  | [**rethinking**](https://github.com/rmcelreath/rethinking/){target="_blank"} | Software for book *Statistical Rethinking* |
 : {tbl-colwidths="[10, 20, 70]"}
 
